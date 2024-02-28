@@ -2,9 +2,21 @@ import "modern-normalize";
 import { createGlobalStyle } from "styled-components";
 export default createGlobalStyle`
 
+html {
+  scroll-behavior: smooth;
+}
 body {
-  font-family: sans-serif;
-  line-height: 1.5;
+  font-family:'Roboto' sans-serif;
+ 
+  background:#141414;
+  min-height:100vh;
+  color:#F9F9F9
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 h1,
 h2,
