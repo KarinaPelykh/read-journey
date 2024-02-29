@@ -1,3 +1,12 @@
+import { Dashboard } from "../../components/Dashboard/Dashboard";
+import { RecommendedBooks } from "../../components/RecommendedBooks/RecommendedBooks";
+import { Div } from "./HomePage.style";
+
 export const HomePage = () => {
-  return <h1>This home page </h1>;
+  return (
+    <Div>
+      <Dashboard />
+      <RecommendedBooks />
+    </Div>
+  );
 };

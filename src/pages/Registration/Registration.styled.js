@@ -1,4 +1,12 @@
 import styled from "styled-components";
+
+export const Wrapper = styled.div`
+  @media screen and (min-width: 1439px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
 export const WrapperForm = styled.div`
   background: ${({ theme }) => theme.colors.lightBlack};
   padding: 20px;
@@ -16,29 +24,9 @@ export const WrapperForm = styled.div`
     padding: 40px 64px 40px 64px;
     max-width: 600px;
     min-height: 100vh;
-  }
-`;
-export const WrapperSvg = styled.div`
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  margin-bottom: 40px;
-  @media screen and (min-width: 1440px) {
-    margin-bottom: 104px;
-  }
-`;
 
-export const Logo = styled.svg`
-  width: 42px;
-  height: 17px;
-`;
-export const TextLogo = styled.p`
-  @media screen and (max-width: 767px) {
-    display: none;
+    margin-right: 16px;
   }
-  font-size: ${({ theme }) => theme.fontSizes.m};
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
-  margin-left: 4px;
 `;
 
 export const Comment = styled.p`
@@ -87,22 +75,8 @@ export const InputPassword = styled.input`
   border: none;
   background-color: ${({ theme }) => theme.colors.darkGray};
   border-radius: ${({ theme }) => theme.radii.m};
-`;
-export const Button = styled.button`
-  border-radius: ${({ theme }) => theme.radii.xl};
-  color: ${({ theme }) => theme.colors.black};
-  background-color: ${({ theme }) => theme.colors.white};
-  padding: 12px 29px;
-  margin-right: 14px;
-`;
-export const WrapperButton = styled.div`
-  margin-top: 20px;
+  margin-bottom: 20px;
   @media screen and (min-width: 768px) {
-    margin-top: 82px;
+    margin-bottom: 65px;
   }
-`;
-
-export const LinkOnLOgin = styled.a`
-  color: ${({ theme }) => theme.colors.grey};
-  font-size: ${({ theme }) => theme.fontSizes.ss};
 `;

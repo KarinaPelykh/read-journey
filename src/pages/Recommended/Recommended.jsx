@@ -1,3 +1,3 @@
 export const Recommended = () => {
-  return <h1>RegistrationPage</h1>;
+  return <h1>Recommended</h1>;
 };

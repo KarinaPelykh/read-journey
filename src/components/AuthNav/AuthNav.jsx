@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 const routes = [
   { path: "/register", page: "Registration Page" },
-  //   { path: "/login", page: "Login Page" },
+  { path: "/login", page: "Login Page" },
 ];
 export const AuthNav = () => {
   return (

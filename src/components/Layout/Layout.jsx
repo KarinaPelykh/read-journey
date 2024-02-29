@@ -1,17 +1,22 @@
-import { Outlet } from "react-router-dom";
-// import { Navigation } from "../Navigation/Navigation";
-import { AuthNav } from "../AuthNav/AuthNav";
-import { Header } from "./Layout.styled";
+import { Link, Outlet } from "react-router-dom";
+import { Navigation } from "../Navigation/Navigation";
+// import { AuthNav } from "../AuthNav/AuthNav";
+import { Div, Header, Nav } from "./Layout.styled";
+import { LogoMain } from "../Logo/Logo";
 
 export const Layout = () => {
   return (
     <>
       <Header>
-        <nav>
-          {/* <Link to="/">Home</Link> */}
-          {/* <Navigation /> */}
-          <AuthNav />
-        </nav>
+        <Nav>
+          <LogoMain />
+          <Div>
+            <Link to="/">Home</Link>
+            <Navigation />
+          </Div>
+
+          {/* <AuthNav /> */}
+        </Nav>
       </Header>
       <Outlet />
     </>

@@ -1,3 +1,3 @@
 export const MyLibrary = () => {
-  return <h1>RegistrationPage</h1>;
+  return <h1>MyLibrary</h1>;
 };
