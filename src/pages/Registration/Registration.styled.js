@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 32px;
   }
 `;
 export const WrapperForm = styled.div`
@@ -79,4 +80,9 @@ export const InputPassword = styled.input`
   @media screen and (min-width: 768px) {
     margin-bottom: 65px;
   }
+`;
+
+export const S = styled.div`
+  position: relative;
+  top: -65px;
 `;

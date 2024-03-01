@@ -1,12 +1,23 @@
 import styled from "styled-components";
 
+
+export const HeaderContainer = styled.header`
+padding-top:32px
+`;
+
+
 export const Header = styled.header`
   background: ${({ theme }) => theme.colors.lightBlack};
   border-radius: ${({ theme }) => theme.radii.l};
   padding: 16px 28px;
   height: 74px;
   display: flex;
+  justify-content: center;
   margin-bottom: 16px;
+
+  @media screen and (min-width: 1440px) {
+    width: 1216px;
+  }
 `;
 export const Nav = styled.nav`
   div {

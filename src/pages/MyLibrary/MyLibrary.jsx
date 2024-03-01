@@ -1,3 +1,9 @@
+import { Container } from "../../components/Container/Container.styled";
+
 export const MyLibrary = () => {
-  return <h1>MyLibrary</h1>;
+  return (
+    <Container>
+      <h1>MyLibrary</h1>
+    </Container>
+  );
 };

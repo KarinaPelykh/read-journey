@@ -16,7 +16,7 @@ export const WrapperBooks = styled.div`
     margin: 0;
     padding: 40px 40px 28px 40px;
     padding-bottom: 40px;
-    width: 100%;
+    width: 847px;
     padding: 40px 20px 20px 20px;
     height: 651px;
   }
