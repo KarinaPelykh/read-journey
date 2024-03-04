@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const WrapperButton = styled.div`
@@ -19,7 +20,7 @@ export const Button = styled.button`
   font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
 `;
-export const LinkOnLOgin = styled.a`
+export const LinkOnLOgin = styled(Link)`
   color: ${({ theme }) => theme.colors.grey};
   font-size: ${({ theme }) => theme.fontSizes.ss};
 `;

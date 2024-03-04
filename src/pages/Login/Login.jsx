@@ -30,7 +30,11 @@ export const LoginPage = () => {
               type="password"
               placeholder="Password:"
             />
-            <Buttons prop={"Log in"} />
+            <Buttons
+              prop={"Log in"}
+              text={"Don’t have an account?"}
+              to={"/register"}
+            />
           </LoginForm>
         </WrapperForm>
         <Hero />

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
   @media screen and (min-width: 1439px) {
@@ -60,29 +60,73 @@ export const RegisterForm = styled.form`
 `;
 
 export const Input = styled.input`
+  color: ${({ theme }) => theme.colors.white};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  font-size: ${({ theme }) => theme.fontSizes.ss};
   width: 100%;
   outline: none;
-  padding: 14px;
   border: none;
+  padding: 14px 14px 14px 62px;
+
   background-color: ${({ theme }) => theme.colors.darkGray};
   border-radius: ${({ theme }) => theme.radii.m};
-  margin-bottom: 8px;
+  margin-bottom: 14px;
 `;
 
 export const InputPassword = styled.input`
   width: 100%;
   outline: none;
-  padding: 14px;
-  border: none;
+  padding: 14px 14px 14px 80px;
+  /* border: none; */
   background-color: ${({ theme }) => theme.colors.darkGray};
   border-radius: ${({ theme }) => theme.radii.m};
   margin-bottom: 20px;
   @media screen and (min-width: 768px) {
-    margin-bottom: 65px;
+    margin-bottom: 55px;
   }
+
+  color: ${({ theme }) => theme.colors.white};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  font-size: ${({ theme }) => theme.fontSizes.ss};
+
+  ${({ $variant }) =>
+    $variant === "error" &&
+    css`
+      border-color: ${({ theme }) => theme.colors.red};
+    `}
+
+  ${({ $variant }) =>
+    $variant === "successful" &&
+    css`
+      border-color: ${({ theme }) => theme.colors.lightGreen};
+    `}
 `;
 
-export const S = styled.div`
+export const TextErrors = styled.div`
   position: relative;
-  top: -65px;
+  top: -54px;
+  left: 4px;
+  color: ${({ theme }) => theme.colors.grey};
+  font-size: ${({ theme }) => theme.fontSizes.ss};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+`;
+export const DivWrapperInput = styled.div`
+  position: relative;
+`;
+export const Label = styled.label`
+  position: absolute;
+  color: ${({ theme }) => theme.colors.grey};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+
+  font-size: ${({ theme }) => theme.fontSizes.ss};
+  top: 15px;
+  left: 14px;
+`;
+export const TextError = styled.div`
+  position: absolute;
+  top: 40px;
+  left: 2px;
+  color: ${({ theme }) => theme.colors.grey};
+  font-size: ${({ theme }) => theme.fontSizes.ss};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
 `;

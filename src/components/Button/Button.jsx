@@ -1,10 +1,10 @@
 import { WrapperButton, Button, LinkOnLOgin } from "./Button.styled";
 
-export const Buttons = ({ prop }) => {
+export const Buttons = ({ prop, text, to }) => {
   return (
     <WrapperButton>
       <Button type="submit">{prop}</Button>
-      <LinkOnLOgin href="">Already have an account?</LinkOnLOgin>
+      <LinkOnLOgin to={to}>{text}</LinkOnLOgin>
     </WrapperButton>
   );
 };

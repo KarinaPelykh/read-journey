@@ -8,6 +8,7 @@ export const theme = {
     black: "#141414",
     blue: "#4F92F7",
     lightGreen: "#30B94D",
+    red: "#E90516",
   },
   fontSizes: {
     xxxl: "64px",

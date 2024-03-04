@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { Buttons } from "../../components/Button/Button";
 import { Container } from "../../components/Container/Container.styled";
 import { Hero } from "../../components/Hero/Hero";
 import { LogoMain } from "../../components/Logo/Logo";
+import { ShowPassword } from "../../components/Validation/ShowPassword";
+import { ValidationRegister } from "../../components/Validation/ValidationRegister";
 import {
   Wrapper,
   WrapperForm,
@@ -10,12 +13,16 @@ import {
   RegisterForm,
   Input,
   InputPassword,
-  S,
+  DivWrapperInput,
+  TextErrors,
+  TextError,
+  Label,
 } from "./Registration.styled";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
 export const RegistrationPage = () => {
+  const [openPsw, setOpenPsw] = useState(true);
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -37,8 +44,9 @@ export const RegistrationPage = () => {
         .required("Required"),
     }),
 
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: () => {
+      // values;
+      // const { name, email, password } = values;
     },
   });
 
@@ -51,47 +59,69 @@ export const RegistrationPage = () => {
             Expand your mind, reading <Span>a book</Span>
           </Comment>
           <RegisterForm onSubmit={formik.handleSubmit}>
-            <label htmlFor="name"></label>
-            <Input
-              name="name"
-              value={formik.values.name}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              type="text"
-              placeholder="Name:"
-            />
-            {formik.touched.name && formik.errors.name ? (
-              <div>{formik.errors.name}</div>
-            ) : null}
+            <DivWrapperInput>
+              {" "}
+              <Label htmlFor="name">Name:</Label>
+              <Input
+                name="name"
+                value={formik.values.name}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                type="text"
+              />
+              {formik.touched.name && formik.errors.name ? (
+                <TextError>{formik.errors.name}</TextError>
+              ) : null}
+            </DivWrapperInput>
+            <DivWrapperInput>
+              <Label htmlFor="email">Mail:</Label>
+              <Input
+                onChange={formik.handleChange}
+                name="email"
+                value={formik.values.email}
+                onBlur={formik.handleBlur}
+                type="email"
+              />
+              {formik.touched.email && formik.errors.email ? (
+                <TextError>{formik.errors.email}</TextError>
+              ) : null}
+            </DivWrapperInput>
+            <DivWrapperInput>
+              <Label htmlFor="password">Password:</Label>
 
-            <label htmlFor="email"></label>
-            <Input
-              onChange={formik.handleChange}
-              name="email"
-              value={formik.values.email}
-              onBlur={formik.handleBlur}
-              type="email"
-              placeholder="Mail:"
-            />
-            {formik.touched.email && formik.errors.email ? (
-              <div>{formik.errors.email}</div>
-            ) : null}
+              <InputPassword
+                // $variant={
+                //   formik.errors.password
+                //     ? "error"
+                //     : formik.touched.password
+                //     ? "successful"
+                //     : null
+                // }
+                onChange={formik.handleChange}
+                value={formik.values.password}
+                onBlur={formik.handleBlur}
+                name="password"
+                type={openPsw ? "password" : "text"}
+              />
 
-            <label htmlFor="password"></label>
-            <InputPassword
-              onChange={formik.handleChange}
-              value={formik.values.password}
-              onBlur={formik.handleBlur}
-              name="password"
-              type="password"
-              placeholder="Password:"
-            />
+              <ValidationRegister
+                touched={formik.touched.password}
+                errors={formik.errors.password}
+              />
+              <ShowPassword
+                openPAsword={openPsw}
+                toggle={() => setOpenPsw((prevState) => !prevState)}
+              />
+            </DivWrapperInput>
 
             {formik.touched.password && formik.errors.password ? (
-              <S>{formik.errors.password}</S>
+              <TextErrors>{formik.errors.password}</TextErrors>
             ) : null}
-
-            <Buttons prop={"Registration"} />
+            <Buttons
+              prop={"Registration"}
+              text={"Already have an account?"}
+              to={"/login"}
+            />
           </RegisterForm>
         </WrapperForm>
         <Hero />
