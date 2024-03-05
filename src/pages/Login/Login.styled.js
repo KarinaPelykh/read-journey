@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
   @media screen and (min-width: 1439px) {
@@ -78,4 +78,16 @@ export const InputPassword = styled.input`
   @media screen and (min-width: 768px) {
     margin-bottom: 110px;
   }
+
+  ${({ $variant }) =>
+    $variant === "error" &&
+    css`
+      border: 1px solid ${({ theme }) => theme.colors.red};
+    `}
+
+  ${({ $variant }) =>
+    $variant === "successful" &&
+    css`
+      border: 1px solid ${({ theme }) => theme.colors.lightGreen};
+    `}
 `;

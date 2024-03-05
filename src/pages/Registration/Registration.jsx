@@ -20,9 +20,13 @@ import {
 } from "./Registration.styled";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { registerThunk } from "../../redux/auth/operations";
 
 export const RegistrationPage = () => {
+  const dispatch = useDispatch();
   const [openPsw, setOpenPsw] = useState(true);
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -44,9 +48,8 @@ export const RegistrationPage = () => {
         .required("Required"),
     }),
 
-    onSubmit: () => {
-      // values;
-      // const { name, email, password } = values;
+    onSubmit: (values) => {
+      dispatch(registerThunk(values));
     },
   });
 
@@ -90,13 +93,13 @@ export const RegistrationPage = () => {
               <Label htmlFor="password">Password:</Label>
 
               <InputPassword
-                // $variant={
-                //   formik.errors.password
-                //     ? "error"
-                //     : formik.touched.password
-                //     ? "successful"
-                //     : null
-                // }
+                $variant={
+                  formik.errors.password
+                    ? "error"
+                    : formik.touched.password
+                    ? "successful"
+                    : null
+                }
                 onChange={formik.handleChange}
                 value={formik.values.password}
                 onBlur={formik.handleBlur}

@@ -77,7 +77,7 @@ export const InputPassword = styled.input`
   width: 100%;
   outline: none;
   padding: 14px 14px 14px 80px;
-  /* border: none; */
+  border: none;
   background-color: ${({ theme }) => theme.colors.darkGray};
   border-radius: ${({ theme }) => theme.radii.m};
   margin-bottom: 20px;
@@ -92,13 +92,13 @@ export const InputPassword = styled.input`
   ${({ $variant }) =>
     $variant === "error" &&
     css`
-      border-color: ${({ theme }) => theme.colors.red};
+      border: 1px solid ${({ theme }) => theme.colors.red};
     `}
 
   ${({ $variant }) =>
     $variant === "successful" &&
     css`
-      border-color: ${({ theme }) => theme.colors.lightGreen};
+      border: 1px solid ${({ theme }) => theme.colors.lightGreen};
     `}
 `;
 
