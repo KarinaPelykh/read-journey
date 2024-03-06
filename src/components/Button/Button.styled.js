@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const WrapperButton = styled.div`
   display: flex;
@@ -19,6 +19,15 @@ export const Button = styled.button`
   width: fit-content;
   font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
+
+  ${($variant) => {
+    $variant === "button-log-out" &&
+      css`
+        border-radius: ${({ theme }) => theme.radii.xl};
+        color: ${({ theme }) => theme.colors.black};
+        background-color: ${({ theme }) => theme.colors.white};
+      `;
+  }}
 `;
 export const LinkOnLOgin = styled(Link)`
   color: ${({ theme }) => theme.colors.grey};

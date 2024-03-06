@@ -1,17 +1,9 @@
-import { NavLink } from "react-router-dom";
-const routes = [
-  // { path: "/recommended", page: "Recommended Page" },
-  { path: "/library", page: "My library " },
-  // { path: "/reading", page: "Reading  Page" },
-];
+import { useSelector } from "react-redux";
+import { ListNav } from "../ListNav/ListNav";
+import { AuthNav } from "../AuthNav/AuthNav";
+
+import { isLoggedInSelect } from "../../redux/auth/selectors";
 export const Navigation = () => {
-  return (
-    <nav>
-      {routes.map(({ path, page }) => (
-        <NavLink key={path} to={path}>
-          {page}
-        </NavLink>
-      ))}
-    </nav>
-  );
+  const isLoggedIn = useSelector(isLoggedInSelect);
+  return <>{!isLoggedIn ? <AuthNav /> : <ListNav />}</>;
 };

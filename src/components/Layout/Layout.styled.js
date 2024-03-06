@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
-
 export const HeaderContainer = styled.header`
-padding-top:32px
+  padding-top: 32px;
 `;
-
 
 export const Header = styled.header`
   background: ${({ theme }) => theme.colors.lightBlack};
@@ -25,10 +23,11 @@ export const Nav = styled.nav`
   }
   @media screen and (min-width: 1440px) {
     div {
-      margin-right: 400px;
+      margin-left: 50px;
+      /* margin-right: 400px; */
     }
     display: flex;
-
+    justify-content: space-between;
     align-items: center;
   }
 `;
