@@ -1,36 +1,14 @@
-import { Outlet, useLocation } from "react-router-dom";
-import { Navigation } from "../Navigation/Navigation";
-import { Header, HeaderContainer, Nav } from "./Layout.styled";
-
+import { Outlet } from "react-router-dom";
 import { Container } from "../Container/Container.styled";
-import { Buttons } from "../Button/Button";
-import { logOutThunk } from "../../redux/auth/operations";
-import { useDispatch } from "react-redux";
-import { LogoMain } from "../Logo/Logo";
+import { Header } from "../Header/Header/Header";
+import { Thumb } from "./Layout.styled";
 export const Layout = () => {
-  const location = useLocation();
-  const locations =
-    location.pathname === "/register" || location.pathname === "/login";
-  const dispatch = useDispatch();
   return (
-    <HeaderContainer>
+    <Thumb>
       <Container>
-        {!locations && (
-          <Header>
-            <Nav>
-              <LogoMain />
-              <Navigation />
-              <Buttons
-                onClick={() => dispatch(logOutThunk())}
-                $variant="button-log-out"
-                prop={"Log out"}
-              />
-            </Nav>
-          </Header>
-        )}
+        <Header />
       </Container>
-
       <Outlet />
-    </HeaderContainer>
+    </Thumb>
   );
 };

@@ -1,4 +1,4 @@
-// import { BookList } from "../../components/BookList/BookList";
+import { BookList } from "../../components/BookList/BookList";
 import { Container } from "../../components/Container/Container.styled";
 import { Dashboard } from "../../components/Dashboard/Dashboard";
 import { RecommendedBooks } from "../../components/RecommendedBooks/RecommendedBooks";
@@ -9,8 +9,9 @@ export const HomePage = () => {
     <Container>
       <Div>
         <Dashboard />
-        <RecommendedBooks />
-        {/* <BookList /> */}
+        <RecommendedBooks>
+          <BookList />
+        </RecommendedBooks>
       </Div>
     </Container>
   );

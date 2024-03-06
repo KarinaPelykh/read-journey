@@ -1,5 +1,5 @@
 import { WrapperBooks } from "./RecommendedBooks.styled";
 
-export const RecommendedBooks = () => {
-  return <WrapperBooks></WrapperBooks>;
+export const RecommendedBooks = ({ children }) => {
+  return <WrapperBooks>{children}</WrapperBooks>;
 };

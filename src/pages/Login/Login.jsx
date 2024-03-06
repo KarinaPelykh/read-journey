@@ -22,9 +22,11 @@ import {
 } from "../Registration/Registration.styled";
 import { useDispatch } from "react-redux";
 import { loginThunk } from "../../redux/auth/operations";
+import { useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [openPsw, setOpenPsw] = useState(true);
   const formik = useFormik({
     initialValues: {
@@ -45,7 +47,9 @@ export const LoginPage = () => {
     }),
     onSubmit: (value) => {
       console.log(value);
-      dispatch(loginThunk(value));
+      dispatch(loginThunk(value))
+        .unwrap()
+        .then(() => navigate("/"));
     },
   });
   return (

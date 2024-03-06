@@ -1,17 +1,17 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 const routes = [
   // { path: "/recommended", page: "Recommended Page" },
+  { path: "/", page: "Home " },
   { path: "/library", page: "My library " },
-  // { path: "/reading", page: "Reading  Page" },
-  { path: "/", page: "Home" },
 ];
-export const ListNav = () => {
+export const UserNav = () => {
   return (
     <ul>
       {routes.map(({ path, page }) => (
-        <NavLink key={path} to={path}>
+        <Link key={path} to={path}>
           {page}
-        </NavLink>
+        </Link>
       ))}
     </ul>
   );

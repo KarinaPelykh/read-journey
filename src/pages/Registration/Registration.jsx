@@ -23,8 +23,10 @@ import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { registerThunk } from "../../redux/auth/operations";
 import { LogoMain } from "../../components/Logo/Logo";
+import { useNavigate } from "react-router-dom";
 export const RegistrationPage = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [openPsw, setOpenPsw] = useState(true);
 
   const formik = useFormik({
@@ -49,7 +51,9 @@ export const RegistrationPage = () => {
     }),
 
     onSubmit: (values) => {
-      dispatch(registerThunk(values));
+      dispatch(registerThunk(values))
+        .unwrap()
+        .then(() => navigate("/"));
     },
   });
 
