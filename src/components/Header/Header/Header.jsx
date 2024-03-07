@@ -19,24 +19,24 @@ export const Header = () => {
   return (
     <>
       {!locationUser && (
-        // <HeaderContainer>
         <HeaderDiv>
           <Nav>
-            <LogoMain />
+            <LogoMain variant="logo-header" />
             {isLoggedIn ? <UserNav /> : <AuthNav />}
             <UserBar />
-            <Buttons
-              onClick={() =>
-                dispatch(logOutThunk())
-                  .unwrap()
-                  .then(() => navigate("/login"))
-              }
-              $variant="button-log-out"
-              prop={"Log out"}
-            />
+            {!isLoggedIn ? null : (
+              <Buttons
+                onClick={() =>
+                  dispatch(logOutThunk())
+                    .unwrap()
+                    .then(() => navigate("/"))
+                }
+                variant="log-out"
+                prop={"Log out"}
+              />
+            )}
           </Nav>
         </HeaderDiv>
-        // </HeaderContainer>
       )}
     </>
   );

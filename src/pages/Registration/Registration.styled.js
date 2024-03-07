@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 32px;
+    /* padding-bottom: 32px; */
   }
 `;
 export const WrapperForm = styled.div`

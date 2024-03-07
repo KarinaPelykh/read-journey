@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const HeaderDiv = styled.header`
   background: ${({ theme }) => theme.colors.lightBlack};
   border-radius: ${({ theme }) => theme.radii.l};
-  padding: 16px 28px;
+  padding: 20px 16px;
   height: 74px;
 
   margin-bottom: 16px;
@@ -13,29 +13,12 @@ export const HeaderDiv = styled.header`
   }
 `;
 export const Nav = styled.nav`
-  div {
-    margin: 0;
-    display: none;
-  }
-  @media screen and (min-width: 1440px) {
-    div {
-      margin: 0;
-      display: flex;
-    }
+  @media screen and (min-width: 768px) {
     display: flex;
-    justify-content: space-between;
     align-items: center;
   }
-`;
-
-export const Div = styled.div`
   a {
     text-decoration: none;
     color: ${({ theme }) => theme.colors.white};
   }
-  a:first-child {
-    margin-right: 20px;
-  }
-
-  display: flex;
 `;

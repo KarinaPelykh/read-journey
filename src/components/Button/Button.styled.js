@@ -20,14 +20,18 @@ export const Button = styled.button`
   font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
 
-  ${($variant) => {
-    $variant === "button-log-out" &&
-      css`
-        border-radius: ${({ theme }) => theme.radii.xl};
-        color: ${({ theme }) => theme.colors.black};
-        background-color: ${({ theme }) => theme.colors.white};
-      `;
-  }}
+  ${({ variant }) =>
+    variant === "log-out" &&
+    css`
+      margin-right: 0px;
+      margin-left: 16px;
+      padding: 12px 28px;
+      border-radius: ${({ theme }) => theme.radii.xl};
+      border: ${({ theme }) => theme.borders.normal};
+      border-color: ${({ theme }) => theme.colors.liteWhite};
+      color: ${({ theme }) => theme.colors.white};
+      background-color: ${({ theme }) => theme.colors.lightBlack};
+    `};
 `;
 export const LinkOnLOgin = styled(Link)`
   color: ${({ theme }) => theme.colors.grey};

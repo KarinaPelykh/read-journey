@@ -60,21 +60,24 @@ export const LoginForm = styled.form`
 export const Input = styled.input`
   width: 100%;
   outline: none;
-  padding: 14px;
+  padding: 14px 14px 14px 62px;
   border: none;
   background-color: ${({ theme }) => theme.colors.darkGray};
   border-radius: ${({ theme }) => theme.radii.m};
-  margin-bottom: 8px;
+  margin-bottom: 14px;
 `;
 
 export const InputPassword = styled.input`
   width: 100%;
   outline: none;
-  padding: 14px;
+  padding: 14px 14px 14px 80px;
   border: none;
   background-color: ${({ theme }) => theme.colors.darkGray};
   border-radius: ${({ theme }) => theme.radii.m};
   margin-bottom: 20px;
+  color: ${({ theme }) => theme.colors.white};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  font-size: ${({ theme }) => theme.fontSizes.ss};
   @media screen and (min-width: 768px) {
     margin-bottom: 110px;
   }
@@ -90,4 +93,16 @@ export const InputPassword = styled.input`
     css`
       border: 1px solid ${({ theme }) => theme.colors.lightGreen};
     `}
+`;
+export const DivWrapperInput = styled.div`
+  position: relative;
+`;
+export const Label = styled.label`
+  position: absolute;
+  color: ${({ theme }) => theme.colors.grey};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+
+  font-size: ${({ theme }) => theme.fontSizes.ss};
+  top: 15px;
+  left: 14px;
 `;

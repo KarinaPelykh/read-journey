@@ -1,5 +1,10 @@
-import { WrapperBooks } from "./RecommendedBooks.styled";
+import { Text, WrapperBooks } from "./RecommendedBooks.styled";
 
 export const RecommendedBooks = ({ children }) => {
-  return <WrapperBooks>{children}</WrapperBooks>;
+  return (
+    <WrapperBooks>
+      <Text>Recommended</Text>
+      {children}
+    </WrapperBooks>
+  );
 };

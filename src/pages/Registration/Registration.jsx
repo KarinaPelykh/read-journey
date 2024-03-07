@@ -53,7 +53,7 @@ export const RegistrationPage = () => {
     onSubmit: (values) => {
       dispatch(registerThunk(values))
         .unwrap()
-        .then(() => navigate("/"));
+        .then(() => navigate("/recommended"));
     },
   });
 

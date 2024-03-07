@@ -1,6 +1,7 @@
 import styled from "styled-components";
-export const Div = styled.div`
-  @media screen and (min-width: 1440px) {
-    display: flex;
-  }
+export const Text = styled.p`
+  font-size: ${({ theme }) => theme.fontSizes.xxl};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  display: flex;
+  justify-content: center;
 `;

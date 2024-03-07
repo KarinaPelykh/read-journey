@@ -12,14 +12,13 @@ import {
   Span,
   WrapperForm,
   Wrapper,
+  DivWrapperInput,
+  Label,
 } from "./Login.styled";
 import { useState } from "react";
 import { ValidationRegister } from "../../components/Validation/ValidationRegister";
 import { ShowPassword } from "../../components/Validation/ShowPassword";
-import {
-  DivWrapperInput,
-  TextErrors,
-} from "../Registration/Registration.styled";
+import { TextErrors } from "../Registration/Registration.styled";
 import { useDispatch } from "react-redux";
 import { loginThunk } from "../../redux/auth/operations";
 import { useNavigate } from "react-router-dom";
@@ -49,7 +48,7 @@ export const LoginPage = () => {
       console.log(value);
       dispatch(loginThunk(value))
         .unwrap()
-        .then(() => navigate("/"));
+        .then(() => navigate("/recommended"));
     },
   });
   return (
@@ -61,20 +60,22 @@ export const LoginPage = () => {
             Expand your mind, reading <Span>a book</Span>
           </Comment>
           <LoginForm onSubmit={formik.handleSubmit}>
-            <label></label>
-            <Input
-              name="email"
-              type="email"
-              placeholder="Mail:"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.email}
-            />
-            <label></label>
             <DivWrapperInput>
+              {" "}
+              <Label>Mail:</Label>
+              <Input
+                name="email"
+                type="email"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.email}
+              />
+            </DivWrapperInput>
+
+            <DivWrapperInput>
+              <Label>Password:</Label>
               <InputPassword
                 name="password"
-                placeholder="Password:"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.password}

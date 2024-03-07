@@ -3,14 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchBooks } from "../../redux/books/operations";
 import { booksSelector } from "../../redux/books/selectors";
 import { Author, BookImg, ListBook, Title } from "./BookList.styled";
+import { isLoggedInSelect } from "../../redux/auth/selectors";
 
 export const BookList = () => {
   const bookSelector = useSelector(booksSelector);
-  console.log(bookSelector);
+  const isLoggedIn = useSelector(isLoggedInSelect);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchBooks());
-  }, [dispatch]);
+    isLoggedIn && dispatch(fetchBooks());
+  }, [dispatch, isLoggedIn]);
 
   return (
     <ListBook>

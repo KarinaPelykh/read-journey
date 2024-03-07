@@ -1,17 +1,16 @@
-import { Link } from "react-router-dom";
+import { Item } from "./UserNav.styled";
 
 const routes = [
-  // { path: "/recommended", page: "Recommended Page" },
-  { path: "/", page: "Home " },
+  { path: "/recommended", page: "Home" },
   { path: "/library", page: "My library " },
 ];
 export const UserNav = () => {
   return (
     <ul>
       {routes.map(({ path, page }) => (
-        <Link key={path} to={path}>
+        <Item key={path} to={path}>
           {page}
-        </Link>
+        </Item>
       ))}
     </ul>
   );
