@@ -10,15 +10,20 @@ import { LoginPage } from "./pages/Login/Login";
 import { PrivateRoute } from "./hoc/PrivateRoute/PrivateRoute";
 import { PublicRoute } from "./hoc/PublicRoute/PublicRoute";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { refreshThunk } from "./redux/auth/operations";
+import { refresh } from "./redux/auth/selectors";
+import { Loader } from "./components/Loader/Loader";
 
 function App() {
   const dispatch = useDispatch();
+  const isrRefresh = useSelector(refresh);
   useEffect(() => {
     dispatch(refreshThunk());
   }, [dispatch]);
-  return (
+  return isrRefresh ? (
+    <Loader />
+  ) : (
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>

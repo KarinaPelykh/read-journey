@@ -1,11 +1,19 @@
 import { Buttons } from "../../Button/Button";
-import { ButtonFilter } from "./FilterForm.styled";
+import { Form, InputFilter, Label, Title, Wrapper } from "./FilterForm.styled";
 export const FilterForm = () => {
   return (
-    <form>
-      <input type="" placeholder="Book title:" />
-      <input type="" placeholder="The author:" />
-      <Buttons prop="to apply" variant={ButtonFilter} />
-    </form>
+    <Form>
+      <Title>Filters:</Title>
+      <Wrapper>
+        <Label>Book title:</Label>
+        <InputFilter type="" />
+      </Wrapper>
+      <Wrapper>
+        <Label>The author:</Label>
+        <InputFilter type="" variant="input2" />
+      </Wrapper>
+
+      <Buttons prop="To apply" variant="buttonFilter" />
+    </Form>
   );
 };

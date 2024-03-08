@@ -24,6 +24,8 @@ export const Title = styled.h1`
   font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   color: ${({ theme }) => theme.colors.white};
+  margin-bottom: 2px;
+  margin-top: 8px;
 `;
 export const Author = styled.p`
   color: ${({ theme }) => theme.colors.grey};
