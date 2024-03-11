@@ -3,9 +3,9 @@ import { instance } from "../../service/Api";
 
 export const fetchBooks = createAsyncThunk(
   "books/fetchAll",
-  async (_, { rejectWithValue }) => {
+  async ({ page }, { rejectWithValue }) => {
     try {
-      const { data } = await instance.get("/books/recommend");
+      const { data } = await instance.get(`/books/recommend?page=${page}`);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

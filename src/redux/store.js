@@ -12,6 +12,7 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import { filterReducer } from "./filter/filterSlice";
 const persistConfig = {
   key: "root",
   version: 1,
@@ -24,6 +25,7 @@ export const store = configureStore({
   reducer: {
     books: bookReducer,
     auth: persistedReducer,
+    filter: filterReducer,
   },
 
   middleware: (getDefaultMiddleware) =>

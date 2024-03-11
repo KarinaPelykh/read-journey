@@ -5,6 +5,9 @@ const initialState = {
   books: [],
   isLoading: false,
   error: null,
+  page: 1,
+  perPage: 10,
+  totalPages: 0,
 };
 
 const bookSlice = createSlice({

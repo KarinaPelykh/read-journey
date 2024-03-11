@@ -5,3 +5,7 @@ export const Text = styled.p`
   display: flex;
   justify-content: center;
 `;
+export const DivAnimation = styled.div`
+  height: 100vh;
+  border-radius: ${({ theme }) => theme.radii.m};
+`;

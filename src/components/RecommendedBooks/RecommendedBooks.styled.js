@@ -19,6 +19,7 @@ export const WrapperBooks = styled.div`
     width: 847px;
     padding: 45px 40px 20px 40px;
     height: 651px;
+    position: relative;
   }
 `;
 export const Text = styled.p`
