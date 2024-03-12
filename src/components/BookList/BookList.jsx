@@ -2,16 +2,20 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBooks } from "../../redux/books/operations";
 import { booksSelector } from "../../redux/books/selectors";
-import { Author, BookImg, ListBook, Title } from "./BookList.styled";
+import { ListBook } from "./BookList.styled";
 import { isLoggedInSelect } from "../../redux/auth/selectors";
 import { Pagination } from "../Pagination/Pagination";
+import { BookItem } from "../BookItem/BookItem";
 
 export const BookList = () => {
-  const bookSelector = useSelector(booksSelector);
-
-  const isLoggedIn = useSelector(isLoggedInSelect);
   const [page, setPage] = useState(1);
+
+  const bookSelector = useSelector(booksSelector);
+  const { results } = bookSelector;
+  console.log(results);
+  const isLoggedIn = useSelector(isLoggedInSelect);
   const dispatch = useDispatch();
+
   useEffect(() => {
     isLoggedIn && dispatch(fetchBooks({ page }));
   }, [dispatch, isLoggedIn, page]);
@@ -26,19 +30,20 @@ export const BookList = () => {
     if (page === 3) {
       return;
     }
-
     setPage(page + 1);
   };
   return (
     <>
       <Pagination previous={handelPrevious} next={handelNext} page={page} />
       <ListBook>
-        {bookSelector.results?.map((item) => (
-          <li key={item._id}>
-            <BookImg src={item.imageUrl} />
-            <Title>{item.title}</Title>
-            <Author>{item.author}</Author>
-          </li>
+        {results?.map((item) => (
+          <BookItem
+            key={item._id}
+            img={item.imageUrl}
+            title={item.title}
+            author={item.author}
+            pages={item.totalPages}
+          />
         ))}
       </ListBook>
     </>

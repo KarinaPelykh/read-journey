@@ -42,6 +42,16 @@ export const Button = styled.button`
       color: ${({ theme }) => theme.colors.white};
       background-color: transparent;
     `};
+  ${({ variant }) =>
+    variant === "buttonModal" &&
+    css`
+      margin: 0;
+      border-radius: ${({ theme }) => theme.radii.xl};
+      border: ${({ theme }) => theme.borders.normal};
+      border-color: ${({ theme }) => theme.colors.liteWhite};
+      color: ${({ theme }) => theme.colors.white};
+      background-color: transparent;
+    `};
 `;
 export const LinkOnLOgin = styled(Link)`
   color: ${({ theme }) => theme.colors.grey};
