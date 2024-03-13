@@ -44,7 +44,7 @@ export const Author = styled.p`
       font-size: ${({ theme }) => theme.fontSizes.s};
     `}
 `;
-export const Pages = styled.p`
+export const QuantityPages = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.xs};
   margin-bottom: 32px;
 `;

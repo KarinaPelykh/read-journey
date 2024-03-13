@@ -1,5 +1,5 @@
 import axios from "axios";
-
+// auth
 export const instance = axios.create({
   baseURL: "https://readjourney.b.goit.study/api",
 });

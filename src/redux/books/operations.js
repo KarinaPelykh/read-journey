@@ -12,3 +12,15 @@ export const fetchBooks = createAsyncThunk(
     }
   }
 );
+
+export const addBooksWithRecommended = createAsyncThunk(
+  "book/addBooks",
+  async ({ id }, { rejectWithValue }) => {
+    try {
+      const { data } = await instance.post(`/books/add/${id}`);
+      return data;
+    } catch (error) {
+      return rejectWithValue.error.message;
+    }
+  }
+);

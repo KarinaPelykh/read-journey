@@ -12,7 +12,7 @@ export const BookList = () => {
 
   const bookSelector = useSelector(booksSelector);
   const { results } = bookSelector;
-  console.log(results);
+
   const isLoggedIn = useSelector(isLoggedInSelect);
   const dispatch = useDispatch();
 
@@ -32,6 +32,7 @@ export const BookList = () => {
     }
     setPage(page + 1);
   };
+
   return (
     <>
       <Pagination previous={handelPrevious} next={handelNext} page={page} />
@@ -39,6 +40,7 @@ export const BookList = () => {
         {results?.map((item) => (
           <BookItem
             key={item._id}
+            id={item._id}
             img={item.imageUrl}
             title={item.title}
             author={item.author}

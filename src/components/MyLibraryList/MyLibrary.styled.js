@@ -1,4 +1,31 @@
 import styled from "styled-components";
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+`;
+export const Text = styled.p`
+  width: 274px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: ${({ theme }) => theme.fontSizes.s};
+`;
+export const Span = styled.span`
+  color: ${({ theme }) => theme.colors.grey};
+`;
+
+export const MyListBook = styled.ul`
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  @media screen and (min-width: 1440px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+`;
 
 export const BookImg = styled.img`
   border-radius: ${({ theme }) => theme.radii.s};

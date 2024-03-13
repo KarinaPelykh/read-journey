@@ -31,12 +31,10 @@ export const Span = styled.span`
   font-size: ${({ theme }) => theme.fontSizes.s};
 `;
 
-export const WrapNav = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
 export const LinkLibrary = styled(Link)`
   color: ${({ theme }) => theme.colors.grey};
   font-size: ${({ theme }) => theme.font};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;

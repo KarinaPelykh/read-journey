@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { filterSelector } from "../../../redux/filter/selectors";
-import { Author, BookImg, Title } from "./BookFilter.styled";
+
+import { BookItemFilter } from "../BookItemFilter/BookItemFilter";
 
 export const BookFilter = () => {
   const filterBook = useSelector(filterSelector);
@@ -8,11 +9,13 @@ export const BookFilter = () => {
   return (
     <div>
       {filterBook?.results?.map((item) => (
-        <div key={item._id}>
-          <BookImg src={item.imageUrl} />
-          <Title>{item.title}</Title>
-          <Author>{item.author}</Author>
-        </div>
+        <BookItemFilter
+          key={item._id}
+          id={item._id}
+          img={item.imageUrl}
+          title={item.title}
+          author={item.author}
+        />
       ))}
     </div>
   );

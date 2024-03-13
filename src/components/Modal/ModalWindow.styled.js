@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Overlay = styled.div`
@@ -28,4 +29,8 @@ export const ButtonClose = styled.button`
   position: absolute;
   top: 10px;
   right: 10px;
+`;
+
+export const ButtonLink = styled(Link)`
+  color: transparent;
 `;

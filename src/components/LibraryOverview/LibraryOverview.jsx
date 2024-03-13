@@ -4,7 +4,6 @@ import {
   LinkLibrary,
   Span,
   Title,
-  WrapNav,
   WrapperInfo,
 } from "./LibraryOverview.styled";
 import icon from "../../images/sprite.svg";
@@ -30,12 +29,12 @@ export const LibraryOverview = () => {
           define a goal, choose a period, start training.
         </Information>
       </WrapperInfo>
-      <WrapNav>
-        <LinkLibrary to="/library">My library</LinkLibrary>
+      <LinkLibrary to="/library">
+        <p> My library</p>
         <svg width="24" height="24">
           <use xlinkHref={icon + "#log-in"}></use>
         </svg>
-      </WrapNav>
+      </LinkLibrary>
     </Block>
   );
 };

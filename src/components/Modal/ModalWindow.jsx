@@ -1,9 +1,18 @@
 import { Buttons } from "../Button/Button";
-import { Overlay, Modal, ButtonClose } from "./ModalWindow.styled";
+import { Overlay, Modal, ButtonClose, ButtonLink } from "./ModalWindow.styled";
 import icons from "../../images/sprite.svg";
 import { useEffect } from "react";
-
-export const ModalWindow = ({ children, open, toggle }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { addBooksWithRecommended } from "../../redux/books/operations";
+import { newBooksSelector } from "../../redux/books/selectors";
+import images from "../../images/pngwing.com.png";
+export const ModalWindow = ({ children, open, toggle, id, title }) => {
+  const bookNew = useSelector(newBooksSelector);
+  console.log("bookNew", bookNew);
+  const dispatch = useDispatch();
+  const handelAddBook = () => {
+    dispatch(addBooksWithRecommended({ id }));
+  };
   useEffect(() => {
     const handelKeyEscape = (e) => {
       if (e.code === "Escape") {
@@ -21,7 +30,7 @@ export const ModalWindow = ({ children, open, toggle }) => {
       toggle();
     }
   };
-
+  const isBookAdded = bookNew.some((book) => book.title === title);
   return (
     <Overlay onClick={handelCloseClick}>
       {open && (
@@ -31,8 +40,23 @@ export const ModalWindow = ({ children, open, toggle }) => {
               <use xlinkHref={icons + "#close"}></use>
             </svg>
           </ButtonClose>
-          {children}
-          <Buttons prop="Add to library" variant="buttonModal" />
+          {isBookAdded ? (
+            <div>
+              <p>Book added choose another</p>
+              <img src={images} />
+            </div>
+          ) : (
+            <>
+              {children}
+              <ButtonLink to="/library">
+                <Buttons
+                  prop="Add to library"
+                  variant="buttonModal"
+                  onClick={handelAddBook}
+                />
+              </ButtonLink>
+            </>
+          )}
         </Modal>
       )}
     </Overlay>

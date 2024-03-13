@@ -12,7 +12,8 @@ export const WrapperBooks = styled.div`
     height: 663px;
   }
   @media screen and (min-width: 1440px) {
-    /* display: flex; */
+    display: flex;
+    flex-direction: column;
     margin: 0;
     /* padding: 40px 40px 28px 40px; */
     padding-bottom: 40px;
