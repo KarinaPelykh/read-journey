@@ -27,7 +27,7 @@ export const FilterForm = () => {
         <InputFilter type="text" variant="input2" name="author" required />
       </Wrapper>
 
-      <Buttons prop="To apply" variant="buttonFilter" />
+      <Buttons prop="To apply" variant="buttonBase" />
     </Form>
   );
 };

@@ -24,3 +24,19 @@ export const addBooksWithRecommended = createAsyncThunk(
     }
   }
 );
+
+export const addNewBook = createAsyncThunk(
+  "book/addNewBook",
+  async ({ title, author, totalPages }, { rejectWithValue }) => {
+    try {
+      const { data } = await instance.post("/books/add", {
+        title,
+        author,
+        totalPages,
+      });
+      return data;
+    } catch (error) {
+      return rejectWithValue.error.message;
+    }
+  }
+);

@@ -48,3 +48,17 @@ export const Author = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.xs};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
 `;
+
+export const TextGreeting = styled.p`
+  font-size: ${({ theme }) => theme.fontSizes.xl};
+  margin-bottom: 14px;
+  margin-top: 32px;
+`;
+export const Greeting = styled.p`
+  font-size: ${({ theme }) => theme.fontSizes.s};
+  color: ${({ theme }) => theme.colors.grey};
+`;
+export const SpanGreeting = styled.span`
+  font-size: ${({ theme }) => theme.fontSizes.s};
+  color: ${({ theme }) => theme.colors.white};
+`;

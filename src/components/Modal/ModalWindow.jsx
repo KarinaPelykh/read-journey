@@ -6,9 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { addBooksWithRecommended } from "../../redux/books/operations";
 import { newBooksSelector } from "../../redux/books/selectors";
 import images from "../../images/pngwing.com.png";
-export const ModalWindow = ({ children, open, toggle, id, title }) => {
+export const ModalWindow = ({ children, open, toggle, id, title, variant }) => {
   const bookNew = useSelector(newBooksSelector);
-  console.log("bookNew", bookNew);
+
   const dispatch = useDispatch();
   const handelAddBook = () => {
     dispatch(addBooksWithRecommended({ id }));
@@ -34,7 +34,7 @@ export const ModalWindow = ({ children, open, toggle, id, title }) => {
   return (
     <Overlay onClick={handelCloseClick}>
       {open && (
-        <Modal>
+        <Modal variant={variant}>
           <ButtonClose onClick={toggle}>
             <svg width="20" height="20">
               <use xlinkHref={icons + "#close"}></use>
@@ -48,6 +48,7 @@ export const ModalWindow = ({ children, open, toggle, id, title }) => {
           ) : (
             <>
               {children}
+
               <ButtonLink to="/library">
                 <Buttons
                   prop="Add to library"

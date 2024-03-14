@@ -34,7 +34,7 @@ export const Button = styled.button`
     `};
 
   ${({ variant }) =>
-    variant === "buttonFilter" &&
+    variant === "buttonBase" &&
     css`
       border-radius: ${({ theme }) => theme.radii.xl};
       border: ${({ theme }) => theme.borders.normal};

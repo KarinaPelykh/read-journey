@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Overlay = styled.div`
   position: fixed;
@@ -24,8 +24,17 @@ export const Modal = styled.div`
   padding: 50px;
   border-radius: ${({ theme }) => theme.radii.m};
   position: relative;
+  ${({ variant }) =>
+    variant === "min-modal" &&
+    css`
+      width: 342px;
+      height: 290px;
+      button {
+        display: none;
+      }
+    `};
 `;
-export const ButtonClose = styled.button`
+export const ButtonClose = styled.div`
   position: absolute;
   top: 10px;
   right: 10px;
