@@ -5,7 +5,6 @@ export const registerThunk = createAsyncThunk(
   "auth/register",
 
   async (userinfo, { rejectWithValue }) => {
-    console.log("userinfo", userinfo);
     try {
       const { data } = await instance.post("/users/signup", userinfo);
       setToken(data.token);
@@ -19,7 +18,6 @@ export const registerThunk = createAsyncThunk(
 export const loginThunk = createAsyncThunk(
   "auth/login",
   async (userinfo, { rejectWithValue }) => {
-    console.log("userinfo", userinfo);
     try {
       const { data } = await instance.post("/users/signin", userinfo);
       setToken(data.token);

@@ -19,15 +19,18 @@ import { ModalWindow } from "../Modal/ModalWindow";
 import { useEffect, useState } from "react";
 export const MyLibraryList = () => {
   const newBook = useSelector(newBooksSelector);
+  console.log(newBook);
   const [isOpen, setIsOpen] = useState(false);
 
   const [amountBook, setAmountBook] = useState(0);
 
   useEffect(() => {
-    if (newBook.length > 0 && newBook.length !== amountBook) {
+    if (newBook.length !== amountBook) {
       setIsOpen(true);
+      setAmountBook(newBook.length);
+    } else {
+      setIsOpen(false);
     }
-    setAmountBook(newBook.length);
   }, [newBook, setIsOpen, amountBook]);
 
   const toggle = () => {
@@ -35,7 +38,7 @@ export const MyLibraryList = () => {
   };
   return (
     <>
-      {newBook.length > 0 ? (
+      {newBook.length !== 0 ? (
         <MyListBook>
           {newBook.map((item) => (
             <li key={item._id}>

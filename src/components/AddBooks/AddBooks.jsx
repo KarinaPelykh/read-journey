@@ -20,7 +20,12 @@ export const AddBook = () => {
       <Title>Create your library:</Title>
       <Wrapper>
         <Label>Book title</Label>
-        <InputADD name="title" type="text" required />
+        <InputADD
+          name="title"
+          type="text"
+          pattern="^[A-Za-zА-Яа-яЁё]+\s?[A-Za-zА-Яа-яЁё]+$"
+          required
+        />
       </Wrapper>
       <Wrapper>
         <Label>The author:</Label>

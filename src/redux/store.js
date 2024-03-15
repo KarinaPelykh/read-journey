@@ -1,6 +1,3 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { bookReducer } from "./books/bookSlice";
-import { authReducer } from "./auth/authSlice";
 import {
   persistStore,
   persistReducer,
@@ -12,21 +9,27 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { bookReducer } from "./books/bookSlice";
+import { authReducer } from "./auth/authSlice";
 import { filterReducer } from "./filter/filterSlice";
+
 const persistConfig = {
   key: "root",
-  version: 1,
   storage,
-  whitelist: ["token"],
 };
-const persistedReducer = persistReducer(persistConfig, authReducer);
 
-export const store = configureStore({
-  reducer: {
+const persistedReducer = persistReducer(
+  persistConfig,
+  combineReducers({
+    auth: authReducer,
     books: bookReducer,
-    auth: persistedReducer,
     filter: filterReducer,
-  },
+  })
+);
+export const store = configureStore({
+  reducer: persistedReducer,
 
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -35,4 +38,5 @@ export const store = configureStore({
       },
     }),
 });
+
 export const persistor = persistStore(store);
