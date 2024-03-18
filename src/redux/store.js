@@ -8,10 +8,10 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
+import { persistedReducerBook } from "./books/bookSlice";
 import storage from "redux-persist/lib/storage";
 
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { bookReducer } from "./books/bookSlice";
+import { configureStore } from "@reduxjs/toolkit";
 import { authReducer } from "./auth/authSlice";
 import { filterReducer } from "./filter/filterSlice";
 
@@ -20,16 +20,13 @@ const persistConfig = {
   storage,
 };
 
-const persistedReducer = persistReducer(
-  persistConfig,
-  combineReducers({
-    auth: authReducer,
-    books: bookReducer,
-    filter: filterReducer,
-  })
-);
+const persistedReducer = persistReducer(persistConfig, authReducer);
 export const store = configureStore({
-  reducer: persistedReducer,
+  reducer: {
+    auth: persistedReducer,
+    books: persistedReducerBook,
+    filter: filterReducer,
+  },
 
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

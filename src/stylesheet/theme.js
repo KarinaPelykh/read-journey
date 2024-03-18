@@ -9,6 +9,7 @@ export const theme = {
     blue: "#4F92F7",
     lightGreen: "#30B94D",
     red: "#E90516",
+    redBorder: "#E85050",
   },
   fontSizes: {
     xxxl: "64px",

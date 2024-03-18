@@ -62,3 +62,14 @@ export const SpanGreeting = styled.span`
   font-size: ${({ theme }) => theme.fontSizes.s};
   color: ${({ theme }) => theme.colors.white};
 `;
+export const ButtonDelete = styled.button`
+  border-radius: ${({ theme }) => theme.radii.round};
+  border: ${({ theme }) => theme.borders.normal};
+  border-color: ${({ theme }) => theme.colors.redBorder};
+  background-color: rgba(232, 80, 80, 0.1);
+  width: 28px;
+  height: 28px;
+`;
+export const WrapperItem = styled.div`
+  display: flex;
+`;

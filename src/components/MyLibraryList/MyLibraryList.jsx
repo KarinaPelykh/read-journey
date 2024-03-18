@@ -1,11 +1,14 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { newBooksSelector } from "../../redux/books/selectors";
 import Images from "../../images/bookDefault.png";
 import book from "../../images/img-book.png";
 import hand from "../../images/hand.png";
+import icon from "../../images/sprite.svg";
+
 import {
   Author,
   BookImg,
+  ButtonDelete,
   Greeting,
   MyListBook,
   Span,
@@ -14,12 +17,14 @@ import {
   TextGreeting,
   Title,
   Wrapper,
+  WrapperItem,
 } from "./MyLibrary.styled";
 import { ModalWindow } from "../Modal/ModalWindow";
 import { useEffect, useState } from "react";
+import { deleteBook } from "../../redux/books/operations";
 export const MyLibraryList = () => {
   const newBook = useSelector(newBooksSelector);
-  console.log(newBook);
+  const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
 
   const [amountBook, setAmountBook] = useState(0);
@@ -28,8 +33,6 @@ export const MyLibraryList = () => {
     if (newBook.length !== amountBook) {
       setIsOpen(true);
       setAmountBook(newBook.length);
-    } else {
-      setIsOpen(false);
     }
   }, [newBook, setIsOpen, amountBook]);
 
@@ -43,8 +46,18 @@ export const MyLibraryList = () => {
           {newBook.map((item) => (
             <li key={item._id}>
               <BookImg src={item.imageUrl ? item.imageUrl : book} />
-              <Title>{item.title}</Title>
-              <Author>{item.author}</Author>
+
+              <WrapperItem>
+                <div>
+                  <Title>{item.title}</Title>
+                  <Author>{item.author}</Author>
+                </div>
+                <ButtonDelete onClick={() => dispatch(deleteBook(item._id))}>
+                  <svg width="14" height="14">
+                    <use xlinkHref={icon + "#trash"}></use>
+                  </svg>
+                </ButtonDelete>
+              </WrapperItem>
             </li>
           ))}
         </MyListBook>
