@@ -13,6 +13,12 @@ export const Selector = styled.select`
   appearance: none;
   outline: 0;
 `;
+export const Option = styled.option`
+  color: ${({ theme }) => theme.colors.grey};
+  &:checked {
+    background-color: transparent;
+  }
+`;
 export const CustomRow = styled.span`
   display: block;
   content: "";

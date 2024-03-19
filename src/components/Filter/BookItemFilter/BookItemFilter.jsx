@@ -4,7 +4,6 @@ import { Author, BookImg, Title } from "./BookItemFilter.styled";
 
 export const BookItemFilter = ({ img, title, author, id }) => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
   const toggle = () => {
     setIsOpen(!isOpen);
   };

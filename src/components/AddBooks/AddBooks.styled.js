@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 export const Form = styled.form`
-  margin-bottom: 20px;
+  margin-bottom: 80px;
   div:nth-child(4) {
     margin: 0;
     margin-bottom: 20px;

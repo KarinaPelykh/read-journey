@@ -4,7 +4,6 @@ import {
   addNewBook,
   deleteBook,
   fetchBooks,
-  getBookStatus,
 } from "./operations";
 import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
@@ -20,7 +19,6 @@ const rejected = (state, action) => {
 const initialState = {
   books: [],
   newBooks: [],
-
   isLoading: false,
   error: null,
   page: 1,
@@ -44,9 +42,7 @@ const bookSlice = createSlice({
       .addCase(addNewBook.fulfilled, (state, action) => {
         state.newBooks.push(action.payload);
       })
-      .addCase(getBookStatus.fulfilled, (state, action) => {
-        state.newBooks = action.payload;
-      })
+
       .addCase(deleteBook.fulfilled, (state, action) => {
         state.newBooks = state.newBooks.filter(
           (newBooks) => newBooks._id !== action.payload

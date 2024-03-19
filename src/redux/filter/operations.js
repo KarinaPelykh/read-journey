@@ -15,3 +15,16 @@ export const getBook = createAsyncThunk(
     }
   }
 );
+export const getBookStatus = createAsyncThunk(
+  "book/bookStatus",
+  async ({ status }, { rejectWithValue }) => {
+    console.log("operTIN getBookStatus", status);
+    try {
+      const { data } = await instance.get("/books/own", { status });
+      console.log("operTIN getBookStatus", data);
+      return data;
+    } catch (error) {
+      return rejectWithValue.error.message;
+    }
+  }
+);

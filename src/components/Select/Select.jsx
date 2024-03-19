@@ -1,26 +1,35 @@
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { getBookStatus } from "../../redux/books/operations";
-import { CustomRow, CustomRowTwe, Selector } from "./Select.styled";
+// import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { CustomRow, CustomRowTwe, Option, Selector } from "./Select.styled";
+import { statusSelector } from "../../redux/filter/selectors";
+import { getBookStatus } from "../../redux/filter/operations";
 
 export const Select = () => {
-  const [status, setStatus] = useState();
+  // const [status, setStatus] = useState();
+  // console.log(status);
+  const statusBook = useSelector(statusSelector);
   const dispatch = useDispatch();
   const handelStatus = (e) => {
-    const select = e.target.value;
-
-    setStatus(select);
-  };
-  useEffect(() => {
+    const status = e.target.value;
     dispatch(getBookStatus({ status }));
-  }, [dispatch, status]);
+    // setStatus(select);
+  };
+  // useEffect(() => {
+  //   dispatch(getBookStatus({ status }));
+  // }, [dispatch, status]);
+
+  // useEffect(() => {
+  //   dispatch(getBookStatus({ status }));
+  // }, [dispatch, status]);
+
   return (
     <div>
-      <Selector onClick={handelStatus} defaultValue="All books">
-        <option value="Unread">Unread</option>
-        <option value="In progress">In progress</option>
-        <option value="Done">Done</option>
-        <option value="All books">All books</option>
+      <Selector onClick={handelStatus} defaultValue={statusBook.status}>
+        <Option value="Unread">Unread</Option>
+        <Option value="In progress">In progress</Option>
+        <Option value="Done">Done</Option>
+        <Option value="All books">All books</Option>
       </Selector>
       <CustomRow></CustomRow>
       <CustomRowTwe></CustomRowTwe>
