@@ -16,5 +16,6 @@ export const Recommended = () => {
 const Div = styled.div`
   @media screen and (min-width: 1440px) {
     display: flex;
+    width: 704px;
   }
 `;

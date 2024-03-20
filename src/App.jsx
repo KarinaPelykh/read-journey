@@ -44,7 +44,14 @@ function App() {
               </PublicRoute>
             }
           />
-          <Route path="reading" element={<Reading />} />
+          <Route
+            path="reading"
+            element={
+              <PrivateRoute>
+                <Reading />
+              </PrivateRoute>
+            }
+          />
           <Route
             path="library"
             element={

@@ -22,8 +22,8 @@ export const MyLibraryItem = ({ id, img, title, author, pages }) => {
   };
   return (
     <>
-      <li onClick={toggle}>
-        <BookImg src={img ? img : book} />
+      <li>
+        <BookImg onClick={toggle} src={img ? img : book} />
 
         <WrapperItem>
           <div>

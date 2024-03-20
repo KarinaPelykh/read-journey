@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 const routes = [
-  // { path: "/recommended", page: "Recommended Page" },
+  { path: "/recommended", page: "Recommended Page" },
   { path: "/library", page: "My library " },
-  // { path: "/reading", page: "Reading  Page" },
+  { path: "/reading", page: "Reading  Page" },
   { path: "/", page: "Home" },
 ];
 export const ListNav = () => {

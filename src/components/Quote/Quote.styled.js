@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
 export const WrapperQuote = styled.div`
-  display: flex;
-  padding: 15px 20px;
-  background-color: ${({ theme }) => theme.colors.darkGray};
-  width: 100%;
-  height: auto;
-  border-radius: ${({ theme }) => theme.radii.m};
+  display: none;
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    padding: 15px 20px;
+    background-color: ${({ theme }) => theme.colors.darkGray};
+    width: 100%;
+    height: auto;
+    border-radius: ${({ theme }) => theme.radii.m};
+  }
 `;
 export const Text = styled.p`
   color: ${({ theme }) => theme.colors.grey};

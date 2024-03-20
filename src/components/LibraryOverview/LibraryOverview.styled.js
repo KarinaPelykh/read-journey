@@ -8,6 +8,17 @@ export const Block = styled.div`
   height: auto;
   padding: 20px;
   margin-bottom: 20px;
+  @media screen and (min-width: 768px) {
+    width: 313px;
+  }
+  @media screen and (min-width: 1440px) {
+    border-radius: ${({ theme }) => theme.radii.m};
+    background: ${({ theme }) => theme.colors.darkGray};
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
 `;
 export const Title = styled.h3`
   color: ${({ theme }) => theme.colors.white};

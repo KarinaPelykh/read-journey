@@ -3,7 +3,12 @@ import { Overlay, Modal, ButtonClose, ButtonLink } from "./ModalWindow.styled";
 import icons from "../../images/sprite.svg";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-export const ModalRead = ({ open, toggle, children }) => {
+import { addReadBook } from "../../redux/books/operations";
+export const ModalRead = ({ open, toggle, children, id }) => {
+  const dispatch = useDispatch();
+  const handelAddBookRead = () => {
+    dispatch(addReadBook({ id }));
+  };
   useEffect(() => {
     const handelKeyEscape = (e) => {
       if (e.code === "Escape") {
@@ -35,7 +40,7 @@ export const ModalRead = ({ open, toggle, children }) => {
           <>
             {children}
 
-            <ButtonLink to="">
+            <ButtonLink onClick={handelAddBookRead} to="/reading">
               <Buttons prop="Start reading" variant="buttonModal" />
             </ButtonLink>
           </>

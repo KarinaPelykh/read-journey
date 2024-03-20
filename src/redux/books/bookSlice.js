@@ -2,8 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   addBooksWithRecommended,
   addNewBook,
+  addReadBook,
   deleteBook,
   fetchBooks,
+  finishedReading,
+  startReading,
 } from "./operations";
 import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
@@ -19,6 +22,8 @@ const rejected = (state, action) => {
 const initialState = {
   books: [],
   newBooks: [],
+  redBook: [],
+
   isLoading: false,
   error: null,
   page: 1,
@@ -48,7 +53,15 @@ const bookSlice = createSlice({
           (newBooks) => newBooks._id !== action.payload
         );
       })
-
+      .addCase(addReadBook.fulfilled, (state, action) => {
+        state.redBook = action.payload;
+      })
+      .addCase(startReading.fulfilled, (state, action) => {
+        state.redBook = action.payload;
+      })
+      .addCase(finishedReading.fulfilled, (state, action) => {
+        state.redBook = action.payload;
+      })
       .addMatcher((action) => action.type.endsWith("/pending"), pending)
       .addMatcher((action) => action.type.endsWith("/rejected"), rejected);
   },

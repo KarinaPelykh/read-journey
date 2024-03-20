@@ -8,6 +8,7 @@ export const WrapperBooks = styled.div`
   height: 382px;
   @media screen and (min-width: 768px) {
     /* display: flex; */
+
     padding: 40px;
     height: 663px;
   }

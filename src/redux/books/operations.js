@@ -55,3 +55,48 @@ export const deleteBook = createAsyncThunk(
     }
   }
 );
+export const addReadBook = createAsyncThunk(
+  "book/addRead",
+  async ({ id }, { rejectWithValue }) => {
+    console.log("addReadBook", id);
+    try {
+      const { data } = await instance.get(`/books/${id}`);
+      console.log(data);
+      return data;
+    } catch (error) {
+      return rejectWithValue.error.message;
+    }
+  }
+);
+export const startReading = createAsyncThunk(
+  "book/startReading",
+  async ({ id, page }, { rejectWithValue }) => {
+    console.log({ id, page });
+    try {
+      const { data } = await instance.post("/books/reading/start", {
+        id,
+        page,
+      });
+      console.log("startReading", data);
+      return data;
+    } catch (error) {
+      return rejectWithValue.error.message;
+    }
+  }
+);
+export const finishedReading = createAsyncThunk(
+  "book/finishedReading",
+  async ({ id, page }, { rejectWithValue }) => {
+    console.log({ id, page });
+    try {
+      const { data } = await instance.post("/books/reading/finish", {
+        id,
+        page,
+      });
+      console.log("finishedReading", data);
+      return data;
+    } catch (error) {
+      return rejectWithValue.error.message;
+    }
+  }
+);
