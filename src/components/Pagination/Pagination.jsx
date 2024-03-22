@@ -5,16 +5,24 @@ import {
   WrapperPagination,
 } from "./Pagination.styled";
 import icon from "../../images/sprite.svg";
-export const Pagination = ({ next, previous }) => {
+export const Pagination = ({ next, previous, page, totalPage }) => {
   return (
     <WrapperPagination>
-      <Button onClick={previous}>
-        <SvgPrevious width="20" height="20">
+      <Button disabled={page === 1} onClick={previous}>
+        <SvgPrevious
+          style={{ stroke: page === 1 ? "#686868" : "#fff" }}
+          width="20"
+          height="20"
+        >
           <use xlinkHref={icon + "#icon-left"}></use>
         </SvgPrevious>
       </Button>
       <Button onClick={next}>
-        <SvgNext width="20" height="20">
+        <SvgNext
+          style={{ stroke: totalPage === page ? "#686868" : "#fff" }}
+          width="20"
+          height="20"
+        >
           <use xlinkHref={icon + "#icon-left"}></use>
         </SvgNext>
       </Button>

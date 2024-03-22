@@ -5,12 +5,12 @@ export const WrapperBooks = styled.div`
   border-radius: ${({ theme }) => theme.radii.xl};
   width: 100%;
 
-  height: 382px;
+  /* height: 382px; */
   @media screen and (min-width: 768px) {
     /* display: flex; */
 
     padding: 40px;
-    height: 663px;
+    /* height: 663px; */
   }
   @media screen and (min-width: 1440px) {
     display: flex;
@@ -20,7 +20,7 @@ export const WrapperBooks = styled.div`
     padding-bottom: 40px;
     width: 847px;
     padding: 45px 40px 20px 40px;
-    height: 651px;
+    /* height: 651px; */
     position: relative;
   }
 `;

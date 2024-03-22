@@ -114,6 +114,17 @@
 <path fill="none" stroke="#e85050" style="stroke: var(--color1, #e85050)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M13.333 14.667v8"></path>
 <path fill="none" stroke="#e85050" style="stroke: var(--color1, #e85050)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M18.667 14.667v8"></path>
 </symbol>
+<symbol id="trash-1" viewBox="0 0 32 32">
+<path  stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M4 8h24"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M25.333 8v18.667c0 0.707-0.281 1.386-0.781 1.886s-1.178 0.781-1.886 0.781h-13.333c-0.707 0-1.386-0.281-1.886-0.781s-0.781-1.178-0.781-1.886v-18.667M10.667 8v-2.667c0-0.707 0.281-1.385 0.781-1.886s1.178-0.781 1.886-0.781h5.333c0.707 0 1.386 0.281 1.886 0.781s0.781 1.178 0.781 1.886v2.667"></path>
+<path  stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M13.333 14.667v8"></path>
+<path  stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M18.667 14.667v8"></path>
+</symbol>
+
+<symbol id="icon-block" viewBox="0 0 77 32">
+<path fill="#30b94d" style="fill: var(--color1, #30b94d)" opacity="0.2" d="M76.8 1.28l-75.52 10.779v19.941h75.52v-30.72z"></path>
+<path fill="#30b94d" style="fill: var(--color1, #30b94d)" d="M74.924 0.204l-73.288 11.849c-0.698 0.113-1.172 0.77-1.059 1.468l0.204 1.264c0.113 0.698 0.77 1.172 1.468 1.059l73.288-11.849c0.698-0.113 1.172-0.77 1.059-1.468l-0.204-1.264c-0.113-0.698-0.77-1.172-1.468-1.059z"></path>
+</symbol>
 </defs>
 
 </svg>

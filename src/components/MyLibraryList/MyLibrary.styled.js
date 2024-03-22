@@ -19,7 +19,7 @@ export const Span = styled.span`
 export const MyListBook = styled.ul`
   @media screen and (min-width: 768px) {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
   }
 `;

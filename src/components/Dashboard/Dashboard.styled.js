@@ -12,7 +12,6 @@ export const DivDashboard = styled.div`
   @media screen and (min-width: 768px) {
     display: flex;
     padding: 32px;
-    height: 336px;
   }
   @media screen and (min-width: 1440px) {
     display: block;

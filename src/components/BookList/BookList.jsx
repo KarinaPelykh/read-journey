@@ -11,6 +11,7 @@ export const BookList = () => {
   const [page, setPage] = useState(1);
 
   const bookSelector = useSelector(booksSelector);
+  const totalPage = bookSelector.totalPages;
   const { results } = bookSelector;
 
   const isLoggedIn = useSelector(isLoggedInSelect);
@@ -35,7 +36,12 @@ export const BookList = () => {
 
   return (
     <>
-      <Pagination previous={handelPrevious} next={handelNext} page={page} />
+      <Pagination
+        previous={handelPrevious}
+        next={handelNext}
+        page={page}
+        totalPage={totalPage}
+      />
       <ListBook>
         {results?.map((item) => (
           <BookItem

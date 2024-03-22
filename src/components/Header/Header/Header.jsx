@@ -27,9 +27,7 @@ export const Header = () => {
             {!isLoggedIn ? null : (
               <Buttons
                 onClick={() =>
-                  dispatch(logOutThunk())
-                    .unwrap()
-                    .then(() => navigate("/"))
+                  dispatch(logOutThunk()).then(() => navigate("/login"))
                 }
                 variant="log-out"
                 prop={"Log out"}

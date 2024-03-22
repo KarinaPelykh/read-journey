@@ -18,6 +18,7 @@ import { filterReducer } from "./filter/filterSlice";
 const persistConfig = {
   key: "root",
   storage,
+  whitelist: ["token"],
 };
 
 const persistedReducer = persistReducer(persistConfig, authReducer);

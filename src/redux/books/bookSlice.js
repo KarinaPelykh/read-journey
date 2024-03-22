@@ -4,6 +4,7 @@ import {
   addNewBook,
   addReadBook,
   deleteBook,
+  deleteProgress,
   fetchBooks,
   finishedReading,
   startReading,
@@ -23,7 +24,6 @@ const initialState = {
   books: [],
   newBooks: [],
   redBook: [],
-
   isLoading: false,
   error: null,
   page: 1,
@@ -60,6 +60,9 @@ const bookSlice = createSlice({
         state.redBook = action.payload;
       })
       .addCase(finishedReading.fulfilled, (state, action) => {
+        state.redBook = action.payload;
+      })
+      .addCase(deleteProgress.fulfilled, (state, action) => {
         state.redBook = action.payload;
       })
       .addMatcher((action) => action.type.endsWith("/pending"), pending)

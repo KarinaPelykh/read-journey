@@ -4,9 +4,14 @@ import { Author, ImgRead, Title, Wrapper } from "./MyBook.styled";
 import icon from "../../images/sprite.svg";
 export const MyBook = () => {
   const readBook = useSelector(redBookSelector);
-  const [status] = readBook.progress;
   return (
     <>
+      {readBook?.timeLeftToRead ? (
+        <p>
+          {readBook.timeLeftToRead.hours}hours and
+          {readBook.timeLeftToRead.minutes}minutes left
+        </p>
+      ) : null}
       <Wrapper>
         <div>
           <div>
@@ -19,11 +24,11 @@ export const MyBook = () => {
       </Wrapper>
       <button>
         <svg width="50" height="50">
-          {/* {status?.status === "active" ? ( */}
-          <use xlinkHref={icon + "#button-stop-read"}></use>
-          {/* ) : (
+          {readBook?.timeLeftToRead ? (
             <use xlinkHref={icon + "#button-read"}></use>
-          )} */}
+          ) : (
+            <use xlinkHref={icon + "#button-stop-read"}></use>
+          )}
         </svg>
       </button>
     </>
