@@ -98,11 +98,12 @@ export const finishedReading = createAsyncThunk(
 );
 export const deleteProgress = createAsyncThunk(
   "book/deleteProgress",
-  async ({ bookId }, { rejectWithValue }) => {
+  async ({ bookId, readingId }, { rejectWithValue }) => {
+    console.log({ bookId, readingId });
     try {
-      const { data } = await instance.delete("/books/reading", {
-        bookId,
-      });
+      const { data } = await instance.delete(
+        `/books/reading?bookId=${bookId}&readingId=${readingId}`
+      );
       console.log("deleteProgress", data);
       return data;
     } catch (error) {

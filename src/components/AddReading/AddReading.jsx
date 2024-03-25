@@ -69,7 +69,7 @@ export const AddReading = () => {
         <Buttons prop={start ? "To stop" : "To start"} variant="buttonBase" />
       </form>
 
-      <Details totalPages={readBook?.progress?.startReading} />
+      <Details />
     </>
   );
 };
