@@ -3,6 +3,8 @@ import { DivDashboard } from "./Dashboard.styled";
 import { FilterOnRecommendedPage } from "../FilterOnRecommendedPage/FilterOnRecommendedPage";
 import { MyLibraryDashboard } from "../MyLibraryDashboard/MyLibraryDashboard";
 import { AddReading } from "../AddReading/AddReading";
+import { ShowMyInform } from "../ShowMyInform/ShowMyInform";
+// import { Statistic } from "../Statistic/Statistic";
 // import { Details } from "../Details/Details";
 
 export const Dashboard = () => {
@@ -14,6 +16,7 @@ export const Dashboard = () => {
       {nav ? (
         <>
           <AddReading />
+          <ShowMyInform />
         </>
       ) : !userNav ? (
         <FilterOnRecommendedPage />

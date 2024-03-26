@@ -1,20 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
-import star from "../../images/star.png";
 import {
   ContainerInfo,
   Data,
-  Describe,
   Div,
   DivDiary,
   DivInfoRead,
-  ImgStatic,
   List,
   Minutes,
   Pages,
   Speed,
-  Text,
-  Thumb,
-  Title,
   Trash,
   VerticalDiv,
   Wrapper,
@@ -31,10 +25,10 @@ export const Details = () => {
   const redBook = useSelector(redBookSelector);
   const bookId = redBook._id;
   const dispatch = useDispatch();
+
   return (
     <>
       <DivDiary>
-        <Text>Diary</Text>
         <Wrapper>
           <List>
             <VerticalDiv></VerticalDiv>
@@ -110,17 +104,6 @@ export const Details = () => {
           </List>
         </Wrapper>
       </DivDiary>
-      {/*    
-        <div>
-          <Title>Progress</Title>
-          <Describe>
-            Here you will see when and how much you read. To record, click on
-            the red button above.
-          </Describe>
-          <Thumb>
-            <ImgStatic src={star} alt="star" />
-          </Thumb>
-        </div> */}
     </>
   );
 };

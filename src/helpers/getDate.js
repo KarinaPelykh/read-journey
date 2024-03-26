@@ -49,10 +49,11 @@ const getDate = ({ progress, totalPage }) => {
             ],
           });
         }
-
+        console.log(total);
         return total;
       },
       []
-    );
+    )
+    .sort((a, c) => c.data.localeCompare(a.data));
 };
 export default getDate;

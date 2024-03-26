@@ -6,7 +6,7 @@ import { finishedReading, startReading } from "../../redux/books/operations";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Details } from "../Details/Details";
+
 export const AddReading = () => {
   const readBook = useSelector(redBookSelector);
   const [page, setPage] = useState("");
@@ -68,8 +68,6 @@ export const AddReading = () => {
         </Wrapper>
         <Buttons prop={start ? "To stop" : "To start"} variant="buttonBase" />
       </form>
-
-      <Details />
     </>
   );
 };

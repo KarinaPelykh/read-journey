@@ -29,6 +29,7 @@ export const theme = {
   borders: {
     none: "none",
     normal: "1px solid",
+    extra: "16px solid",
   },
   radii: {
     round: "100%",
@@ -36,5 +37,6 @@ export const theme = {
     l: "15px",
     m: "12px",
     s: "8px",
+    xs: "4px",
   },
 };
