@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Buttons } from "../../components/Button/Button";
 import { Container } from "../../components/Container/Container.styled";
 import { Hero } from "../../components/Hero/Hero";
-// import { LogoMain } from "../../components/Logo/Logo";
 import { ShowPassword } from "../../components/Validation/ShowPassword";
 import { ValidationRegister } from "../../components/Validation/ValidationRegister";
 import {
@@ -24,6 +23,7 @@ import { useDispatch } from "react-redux";
 import { registerThunk } from "../../redux/auth/operations";
 import { LogoMain } from "../../components/Logo/Logo";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 export const RegistrationPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -53,7 +53,17 @@ export const RegistrationPage = () => {
     onSubmit: (values) => {
       dispatch(registerThunk(values))
         .unwrap()
-        .then(() => navigate("/recommended"));
+        .then(() => {
+          navigate("/recommended");
+          toast.success("You already registration ", {
+            position: "top-right",
+            hideProgressBar: true,
+            theme: "dark",
+          });
+        })
+        .catch(() => {
+          toast.error("Something went worn.Try again!");
+        });
     },
   });
 

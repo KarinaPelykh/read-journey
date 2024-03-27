@@ -22,6 +22,7 @@ import { TextErrors } from "../Registration/Registration.styled";
 import { useDispatch } from "react-redux";
 import { loginThunk } from "../../redux/auth/operations";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
@@ -48,7 +49,15 @@ export const LoginPage = () => {
       console.log(value);
       dispatch(loginThunk(value))
         .unwrap()
-        .then(() => navigate("/recommended"));
+        .then(() => {
+          navigate("/recommended");
+          toast.success("You already login", {
+            position: "top-right",
+            hideProgressBar: true,
+            theme: "dark",
+          });
+        })
+        .catch(() => toast.error("Something went worn.Try again!"));
     },
   });
   return (

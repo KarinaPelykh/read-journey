@@ -40,7 +40,7 @@ export const MyLibraryItem = ({ id, img, title, author, pages }) => {
 
       {isOpen && (
         <ModalRead open={isOpen} toggle={toggle} id={id}>
-          <BookImg variant="imgModal" src={img} />
+          <BookImg variant="imgModal" src={img ? img : book} />
           <Title variant="titleModal">{title}</Title>
 
           <Author variant="titleAuthor">{author}</Author>

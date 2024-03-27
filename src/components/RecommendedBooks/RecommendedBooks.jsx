@@ -4,9 +4,8 @@ import { useLocation } from "react-router-dom";
 import { BookFilter } from "../Filter/BookFilter/BookFilter";
 import { useSelector } from "react-redux";
 import { filterSelector } from "../../redux/filter/selectors";
-import { MyLibraryList } from "../MyLibraryList/MyLibraryList";
-import { Select } from "../Select/Select";
 import { MyBook } from "../MyBook/MyBook";
+import { Select } from "../Select/Select";
 
 export const RecommendedBooks = () => {
   const location = useLocation();
@@ -30,7 +29,6 @@ export const RecommendedBooks = () => {
         <>
           <Text>My library</Text>
           <Select />
-          <MyLibraryList />
         </>
       )}
     </WrapperBooks>

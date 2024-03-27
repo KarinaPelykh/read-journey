@@ -1,10 +1,11 @@
-import { useDispatch } from "react-redux";
-import { addNewBook } from "../../redux/books/operations";
-import { Form, InputADD, Label, Title, Wrapper } from "./AddBooks.styled";
-import { Buttons } from "../Button/Button";
+import { useDispatch } from 'react-redux';
+import { addNewBook } from '../../redux/books/operations';
+import { Form, InputADD, Label, Title, Wrapper } from './AddBooks.styled';
+import { Buttons } from '../Button/Button';
+import { toast } from 'react-toastify';
 export const AddBook = () => {
   const dispatch = useDispatch();
-  const handelSubmit = (e) => {
+  const handelSubmit = e => {
     e.preventDefault();
     const form = e.target;
     const title = form.elements.title.value;
@@ -12,7 +13,16 @@ export const AddBook = () => {
     const totalPages = form.elements.pages.value;
     form.reset();
     console.log({ title, author, totalPages });
-    dispatch(addNewBook({ title, author, totalPages }));
+    dispatch(addNewBook({ title, author, totalPages }))
+      .unwrap()
+      .then(() =>
+        toast.success('You add new book', {
+          position: 'top-right',
+          hideProgressBar: true,
+          theme: 'dark',
+        })
+      )
+      .catch(error => toast.error(error));
   };
 
   return (
@@ -42,7 +52,7 @@ export const AddBook = () => {
         />
       </Wrapper>
 
-      <Buttons type="submit" variant="buttonBase" prop={"Add book"} />
+      <Buttons type="submit" variant="buttonBase" prop={'Add book'} />
     </Form>
   );
 };

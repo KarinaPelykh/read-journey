@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { redBookSelector } from "../../redux/books/selectors";
 import { Author, ImgRead, Title, Wrapper } from "./MyBook.styled";
 import icon from "../../images/sprite.svg";
+import book from "../../images/img-book.png";
 export const MyBook = () => {
   const readBook = useSelector(redBookSelector);
   return (
@@ -15,7 +16,7 @@ export const MyBook = () => {
       <Wrapper>
         <div>
           <div>
-            <ImgRead src={readBook?.imageUrl} />
+            <ImgRead src={readBook?.imageUrl ? readBook?.imageUrl : book} />
           </div>
 
           <Title>{readBook?.title}</Title>

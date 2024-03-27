@@ -36,6 +36,7 @@ export const addNewBook = createAsyncThunk(
         author,
         totalPages,
       });
+      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue.error.message;
@@ -49,6 +50,17 @@ export const deleteBook = createAsyncThunk(
     try {
       await instance.delete(`/books/remove/${id}`);
       return id;
+    } catch (error) {
+      return rejectWithValue.error.message;
+    }
+  }
+);
+export const getBookOwn = createAsyncThunk(
+  "book/bookStatus",
+  async ({ status }, { rejectWithValue }) => {
+    try {
+      const { data } = await instance.get("/books/own", { status });
+      return data;
     } catch (error) {
       return rejectWithValue.error.message;
     }
@@ -99,12 +111,10 @@ export const finishedReading = createAsyncThunk(
 export const deleteProgress = createAsyncThunk(
   "book/deleteProgress",
   async ({ bookId, readingId }, { rejectWithValue }) => {
-    console.log({ bookId, readingId });
     try {
       const { data } = await instance.delete(
         `/books/reading?bookId=${bookId}&readingId=${readingId}`
       );
-      console.log("deleteProgress", data);
       return data;
     } catch (error) {
       return rejectWithValue.error.message;

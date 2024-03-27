@@ -13,29 +13,24 @@ import {
   Wrapper,
 } from "./MyLibrary.styled";
 import { ModalWindow } from "../Modal/ModalWindow";
-import { useEffect, useState } from "react";
-import { statusSelector } from "../../redux/filter/selectors";
 import { MyLibraryItem } from "./MyLibraryItem/MyLibraryItem";
+import { useEffect, useState } from "react";
 
-export const MyLibraryList = () => {
+export const MyLibraryList = ({ status }) => {
   const newBook = useSelector(newBooksSelector);
-  console.log(newBook);
-  const statusBook = useSelector(statusSelector);
 
-  const getVisibleTasks = (newBook, statusBook) => {
-    switch (statusBook.status) {
-      case "unread":
-        return newBook?.filter((item) => !item.status !== "unread");
-      case "all books":
-        return newBook?.filter((item) => !item.status !== "all books");
-      case "done":
-        return newBook?.filter((item) => !item.status !== "done");
-      default:
-        return newBook;
+  const getVisibleTasks = (status, newBook) => {
+    if (status === "done") {
+      return newBook.filter((item) => item.status === "done");
+    } else if (status === "in progress") {
+      return newBook.filter((item) => item.status === "in-progress");
+    } else if (status === "unread") {
+      return newBook.filter((item) => item.status === "unread");
     }
+    return newBook;
   };
 
-  const visible = getVisibleTasks(newBook, statusBook);
+  const visible = getVisibleTasks(status, newBook);
 
   const [isOpen, setIsOpen] = useState(false);
 

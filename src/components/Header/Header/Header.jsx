@@ -8,6 +8,7 @@ import { HeaderDiv, Nav } from "./Header.styled";
 import { isLoggedInSelect } from "../../../redux/auth/selectors";
 import { AuthNav } from "../../AuthNav/AuthNav";
 import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 export const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -16,6 +17,19 @@ export const Header = () => {
   const locationUser =
     location.pathname === "/login" || location.pathname === "/register";
   const isLoggedIn = useSelector(isLoggedInSelect);
+
+  const handelLogout = () => {
+    dispatch(logOutThunk()).then(() => {
+      navigate("/login");
+      toast
+        .success("You Log-out", {
+          position: "top-right",
+          hideProgressBar: true,
+          theme: "dark",
+        })
+        .catch(() => toast.error(""));
+    });
+  };
   return (
     <>
       {!locationUser && (
@@ -26,9 +40,7 @@ export const Header = () => {
             <UserBar />
             {!isLoggedIn ? null : (
               <Buttons
-                onClick={() =>
-                  dispatch(logOutThunk()).then(() => navigate("/login"))
-                }
+                onClick={handelLogout}
                 variant="log-out"
                 prop={"Log out"}
               />

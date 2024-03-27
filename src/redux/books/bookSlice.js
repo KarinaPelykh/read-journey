@@ -7,6 +7,7 @@ import {
   deleteProgress,
   fetchBooks,
   finishedReading,
+  getBookOwn,
   startReading,
 } from "./operations";
 import storage from "redux-persist/lib/storage";
@@ -24,6 +25,7 @@ const initialState = {
   books: [],
   newBooks: [],
   redBook: [],
+  // bookOwn: [],
   isLoading: false,
   error: null,
   page: 1,
@@ -52,6 +54,9 @@ const bookSlice = createSlice({
         state.newBooks = state.newBooks.filter(
           (newBooks) => newBooks._id !== action.payload
         );
+      })
+      .addCase(getBookOwn.fulfilled, (state, action) => {
+        state.newBooks = action.payload;
       })
       .addCase(addReadBook.fulfilled, (state, action) => {
         state.redBook = action.payload;

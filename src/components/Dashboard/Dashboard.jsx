@@ -4,8 +4,6 @@ import { FilterOnRecommendedPage } from "../FilterOnRecommendedPage/FilterOnReco
 import { MyLibraryDashboard } from "../MyLibraryDashboard/MyLibraryDashboard";
 import { AddReading } from "../AddReading/AddReading";
 import { ShowMyInform } from "../ShowMyInform/ShowMyInform";
-// import { Statistic } from "../Statistic/Statistic";
-// import { Details } from "../Details/Details";
 
 export const Dashboard = () => {
   const location = useLocation();
