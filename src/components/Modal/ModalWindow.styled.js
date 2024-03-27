@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import styled, { css } from "styled-components";
+import { Link } from 'react-router-dom';
+import styled, { css } from 'styled-components';
 
 export const Overlay = styled.div`
   position: fixed;
@@ -11,6 +11,7 @@ export const Overlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 444;
 `;
 
 export const Modal = styled.div`
@@ -25,7 +26,7 @@ export const Modal = styled.div`
   border-radius: ${({ theme }) => theme.radii.m};
   position: relative;
   ${({ variant }) =>
-    variant === "min-modal" &&
+    variant === 'min-modal' &&
     css`
       width: 342px;
       height: 290px;

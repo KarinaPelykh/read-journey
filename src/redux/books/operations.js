@@ -1,8 +1,8 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import { instance } from "../../service/Api";
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { instance } from '../../service/Api';
 
 export const fetchBooks = createAsyncThunk(
-  "books/fetchAll",
+  'books/fetchAll',
   async ({ page }, { rejectWithValue }) => {
     try {
       const { data } = await instance.get(`/books/recommend?page=${page}`);
@@ -14,7 +14,7 @@ export const fetchBooks = createAsyncThunk(
 );
 
 export const addBooksWithRecommended = createAsyncThunk(
-  "book/addBooks",
+  'book/addBooks',
   async ({ id }, { rejectWithValue }) => {
     try {
       const { data } = await instance.post(`/books/add/${id}`);
@@ -28,10 +28,10 @@ export const addBooksWithRecommended = createAsyncThunk(
 );
 
 export const addNewBook = createAsyncThunk(
-  "book/addNewBook",
+  'book/addNewBook',
   async ({ title, author, totalPages }, { rejectWithValue }) => {
     try {
-      const { data } = await instance.post("/books/add", {
+      const { data } = await instance.post('/books/add', {
         title,
         author,
         totalPages,
@@ -45,7 +45,7 @@ export const addNewBook = createAsyncThunk(
 );
 
 export const deleteBook = createAsyncThunk(
-  "book/deleteBook",
+  'book/deleteBook',
   async (id, { rejectWithValue }) => {
     try {
       await instance.delete(`/books/remove/${id}`);
@@ -56,10 +56,10 @@ export const deleteBook = createAsyncThunk(
   }
 );
 export const getBookOwn = createAsyncThunk(
-  "book/bookStatus",
+  'book/bookStatus',
   async ({ status }, { rejectWithValue }) => {
     try {
-      const { data } = await instance.get("/books/own", { status });
+      const { data } = await instance.get('/books/own', { status });
       return data;
     } catch (error) {
       return rejectWithValue.error.message;
@@ -67,7 +67,7 @@ export const getBookOwn = createAsyncThunk(
   }
 );
 export const addReadBook = createAsyncThunk(
-  "book/addRead",
+  'book/addRead',
   async ({ id }, { rejectWithValue }) => {
     try {
       const { data } = await instance.get(`/books/${id}`);
@@ -79,14 +79,14 @@ export const addReadBook = createAsyncThunk(
   }
 );
 export const startReading = createAsyncThunk(
-  "book/startReading",
+  'book/startReading',
   async ({ id, page }, { rejectWithValue }) => {
     try {
-      const { data } = await instance.post("/books/reading/start", {
+      const { data } = await instance.post('/books/reading/start', {
         id,
         page,
       });
-      console.log("startReading", data);
+      console.log('startReading', data);
       return data;
     } catch (error) {
       return rejectWithValue.error.message;
@@ -94,14 +94,14 @@ export const startReading = createAsyncThunk(
   }
 );
 export const finishedReading = createAsyncThunk(
-  "book/finishedReading",
+  'book/finishedReading',
   async ({ id, page }, { rejectWithValue }) => {
     try {
-      const { data } = await instance.post("/books/reading/finish", {
+      const { data } = await instance.post('/books/reading/finish', {
         id,
         page,
       });
-      console.log("finishedReading", data);
+      console.log('finishedReading', data);
       return data;
     } catch (error) {
       return rejectWithValue.error.message;
@@ -109,12 +109,13 @@ export const finishedReading = createAsyncThunk(
   }
 );
 export const deleteProgress = createAsyncThunk(
-  "book/deleteProgress",
+  'book/deleteProgress',
   async ({ bookId, readingId }, { rejectWithValue }) => {
     try {
       const { data } = await instance.delete(
         `/books/reading?bookId=${bookId}&readingId=${readingId}`
       );
+      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue.error.message;

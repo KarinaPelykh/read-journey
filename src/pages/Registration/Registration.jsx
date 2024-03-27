@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { Buttons } from "../../components/Button/Button";
-import { Container } from "../../components/Container/Container.styled";
-import { Hero } from "../../components/Hero/Hero";
-import { ShowPassword } from "../../components/Validation/ShowPassword";
-import { ValidationRegister } from "../../components/Validation/ValidationRegister";
+import { useState } from 'react';
+import { Buttons } from '../../components/Button/Button';
+import { Container } from '../../components/Container/Container.styled';
+import { Hero } from '../../components/Hero/Hero';
+import { ShowPassword } from '../../components/Validation/ShowPassword';
+import { ValidationRegister } from '../../components/Validation/ValidationRegister';
 import {
   Wrapper,
   WrapperForm,
@@ -16,14 +16,14 @@ import {
   TextErrors,
   TextError,
   Label,
-} from "./Registration.styled";
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import { useDispatch } from "react-redux";
-import { registerThunk } from "../../redux/auth/operations";
-import { LogoMain } from "../../components/Logo/Logo";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+} from './Registration.styled';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import { useDispatch } from 'react-redux';
+import { registerThunk } from '../../redux/auth/operations';
+import { LogoMain } from '../../components/Logo/Logo';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 export const RegistrationPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -31,38 +31,38 @@ export const RegistrationPage = () => {
 
   const formik = useFormik({
     initialValues: {
-      name: "",
-      email: "",
-      password: "",
+      name: '',
+      email: '',
+      password: '',
     },
 
     validationSchema: Yup.object({
-      name: Yup.string().required("Required"),
+      name: Yup.string().required('Required'),
       email: Yup.string()
         .matches(
           /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
-          "You have wrong email, try again"
+          'You have wrong email, try again'
         )
-        .required("Required"),
+        .required('Required'),
       password: Yup.string()
-        .min(7, "Enter a valid Password*")
-        .max(12, "Enter a valid Password*")
-        .required("Required"),
+        .min(7, 'Enter a valid Password*')
+        .max(12, 'Enter a valid Password*')
+        .required('Required'),
     }),
 
-    onSubmit: (values) => {
+    onSubmit: values => {
       dispatch(registerThunk(values))
         .unwrap()
         .then(() => {
-          navigate("/recommended");
-          toast.success("You already registration ", {
-            position: "top-right",
+          navigate('/recommended');
+          toast.success('You already registration ', {
+            position: 'top-right',
             hideProgressBar: true,
-            theme: "dark",
+            theme: 'dark',
           });
         })
         .catch(() => {
-          toast.error("Something went worn.Try again!");
+          toast.error('Something went worn.Try again!');
         });
     },
   });
@@ -77,7 +77,7 @@ export const RegistrationPage = () => {
           </Comment>
           <RegisterForm onSubmit={formik.handleSubmit}>
             <DivWrapperInput>
-              {" "}
+              {' '}
               <Label htmlFor="name">Name:</Label>
               <Input
                 name="name"
@@ -109,16 +109,16 @@ export const RegistrationPage = () => {
               <InputPassword
                 $variant={
                   formik.errors.password
-                    ? "error"
+                    ? 'error'
                     : formik.touched.password
-                    ? "successful"
+                    ? 'successful'
                     : null
                 }
                 onChange={formik.handleChange}
                 value={formik.values.password}
                 onBlur={formik.handleBlur}
                 name="password"
-                type={openPsw ? "password" : "text"}
+                type={openPsw ? 'password' : 'text'}
               />
 
               <ValidationRegister
@@ -127,7 +127,7 @@ export const RegistrationPage = () => {
               />
               <ShowPassword
                 openPAsword={openPsw}
-                toggle={() => setOpenPsw((prevState) => !prevState)}
+                toggle={() => setOpenPsw(prevState => !prevState)}
               />
             </DivWrapperInput>
 
@@ -135,9 +135,9 @@ export const RegistrationPage = () => {
               <TextErrors>{formik.errors.password}</TextErrors>
             ) : null}
             <Buttons
-              prop={"Registration"}
-              text={"Already have an account?"}
-              to={"/login"}
+              prop={'Registration'}
+              text={'Already have an account?'}
+              to={'/login'}
             />
           </RegisterForm>
         </WrapperForm>

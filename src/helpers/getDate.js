@@ -1,6 +1,6 @@
 const getDate = ({ progress, totalPage }) => {
   return progress
-    .filter(({ status }) => status === "inactive")
+    .filter(({ status }) => status === 'inactive')
     .reduce(
       (
         total,
@@ -15,9 +15,9 @@ const getDate = ({ progress, totalPage }) => {
         }
       ) => {
         const data = new Date(finishReading).toDateString();
-        const entry = total.find((entry) => entry.data === data);
+        const entry = total.find(entry => entry.data === data);
         const pagesReadCount =
-          status === "inactive" ? finishPage - startPage : "0";
+          status === 'inactive' ? finishPage - startPage : 0;
         const progressReading = parseInt(
           (pagesReadCount / totalPage) * 100
         ).toFixed(1);

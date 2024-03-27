@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
 import {
   ContainerInfo,
   Data,
@@ -13,13 +13,13 @@ import {
   VerticalDiv,
   Wrapper,
   WrapperMain,
-} from "./Details.styled";
-import { redBookSelector } from "../../redux/books/selectors";
-import icon from "../../images/sprite.svg";
-import { deleteProgress } from "../../redux/books/operations";
-import formatDate from "../../helpers/formatDate";
-import getDate from "../../helpers/getDate";
-import timeReadingBook from "../../helpers/timeReadingBook";
+} from './Details.styled';
+import { redBookSelector } from '../../redux/books/selectors';
+import icon from '../../images/sprite.svg';
+import { deleteProgress } from '../../redux/books/operations';
+import formatDate from '../../helpers/formatDate';
+import getDate from '../../helpers/getDate';
+import timeReadingBook from '../../helpers/timeReadingBook';
 
 export const Details = () => {
   const redBook = useSelector(redBookSelector);
@@ -67,7 +67,7 @@ export const Details = () => {
                           <Div>
                             <div>
                               <svg width="59" height="25">
-                                <use xlinkHref={icon + "#icon-block"}></use>
+                                <use xlinkHref={icon + '#icon-block'}></use>
                               </svg>
                               <Speed>{speed} pages per hours</Speed>
                             </div>
@@ -86,11 +86,11 @@ export const Details = () => {
                                 width="14"
                                 height="14"
                                 style={{
-                                  stroke: "#686868",
-                                  fill: "transparent",
+                                  stroke: '#686868',
+                                  fill: 'transparent',
                                 }}
                               >
-                                <use xlinkHref={icon + "#trash-1"}></use>
+                                <use xlinkHref={icon + '#trash-1'}></use>
                               </Trash>
                             </button>
                           </Div>

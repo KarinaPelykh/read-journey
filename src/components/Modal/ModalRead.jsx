@@ -1,27 +1,27 @@
-import { Buttons } from "../Button/Button";
-import { Overlay, Modal, ButtonClose, ButtonLink } from "./ModalWindow.styled";
-import icons from "../../images/sprite.svg";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { addReadBook } from "../../redux/books/operations";
-export const ModalRead = ({ open, toggle, children, id }) => {
+import { Buttons } from '../Button/Button';
+import { Overlay, Modal, ButtonClose, ButtonLink } from './ModalWindow.styled';
+import icons from '../../images/sprite.svg';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { addReadBook } from '../../redux/books/operations';
+export const ModalRead = ({ open, toggle, children, id, variant }) => {
   const dispatch = useDispatch();
   const handelAddBookRead = () => {
     dispatch(addReadBook({ id }));
   };
   useEffect(() => {
-    const handelKeyEscape = (e) => {
-      if (e.code === "Escape") {
+    const handelKeyEscape = e => {
+      if (e.code === 'Escape') {
         toggle();
       }
     };
-    document.addEventListener("keydown", handelKeyEscape);
+    document.addEventListener('keydown', handelKeyEscape);
     return () => {
-      document.removeEventListener("keydown", handelKeyEscape);
+      document.removeEventListener('keydown', handelKeyEscape);
     };
   }, [toggle]);
 
-  const handelCloseClick = (e) => {
+  const handelCloseClick = e => {
     if (e.target === e.currentTarget) {
       toggle();
     }
@@ -30,10 +30,10 @@ export const ModalRead = ({ open, toggle, children, id }) => {
   return (
     <Overlay onClick={handelCloseClick}>
       {open && (
-        <Modal>
+        <Modal variant={variant}>
           <ButtonClose onClick={toggle}>
             <svg width="20" height="20">
-              <use xlinkHref={icons + "#close"}></use>
+              <use xlinkHref={icons + '#close'}></use>
             </svg>
           </ButtonClose>
 

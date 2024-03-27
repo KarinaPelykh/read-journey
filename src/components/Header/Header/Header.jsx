@@ -1,33 +1,33 @@
-import { UserBar } from "../UserBar/UserBar";
-import { Buttons } from "../../Button/Button";
-import { logOutThunk } from "../../../redux/auth/operations";
-import { useDispatch, useSelector } from "react-redux";
-import { LogoMain } from "../../Logo/Logo";
-import { UserNav } from "../UserNav/UserNav";
-import { HeaderDiv, Nav } from "./Header.styled";
-import { isLoggedInSelect } from "../../../redux/auth/selectors";
-import { AuthNav } from "../../AuthNav/AuthNav";
-import { useLocation, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { UserBar } from '../UserBar/UserBar';
+import { Buttons } from '../../Button/Button';
+import { logOutThunk } from '../../../redux/auth/operations';
+import { useDispatch, useSelector } from 'react-redux';
+import { LogoMain } from '../../Logo/Logo';
+import { UserNav } from '../UserNav/UserNav';
+import { HeaderDiv, Nav } from './Header.styled';
+import { isLoggedInSelect } from '../../../redux/auth/selectors';
+import { AuthNav } from '../../AuthNav/AuthNav';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 export const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const location = useLocation();
   const locationUser =
-    location.pathname === "/login" || location.pathname === "/register";
+    location.pathname === '/login' || location.pathname === '/register';
   const isLoggedIn = useSelector(isLoggedInSelect);
 
   const handelLogout = () => {
     dispatch(logOutThunk()).then(() => {
-      navigate("/login");
+      navigate('/login');
       toast
-        .success("You Log-out", {
-          position: "top-right",
+        .success('You Log-out', {
+          position: 'top-right',
           hideProgressBar: true,
-          theme: "dark",
+          theme: 'dark',
         })
-        .catch(() => toast.error(""));
+        .catch(error => toast.error(error));
     });
   };
   return (
@@ -42,7 +42,7 @@ export const Header = () => {
               <Buttons
                 onClick={handelLogout}
                 variant="log-out"
-                prop={"Log out"}
+                prop={'Log out'}
               />
             )}
           </Nav>

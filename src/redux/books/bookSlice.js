@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 import {
   addBooksWithRecommended,
   addNewBook,
@@ -9,12 +9,12 @@ import {
   finishedReading,
   getBookOwn,
   startReading,
-} from "./operations";
-import storage from "redux-persist/lib/storage";
-import { persistReducer } from "redux-persist";
-const pending = (state) => {
+} from './operations';
+import storage from 'redux-persist/lib/storage';
+import { persistReducer } from 'redux-persist';
+const pending = state => {
   state.isLoading = true;
-  state.error = "";
+  state.error = '';
 };
 
 const rejected = (state, action) => {
@@ -25,7 +25,7 @@ const initialState = {
   books: [],
   newBooks: [],
   redBook: [],
-  // bookOwn: [],
+
   isLoading: false,
   error: null,
   page: 1,
@@ -34,10 +34,10 @@ const initialState = {
 };
 
 const bookSlice = createSlice({
-  name: "book",
+  name: 'book',
   initialState,
 
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     builder
       .addCase(fetchBooks.fulfilled, (state, action) => {
         state.books = action.payload;
@@ -52,7 +52,7 @@ const bookSlice = createSlice({
 
       .addCase(deleteBook.fulfilled, (state, action) => {
         state.newBooks = state.newBooks.filter(
-          (newBooks) => newBooks._id !== action.payload
+          newBooks => newBooks._id !== action.payload
         );
       })
       .addCase(getBookOwn.fulfilled, (state, action) => {
@@ -70,13 +70,13 @@ const bookSlice = createSlice({
       .addCase(deleteProgress.fulfilled, (state, action) => {
         state.redBook = action.payload;
       })
-      .addMatcher((action) => action.type.endsWith("/pending"), pending)
-      .addMatcher((action) => action.type.endsWith("/rejected"), rejected);
+      .addMatcher(action => action.type.endsWith('/pending'), pending)
+      .addMatcher(action => action.type.endsWith('/rejected'), rejected);
   },
 });
 
 const persistConfig = {
-  key: "book",
+  key: 'book',
   storage,
 };
 export const bookReducer = bookSlice.reducer;

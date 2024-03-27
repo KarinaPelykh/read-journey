@@ -6,15 +6,21 @@ import { finishedReading, startReading } from '../../redux/books/operations';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { ModalRead } from '../Modal/ModalRead';
+import book from '../../images/book.png';
 export const AddReading = () => {
   const readBook = useSelector(redBookSelector);
   const [page, setPage] = useState('');
   const [start, setStart] = useState(false);
+  const [open, setOpen] = useState(false);
   const id = readBook._id;
   const dispatch = useDispatch();
+  const toggle = () => {
+    setOpen(!open);
+  };
   const handelSubmit = e => {
     e.preventDefault();
+
     if (!start) {
       dispatch(startReading({ id, page }))
         .unwrap()
@@ -37,14 +43,21 @@ export const AddReading = () => {
     } else if (start) {
       dispatch(finishedReading({ id, page }))
         .unwrap()
-        .then(() => {
+        .then(res => {
+          if (res) {
+            res.status === 'done' && toggle();
+          }
+
           toast.success('You finished read', {
             position: 'top-right',
             hideProgressBar: true,
             theme: 'dark',
           });
         })
-        .catch(error => toast.error(error));
+        .catch(error => {
+          toast.error(error);
+          console.log(error.message);
+        });
 
       setStart(!start);
     }
@@ -69,6 +82,16 @@ export const AddReading = () => {
         </Wrapper>
         <Buttons prop={start ? 'To stop' : 'To start'} variant="buttonBase" />
       </form>
+      {open && (
+        <ModalRead open={open} toggle={toggle} variant="min-modal">
+          <img width="68" height="70" src={book} />
+          <p>The book is read</p>
+          <p>
+            It was an <span>exciting journey</span>, where each page revealed
+            new horizons, and the characters became inseparable friends.
+          </p>
+        </ModalRead>
+      )}
     </>
   );
 };

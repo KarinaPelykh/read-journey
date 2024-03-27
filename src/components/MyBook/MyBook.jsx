@@ -1,10 +1,11 @@
-import { useSelector } from "react-redux";
-import { redBookSelector } from "../../redux/books/selectors";
-import { Author, ImgRead, Title, Wrapper } from "./MyBook.styled";
-import icon from "../../images/sprite.svg";
-import book from "../../images/img-book.png";
+import { useSelector } from 'react-redux';
+import { redBookSelector } from '../../redux/books/selectors';
+import { Author, ImgRead, Title, Wrapper } from './MyBook.styled';
+import icon from '../../images/sprite.svg';
+import book from '../../images/img-book.png';
 export const MyBook = () => {
   const readBook = useSelector(redBookSelector);
+  console.log(readBook);
   return (
     <>
       {readBook?.timeLeftToRead ? (
@@ -26,9 +27,9 @@ export const MyBook = () => {
       <button>
         <svg width="50" height="50">
           {readBook?.timeLeftToRead ? (
-            <use xlinkHref={icon + "#button-read"}></use>
+            <use xlinkHref={icon + '#button-read'}></use>
           ) : (
-            <use xlinkHref={icon + "#button-stop-read"}></use>
+            <use xlinkHref={icon + '#button-stop-read'}></use>
           )}
         </svg>
       </button>
