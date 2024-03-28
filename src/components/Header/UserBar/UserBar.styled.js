@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 export const UserSvg = styled.div`
   width: 40px;
   height: 40px;
@@ -16,4 +16,13 @@ export const Div = styled.div`
   margin-left: auto;
   justify-content: center;
   align-items: center;
+`;
+export const Name = styled.p`
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+  }
 `;

@@ -1,16 +1,16 @@
-import { Text, WrapperBooks } from "./RecommendedBooks.styled";
-import { BookList } from "../BookList/BookList";
-import { useLocation } from "react-router-dom";
-import { BookFilter } from "../Filter/BookFilter/BookFilter";
-import { useSelector } from "react-redux";
-import { filterSelector } from "../../redux/filter/selectors";
-import { MyBook } from "../MyBook/MyBook";
-import { Select } from "../Select/Select";
+import { Text, WrapperBooks } from './RecommendedBooks.styled';
+import { BookList } from '../BookList/BookList';
+import { useLocation } from 'react-router-dom';
+import { BookFilter } from '../Filter/BookFilter/BookFilter';
+import { useSelector } from 'react-redux';
+import { filterSelector } from '../../redux/filter/selectors';
+import { MyBook } from '../MyBook/MyBook';
+import { Select } from '../Select/Select';
 
 export const RecommendedBooks = () => {
   const location = useLocation();
-  const localUser = location.pathname === "/library";
-  const user = location.pathname === "/reading";
+  const localUser = location.pathname === '/library';
+  const user = location.pathname === '/reading';
   const filterBook = useSelector(filterSelector);
 
   return (

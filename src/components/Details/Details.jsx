@@ -20,11 +20,35 @@ import { deleteProgress } from '../../redux/books/operations';
 import formatDate from '../../helpers/formatDate';
 import getDate from '../../helpers/getDate';
 import timeReadingBook from '../../helpers/timeReadingBook';
+import { toast } from 'react-toastify';
 
 export const Details = () => {
   const redBook = useSelector(redBookSelector);
   const bookId = redBook._id;
   const dispatch = useDispatch();
+  const handelDeleteProgress = _id => {
+    dispatch(
+      deleteProgress({
+        bookId,
+        readingId: _id,
+      })
+    )
+      .unwrap()
+      .then(() => {
+        toast.success('You delete progress', {
+          position: 'top-right',
+          hideProgressBar: true,
+          theme: 'dark',
+        });
+      })
+      .catch(error =>
+        toast.error(error, {
+          position: 'top-right',
+          hideProgressBar: true,
+          theme: 'dark',
+        })
+      );
+  };
 
   return (
     <>
@@ -72,16 +96,7 @@ export const Details = () => {
                               <Speed>{speed} pages per hours</Speed>
                             </div>
 
-                            <button
-                              onClick={() =>
-                                dispatch(
-                                  deleteProgress({
-                                    bookId,
-                                    readingId: _id,
-                                  })
-                                )
-                              }
-                            >
+                            <button onClick={() => handelDeleteProgress(_id)}>
                               <Trash
                                 width="14"
                                 height="14"

@@ -3,9 +3,12 @@ import { instance } from '../../service/Api';
 
 export const fetchBooks = createAsyncThunk(
   'books/fetchAll',
-  async ({ page }, { rejectWithValue }) => {
+  async ({ page, limit }, { rejectWithValue }) => {
     try {
-      const { data } = await instance.get(`/books/recommend?page=${page}`);
+      const { data } = await instance.get(
+        `/books/recommend?page=${page}&limit=${limit}`
+      );
+      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -19,10 +22,9 @@ export const addBooksWithRecommended = createAsyncThunk(
     try {
       const { data } = await instance.post(`/books/add/${id}`);
 
-      console.log(data);
       return data;
     } catch (error) {
-      return rejectWithValue.error.message;
+      return rejectWithValue(error.response.data.message);
     }
   }
 );
@@ -36,10 +38,10 @@ export const addNewBook = createAsyncThunk(
         author,
         totalPages,
       });
-      console.log(data);
+
       return data;
     } catch (error) {
-      return rejectWithValue.error.message;
+      return rejectWithValue(error.response.data.message);
     }
   }
 );
@@ -51,7 +53,7 @@ export const deleteBook = createAsyncThunk(
       await instance.delete(`/books/remove/${id}`);
       return id;
     } catch (error) {
-      return rejectWithValue.error.message;
+      return rejectWithValue(error.response.data.message);
     }
   }
 );
@@ -62,7 +64,7 @@ export const getBookOwn = createAsyncThunk(
       const { data } = await instance.get('/books/own', { status });
       return data;
     } catch (error) {
-      return rejectWithValue.error.message;
+      return rejectWithValue(error.response.data.message);
     }
   }
 );
@@ -71,10 +73,10 @@ export const addReadBook = createAsyncThunk(
   async ({ id }, { rejectWithValue }) => {
     try {
       const { data } = await instance.get(`/books/${id}`);
-      console.log(data);
+
       return data;
     } catch (error) {
-      return rejectWithValue.error.message;
+      return rejectWithValue(error.response.data.message);
     }
   }
 );
@@ -89,7 +91,7 @@ export const startReading = createAsyncThunk(
       console.log('startReading', data);
       return data;
     } catch (error) {
-      return rejectWithValue.error.message;
+      return rejectWithValue(error.response.data.message);
     }
   }
 );
@@ -104,7 +106,7 @@ export const finishedReading = createAsyncThunk(
       console.log('finishedReading', data);
       return data;
     } catch (error) {
-      return rejectWithValue.error.message;
+      return rejectWithValue(error.response.data.message);
     }
   }
 );
@@ -115,10 +117,10 @@ export const deleteProgress = createAsyncThunk(
       const { data } = await instance.delete(
         `/books/reading?bookId=${bookId}&readingId=${readingId}`
       );
-      console.log(data);
+
       return data;
     } catch (error) {
-      return rejectWithValue.error.message;
+      return rejectWithValue(error.response.data.message);
     }
   }
 );

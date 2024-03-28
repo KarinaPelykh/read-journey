@@ -1,11 +1,10 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
   @media screen and (min-width: 1439px) {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding-bottom: 32px; */
   }
 `;
 export const WrapperForm = styled.div`
@@ -50,11 +49,10 @@ export const Span = styled.span`
 `;
 
 export const RegisterForm = styled.form`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-
   @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     flex-direction: column;
   }
 `;
@@ -71,6 +69,11 @@ export const Input = styled.input`
   background-color: ${({ theme }) => theme.colors.darkGray};
   border-radius: ${({ theme }) => theme.radii.m};
   margin-bottom: 14px;
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.white};
+    font-weight: ${({ theme }) => theme.fontWeights.medium};
+    font-size: ${({ theme }) => theme.fontSizes.ss};
+  }
 `;
 
 export const InputPassword = styled.input`
@@ -81,6 +84,11 @@ export const InputPassword = styled.input`
   background-color: ${({ theme }) => theme.colors.darkGray};
   border-radius: ${({ theme }) => theme.radii.m};
   margin-bottom: 20px;
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.white};
+    font-weight: ${({ theme }) => theme.fontWeights.medium};
+    font-size: ${({ theme }) => theme.fontSizes.ss};
+  }
   @media screen and (min-width: 768px) {
     margin-bottom: 55px;
   }
@@ -90,13 +98,13 @@ export const InputPassword = styled.input`
   font-size: ${({ theme }) => theme.fontSizes.ss};
 
   ${({ $variant }) =>
-    $variant === "error" &&
+    $variant === 'error' &&
     css`
       border: 1px solid ${({ theme }) => theme.colors.red};
     `}
 
   ${({ $variant }) =>
-    $variant === "successful" &&
+    $variant === 'successful' &&
     css`
       border: 1px solid ${({ theme }) => theme.colors.lightGreen};
     `}
@@ -104,11 +112,15 @@ export const InputPassword = styled.input`
 
 export const TextErrors = styled.div`
   position: relative;
-  top: -54px;
+  top: -22px;
   left: 4px;
   color: ${({ theme }) => theme.colors.grey};
   font-size: ${({ theme }) => theme.fontSizes.ss};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
+
+  @media screen and (min-width: 768px) {
+    top: -54px;
+  }
 `;
 export const DivWrapperInput = styled.div`
   position: relative;

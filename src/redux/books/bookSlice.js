@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import {
   addBooksWithRecommended,
   addNewBook,
@@ -70,8 +70,37 @@ const bookSlice = createSlice({
       .addCase(deleteProgress.fulfilled, (state, action) => {
         state.redBook = action.payload;
       })
-      .addMatcher(action => action.type.endsWith('/pending'), pending)
-      .addMatcher(action => action.type.endsWith('/rejected'), rejected);
+
+      .addMatcher(
+        isAnyOf(
+          fetchBooks.pending,
+          addBooksWithRecommended.pending,
+          addNewBook.pending,
+          deleteBook.pending,
+          getBookOwn.pending,
+          addReadBook.pending,
+
+          startReading.pending,
+          finishedReading.pending,
+          deleteProgress.pending
+        ),
+        pending
+      )
+      .addMatcher(
+        isAnyOf(
+          fetchBooks.rejected,
+          addBooksWithRecommended.rejected,
+          addNewBook.rejected,
+          deleteBook.rejected,
+          getBookOwn.rejected,
+          addReadBook.rejected,
+
+          startReading.rejected,
+          finishedReading.rejected,
+          deleteProgress.rejected
+        ),
+        rejected
+      );
   },
 });
 

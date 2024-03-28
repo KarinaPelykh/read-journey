@@ -1,10 +1,10 @@
-import { useDispatch } from "react-redux";
-import { Buttons } from "../../Button/Button";
-import { Form, InputFilter, Label, Title, Wrapper } from "./FilterForm.styled";
-import { getBook } from "../../../redux/filter/operations";
+import { useDispatch } from 'react-redux';
+import { Buttons } from '../../Button/Button';
+import { Form, InputFilter, Label, Title, Wrapper } from './FilterForm.styled';
+import { getBook } from '../../../redux/filter/operations';
 export const FilterForm = () => {
   const dispatch = useDispatch();
-  const handelSubmit = (e) => {
+  const handelSubmit = e => {
     e.preventDefault();
     const form = e.target;
     const title = form.elements.title.value;

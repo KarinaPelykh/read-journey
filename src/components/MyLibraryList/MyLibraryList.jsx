@@ -1,7 +1,7 @@
-import { useSelector } from "react-redux";
-import { newBooksSelector } from "../../redux/books/selectors";
-import Images from "../../images/bookDefault.png";
-import hand from "../../images/hand.png";
+import { useSelector } from 'react-redux';
+import { newBooksSelector } from '../../redux/books/selectors';
+import Images from '../../images/bookDefault.png';
+import hand from '../../images/hand.png';
 
 import {
   Greeting,
@@ -11,21 +11,21 @@ import {
   Text,
   TextGreeting,
   Wrapper,
-} from "./MyLibrary.styled";
-import { ModalWindow } from "../Modal/ModalWindow";
-import { MyLibraryItem } from "./MyLibraryItem/MyLibraryItem";
-import { useEffect, useState } from "react";
+} from './MyLibrary.styled';
+import { ModalWindow } from '../Modal/ModalWindow';
+import { MyLibraryItem } from './MyLibraryItem/MyLibraryItem';
+import { useEffect, useState } from 'react';
 
 export const MyLibraryList = ({ status }) => {
   const newBook = useSelector(newBooksSelector);
 
   const getVisibleTasks = (status, newBook) => {
-    if (status === "done") {
-      return newBook.filter((item) => item.status === "done");
-    } else if (status === "in progress") {
-      return newBook.filter((item) => item.status === "in-progress");
-    } else if (status === "unread") {
-      return newBook.filter((item) => item.status === "unread");
+    if (status === 'done') {
+      return newBook.filter(item => item.status === 'done');
+    } else if (status === 'in progress') {
+      return newBook.filter(item => item.status === 'in-progress');
+    } else if (status === 'unread') {
+      return newBook.filter(item => item.status === 'unread');
     }
     return newBook;
   };
@@ -39,9 +39,9 @@ export const MyLibraryList = ({ status }) => {
   useEffect(() => {
     if (newBook.length !== amountBook) {
       setIsOpen(true);
-      setAmountBook(newBook.length);
+      // setAmountBook(newBook.length);
     }
-  }, [newBook, setIsOpen, amountBook]);
+  }, [newBook]);
 
   const toggle = () => {
     setIsOpen(false);
@@ -50,7 +50,7 @@ export const MyLibraryList = ({ status }) => {
     <>
       {newBook.length !== 0 ? (
         <MyListBook>
-          {visible.map((item) => (
+          {visible.map(item => (
             <MyLibraryItem
               key={item._id}
               id={item._id}

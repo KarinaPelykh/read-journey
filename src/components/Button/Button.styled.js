@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import styled, { css } from "styled-components";
+import { Link } from 'react-router-dom';
+import styled, { css } from 'styled-components';
 
 export const WrapperButton = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ export const Button = styled.button`
   font-weight: ${({ theme }) => theme.fontWeights.bold};
 
   ${({ variant }) =>
-    variant === "log-out" &&
+    variant === 'log-out' &&
     css`
       margin-right: 0px;
       margin-left: 16px;
@@ -34,16 +34,17 @@ export const Button = styled.button`
     `};
 
   ${({ variant }) =>
-    variant === "buttonBase" &&
+    variant === 'buttonBase' &&
     css`
       border-radius: ${({ theme }) => theme.radii.xl};
       border: ${({ theme }) => theme.borders.normal};
       border-color: ${({ theme }) => theme.colors.liteWhite};
       color: ${({ theme }) => theme.colors.white};
       background-color: transparent;
+      margin: 0;
     `};
   ${({ variant }) =>
-    variant === "buttonModal" &&
+    variant === 'buttonModal' &&
     css`
       margin: 0;
       border-radius: ${({ theme }) => theme.radii.xl};

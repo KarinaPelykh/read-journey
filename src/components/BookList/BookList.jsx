@@ -1,15 +1,16 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchBooks } from "../../redux/books/operations";
-import { booksSelector } from "../../redux/books/selectors";
-import { ListBook } from "./BookList.styled";
-import { isLoggedInSelect } from "../../redux/auth/selectors";
-import { Pagination } from "../Pagination/Pagination";
-import { BookItem } from "../BookItem/BookItem";
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchBooks } from '../../redux/books/operations';
+import { booksSelector } from '../../redux/books/selectors';
+import { ListBook } from './BookList.styled';
+import { isLoggedInSelect } from '../../redux/auth/selectors';
+import { Pagination } from '../Pagination/Pagination';
+import { BookItem } from '../BookItem/BookItem';
 
 export const BookList = () => {
   const [page, setPage] = useState(1);
-
+  const [limit, setLimit] = useState(10);
+  const [sizeWindow, setSizeWindow] = useState(window.innerWidth);
   const bookSelector = useSelector(booksSelector);
   const totalPage = bookSelector.totalPages;
   const { results } = bookSelector;
@@ -17,9 +18,31 @@ export const BookList = () => {
   const isLoggedIn = useSelector(isLoggedInSelect);
   const dispatch = useDispatch();
 
+  const handelSize = () => {
+    setSizeWindow(window.innerWidth);
+  };
+
   useEffect(() => {
-    isLoggedIn && dispatch(fetchBooks({ page }));
-  }, [dispatch, isLoggedIn, page]);
+    window.addEventListener('resize', handelSize);
+
+    return () => {
+      window.removeEventListener('resize', handelSize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (sizeWindow < 768) {
+      setLimit(2);
+    } else if (sizeWindow > 768 && sizeWindow < 1440) {
+      setLimit(8);
+    } else {
+      setLimit(10);
+    }
+  }, [sizeWindow]);
+
+  useEffect(() => {
+    isLoggedIn && dispatch(fetchBooks({ page, limit }));
+  }, [dispatch, isLoggedIn, page, limit]);
 
   const handelPrevious = () => {
     if (page === 1) {
@@ -43,7 +66,7 @@ export const BookList = () => {
         totalPage={totalPage}
       />
       <ListBook>
-        {results?.map((item) => (
+        {results?.map(item => (
           <BookItem
             key={item._id}
             id={item._id}

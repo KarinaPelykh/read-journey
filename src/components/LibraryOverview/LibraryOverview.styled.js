@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const Block = styled.div`
   border-radius: ${({ theme }) => theme.radii.m};
@@ -7,7 +7,7 @@ export const Block = styled.div`
   width: 100%;
   height: auto;
   padding: 20px;
-  margin-bottom: 20px;
+
   @media screen and (min-width: 768px) {
     width: 313px;
   }
@@ -18,14 +18,18 @@ export const Block = styled.div`
     height: auto;
     padding: 20px;
     margin-bottom: 20px;
+    margin-top: 20px;
   }
 `;
 export const Title = styled.h3`
   color: ${({ theme }) => theme.colors.white};
-  font-size: ${({ theme }) => theme.fontSizes.xl};
+  font-size: ${({ theme }) => theme.fontSizes.m};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
-
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  @media screen and (min-width: 1440px) {
+    font-size: ${({ theme }) => theme.fontSizes.xl};
+    margin-bottom: 40px;
+  }
 `;
 export const WrapperInfo = styled.div`
   display: flex;

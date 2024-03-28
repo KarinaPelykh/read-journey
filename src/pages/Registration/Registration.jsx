@@ -85,6 +85,7 @@ export const RegistrationPage = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 type="text"
+                placeholder="Ilona Ratushniak"
               />
               {formik.touched.name && formik.errors.name ? (
                 <TextError>{formik.errors.name}</TextError>
@@ -98,6 +99,7 @@ export const RegistrationPage = () => {
                 value={formik.values.email}
                 onBlur={formik.handleBlur}
                 type="email"
+                placeholder="Your@email.com"
               />
               {formik.touched.email && formik.errors.email ? (
                 <TextError>{formik.errors.email}</TextError>
@@ -119,6 +121,7 @@ export const RegistrationPage = () => {
                 onBlur={formik.handleBlur}
                 name="password"
                 type={openPsw ? 'password' : 'text'}
+                placeholder="Yourpasswordhere"
               />
 
               <ValidationRegister
