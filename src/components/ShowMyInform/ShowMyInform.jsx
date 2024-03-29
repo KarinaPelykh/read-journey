@@ -7,15 +7,16 @@ import { useState } from 'react';
 import { Describe, ImgStatic, Thumb, Title } from '../Details/Details.styled';
 import { useSelector } from 'react-redux';
 import { redBookSelector } from '../../redux/books/selectors';
+import { Div, Text, Wrapper, WrapperProgress } from './ShowmyInform.styled';
 export const ShowMyInform = () => {
   const [open, setOpen] = useState({ statistic: false, details: true });
   const redBook = useSelector(redBookSelector);
   return (
-    <>
+    <Wrapper>
       {redBook.progress[0]?.status === 'inactive' ? (
         <>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <p> {open.details ? 'Diary' : 'Statistic'} </p>
+          <Div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Text> {open.details ? 'Diary' : 'Statistic'} </Text>
             <div>
               <button
                 onClick={() => {
@@ -44,12 +45,12 @@ export const ShowMyInform = () => {
                 </svg>
               </button>
             </div>
-          </div>
+          </Div>
           {open.details && <Details />}
           {open.statistic && <Statistic />}
         </>
       ) : (
-        <div>
+        <WrapperProgress>
           <Title>Progress</Title>
           <Describe>
             Here you will see when and how much you read. To record, click on
@@ -58,8 +59,8 @@ export const ShowMyInform = () => {
           <Thumb>
             <ImgStatic src={star} alt="star" />
           </Thumb>
-        </div>
+        </WrapperProgress>
       )}
-    </>
+    </Wrapper>
   );
 };

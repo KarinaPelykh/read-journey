@@ -1,6 +1,15 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Buttons } from '../Button/Button';
-import { InputAddBook, Label, Title, Wrapper } from './AddReading.styled';
+import {
+  Description,
+  Form,
+  InputAddBook,
+  Label,
+  Span,
+  Text,
+  Title,
+  Wrapper,
+} from './AddReading.styled';
 import { redBookSelector } from '../../redux/books/selectors';
 import { finishedReading, startReading } from '../../redux/books/operations';
 import { useState } from 'react';
@@ -66,7 +75,7 @@ export const AddReading = () => {
 
   return (
     <>
-      <form onSubmit={handelSubmit}>
+      <Form onSubmit={handelSubmit}>
         <Title>Start page:</Title>
         <Wrapper>
           <Label>Page number:</Label>
@@ -81,15 +90,15 @@ export const AddReading = () => {
           />
         </Wrapper>
         <Buttons prop={start ? 'To stop' : 'To start'} variant="buttonBase" />
-      </form>
+      </Form>
       {open && (
         <ModalRead open={open} toggle={toggle} variant="min-modal">
           <img width="68" height="70" src={book} />
-          <p>The book is read</p>
-          <p>
-            It was an <span>exciting journey</span>, where each page revealed
+          <Text>The book is read</Text>
+          <Description>
+            It was an <Span>exciting journey</Span>, where each page revealed
             new horizons, and the characters became inseparable friends.
-          </p>
+          </Description>
         </ModalRead>
       )}
     </>

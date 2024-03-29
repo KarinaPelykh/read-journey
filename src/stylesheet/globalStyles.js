@@ -1,5 +1,5 @@
-import "modern-normalize";
-import { createGlobalStyle } from "styled-components";
+import 'modern-normalize';
+import { createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
 
 html {
@@ -13,7 +13,9 @@ body {
   color:#F9F9F9
 
 }
-
+body.modal-open {
+  overflow: hidden;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

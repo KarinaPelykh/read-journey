@@ -1,9 +1,8 @@
-import styled from "styled-components";
+// import styled from 'styled-components';
 
-export const Thumb = styled.div`
-  padding-top: 32px;
-  padding-bottom: 32px;
-  @media screen and (min-width: 1440px) {
-    padding: 32px;
-  }
-`;
+// export const Thumb = styled.div`
+//   padding: 20px;
+//   @media screen and (min-width: 768px) {
+//     padding: 32px;
+//   }
+// `;

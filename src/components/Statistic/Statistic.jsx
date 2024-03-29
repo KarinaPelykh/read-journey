@@ -4,15 +4,16 @@ import {
   Square,
   Text,
   TextSeed,
+  TextSeeds,
   Wrapper,
   WrapperInform,
-} from "./Statistic.styled";
-import { useSelector } from "react-redux";
-import { redBookSelector } from "../../redux/books/selectors";
-import getProsesReading from "../../helpers/getProgressReading";
+} from './Statistic.styled';
+import { useSelector } from 'react-redux';
+import { redBookSelector } from '../../redux/books/selectors';
+import getProsesReading from '../../helpers/getProgressReading';
 
-import { CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 export const Statistic = () => {
   const redBook = useSelector(redBookSelector);
@@ -38,20 +39,20 @@ export const Statistic = () => {
             text="100%"
             styles={{
               path: {
-                transform: "rotate(0.0turn)",
-                transformOrigin: "center center",
-                stroke: "#30B94D",
+                transform: 'rotate(0.0turn)',
+                transformOrigin: 'center center',
+                stroke: '#30B94D',
               },
               trail: {
-                stroke: "#1F1F1F",
-                strokeLinecap: "butt",
-                transform: "rotate(0.25turn)",
-                transformOrigin: "center center",
+                stroke: '#1F1F1F',
+                strokeLinecap: 'butt',
+                transform: 'rotate(0.25turn)',
+                transformOrigin: 'center center',
               },
               text: {
-                fill: "#fff",
-                fontSize: "15px",
-                fontWeight: "bold",
+                fill: '#fff',
+                fontSize: '15px',
+                fontWeight: 'bold',
               },
             }}
           />
@@ -60,7 +61,7 @@ export const Statistic = () => {
           <Square></Square>
           <Div>
             <Text>{pagesRead}%</Text>
-            <TextSeed>{speed} pages read</TextSeed>
+            <TextSeeds>{speed} pages read</TextSeeds>
           </Div>
         </WrapperInform>
       </Wrapper>

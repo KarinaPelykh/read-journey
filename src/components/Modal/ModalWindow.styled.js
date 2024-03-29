@@ -15,8 +15,8 @@ export const Overlay = styled.div`
 `;
 
 export const Modal = styled.div`
-  width: 500px;
-  height: 483px;
+  width: 335px;
+  height: 439px;
   background-color: ${({ theme }) => theme.colors.lightBlack};
   display: flex;
   justify-content: center;
@@ -28,12 +28,25 @@ export const Modal = styled.div`
   ${({ variant }) =>
     variant === 'min-modal' &&
     css`
-      width: 342px;
+      width: 335px;
       height: 290px;
       button {
         display: none;
       }
     `};
+  @media screen and (min-width: 1440px) {
+    width: 500px;
+    height: 483px;
+    ${({ variant }) =>
+      variant === 'min-modal' &&
+      css`
+        width: 342px;
+        height: 290px;
+        button {
+          display: none;
+        }
+      `};
+  }
 `;
 export const ButtonClose = styled.div`
   position: absolute;

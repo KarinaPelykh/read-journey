@@ -125,6 +125,10 @@
 <path fill="#30b94d" style="fill: var(--color1, #30b94d)" opacity="0.2" d="M76.8 1.28l-75.52 10.779v19.941h75.52v-30.72z"></path>
 <path fill="#30b94d" style="fill: var(--color1, #30b94d)" d="M74.924 0.204l-73.288 11.849c-0.698 0.113-1.172 0.77-1.059 1.468l0.204 1.264c0.113 0.698 0.77 1.172 1.468 1.059l73.288-11.849c0.698-0.113 1.172-0.77 1.059-1.468l-0.204-1.264c-0.113-0.698-0.77-1.172-1.468-1.059z"></path>
 </symbol>
+
+<symbol id="icon-menu" viewBox="0 0 48 32">
+<path fill="none" stroke="#f9f9f9" style="stroke: var(--color1, #f9f9f9)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4" d="M3 16h42M3 2h42M17 30h28"></path>
+</symbol>
 </defs>
 
 </svg>

@@ -41,7 +41,11 @@ export const InputFilter = styled.input`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
-
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.white};
+    font-size: ${({ theme }) => theme.fontSizes.ss};
+    font-weight: ${({ theme }) => theme.fontWeights.medium};
+  }
   ${({ variant }) =>
     variant === 'input2' &&
     css`

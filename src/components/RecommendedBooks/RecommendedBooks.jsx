@@ -1,4 +1,4 @@
-import { Text, WrapperBooks } from './RecommendedBooks.styled';
+import { Text, TextLibrary, WrapperBooks } from './RecommendedBooks.styled';
 import { BookList } from '../BookList/BookList';
 import { useLocation } from 'react-router-dom';
 import { BookFilter } from '../Filter/BookFilter/BookFilter';
@@ -27,7 +27,7 @@ export const RecommendedBooks = () => {
         </>
       ) : (
         <>
-          <Text>My library</Text>
+          <TextLibrary>My library</TextLibrary>
           <Select />
         </>
       )}

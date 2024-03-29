@@ -1,15 +1,12 @@
-import { Container } from "../../components/Container/Container.styled";
-import styled from "styled-components";
-import { Dashboard } from "../../components/Dashboard/Dashboard";
-import { RecommendedBooks } from "../../components/RecommendedBooks/RecommendedBooks";
+import styled from 'styled-components';
+import { Dashboard } from '../../components/Dashboard/Dashboard';
+import { RecommendedBooks } from '../../components/RecommendedBooks/RecommendedBooks';
 export const Reading = () => {
   return (
-    <Container>
-      <Div>
-        <Dashboard />
-        <RecommendedBooks />
-      </Div>
-    </Container>
+    <Div>
+      <Dashboard />
+      <RecommendedBooks />
+    </Div>
   );
 };
 

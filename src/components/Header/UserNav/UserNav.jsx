@@ -4,9 +4,9 @@ const routes = [
   { path: '/recommended', page: 'Home' },
   { path: '/library', page: 'My library ' },
 ];
-export const UserNav = () => {
+export const UserNav = ({ variant }) => {
   return (
-    <List>
+    <List variant={variant}>
       {routes.map(({ path, page }) => (
         <Item key={path} to={path}>
           {page}

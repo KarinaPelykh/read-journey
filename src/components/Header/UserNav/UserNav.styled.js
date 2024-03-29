@@ -1,8 +1,17 @@
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const List = styled.ul`
   display: none;
+  ${({ variant }) =>
+    variant === 'burger-menu' &&
+    css`
+      display: flex;
+      flex-direction: column;
+      & > ${Item}:first-child {
+        margin-bottom: 20px;
+      }
+    `}
   @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: row;

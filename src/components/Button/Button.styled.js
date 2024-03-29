@@ -23,6 +23,9 @@ export const Button = styled.button`
   ${({ variant }) =>
     variant === 'log-out' &&
     css`
+      @media screen and (max-width: 767px) {
+        padding: 10px 20px;
+      }
       margin-right: 0px;
       margin-left: 16px;
       padding: 12px 28px;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -7,17 +7,30 @@ export const Wrapper = styled.div`
   margin: auto;
 `;
 export const Text = styled.p`
-  width: 274px;
-  margin-top: 20px;
+  width: 197px;
   text-align: center;
-  font-size: ${({ theme }) => theme.fontSizes.s};
+  margin-top: 10px;
+  @media screen and (min-width: 768px) {
+    width: 274px;
+    margin-top: 20px;
+
+    font-size: ${({ theme }) => theme.fontSizes.s};
+  }
 `;
 export const Span = styled.span`
   color: ${({ theme }) => theme.colors.grey};
 `;
 
 export const MyListBook = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  @media screen and (min-width: 1440px) {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;

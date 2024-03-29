@@ -1,13 +1,22 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin-top: 20px;
   background-color: ${({ theme }) => theme.colors.darkGray};
-  width: 313px;
-  height: auto;
   border-radius: ${({ theme }) => theme.radii.m};
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @media screen and (min-width: 768px) {
+    width: 321px;
+    height: 252px;
+    margin-top: 14px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 313px;
+    height: auto;
+  }
 `;
 export const Circle = styled.div`
   border-radius: ${({ theme }) => theme.radii.round};
@@ -28,6 +37,16 @@ export const Text = styled.p`
   font-weight: ${({ theme }) => theme.fontWeights.medium};
 `;
 export const TextSeed = styled.p`
+  display: none;
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    margin-top: 8px;
+    color: ${({ theme }) => theme.colors.grey};
+    font-size: ${({ theme }) => theme.fontSizes.ss};
+    font-weight: ${({ theme }) => theme.fontWeights.medium};
+  }
+`;
+export const TextSeeds = styled.p`
   margin-top: 8px;
   color: ${({ theme }) => theme.colors.grey};
   font-size: ${({ theme }) => theme.fontSizes.ss};

@@ -20,11 +20,22 @@ export const FilterForm = () => {
       <Title>Filters:</Title>
       <Wrapper>
         <Label>Book title:</Label>
-        <InputFilter type="text" name="title" required />
+        <InputFilter
+          type="text"
+          name="title"
+          required
+          placeholder="Enter text"
+        />
       </Wrapper>
       <Wrapper>
         <Label>The author:</Label>
-        <InputFilter type="text" variant="input2" name="author" required />
+        <InputFilter
+          type="text"
+          variant="input2"
+          name="author"
+          required
+          placeholder="Enter text"
+        />
       </Wrapper>
 
       <Buttons prop="To apply" variant="buttonBase" />

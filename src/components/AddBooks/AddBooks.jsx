@@ -29,17 +29,24 @@ export const AddBook = () => {
     <Form onSubmit={handelSubmit}>
       <Title>Create your library:</Title>
       <Wrapper>
-        <Label>Book title</Label>
+        <Label>Book title:</Label>
         <InputADD
           name="title"
           type="text"
           pattern="^[A-Za-zА-Яа-яЁё]+\s?[A-Za-zА-Яа-яЁё]+$"
           required
+          placeholder="I See You Are Interested In The Dark"
         />
       </Wrapper>
       <Wrapper>
         <Label>The author:</Label>
-        <InputADD name="author" type="text" variant="input2" required />
+        <InputADD
+          name="author"
+          type="text"
+          variant="input2"
+          required
+          placeholder="Hilarion Pavlyuk"
+        />
       </Wrapper>
       <Wrapper>
         <Label>Number of pages:</Label>
@@ -49,6 +56,7 @@ export const AddBook = () => {
           variant="input3"
           pattern="^[0-9]+$"
           required
+          placeholder="664"
         />
       </Wrapper>
 

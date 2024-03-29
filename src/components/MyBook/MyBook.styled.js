@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -10,6 +10,14 @@ export const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
   }
+`;
+export const TextTime = styled.p`
+  color: ${({ theme }) => theme.colors.grey};
+  font-size: ${({ theme }) => theme.fontSizes.ss};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  position: absolute;
+  top: 45px;
+  right: 20px;
 `;
 export const ImgRead = styled.img`
   border-radius: ${({ theme }) => theme.radii.s};
@@ -28,4 +36,8 @@ export const Author = styled.p`
   color: ${({ theme }) => theme.colors.grey};
   font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
+`;
+export const Button = styled.div`
+  display: flex;
+  justify-content: center;
 `;

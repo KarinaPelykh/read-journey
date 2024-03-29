@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Title = styled.h1`
   margin-top: 40px;
@@ -26,13 +26,13 @@ export const ImgStatic = styled.img`
 export const Wrapper = styled.div`
   display: flex;
   position: relative;
-
   background-color: ${({ theme }) => theme.colors.darkGray};
-  width: 313px;
-  height: auto;
   border-radius: ${({ theme }) => theme.radii.m};
   padding: 9px 32px;
-  margin-top: 20px;
+  @media screen and (min-width: 1440px) {
+    width: 313px;
+    height: auto;
+  }
 `;
 
 export const List = styled.ul`
@@ -98,7 +98,7 @@ export const VerticalDiv = styled.div`
   left: 14px;
 `;
 export const DivDiary = styled.div`
-  margin-top: 40px;
+  margin-top: 20px;
 `;
 export const Text = styled.p`
   color: ${({ theme }) => theme.colors.white};

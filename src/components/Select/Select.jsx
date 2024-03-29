@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
-import { CustomRow, CustomRowTwe, Option, Selector } from "./Select.styled";
-import { getBookOwn } from "../../redux/books/operations";
-import { MyLibraryList } from "../MyLibraryList/MyLibraryList";
+import { CustomRow, CustomRowTwe, Option, Selector } from './Select.styled';
+import { getBookOwn } from '../../redux/books/operations';
+import { MyLibraryList } from '../MyLibraryList/MyLibraryList';
 
 export const Select = () => {
-  const [statusValue, setStatus] = useState("All books");
+  const [statusValue, setStatus] = useState('All books');
   const dispatch = useDispatch();
 
-  const handelStatus = (e) => {
+  const handelStatus = e => {
     const status = e.target.value;
 
     setStatus(status);
@@ -28,8 +28,8 @@ export const Select = () => {
           <Option value="Done">Done</Option>
           <Option value="All books">All books</Option>
         </Selector>
-        <CustomRow></CustomRow>
-        <CustomRowTwe></CustomRowTwe>
+        {/* <CustomRow></CustomRow>
+        <CustomRowTwe></CustomRowTwe> */}
       </div>
       <MyLibraryList status={statusValue.toLowerCase()} />
     </>

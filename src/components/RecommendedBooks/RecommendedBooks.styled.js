@@ -14,6 +14,7 @@ export const WrapperBooks = styled.div`
     margin: 0;
     padding-bottom: 40px;
     width: 847px;
+
     padding: 45px 40px 20px 40px;
   }
 `;
@@ -23,6 +24,19 @@ export const Text = styled.p`
   margin-bottom: 34px;
   @media screen and (min-width: 1440px) {
     font-size: ${({ theme }) => theme.fontSizes.medium};
+    margin-bottom: 28px;
+  }
+`;
+
+export const TextLibrary = styled.p`
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  font-size: ${({ theme }) => theme.fontSizes.xl};
+  margin-bottom: 83px;
+  @media screen and (min-width: 768px) {
+    font-size: ${({ theme }) => theme.fontSizes.medium};
+    margin-bottom: 100px;
+  }
+  @media screen and (min-width: 1440px) {
     margin-bottom: 28px;
   }
 `;

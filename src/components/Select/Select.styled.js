@@ -1,17 +1,22 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 export const Selector = styled.select`
   background-color: transparent;
   border-radius: ${({ theme }) => theme.radii.m};
   border: ${({ theme }) => theme.borders.normal};
   border-color: ${({ theme }) => theme.colors.liteWhite};
-  width: 153px;
-  padding: 14px;
   color: ${({ theme }) => theme.colors.white};
-  position: absolute;
-  top: 45px;
-  right: 39px;
-  appearance: none;
   outline: 0;
+  width: 120px;
+  padding: 14px;
+  position: absolute;
+  top: 35px;
+  right: 20px;
+  appearance: none;
+  @media screen and (min-width: 1440px) {
+    width: 153px;
+    top: 45px;
+    right: 39px;
+  }
 `;
 export const Option = styled.option`
   color: ${({ theme }) => theme.colors.grey};
@@ -21,7 +26,7 @@ export const Option = styled.option`
 `;
 export const CustomRow = styled.span`
   display: block;
-  content: "";
+  content: '';
   background-color: ${({ theme }) => theme.colors.white};
   width: 10px;
   padding: 1px;
@@ -32,7 +37,7 @@ export const CustomRow = styled.span`
 `;
 export const CustomRowTwe = styled.span`
   display: block;
-  content: "";
+  content: '';
   background-color: ${({ theme }) => theme.colors.white};
   width: 10px;
   padding: 1px;
