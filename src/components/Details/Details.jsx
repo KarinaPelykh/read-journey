@@ -62,6 +62,13 @@ export const Details = () => {
             })?.map(({ data, pagesReadCount, inform }) => (
               <li key={data}>
                 <WrapperMain>
+                  <svg
+                    width="20"
+                    height="20"
+                    style={{ position: 'absolute', left: '-27px' }}
+                  >
+                    <use xlinkHref={icon + '#block'}></use>
+                  </svg>
                   <Data>{formatDate(data)}</Data>
                   <Pages>
                     {pagesReadCount}

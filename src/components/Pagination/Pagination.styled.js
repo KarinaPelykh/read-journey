@@ -6,10 +6,13 @@ export const WrapperPagination = styled.div`
   align-items: center;
   position: absolute;
   top: 35px;
-  left: 230px;
+  left: 170px;
+
+  @media screen and (min-width: 375px) {
+    left: 230px;
+  }
   @media screen and (min-width: 768px) {
     top: 44px;
-
     left: 520px;
   }
   @media screen and (min-width: 1440px) {

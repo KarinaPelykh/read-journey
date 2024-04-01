@@ -29,9 +29,15 @@ export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.darkGray};
   border-radius: ${({ theme }) => theme.radii.m};
   padding: 9px 32px;
+  width: 240px;
+  /* height: 256px; */
+
+  @media screen and (min-width: 768px) {
+    width: 100%;
+  }
   @media screen and (min-width: 1440px) {
     width: 313px;
-    height: auto;
+    /* height: 373px; */
   }
 `;
 
@@ -43,6 +49,7 @@ export const WrapperMain = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 28px;
+  position: relative;
 `;
 export const ContainerInfo = styled.div`
   display: flex;
@@ -99,6 +106,8 @@ export const VerticalDiv = styled.div`
 `;
 export const DivDiary = styled.div`
   margin-top: 20px;
+  overflow-y: auto;
+  height: 373px;
 `;
 export const Text = styled.p`
   color: ${({ theme }) => theme.colors.white};

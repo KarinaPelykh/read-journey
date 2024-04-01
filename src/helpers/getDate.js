@@ -17,10 +17,10 @@ const getDate = ({ progress, totalPage }) => {
         const data = new Date(finishReading).toDateString();
         const entry = total.find(entry => entry.data === data);
         const pagesReadCount =
-          status === 'inactive' ? finishPage - startPage : 0;
+          status === 'inactive' ? finishPage - startPage + 1 : 0;
         const progressReading = parseInt(
           (pagesReadCount / totalPage) * 100
-        ).toFixed(1);
+        ).toFixed(2);
 
         if (entry) {
           entry.readTotalPage = (entry.readTotalPage || 0) + pagesReadCount;
@@ -49,7 +49,7 @@ const getDate = ({ progress, totalPage }) => {
             ],
           });
         }
-        console.log(total);
+        console.log('total', total);
         return total;
       },
       []

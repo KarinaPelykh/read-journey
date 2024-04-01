@@ -10,9 +10,16 @@ export const Div = styled.div`
   @media screen and (min-width: 768px) {
     margin-top: 0px;
   }
+  @media screen and (min-width: 1440px) {
+    margin-top: 40px;
+  }
 `;
 export const Wrapper = styled.div`
   width: 321px;
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: auto;
+  }
 `;
 export const WrapperProgress = styled.div`
   width: 295px;

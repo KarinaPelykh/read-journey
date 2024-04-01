@@ -23,17 +23,17 @@ export const Span = styled.span`
 
 export const MyListBook = styled.ul`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 20px;
+  justify-items: center;
+  @media screen and (min-width: 375px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
   @media screen and (min-width: 768px) {
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
   }
   @media screen and (min-width: 1440px) {
-    display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
   }
 `;
 

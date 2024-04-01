@@ -20,11 +20,25 @@ export const Button = styled.button`
   font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
 
+  &:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ffee10;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: #ffee10;
+    text-decoration: none;
+    box-shadow: 0 0 5px #ffee10;
+    text-shadow: 0 0 5px #ffee10;
+  }
+
   ${({ variant }) =>
     variant === 'log-out' &&
     css`
       @media screen and (max-width: 767px) {
         padding: 10px 20px;
+        display: none;
       }
       margin-right: 0px;
       margin-left: 16px;

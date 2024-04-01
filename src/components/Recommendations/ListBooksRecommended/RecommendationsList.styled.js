@@ -1,20 +1,26 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const List = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
-  li {
-    margin-right: 20px;
-  }
-  li:last-child {
-    margin: 0;
+
+  @media screen and (min-width: 375px) {
+    li {
+      margin-right: 20px;
+    }
+    li:last-child {
+      margin: 0;
+    }
   }
 `;
 export const Img = styled.img`
   border-radius: ${({ theme }) => theme.radii.s};
-  width: 71px;
+  width: 65px;
   height: 107px;
+  @media screen and (min-width: 375px) {
+    width: 71px;
+  }
 `;
 export const Title = styled.h1`
   width: 71px;

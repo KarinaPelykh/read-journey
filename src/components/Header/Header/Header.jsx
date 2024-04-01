@@ -39,14 +39,13 @@ export const Header = () => {
             <LogoMain variant="logo-header" />
             {isLoggedIn ? <UserNav /> : <AuthNav />}
             <UserBar />
-            {/* {!isLoggedIn ? null : (
+            {!isLoggedIn ? null : (
               <Buttons
                 onClick={handelLogout}
                 variant="log-out"
                 prop={'Log out'}
               />
-
-            )} */}
+            )}
             <ButtonMenu />
           </Nav>
         </HeaderDiv>

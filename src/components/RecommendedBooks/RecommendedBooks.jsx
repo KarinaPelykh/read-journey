@@ -5,7 +5,7 @@ import { BookFilter } from '../Filter/BookFilter/BookFilter';
 import { useSelector } from 'react-redux';
 import { filterSelector } from '../../redux/filter/selectors';
 import { MyBook } from '../MyBook/MyBook';
-import { Select } from '../Select/Select';
+import { Selector } from '../Select/Select';
 
 export const RecommendedBooks = () => {
   const location = useLocation();
@@ -28,7 +28,7 @@ export const RecommendedBooks = () => {
       ) : (
         <>
           <TextLibrary>My library</TextLibrary>
-          <Select />
+          <Selector />
         </>
       )}
     </WrapperBooks>
