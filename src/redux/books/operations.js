@@ -8,7 +8,6 @@ export const fetchBooks = createAsyncThunk(
       const { data } = await instance.get(
         `/books/recommend?page=${page}&limit=${limit}`
       );
-      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -88,7 +87,6 @@ export const startReading = createAsyncThunk(
         id,
         page,
       });
-      console.log('startReading', data);
       return data;
     } catch (error) {
       return rejectWithValue(error.response.data.message);
@@ -103,7 +101,6 @@ export const finishedReading = createAsyncThunk(
         id,
         page,
       });
-      console.log('finishedReading', data);
       return data;
     } catch (error) {
       return rejectWithValue(error.response.data.message);

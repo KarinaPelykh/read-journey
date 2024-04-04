@@ -49,7 +49,6 @@ const getDate = ({ progress, totalPage }) => {
             ],
           });
         }
-        console.log('total', total);
         return total;
       },
       []

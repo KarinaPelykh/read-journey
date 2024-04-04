@@ -14,6 +14,7 @@ export const Form = styled.form`
   }
   @media screen and (min-width: 1440px) {
     margin-bottom: 80px;
+    margin-right: 0;
     div:nth-child(4) {
       margin: 0;
       margin-bottom: 20px;

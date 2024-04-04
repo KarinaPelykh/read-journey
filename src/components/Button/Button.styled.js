@@ -19,18 +19,18 @@ export const Button = styled.button`
   width: fit-content;
   font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
-
+  transition-property: background-color, color, text-shadow, box-shadow;
+  transition-duration: 250ms;
   &:hover::before {
     transform: scale(1.1);
-    box-shadow: 0 0 15px #ffee10;
-    text-decoration: none;
+    box-shadow: 0 0 15px #000;
   }
 
   &:hover {
-    color: #ffee10;
-    text-decoration: none;
-    box-shadow: 0 0 5px #ffee10;
-    text-shadow: 0 0 5px #ffee10;
+    color: #000;
+    background-color: #fff;
+    box-shadow: 0 0 5px #000;
+    text-shadow: 0 0 5px #000;
   }
 
   ${({ variant }) =>

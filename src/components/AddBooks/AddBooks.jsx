@@ -12,7 +12,7 @@ export const AddBook = () => {
     const author = form.elements.author.value;
     const totalPages = form.elements.pages.value;
     form.reset();
-    console.log({ title, author, totalPages });
+
     dispatch(addNewBook({ title, author, totalPages }))
       .unwrap()
       .then(() =>

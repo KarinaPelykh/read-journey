@@ -17,7 +17,7 @@ export const Modal = styled.div`
     margin-left: auto;
   }
   transform: translateX(100%);
-  transition: transform 1000ms ease;
+  transition: transform 250ms ease;
 
   &.open {
     transform: translateX(0%);

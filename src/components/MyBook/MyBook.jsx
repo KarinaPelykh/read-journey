@@ -12,7 +12,6 @@ import icon from '../../images/sprite.svg';
 import book from '../../images/img-book.png';
 export const MyBook = () => {
   const readBook = useSelector(redBookSelector);
-  console.log(readBook);
   return (
     <>
       {readBook?.timeLeftToRead ? (

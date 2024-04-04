@@ -1,12 +1,13 @@
-import { useState } from "react";
-import { Author, BookImg, QuantityPages, Title } from "./BookItem.styled";
-import { ModalWindow } from "../Modal/ModalWindow";
+import { useState } from 'react';
+import { Author, BookImg, QuantityPages, Title } from './BookItem.styled';
+import { ModalWindow } from '../Modal/ModalWindow';
 
 export const BookItem = ({ img, title, author, pages, id }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
     setIsOpen(!isOpen);
+    document.body.classList.toggle('modal-open');
   };
   return (
     <>

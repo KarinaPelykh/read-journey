@@ -23,7 +23,7 @@ export const WrapperForm = styled.div`
   @media screen and (min-width: 1439px) {
     padding: 40px 64px 40px 64px;
     max-width: 600px;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 
     margin-right: 16px;
   }

@@ -5,38 +5,26 @@ export const Selectors = styled(Select)`
   border-radius: ${({ theme }) => theme.radii.m};
   border: ${({ theme }) => theme.borders.normal};
   border-color: ${({ theme }) => theme.colors.liteWhite};
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   outline: 0;
-  width: 120px;
-  height: 46px;
-  padding: 14px;
 
-  &.css-b62m3t-container {
-    position: absolute !important;
-    top: 45px;
-    right: 39px;
-    cursor: default;
-  }
+  position: absolute !important;
+  top: 45px;
+  right: 39px;
+  cursor: none;
+  position: relative;
 
   .react-select__control {
     background-color: transparent !important;
     border: none !important;
-    outline: none;
+    padding: 12px;
+    width: 120px;
+    height: 46px;
+    outline: 0;
     box-shadow: none;
-    display: flex;
   }
-  /* .react-select__control--is-focused {
-    background-color: transparent !important;
-    border: none !important;
-    outline: none;
-    box-shadow: none;
-    display: flex;
-  } */
+
   .css-art2ul-ValueContainer2 {
-    /* overflow: visible !important;
-    padding: 0; */
+    padding: 0;
   }
   .css-1dimb5e-singleValue {
     color: ${({ theme }) => theme.colors.white} !important;
@@ -45,32 +33,33 @@ export const Selectors = styled(Select)`
   .css-1u9des2-indicatorSeparator {
     display: none;
   }
-  .css-1xc3v61-indicatorContainer2 {
+  .react-select__indicator {
     padding: 0;
   }
 
+  .css-1xc3v61-indicatorContainer2 {
+    padding: 0;
+    align-items: start;
+  }
+  .css-1xc3v61-indicatorContainer {
+    padding: 0;
+  }
   .css-13cymwt-control:hover {
     border: none;
   }
   .css-1nmdiq5-menu {
     background-color: ${({ theme }) => theme.colors.darkGray};
     border-radius: ${({ theme }) => theme.radii.m};
-
-    width: 153px;
+    border-color: transparent;
     padding: 14px;
     border: none;
     left: -1px;
   }
-  /* .react-select__input {
-    display: none;
-  } */
 
   .css-d7l1ni-option {
     background-color: transparent !important;
   }
-  /* .css-w9q2zk-Input2 {
-    display: block;
-  } */
+
   .css-tr4s17-option:active {
     background-color: transparent !important;
   }
@@ -102,11 +91,24 @@ export const Selectors = styled(Select)`
 
   .react-select__control--menu-is-open .react-select__indicator svg {
     transform: rotate(180deg);
+    transition-property: rotate;
+    transition-duration: 250ms;
+  }
+
+  .css-tj5bde-Svg {
+    fill: #fff;
   }
   @media screen and (min-width: 1440px) {
     width: 153px;
     position: absolute;
-
     right: 39px;
+
+    .react-select__control {
+      background-color: transparent !important;
+      border: none !important;
+      padding: 12px;
+      width: 100%;
+      height: 46px;
+    }
   }
 `;

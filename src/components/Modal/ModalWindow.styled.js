@@ -52,8 +52,13 @@ export const ButtonClose = styled.div`
   position: absolute;
   top: 10px;
   right: 10px;
+
+  &:hover {
+    transition: rotate(360deg);
+  }
 `;
 
 export const ButtonLink = styled(Link)`
   color: transparent;
+  text-decoration: none;
 `;

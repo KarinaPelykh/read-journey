@@ -4,7 +4,7 @@ import { Button } from './ButtonMenu.styled';
 import { BurgerMenu } from '../BurgerMenu';
 export const ButtonMenu = () => {
   const [open, setOpen] = useState(false);
-  console.log(open);
+
   const handelOpen = () => {
     setOpen(!open);
     document.body.classList.toggle('modal-open');

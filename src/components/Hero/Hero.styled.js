@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const WrapperForm = styled.div`
   background: ${({ theme }) => theme.colors.lightBlack};
@@ -18,11 +18,17 @@ export const WrapperForm = styled.div`
 
     padding: 80px 97px 0px 97px;
     max-width: 600px;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     margin-top: 0;
   }
 `;
 export const Images = styled.img`
   width: 393px;
   height: auto;
+`;
+export const Picture = styled.picture`
+  display: block;
+  @media only screen and (min-width: 1440px) {
+    margin-top: 22px;
+  }
 `;

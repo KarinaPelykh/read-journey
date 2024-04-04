@@ -34,18 +34,16 @@ export const MyLibraryList = ({ status }) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const [amountBook, setAmountBook] = useState(0);
-
   useEffect(() => {
-    if (newBook.length !== amountBook) {
+    if (newBook.length > 0) {
       setIsOpen(true);
-      // setAmountBook(newBook.length);
     }
   }, [newBook]);
 
   const toggle = () => {
-    setIsOpen(false);
+    setIsOpen(!isOpen);
   };
+
   return (
     <>
       {newBook.length !== 0 ? (

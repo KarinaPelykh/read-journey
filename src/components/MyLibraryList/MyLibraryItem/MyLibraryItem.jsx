@@ -1,10 +1,10 @@
-import book from "../../../images/img-book.png";
-import icon from "../../../images/sprite.svg";
+import book from '../../../images/img-book.png';
+import icon from '../../../images/sprite.svg';
 
-import { useState } from "react";
-import { deleteBook } from "../../../redux/books/operations";
-import { useDispatch } from "react-redux";
-import { ModalRead } from "../../Modal/ModalRead";
+import { useState } from 'react';
+import { deleteBook } from '../../../redux/books/operations';
+import { useDispatch } from 'react-redux';
+import { ModalRead } from '../../Modal/ModalRead';
 import {
   Author,
   BookImg,
@@ -12,7 +12,7 @@ import {
   QuantityPages,
   Title,
   WrapperItem,
-} from "./MyLibraryItem.styled";
+} from './MyLibraryItem.styled';
 
 export const MyLibraryItem = ({ id, img, title, author, pages }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +32,7 @@ export const MyLibraryItem = ({ id, img, title, author, pages }) => {
           </div>
           <ButtonDelete onClick={() => dispatch(deleteBook(id))}>
             <svg width="14" height="14">
-              <use xlinkHref={icon + "#trash"}></use>
+              <use xlinkHref={icon + '#trash'}></use>
             </svg>
           </ButtonDelete>
         </WrapperItem>

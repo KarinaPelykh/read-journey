@@ -9,6 +9,9 @@ export const Form = styled.form`
     margin-right: 34px;
     margin-bottom: 0;
   }
+  @media screen and (min-width: 1440px) {
+    margin: 0;
+  }
 `;
 export const Title = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.xs};

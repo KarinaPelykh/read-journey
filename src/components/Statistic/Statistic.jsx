@@ -24,7 +24,6 @@ export const Statistic = () => {
   });
 
   const { pagesRead, speed } = data;
-  console.log({ pagesRead, speed });
   return (
     <>
       <TextSeed>

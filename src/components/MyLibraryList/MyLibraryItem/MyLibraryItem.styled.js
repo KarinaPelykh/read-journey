@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const BookImg = styled.img`
   border-radius: ${({ theme }) => theme.radii.s};
@@ -43,6 +43,12 @@ export const ButtonDelete = styled.button`
   background-color: rgba(232, 80, 80, 0.1);
   width: 28px;
   height: 28px;
+  transition-property: border-color, background-color;
+  transition-duration: 250ms;
+  &:hover {
+    border-color: #f40009;
+    background-color: rgba(232, 80, 80, 0.1);
+  }
 `;
 export const WrapperItem = styled.div`
   display: flex;
