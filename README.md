@@ -41,6 +41,6 @@
 # Visual inspection
 
 <section>
-<img src="src/images/Readme/screenshot1.png" alt="photo"   width="500" height="420">
-<img src="src/images/Readme/screenshot2.png" alt="photo"  width="500" height="420">
+<img src="src/images/Readme/screenshot1.png" alt="photo"   width="500">
+<img src="src/images/Readme/screenshot2.png" alt="photo"  width="500">
 </section>
