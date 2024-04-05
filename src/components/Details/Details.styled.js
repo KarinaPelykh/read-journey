@@ -29,7 +29,7 @@ export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.darkGray};
   border-radius: ${({ theme }) => theme.radii.m};
   padding: 9px 32px;
-  width: 240px;
+  /* width: 240px; */
   /* height: 256px; */
 
   @media screen and (min-width: 768px) {

@@ -4,11 +4,9 @@ export const WrapperBooks = styled.div`
   padding: 40px 20px;
   border-radius: ${({ theme }) => theme.radii.xl};
   width: 100%;
-  height: 407px;
   position: relative;
   @media screen and (min-width: 768px) {
     padding: 40px;
-    height: auto;
   }
   @media screen and (min-width: 1440px) {
     display: flex;

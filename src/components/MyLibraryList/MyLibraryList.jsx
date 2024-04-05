@@ -42,7 +42,7 @@ export const MyLibraryList = ({ status }) => {
 
   const toggle = () => {
     setIsOpen(!isOpen);
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'auto';
   };
 
   return (

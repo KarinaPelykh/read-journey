@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 export const Form = styled.form`
-  margin-right: 40px;
+  @media screen and (min-width: 768px) {
+    margin-right: 40px;
+  }
   @media screen and (min-width: 1440px) {
     margin-right: 0;
   }

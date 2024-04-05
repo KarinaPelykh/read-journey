@@ -9,6 +9,9 @@ export const BookItem = ({ img, title, author, pages, id }) => {
   const toggle = () => {
     setIsOpen(!isOpen);
     document.body.style.overflow = 'hidden';
+    if (isOpen) {
+      document.body.style.overflow = 'auto';
+    }
   };
   return (
     <>

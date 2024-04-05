@@ -12,6 +12,10 @@ export const ModalRead = ({ open, toggle, children, id, variant }) => {
   const handelAddBookRead = () => {
     dispatch(addReadBook({ id }));
     navigate('/reading');
+
+    if (open) {
+      document.body.style.overflow = 'auto';
+    }
   };
   useEffect(() => {
     const handelKeyEscape = e => {

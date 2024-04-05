@@ -21,6 +21,9 @@ export const MyLibraryItem = ({ id, img, title, author, pages }) => {
   const toggle = () => {
     setIsOpen(!isOpen);
     document.body.style.overflow = 'hidden';
+    if (isOpen) {
+      document.body.style.overflow = 'auto';
+    }
   };
   return (
     <>
