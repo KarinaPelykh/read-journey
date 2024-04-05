@@ -1,13 +1,30 @@
 import 'modern-normalize';
+
+import GilroyBold from '../assets/fonts/Gilroy-Bold.ttf';
+import GilroyMedium from '../assets/fonts/Gilroy-Medium.ttf';
 import { createGlobalStyle } from 'styled-components';
-export default createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
+
+
+
+@font-face {
+  font-family: 'Gilroy-Bold';
+  src:  url(${GilroyBold});
+   font-weight: 700 ; 
+}
+
+@font-face {
+  font-family: 'Gilroy-Medium';
+  src:  url(${GilroyMedium});
+   font-weight: 500 ; 
+}
 
 html {
   scroll-behavior: smooth;
 }
 body {
-  font-family:'Roboto' sans-serif;
- 
+  font-family:'Gilroy-Medium';
+
   background:#141414;
   min-height:100vh;
   color:#F9F9F9
@@ -50,3 +67,4 @@ button {
   }
 
   `;
+export default GlobalStyles;

@@ -20,16 +20,16 @@ export const Header = () => {
   const isLoggedIn = useSelector(isLoggedInSelect);
 
   const handelLogout = () => {
-    dispatch(logOutThunk()).then(() => {
-      navigate('/');
-      toast
-        .success('You Log-out', {
+    dispatch(logOutThunk())
+      .then(() => {
+        navigate('/');
+        toast.success('You Log-out', {
           position: 'top-right',
           hideProgressBar: true,
           theme: 'dark',
-        })
-        .catch(error => toast.error(error));
-    });
+        });
+      })
+      .catch(error => toast.error(error));
   };
   return (
     <>

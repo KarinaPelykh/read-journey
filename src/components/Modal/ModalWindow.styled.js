@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 export const Overlay = styled.div`
@@ -47,6 +46,9 @@ export const Modal = styled.div`
         }
       `};
   }
+  h1 {
+    text-align: center;
+  }
 `;
 export const ButtonClose = styled.div`
   position: absolute;
@@ -56,9 +58,4 @@ export const ButtonClose = styled.div`
   &:hover {
     transition: rotate(360deg);
   }
-`;
-
-export const ButtonLink = styled(Link)`
-  color: transparent;
-  text-decoration: none;
 `;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import book from '../../../images/img-book.png';
 import icon from '../../../images/sprite.svg';
 
@@ -49,4 +50,12 @@ export const MyLibraryItem = ({ id, img, title, author, pages }) => {
       )}
     </>
   );
+};
+
+MyLibraryItem.propTypes = {
+  author: PropTypes.string,
+  id: PropTypes.string,
+  img: PropTypes.any,
+  pages: PropTypes.number,
+  title: PropTypes.string,
 };

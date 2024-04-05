@@ -1,13 +1,17 @@
+import PropTypes from 'prop-types';
 import { Buttons } from '../Button/Button';
-import { Overlay, Modal, ButtonClose, ButtonLink } from './ModalWindow.styled';
+import { Overlay, Modal, ButtonClose } from './ModalWindow.styled';
 import icons from '../../images/sprite.svg';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addReadBook } from '../../redux/books/operations';
+import { useNavigate } from 'react-router-dom';
 export const ModalRead = ({ open, toggle, children, id, variant }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handelAddBookRead = () => {
     dispatch(addReadBook({ id }));
+    navigate('/reading');
   };
   useEffect(() => {
     const handelKeyEscape = e => {
@@ -40,12 +44,22 @@ export const ModalRead = ({ open, toggle, children, id, variant }) => {
           <>
             {children}
 
-            <ButtonLink onClick={handelAddBookRead} to="/reading">
-              <Buttons prop="Start reading" variant="buttonModal" />
-            </ButtonLink>
+            <Buttons
+              onClick={handelAddBookRead}
+              prop="Start reading"
+              variant="buttonModal"
+            />
           </>
         </Modal>
       )}
     </Overlay>
   );
+};
+
+ModalRead.propTypes = {
+  children: PropTypes.any,
+  id: PropTypes.number,
+  open: PropTypes.bool,
+  toggle: PropTypes.func,
+  variant: PropTypes.any,
 };

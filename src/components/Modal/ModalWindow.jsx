@@ -1,17 +1,20 @@
+import PropTypes from 'prop-types';
 import { Buttons } from '../Button/Button';
-import { Overlay, Modal, ButtonClose, ButtonLink } from './ModalWindow.styled';
+import { Overlay, Modal, ButtonClose } from './ModalWindow.styled';
 import icons from '../../images/sprite.svg';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addBooksWithRecommended } from '../../redux/books/operations';
 import { newBooksSelector } from '../../redux/books/selectors';
 import images from '../../images/pngwing.com.png';
+import { useNavigate } from 'react-router-dom';
 export const ModalWindow = ({ children, open, toggle, id, title, variant }) => {
   const bookNew = useSelector(newBooksSelector);
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const handelAddBook = () => {
     dispatch(addBooksWithRecommended({ id }));
+    navigate('/library');
   };
 
   useEffect(() => {
@@ -51,17 +54,24 @@ export const ModalWindow = ({ children, open, toggle, id, title, variant }) => {
             <>
               {children}
 
-              <ButtonLink to="/library">
-                <Buttons
-                  prop="Add to library"
-                  variant="buttonModal"
-                  onClick={handelAddBook}
-                />
-              </ButtonLink>
+              <Buttons
+                prop="Add to library"
+                variant="buttonModal"
+                onClick={handelAddBook}
+              />
             </>
           )}
         </Modal>
       )}
     </Overlay>
   );
+};
+
+ModalWindow.propTypes = {
+  children: PropTypes.any,
+  id: PropTypes.number,
+  open: PropTypes.bool,
+  title: PropTypes.string,
+  toggle: PropTypes.func,
+  variant: PropTypes.any,
 };

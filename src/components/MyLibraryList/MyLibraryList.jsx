@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { newBooksSelector } from '../../redux/books/selectors';
 import Images from '../../images/bookDefault.png';
@@ -35,10 +36,8 @@ export const MyLibraryList = ({ status }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    if (newBook.length > 0) {
-      setIsOpen(true);
-    }
-  }, [newBook]);
+    setIsOpen(true);
+  }, []);
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -83,4 +82,8 @@ export const MyLibraryList = ({ status }) => {
       ) : null}
     </>
   );
+};
+
+MyLibraryList.propTypes = {
+  status: PropTypes.string,
 };

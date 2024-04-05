@@ -1,13 +1,18 @@
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { isLoggedInSelect } from '../../redux/auth/selectors';
-import { Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 
 export const PublicRoute = ({ children }) => {
-  const icLoggedIn = useSelector(isLoggedInSelect);
+  const isLoggedIn = useSelector(isLoggedInSelect);
   const location = useLocation();
 
-  if (icLoggedIn) {
+  if (isLoggedIn) {
     return <Navigate to={location.state?.from ?? '/'} />;
   }
   return children;
+};
+
+PublicRoute.propTypes = {
+  children: PropTypes.any,
 };

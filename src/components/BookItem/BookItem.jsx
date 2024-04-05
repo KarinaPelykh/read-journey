@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Author, BookImg, QuantityPages, Title } from './BookItem.styled';
 import { ModalWindow } from '../Modal/ModalWindow';
@@ -27,4 +28,12 @@ export const BookItem = ({ img, title, author, pages, id }) => {
       )}
     </>
   );
+};
+
+BookItem.propTypes = {
+  author: PropTypes.string,
+  id: PropTypes.string,
+  img: PropTypes.any,
+  pages: PropTypes.number,
+  title: PropTypes.string,
 };

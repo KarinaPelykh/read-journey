@@ -1,4 +1,5 @@
-import { WrapperButton, Button, LinkOnLOgin } from "./Button.styled";
+import PropTypes from 'prop-types';
+import { WrapperButton, Button, LinkOnLOgin } from './Button.styled';
 
 export const Buttons = ({ prop, text, to, onClick, variant }) => {
   return (
@@ -9,4 +10,12 @@ export const Buttons = ({ prop, text, to, onClick, variant }) => {
       <LinkOnLOgin to={to}>{text}</LinkOnLOgin>
     </WrapperButton>
   );
+};
+
+Buttons.propTypes = {
+  onClick: PropTypes.func,
+  prop: PropTypes.any,
+  text: PropTypes.string,
+  to: PropTypes.string,
+  variant: PropTypes.string,
 };

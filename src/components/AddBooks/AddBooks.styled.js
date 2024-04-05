@@ -27,7 +27,7 @@ export const Title = styled.p`
   margin-bottom: 8px;
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   font-size: ${({ theme }) => theme.fontSizes.xs};
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
     font-size: ${({ theme }) => theme.fontSizes.s};
   }
 `;

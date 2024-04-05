@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
-import { Container } from "../../components/Container/Container.styled";
-import { DivAnimation, Text } from "./HomePage.style";
-import BIRDS from "vanta/dist/vanta.birds.min";
+import { useEffect, useRef, useState } from 'react';
+import { Container } from '../../components/Container/Container.styled';
+import { DivAnimation, Text } from './HomePage.style';
+import BIRDS from 'vanta/dist/vanta.birds.min';
 
 export const HomePage = () => {
   const [vantaEffect, setVantaEffect] = useState(null);
@@ -10,8 +10,6 @@ export const HomePage = () => {
     if (!vantaEffect) {
       setVantaEffect(
         BIRDS({
-          // el: myRef.current,
-
           el: myRef.current,
           mouseControls: true,
           touchControls: true,
@@ -23,7 +21,7 @@ export const HomePage = () => {
           backgroundColor: 0x141414,
           color1: 0xae0000,
           color2: 0xd1ff,
-          colorMode: "variance",
+          colorMode: 'variance',
           wingSpan: 40.0,
           separation: 100.0,
           alignment: 25.0,
@@ -40,7 +38,7 @@ export const HomePage = () => {
 
   return (
     <Container ref={myRef}>
-      <DivAnimation>
+      <DivAnimation id="my-background">
         <Text>WELCOME ON BOOK APP</Text>
       </DivAnimation>
     </Container>

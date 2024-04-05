@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { isLoggedInSelect } from '../../redux/auth/selectors';
 import { Navigate, useLocation } from 'react-router-dom';
@@ -10,4 +11,8 @@ export const PrivateRoute = ({ children }) => {
     return <Navigate to={'/login'} state={{ from: location }} />;
   }
   return children;
+};
+
+PrivateRoute.propTypes = {
+  children: PropTypes.any,
 };
