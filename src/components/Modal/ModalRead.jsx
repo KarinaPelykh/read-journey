@@ -17,6 +17,7 @@ export const ModalRead = ({ open, toggle, children, id, variant }) => {
     const handelKeyEscape = e => {
       if (e.code === 'Escape') {
         toggle();
+        document.body.style.overflow = 'auto';
       }
     };
     document.addEventListener('keydown', handelKeyEscape);
@@ -28,6 +29,7 @@ export const ModalRead = ({ open, toggle, children, id, variant }) => {
   const handelCloseClick = e => {
     if (e.target === e.currentTarget) {
       toggle();
+      document.body.style.overflow = 'auto';
     }
   };
 

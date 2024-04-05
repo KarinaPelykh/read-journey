@@ -20,6 +20,7 @@ export const MyLibraryItem = ({ id, img, title, author, pages }) => {
   const dispatch = useDispatch();
   const toggle = () => {
     setIsOpen(!isOpen);
+    document.body.style.overflow = 'hidden';
   };
   return (
     <>

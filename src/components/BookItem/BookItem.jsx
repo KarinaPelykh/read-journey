@@ -8,7 +8,7 @@ export const BookItem = ({ img, title, author, pages, id }) => {
 
   const toggle = () => {
     setIsOpen(!isOpen);
-    document.body.classList.toggle('modal-open');
+    document.body.style.overflow = 'hidden';
   };
   return (
     <>
