@@ -37,10 +37,12 @@ export const MyLibraryList = ({ status }) => {
 
   useEffect(() => {
     setIsOpen(true);
+    document.body.style.overflow = 'hidden';
   }, []);
 
   const toggle = () => {
     setIsOpen(!isOpen);
+    document.body.style.overflow = 'hidden';
   };
 
   return (
