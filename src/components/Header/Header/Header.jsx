@@ -18,7 +18,7 @@ export const Header = () => {
   const locationUser =
     location.pathname === '/login' || location.pathname === '/register';
   const isLoggedIn = useSelector(isLoggedInSelect);
-
+  const userNav = location.pathname === '/';
   const handelLogout = () => {
     dispatch(logOutThunk())
       .then(() => {
@@ -46,7 +46,7 @@ export const Header = () => {
                 prop={'Log out'}
               />
             )}
-            <ButtonMenu />
+            {userNav ? null : <ButtonMenu />}
           </Nav>
         </HeaderDiv>
       )}
