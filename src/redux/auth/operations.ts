@@ -1,5 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { clear, instance, setToken } from '../../service/Api';
+import { MyKnownError, State } from '../../type/Auth.type';
+import { RootState } from '../store';
 
 export const registerThunk = createAsyncThunk(
   'auth/register',
@@ -10,7 +12,7 @@ export const registerThunk = createAsyncThunk(
       setToken(data.token);
       return data;
     } catch (error) {
-      return rejectWithValue(error.message);
+      return rejectWithValue(error as MyKnownError);
     }
   }
 );
@@ -23,7 +25,7 @@ export const loginThunk = createAsyncThunk(
       setToken(data.token);
       return data;
     } catch (error) {
-      return rejectWithValue(error.message);
+      return rejectWithValue(error as MyKnownError);
     }
   }
 );
@@ -35,25 +37,28 @@ export const logOutThunk = createAsyncThunk(
       await instance.post('/users/signout');
       clear();
     } catch (error) {
-      return rejectWithValue(error.message);
+      return rejectWithValue(error as MyKnownError);
     }
   }
 );
 
-export const refreshThunk = createAsyncThunk(
-  'auth/refresh',
-
-  async (_, { rejectWithValue, getState }) => {
-    const persited = getState().auth.token;
-    if (!persited) {
-      return rejectWithValue('NOne');
-    }
-    try {
-      setToken(persited);
-      const { data } = await instance.get('/users/current');
-      return data;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
+export const refreshThunk = createAsyncThunk<
+  undefined,
+  undefined,
+  {
+    rejectWithValue: MyKnownError;
+    state: RootState;
   }
-);
+>('auth/refresh', async (_, { rejectWithValue, getState }) => {
+  const persited = getState().auth.token;
+  if (!persited) {
+    return rejectWithValue('None');
+  }
+  try {
+    setToken(persited);
+    const { data } = await instance.get('/users/current');
+    return data;
+  } catch (error) {
+    return rejectWithValue(error as MyKnownError);
+  }
+});

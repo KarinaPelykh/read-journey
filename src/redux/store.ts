@@ -7,18 +7,18 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from "redux-persist";
-import { persistedReducerBook } from "./books/bookSlice";
-import storage from "redux-persist/lib/storage";
+} from 'redux-persist';
+import { persistedReducerBook } from './books/bookSlice';
+import storage from 'redux-persist/lib/storage';
 
-import { configureStore } from "@reduxjs/toolkit";
-import { authReducer } from "./auth/authSlice";
-import { filterReducer } from "./filter/filterSlice";
+import { configureStore } from '@reduxjs/toolkit';
+import { authReducer } from './auth/authSlice';
+import { filterReducer } from './filter/filterSlice';
 
 const persistConfig = {
-  key: "root",
+  key: 'root',
   storage,
-  whitelist: ["token"],
+  whitelist: ['token'],
 };
 
 const persistedReducer = persistReducer(persistConfig, authReducer);
@@ -29,7 +29,7 @@ export const store = configureStore({
     filter: filterReducer,
   },
 
-  middleware: (getDefaultMiddleware) =>
+  middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
@@ -38,3 +38,5 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

@@ -1,10 +1,10 @@
-import axios from "axios";
-// auth
+import axios from 'axios';
+
 export const instance = axios.create({
-  baseURL: "https://readjourney.b.goit.study/api",
+  baseURL: 'https://readjourney.b.goit.study/api',
 });
 
-export const setToken = (token) => {
+export const setToken = (token: string) => {
   instance.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 

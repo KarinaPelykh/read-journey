@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
+import { createRoot } from 'react-dom/client';
+import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { theme } from './stylesheet/theme.js';
 import { ThemeProvider } from 'styled-components';
@@ -9,7 +9,11 @@ import { persistor, store } from './redux/store.js';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ToastContainer } from 'react-toastify';
 import GlobalStyles from './stylesheet/globalStyles.js';
-ReactDOM.createRoot(document.getElementById('root')).render(
+
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement as HTMLElement);
+
+root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate persistor={persistor}>
