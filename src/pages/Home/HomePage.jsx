@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { Container } from '../../components/Container/Container.styled';
 import { DivAnimation, Text } from './HomePage.style';
 import BIRDS from 'vanta/dist/vanta.birds.min';
+import { Container } from '../../components/Container/Container.styled';
 
 export const HomePage = () => {
   const [vantaEffect, setVantaEffect] = useState(null);

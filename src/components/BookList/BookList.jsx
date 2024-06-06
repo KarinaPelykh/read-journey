@@ -1,21 +1,22 @@
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { fetchBooks } from '../../redux/books/operations';
 import { booksSelector } from '../../redux/books/selectors';
 import { ListBook } from './BookList.styled';
 import { isLoggedInSelect } from '../../redux/auth/selectors';
 import { Pagination } from '../Pagination/Pagination';
 import { BookItem } from '../BookItem/BookItem';
+import { useAppSelector } from '../../hooks/hooks';
 
 export const BookList = () => {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [sizeWindow, setSizeWindow] = useState(window.innerWidth);
-  const bookSelector = useSelector(booksSelector);
+  const bookSelector = useAppSelector(booksSelector);
   const totalPage = bookSelector.totalPages;
   const { results } = bookSelector;
 
-  const isLoggedIn = useSelector(isLoggedInSelect);
+  const isLoggedIn = useAppSelector(isLoggedInSelect);
   const dispatch = useDispatch();
 
   const handelSize = () => {

@@ -18,7 +18,6 @@ export const WrapperForm = styled.div`
 
     padding: 80px 97px 0px 97px;
     max-width: 600px;
-    /* min-height: 100vh; */
     margin-top: 0;
   }
 `;

@@ -12,8 +12,8 @@ import { persistedReducerBook } from './books/bookSlice';
 import storage from 'redux-persist/lib/storage';
 
 import { configureStore } from '@reduxjs/toolkit';
-import { authReducer } from './auth/authSlice';
 import { filterReducer } from './filter/filterSlice';
+import { authReducer } from './auth/authSlice';
 
 const persistConfig = {
   key: 'root',

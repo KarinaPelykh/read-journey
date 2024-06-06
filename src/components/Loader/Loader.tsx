@@ -1,5 +1,5 @@
-import { ProgressBar } from "react-loader-spinner";
-import { Div } from "./Loader.styled";
+import { ProgressBar } from 'react-loader-spinner';
+import { Div } from './Loader.styled';
 
 export const Loader = () => {
   return (
@@ -8,7 +8,7 @@ export const Loader = () => {
         visible={true}
         height="100"
         width="100"
-        color="#4fa94d"
+        // color="#4fa94d"
         ariaLabel="progress-bar-loading"
         wrapperStyle={{}}
         wrapperClass=""

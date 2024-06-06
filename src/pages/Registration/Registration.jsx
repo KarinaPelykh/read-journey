@@ -1,7 +1,7 @@
-import { Hero } from '../../components/Hero/Hero';
 import { Wrapper, WrapperForm, Comment, Span } from './Registration.styled';
-import { LogoMain } from '../../components/Logo/Logo';
 import { RegistrationFromCopm } from '../../components/RegisterFrom/RegisterFrom';
+import { Hero } from '../../components/Hero/Hero';
+import { LogoMain } from '../../components/Logo/Logo';
 export const RegistrationPage = () => {
   return (
     <Wrapper>

@@ -1,10 +1,9 @@
 import { useFormik } from 'formik';
-import { Buttons } from '../../components/Button/Button';
+import { Buttons } from '../Button/Button';
 import * as Yup from 'yup';
 import { useState } from 'react';
-import { ValidationRegister } from '../../components/Validation/ValidationRegister';
-import { ShowPassword } from '../../components/Validation/ShowPassword';
-import { useDispatch } from 'react-redux';
+import { ValidationRegister } from '../Validation/ValidationRegister';
+import { ShowPassword } from '../Validation/ShowPassword';
 import { loginThunk } from '../../redux/auth/operations';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -16,9 +15,10 @@ import {
   LoginForm,
   TextError,
 } from './LoginForm.styled';
+import { useAppDispatch } from '../../hooks/hooks';
 
 export const LoginFormComp = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const [openPsw, setOpenPsw] = useState(true);
   const formik = useFormik({

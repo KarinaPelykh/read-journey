@@ -15,7 +15,6 @@ export const Div = styled.div`
   }
 `;
 export const Wrapper = styled.div`
-  /* width: 321px; */
   @media screen and (min-width: 768px) {
     margin-bottom: auto;
     width: 321px;

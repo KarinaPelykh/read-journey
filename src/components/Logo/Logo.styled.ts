@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-export const WrapperSvg = styled.div`
+import { Prop } from '../Header/UserNav/UserNav.styled';
+
+export const WrapperSvg = styled.div<Prop>`
   display: flex;
   justify-content: start;
   align-items: center;
@@ -9,8 +11,8 @@ export const WrapperSvg = styled.div`
     margin-bottom: 104px;
   }
 
-  ${({ variant }) =>
-    variant === 'logo-header' &&
+  ${({ $variant }) =>
+    $variant === 'logo-header' &&
     css`
       @media screen and (min-width: 320px) {
         margin-bottom: 0;

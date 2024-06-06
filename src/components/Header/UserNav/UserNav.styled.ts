@@ -1,10 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
-export const List = styled.ul`
+export interface Prop {
+  $variant: string;
+}
+export const List = styled.ul<Prop>`
   display: none;
-  ${({ variant }) =>
-    variant === 'burger-menu' &&
+  ${({ $variant }) =>
+    $variant === 'burger-menu' &&
     css`
       display: flex;
       flex-direction: column;

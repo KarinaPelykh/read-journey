@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
 import { isLoggedInSelect } from '../../redux/auth/selectors';
 import { Navigate, useLocation } from 'react-router-dom';
 import { Children } from '../PrivateRoute/PrivateRoute';
+import { useAppSelector } from '../../hooks/hooks';
 
 export const PublicRoute = ({ children }: Children) => {
-  const isLoggedIn = useSelector(isLoggedInSelect);
+  const isLoggedIn = useAppSelector(isLoggedInSelect);
   const location = useLocation();
 
   if (isLoggedIn) {

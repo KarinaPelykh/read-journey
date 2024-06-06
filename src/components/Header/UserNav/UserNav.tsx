@@ -1,12 +1,15 @@
-import { Item, List } from './UserNav.styled';
-
+import React from 'react';
+import { List, Item } from './UserNav.styled';
 const routes = [
   { path: '/recommended', page: 'Home' },
   { path: '/library', page: 'My library ' },
 ];
-export const UserNav = ({ variant }) => {
+export type Variant = {
+  variant: string;
+};
+export const UserNav: React.FunctionComponent<Variant> = ({ variant }) => {
   return (
-    <List variant={variant}>
+    <List $variant={variant}>
       {routes.map(({ path, page }) => (
         <Item key={path} to={path}>
           {page}

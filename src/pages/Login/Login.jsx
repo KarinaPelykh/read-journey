@@ -1,8 +1,7 @@
+import { Comment, Span, WrapperForm, Wrapper } from './Login.styled';
+import { LoginFormComp } from '../../components/LoginForm/LoginForm';
 import { Hero } from '../../components/Hero/Hero';
 import { LogoMain } from '../../components/Logo/Logo';
-import { Comment, Span, WrapperForm, Wrapper } from './Login.styled';
-
-import { LoginFormComp } from '../../components/LoginForm/LoginForm';
 
 export const LoginPage = () => {
   return (

@@ -1,4 +1,7 @@
 import styled, { css } from 'styled-components';
+type Prop = {
+  $variant: string;
+};
 export const Form = styled.form`
   margin-bottom: 20px;
   div:nth-child(4) {
@@ -44,7 +47,7 @@ export const Label = styled.label`
   font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
 `;
-export const InputADD = styled.input`
+export const InputADD = styled.input<Prop>`
   width: 100%;
   padding: 16px 16px 16px 86px;
   border: none;
@@ -58,13 +61,13 @@ export const InputADD = styled.input`
     color: ${({ theme }) => theme.colors.white};
     font-size: ${({ theme }) => theme.fontSizes.ss};
   }
-  ${({ variant }) =>
-    variant === 'input2' &&
+  ${({ $variant }) =>
+    $variant === 'input2' &&
     css`
       padding: 16px 16px 16px 95px;
     `}
-  ${({ variant }) =>
-    variant === 'input3' &&
+  ${({ $variant }) =>
+    $variant === 'input3' &&
     css`
       padding: 16px 16px 16px 135px;
     `}

@@ -53,7 +53,7 @@ export const AddBook = () => {
         <InputADD
           name="pages"
           type="text"
-          variant="input3"
+          $variant="input3"
           pattern="^[0-9]+$"
           required
           placeholder="664"

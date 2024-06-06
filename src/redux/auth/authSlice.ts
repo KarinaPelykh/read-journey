@@ -1,21 +1,24 @@
-import { createSlice, isAnyOf } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice, isAnyOf } from '@reduxjs/toolkit';
 import {
   logOutThunk,
   loginThunk,
   refreshThunk,
   registerThunk,
 } from './operations';
-const pending = state => {
+import { MyKnownError, State, StateFunction } from '../../type/Auth.type';
+const pending = (state: StateFunction) => {
   state.loading = true;
   state.error = '';
-  state.isRefresh = true;
 };
-const rejected = (state, action) => {
+const rejected = (
+  state: StateFunction,
+  action: PayloadAction<MyKnownError | unknown>
+) => {
   state.loading = false;
   state.error = action.payload;
   state.isRefresh = false;
 };
-const initialState = {
+const initialState: State = {
   user: {
     name: '',
     email: '',
@@ -30,6 +33,7 @@ const initialState = {
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
+  reducers: {},
   extraReducers: builder => {
     builder
 
