@@ -1,21 +1,23 @@
-import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-
+import { useState } from 'react';
 import { Selectors } from './Select.styled';
-import { getBookOwn } from '../../redux/books/operations';
+// import { getBookOwn } from '../../redux/books/operations';
 import { MyLibraryList } from '../MyLibraryList/MyLibraryList';
-
+type Selector = {
+  value: string;
+  label: string;
+  handleStatusChange: (options: Selector | null) => void;
+};
 export const Selector = () => {
   const [statusValue, setStatus] = useState({
     value: 'All books',
     label: 'All books',
   });
-  const dispatch = useDispatch();
+
   const statusBook = statusValue.value.toLowerCase();
 
-  useEffect(() => {
-    dispatch(getBookOwn({ status: statusValue }));
-  }, [dispatch, statusValue]);
+  // useEffect(() => {
+  //   dispatch(getBookOwn());
+  // }, [dispatch, statusValue]);
 
   const options = [
     { value: 'Unread', label: 'Unread' },
@@ -23,10 +25,20 @@ export const Selector = () => {
     { value: 'Done', label: 'Done' },
     { value: 'All books', label: 'All books' },
   ];
+  const handleStatusChange = (options: Selector | any | null): void => {
+    if (options) {
+      setStatus(prevState => ({
+        ...prevState,
+        value: options.value,
+        label: options.label,
+      }));
+    }
+  };
+
   return (
     <>
       <Selectors
-        onChange={setStatus}
+        onChange={handleStatusChange}
         defaultValue={statusValue}
         options={options}
         classNamePrefix="react-select"

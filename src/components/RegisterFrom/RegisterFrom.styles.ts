@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
-
+type Prop = {
+  $variant: string | null;
+};
 export const RegisterForm = styled.form`
   @media screen and (min-width: 768px) {
     display: flex;
@@ -28,7 +30,7 @@ export const Input = styled.input`
   }
 `;
 
-export const InputPassword = styled.input`
+export const InputPassword = styled.input<Prop>`
   width: 100%;
   outline: none;
   padding: 14px 14px 14px 80px;

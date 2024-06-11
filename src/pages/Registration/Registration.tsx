@@ -6,7 +6,7 @@ export const RegistrationPage = () => {
   return (
     <Wrapper>
       <WrapperForm>
-        <LogoMain />
+        <LogoMain variant="" />
         <Comment>
           Expand your mind, reading <Span>a book</Span>
         </Comment>

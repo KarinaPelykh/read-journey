@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { RecommendedBooks } from '../../components/RecommendedBooks/RecommendedBooks';
 import { Dashboard } from '../../components/Dashboard/Dashboard';
-export const Reading = () => {
+import { RecommendedBooks } from '../../components/RecommendedBooks/RecommendedBooks';
+export const MyLibrary = () => {
   return (
     <Div>
       <Dashboard />

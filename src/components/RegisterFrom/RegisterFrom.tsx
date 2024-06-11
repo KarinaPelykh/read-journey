@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Buttons } from '../../components/Button/Button';
-import { ShowPassword } from '../../components/Validation/ShowPassword';
-import { ValidationRegister } from '../../components/Validation/ValidationRegister';
+import { Buttons } from '../Button/Button';
+import { ShowPassword } from '../Validation/ShowPassword';
+import { ValidationRegister } from '../Validation/ValidationRegister';
 import {
   RegisterForm,
   Input,
@@ -13,12 +13,12 @@ import {
 } from './RegisterFrom.styles';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useDispatch } from 'react-redux';
 import { registerThunk } from '../../redux/auth/operations';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { useAppDispatch } from '../../hooks/hooks';
 export const RegistrationFromCopm = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const [openPsw, setOpenPsw] = useState(true);
 

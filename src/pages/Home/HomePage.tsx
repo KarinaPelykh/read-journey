@@ -4,8 +4,9 @@ import BIRDS from 'vanta/dist/vanta.birds.min';
 import { Container } from '../../components/Container/Container.styled';
 
 export const HomePage = () => {
-  const [vantaEffect, setVantaEffect] = useState(null);
-  const myRef = useRef(null);
+  const [vantaEffect, setVantaEffect] = useState<any>(null);
+  const myRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (!vantaEffect) {
       setVantaEffect(

@@ -11,9 +11,11 @@ import { Div, Text, Wrapper, WrapperProgress } from './ShowmyInform.styled';
 export const ShowMyInform = () => {
   const [open, setOpen] = useState({ statistic: false, details: true });
   const redBook = useSelector(redBookSelector);
+  console.log(redBook);
+
   return (
     <Wrapper>
-      {redBook.progress[0]?.status === 'inactive' ? (
+      {redBook.progress && redBook.progress[0]?.status === 'inactive' ? (
         <>
           <Div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <Text> {open.details ? 'Diary' : 'Statistic'} </Text>

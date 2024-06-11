@@ -6,6 +6,7 @@ import {
   registerThunk,
 } from './operations';
 import { MyKnownError, State, StateFunction } from '../../type/Auth.type';
+
 const pending = (state: StateFunction) => {
   state.loading = true;
   state.error = '';
@@ -16,7 +17,6 @@ const rejected = (
 ) => {
   state.loading = false;
   state.error = action.payload;
-  state.isRefresh = false;
 };
 const initialState: State = {
   user: {
@@ -45,9 +45,15 @@ export const authSlice = createSlice({
           (state.token = ''),
           (state.isLoggedIn = false);
       })
+      .addCase(refreshThunk.pending, state => {
+        state.isRefresh = true;
+      })
       .addCase(refreshThunk.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isLoggedIn = true;
+        state.isRefresh = false;
+      })
+      .addCase(refreshThunk.rejected, state => {
         state.isRefresh = false;
       })
       .addMatcher(
