@@ -1,4 +1,4 @@
-import { createSlice, isAnyOf } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice, isAnyOf } from '@reduxjs/toolkit';
 import {
   addBooksWithRecommended,
   addNewBook,
@@ -12,20 +12,22 @@ import {
 } from './operations';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
-const pending = state => {
+import { MyKnownError, StateBook } from '../../type/Book.type';
+
+const pending = (state: StateBook) => {
   state.isLoading = true;
   state.error = '';
 };
 
-const rejected = (state, action) => {
+const rejected = (state: StateBook, action: PayloadAction<MyKnownError>) => {
   state.isLoading = false;
   state.error = action.payload;
 };
+
 const initialState = {
   books: [],
   newBooks: [],
   redBook: [],
-
   isLoading: false,
   error: null,
   page: 1,
@@ -36,7 +38,7 @@ const initialState = {
 const bookSlice = createSlice({
   name: 'book',
   initialState,
-
+  reducers: {},
   extraReducers: builder => {
     builder
       .addCase(fetchBooks.fulfilled, (state, action) => {
@@ -70,7 +72,6 @@ const bookSlice = createSlice({
       .addCase(deleteProgress.fulfilled, (state, action) => {
         state.redBook = action.payload;
       })
-
       .addMatcher(
         isAnyOf(
           fetchBooks.pending,

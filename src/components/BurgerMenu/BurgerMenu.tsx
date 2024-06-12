@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { logOutThunk } from '../../redux/auth/operations';
 import { Buttons } from '../Button/Button';
@@ -7,8 +6,15 @@ import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import icon from '../../images/sprite.svg';
 import { Menu, Modal } from './BurgerMenu.styled';
-export const BurgerMenu = ({ open, toggle }) => {
-  const dispatch = useDispatch();
+import { useAppDispatch } from '../../hooks/hooks';
+
+interface BurgerMenu {
+  open: boolean;
+  toggle: () => void;
+}
+
+export const BurgerMenu = ({ open, toggle }: BurgerMenu) => {
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const handelLogout = () => {
@@ -39,9 +45,4 @@ export const BurgerMenu = ({ open, toggle }) => {
       </Modal>
     </>
   );
-};
-
-BurgerMenu.propTypes = {
-  open: PropTypes.bool,
-  toggle: PropTypes.func,
 };

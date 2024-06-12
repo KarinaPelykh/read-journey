@@ -1,10 +1,10 @@
-import { useDispatch } from 'react-redux';
 import { addNewBook } from '../../redux/books/operations';
 import { Form, InputADD, Label, Title, Wrapper } from './AddBooks.styled';
 import { Buttons } from '../Button/Button';
 import { toast } from 'react-toastify';
+import { useAppDispatch } from '../../hooks/hooks';
 export const AddBook = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const handelSubmit = e => {
     e.preventDefault();
     const form = e.target;
@@ -43,7 +43,7 @@ export const AddBook = () => {
         <InputADD
           name="author"
           type="text"
-          variant="input2"
+          $variant="input2"
           required
           placeholder="Hilarion Pavlyuk"
         />
@@ -59,8 +59,8 @@ export const AddBook = () => {
           placeholder="664"
         />
       </Wrapper>
-
-      <Buttons type="submit" variant="buttonBase" prop={'Add book'} />
+      <Buttons variant="buttonBase" prop={'Add book'} />
+      {/* type="submit" */}
     </Form>
   );
 };

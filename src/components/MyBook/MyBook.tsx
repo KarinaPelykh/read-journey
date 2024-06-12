@@ -10,8 +10,9 @@ import {
 } from './MyBook.styled';
 import icon from '../../images/sprite.svg';
 import book from '../../images/img-book.png';
+import { useAppSelector } from '../../hooks/hooks';
 export const MyBook = () => {
-  const readBook = useSelector(redBookSelector);
+  const readBook = useAppSelector(redBookSelector);
   return (
     <>
       {readBook?.timeLeftToRead ? (

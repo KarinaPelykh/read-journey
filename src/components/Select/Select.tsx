@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Selectors } from './Select.styled';
-// import { getBookOwn } from '../../redux/books/operations';
+import { getBookOwn } from '../../redux/books/operations';
 import { MyLibraryList } from '../MyLibraryList/MyLibraryList';
+import { useAppDispatch } from '../../hooks/hooks';
+import { string } from 'prop-types';
 type Selector = {
   value: string;
   label: string;
@@ -14,10 +16,10 @@ export const Selector = () => {
   });
 
   const statusBook = statusValue.value.toLowerCase();
-
-  // useEffect(() => {
-  //   dispatch(getBookOwn());
-  // }, [dispatch, statusValue]);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(getBookOwn({ status: statusValue }));
+  }, [dispatch, statusValue]);
 
   const options = [
     { value: 'Unread', label: 'Unread' },

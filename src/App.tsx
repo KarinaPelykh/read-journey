@@ -19,7 +19,6 @@ import { Recommended } from './pages/Recommended/Recommended';
 function App() {
   const dispatch = useAppDispatch();
   const isrRefresh = useAppSelector(refresh);
-  console.log(isrRefresh);
 
   useEffect(() => {
     dispatch(refreshThunk());

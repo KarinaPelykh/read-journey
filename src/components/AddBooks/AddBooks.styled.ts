@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 type Prop = {
-  $variant: string;
+  $variant?: string;
 };
 export const Form = styled.form`
   margin-bottom: 20px;

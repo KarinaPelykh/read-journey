@@ -1,13 +1,27 @@
-import PropTypes from 'prop-types';
+import React, { MouseEvent } from 'react';
 import { Buttons } from '../Button/Button';
 import { Overlay, Modal, ButtonClose } from './ModalWindow.styled';
 import icons from '../../images/sprite.svg';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { ReactNode, useEffect } from 'react';
 import { addReadBook } from '../../redux/books/operations';
 import { useNavigate } from 'react-router-dom';
-export const ModalRead = ({ open, toggle, children, id, variant }) => {
-  const dispatch = useDispatch();
+import { useAppDispatch } from '../../hooks/hooks';
+
+interface ModalRead {
+  children: ReactNode;
+  id?: string;
+  open: boolean;
+  toggle: () => void;
+  variant?: string | null;
+}
+export const ModalRead = ({
+  open,
+  toggle,
+  children,
+  id,
+  variant,
+}: ModalRead) => {
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const handelAddBookRead = () => {
     dispatch(addReadBook({ id }));
@@ -18,7 +32,7 @@ export const ModalRead = ({ open, toggle, children, id, variant }) => {
     }
   };
   useEffect(() => {
-    const handelKeyEscape = e => {
+    const handelKeyEscape = (e: KeyboardEvent) => {
       if (e.code === 'Escape') {
         toggle();
         document.body.style.overflow = 'auto';
@@ -30,7 +44,7 @@ export const ModalRead = ({ open, toggle, children, id, variant }) => {
     };
   }, [toggle]);
 
-  const handelCloseClick = e => {
+  const handelCloseClick = (e: MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       toggle();
       document.body.style.overflow = 'auto';
@@ -40,7 +54,7 @@ export const ModalRead = ({ open, toggle, children, id, variant }) => {
   return (
     <Overlay onClick={handelCloseClick}>
       {open && (
-        <Modal variant={variant}>
+        <Modal $variant={variant || null}>
           <ButtonClose onClick={toggle}>
             <svg width="20" height="20">
               <use xlinkHref={icons + '#close'}></use>
@@ -60,12 +74,4 @@ export const ModalRead = ({ open, toggle, children, id, variant }) => {
       )}
     </Overlay>
   );
-};
-
-ModalRead.propTypes = {
-  children: PropTypes.any,
-  id: PropTypes.number,
-  open: PropTypes.bool,
-  toggle: PropTypes.func,
-  variant: PropTypes.any,
 };

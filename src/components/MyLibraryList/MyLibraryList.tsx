@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
 import { newBooksSelector } from '../../redux/books/selectors';
 import Images from '../../images/bookDefault.png';
 import hand from '../../images/hand.png';
@@ -16,24 +14,16 @@ import {
 import { ModalWindow } from '../Modal/ModalWindow';
 import { MyLibraryItem } from './MyLibraryItem/MyLibraryItem';
 import { useEffect, useState } from 'react';
-
-export const MyLibraryList = ({ status }) => {
-  const newBook = useSelector(newBooksSelector);
-
-  const getVisibleTasks = (status, newBook) => {
-    if (status === 'done') {
-      return newBook.filter(item => item.status === 'done');
-    } else if (status === 'in progress') {
-      return newBook.filter(item => item.status === 'in-progress');
-    } else if (status === 'unread') {
-      return newBook.filter(item => item.status === 'unread');
-    }
-    return newBook;
-  };
+import { getVisibleTasks } from '../../helpers/sortedBook';
+import { useAppSelector } from '../../hooks/hooks';
+type Status = {
+  status: string;
+};
+export const MyLibraryList = ({ status }: Status) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const newBook = useAppSelector(newBooksSelector);
 
   const visible = getVisibleTasks(status, newBook);
-
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setIsOpen(true);
@@ -84,8 +74,4 @@ export const MyLibraryList = ({ status }) => {
       ) : null}
     </>
   );
-};
-
-MyLibraryList.propTypes = {
-  status: PropTypes.string,
 };

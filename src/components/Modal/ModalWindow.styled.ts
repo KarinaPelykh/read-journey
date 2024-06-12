@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
-
+interface Prop {
+  $variant: string | null;
+}
 export const Overlay = styled.div`
   position: fixed;
   top: 0;
@@ -13,7 +15,7 @@ export const Overlay = styled.div`
   z-index: 444;
 `;
 
-export const Modal = styled.div`
+export const Modal = styled.div<Prop>`
   width: 335px;
   height: 439px;
   background-color: ${({ theme }) => theme.colors.lightBlack};
@@ -24,8 +26,8 @@ export const Modal = styled.div`
   padding: 50px;
   border-radius: ${({ theme }) => theme.radii.m};
   position: relative;
-  ${({ variant }) =>
-    variant === 'min-modal' &&
+  ${({ $variant }) =>
+    $variant === 'min-modal' &&
     css`
       width: 335px;
       height: 290px;
@@ -36,8 +38,8 @@ export const Modal = styled.div`
   @media screen and (min-width: 1440px) {
     width: 500px;
     height: 483px;
-    ${({ variant }) =>
-      variant === 'min-modal' &&
+    ${({ $variant }) =>
+      $variant === 'min-modal' &&
       css`
         width: 342px;
         height: 290px;

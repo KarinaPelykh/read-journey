@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-
+interface Button {
+  $variant: string | undefined;
+}
 export const WrapperButton = styled.div`
   display: flex;
   justify-content: start;
   align-items: center;
 `;
-export const Button = styled.button`
+export const Button = styled.button<Button>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,8 +35,8 @@ export const Button = styled.button`
     text-shadow: 0 0 5px #000;
   }
 
-  ${({ variant }) =>
-    variant === 'log-out' &&
+  ${({ $variant }) =>
+    $variant === 'log-out' &&
     css`
       @media screen and (max-width: 767px) {
         padding: 10px 20px;
@@ -50,8 +52,8 @@ export const Button = styled.button`
       background-color: ${({ theme }) => theme.colors.lightBlack};
     `};
 
-  ${({ variant }) =>
-    variant === 'buttonBase' &&
+  ${({ $variant }) =>
+    $variant === 'buttonBase' &&
     css`
       border-radius: ${({ theme }) => theme.radii.xl};
       border: ${({ theme }) => theme.borders.normal};
@@ -60,8 +62,8 @@ export const Button = styled.button`
       background-color: transparent;
       margin: 0;
     `};
-  ${({ variant }) =>
-    variant === 'buttonModal' &&
+  ${({ $variant }) =>
+    $variant === 'buttonModal' &&
     css`
       margin: 0;
       border-radius: ${({ theme }) => theme.radii.xl};

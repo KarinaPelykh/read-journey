@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const WrapperPagination = styled.div`
   display: flex;
@@ -37,17 +37,7 @@ export const Button = styled.button`
 export const SvgNext = styled.svg`
   transform: rotate(178deg);
   stroke: ${({ theme }) => theme.colors.grey};
-  ${({ variant }) =>
-    variant === 'active' &&
-    css`
-      stroke: ${({ theme }) => theme.colors.white};
-    `}
 `;
 export const SvgPrevious = styled.svg`
   stroke: ${({ theme }) => theme.colors.grey};
-  ${({ variant }) =>
-    variant === 'active' &&
-    css`
-      stroke: ${({ theme }) => theme.colors.white};
-    `}
 `;

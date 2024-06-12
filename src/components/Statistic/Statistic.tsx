@@ -8,15 +8,15 @@ import {
   Wrapper,
   WrapperInform,
 } from './Statistic.styled';
-import { useSelector } from 'react-redux';
 import { redBookSelector } from '../../redux/books/selectors';
 import getProsesReading from '../../helpers/getProgressReading';
 
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { useAppSelector } from '../../hooks/hooks';
 
 export const Statistic = () => {
-  const redBook = useSelector(redBookSelector);
+  const redBook = useAppSelector(redBookSelector);
 
   const data = getProsesReading({
     progress: redBook.progress,

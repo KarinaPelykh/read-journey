@@ -1,9 +1,14 @@
-import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Author, BookImg, QuantityPages, Title } from './BookItem.styled';
 import { ModalWindow } from '../Modal/ModalWindow';
-
-export const BookItem = ({ img, title, author, pages, id }) => {
+interface BookItem {
+  author: string;
+  id: string;
+  img: string;
+  pages: number;
+  title: string;
+}
+export const BookItem = ({ img, title, author, pages, id }: BookItem) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -22,21 +27,13 @@ export const BookItem = ({ img, title, author, pages, id }) => {
       </li>
       {isOpen && (
         <ModalWindow open={isOpen} toggle={toggle} id={id} title={title}>
-          <BookImg variant="imgModal" src={img} />
-          <Title variant="titleModal">{title}</Title>
+          <BookImg $variant="imgModal" src={img} />
+          <Title $variant="titleModal">{title}</Title>
 
-          <Author variant="titleAuthor">{author}</Author>
+          <Author $variant="titleAuthor">{author}</Author>
           <QuantityPages>{pages} pages</QuantityPages>
         </ModalWindow>
       )}
     </>
   );
-};
-
-BookItem.propTypes = {
-  author: PropTypes.string,
-  id: PropTypes.string,
-  img: PropTypes.any,
-  pages: PropTypes.number,
-  title: PropTypes.string,
 };

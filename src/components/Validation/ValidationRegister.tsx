@@ -1,15 +1,19 @@
-import icon from "../../images/sprite.svg";
-import styled from "styled-components";
-export const ValidationRegister = ({ errors, touched }) => {
+import icon from '../../images/sprite.svg';
+import styled from 'styled-components';
+type Information = {
+  errors: string | undefined;
+  touched: boolean | undefined;
+};
+export const ValidationRegister = ({ errors, touched }: Information) => {
   return (
     <>
       {touched && errors ? (
         <SvgValidation width="20px" height="20px">
-          <use xlinkHref={icon + "#error"}></use>
+          <use xlinkHref={icon + '#error'}></use>
         </SvgValidation>
       ) : touched && !errors ? (
         <SvgValidation width="20px" height="20px">
-          <use xlinkHref={icon + "#icon-check-psw"}></use>
+          <use xlinkHref={icon + '#icon-check-psw'}></use>
         </SvgValidation>
       ) : null}
     </>

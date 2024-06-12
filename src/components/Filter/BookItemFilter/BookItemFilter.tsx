@@ -1,9 +1,13 @@
-import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { ModalWindow } from '../../Modal/ModalWindow';
 import { Author, BookImg, Title } from './BookItemFilter.styled';
-
-export const BookItemFilter = ({ img, title, author, id }) => {
+interface BookItemFilter {
+  author: string;
+  id: string;
+  img: string;
+  title: string;
+}
+export const BookItemFilter = ({ img, title, author, id }: BookItemFilter) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -24,11 +28,4 @@ export const BookItemFilter = ({ img, title, author, id }) => {
       )}
     </>
   );
-};
-
-BookItemFilter.propTypes = {
-  author: PropTypes.string,
-  id: PropTypes.string,
-  img: PropTypes.any,
-  title: PropTypes.string,
 };

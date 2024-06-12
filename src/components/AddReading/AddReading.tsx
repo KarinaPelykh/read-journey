@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Buttons } from '../Button/Button';
 import {
   Description,
@@ -17,13 +17,14 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ModalRead } from '../Modal/ModalRead';
 import book from '../../images/book.png';
+import { useAppDispatch } from '../../hooks/hooks';
 export const AddReading = () => {
   const readBook = useSelector(redBookSelector);
   const [page, setPage] = useState('');
   const [start, setStart] = useState(false);
   const [open, setOpen] = useState(false);
   const id = readBook._id;
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const toggle = () => {
     setOpen(!open);
   };

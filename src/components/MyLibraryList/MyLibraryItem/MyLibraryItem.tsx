@@ -1,10 +1,8 @@
-import PropTypes from 'prop-types';
 import book from '../../../images/img-book.png';
 import icon from '../../../images/sprite.svg';
 
 import { useState } from 'react';
 import { deleteBook } from '../../../redux/books/operations';
-import { useDispatch } from 'react-redux';
 import { ModalRead } from '../../Modal/ModalRead';
 import {
   Author,
@@ -14,10 +12,17 @@ import {
   Title,
   WrapperItem,
 } from './MyLibraryItem.styled';
-
-export const MyLibraryItem = ({ id, img, title, author, pages }) => {
+import { useAppDispatch } from '../../../hooks/hooks';
+interface Item {
+  author: string;
+  id: string;
+  img: string;
+  pages: number;
+  title: string;
+}
+export const MyLibraryItem = ({ id, img, title, author, pages }: Item) => {
   const [isOpen, setIsOpen] = useState(false);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const toggle = () => {
     setIsOpen(!isOpen);
     document.body.style.overflow = 'hidden';
@@ -45,21 +50,13 @@ export const MyLibraryItem = ({ id, img, title, author, pages }) => {
 
       {isOpen && (
         <ModalRead open={isOpen} toggle={toggle} id={id}>
-          <BookImg variant="imgModal" src={img ? img : book} />
-          <Title variant="titleModal">{title}</Title>
+          <BookImg src={img ? img : book} />
+          <Title>{title}</Title>
 
-          <Author variant="titleAuthor">{author}</Author>
+          <Author>{author}</Author>
           <QuantityPages>{pages} pages</QuantityPages>
         </ModalRead>
       )}
     </>
   );
-};
-
-MyLibraryItem.propTypes = {
-  author: PropTypes.string,
-  id: PropTypes.string,
-  img: PropTypes.any,
-  pages: PropTypes.number,
-  title: PropTypes.string,
 };

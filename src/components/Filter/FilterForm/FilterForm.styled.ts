@@ -1,4 +1,8 @@
 import styled, { css } from 'styled-components';
+
+interface Prop {
+  $variant?: string;
+}
 export const Form = styled.form`
   margin-bottom: 20px;
   div:nth-child(3) {
@@ -34,7 +38,7 @@ export const Label = styled.label`
   font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
 `;
-export const InputFilter = styled.input`
+export const InputFilter = styled.input<Prop>`
   width: 100%;
   padding: 16px 16px 16px 86px;
   border: none;
@@ -49,8 +53,8 @@ export const InputFilter = styled.input`
     font-size: ${({ theme }) => theme.fontSizes.ss};
     font-weight: ${({ theme }) => theme.fontWeights.medium};
   }
-  ${({ variant }) =>
-    variant === 'input2' &&
+  ${({ $variant }) =>
+    $variant === 'input2' &&
     css`
       padding: 16px 16px 16px 95px;
     `}

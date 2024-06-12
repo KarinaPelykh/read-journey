@@ -6,7 +6,6 @@ export const BookImg = styled.img`
   height: 208px;
 `;
 export const Title = styled.h1`
-  /* width: 137px; */
   width: 100px;
   white-space: nowrap;
   overflow: hidden;

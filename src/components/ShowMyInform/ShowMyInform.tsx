@@ -5,13 +5,12 @@ import star from '../../images/star.png';
 
 import { useState } from 'react';
 import { Describe, ImgStatic, Thumb, Title } from '../Details/Details.styled';
-import { useSelector } from 'react-redux';
 import { redBookSelector } from '../../redux/books/selectors';
 import { Div, Text, Wrapper, WrapperProgress } from './ShowmyInform.styled';
+import { useAppSelector } from '../../hooks/hooks';
 export const ShowMyInform = () => {
   const [open, setOpen] = useState({ statistic: false, details: true });
-  const redBook = useSelector(redBookSelector);
-  console.log(redBook);
+  const redBook = useAppSelector(redBookSelector);
 
   return (
     <Wrapper>

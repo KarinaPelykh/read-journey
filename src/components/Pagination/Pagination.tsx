@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import {
   Button,
   SvgNext,
@@ -6,7 +5,13 @@ import {
   WrapperPagination,
 } from './Pagination.styled';
 import icon from '../../images/sprite.svg';
-export const Pagination = ({ next, previous, page, totalPage }) => {
+interface Pagination {
+  next: () => void;
+  page: number;
+  previous: () => void;
+  totalPage: number;
+}
+export const Pagination = ({ next, previous, page, totalPage }: Pagination) => {
   return (
     <WrapperPagination>
       <Button disabled={page === 1} onClick={previous}>
@@ -20,7 +25,9 @@ export const Pagination = ({ next, previous, page, totalPage }) => {
       </Button>
       <Button onClick={next}>
         <SvgNext
-          style={{ stroke: totalPage === page ? '#686868' : '#fff' }}
+          style={{
+            stroke: totalPage === page ? '#686868' : '#fff',
+          }}
           width="20"
           height="20"
         >
@@ -29,11 +36,4 @@ export const Pagination = ({ next, previous, page, totalPage }) => {
       </Button>
     </WrapperPagination>
   );
-};
-
-Pagination.propTypes = {
-  next: PropTypes.func,
-  page: PropTypes.number,
-  previous: PropTypes.func,
-  totalPage: PropTypes.number,
 };

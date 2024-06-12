@@ -1,16 +1,18 @@
-import styled, { css } from "styled-components";
-
-export const BookImg = styled.img`
+import styled, { css } from 'styled-components';
+interface Prop {
+  $variant?: string | null;
+}
+export const BookImg = styled.img<Prop>`
   border-radius: ${({ theme }) => theme.radii.s};
   width: 137px;
   height: 208px;
-  ${({ variant }) =>
-    variant === "imgModal" &&
+  ${({ $variant }) =>
+    $variant === 'imgModal' &&
     css`
       margin-bottom: 16px;
     `}
 `;
-export const Title = styled.h1`
+export const Title = styled.h1<Prop>`
   width: 137px;
   white-space: nowrap;
   overflow: hidden;
@@ -20,8 +22,8 @@ export const Title = styled.h1`
   color: ${({ theme }) => theme.colors.white};
   margin-bottom: 2px;
   margin-top: 8px;
-  ${({ variant }) =>
-    variant === "titleModal" &&
+  ${({ $variant }) =>
+    $variant === 'titleModal' &&
     css`
       margin-top: 0;
 
@@ -33,12 +35,12 @@ export const Title = styled.h1`
       font-weight: ${({ theme }) => theme.fontWeights.bold};
     `}
 `;
-export const Author = styled.p`
+export const Author = styled.p<Prop>`
   color: ${({ theme }) => theme.colors.grey};
   font-size: ${({ theme }) => theme.fontSizes.xs};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
-  ${({ variant }) =>
-    variant === "titleAuthor" &&
+  ${({ $variant }) =>
+    $variant === 'titleAuthor' &&
     css`
       margin-bottom: 4px;
       font-size: ${({ theme }) => theme.fontSizes.s};

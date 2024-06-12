@@ -9,6 +9,8 @@ interface ListRecommends {
 }
 export const RecommendationsList = () => {
   const bookRecommended = useAppSelector(booksSelector);
+  console.log(bookRecommended);
+
   const CutBookRecommended = bookRecommended.results.slice(0, 3);
   return (
     <List>
