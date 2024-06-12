@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { Author, BookImg, QuantityPages, Title } from './BookItem.styled';
 import { ModalWindow } from '../Modal/ModalWindow';
 interface BookItem {
@@ -8,7 +8,7 @@ interface BookItem {
   pages: number;
   title: string;
 }
-export const BookItem = ({ img, title, author, pages, id }: BookItem) => {
+export const BookItem: FC<BookItem> = ({ img, title, author, pages, id }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {

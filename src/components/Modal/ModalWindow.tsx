@@ -1,4 +1,4 @@
-import React, { MouseEvent, ReactNode } from 'react';
+import React, { FC, MouseEvent, ReactNode } from 'react';
 import { Buttons } from '../Button/Button';
 import { Overlay, Modal, ButtonClose } from './ModalWindow.styled';
 import icons from '../../images/sprite.svg';
@@ -17,14 +17,14 @@ interface ModalWindow {
   toggle: () => void;
   variant?: string;
 }
-export const ModalWindow = ({
+export const ModalWindow: FC<ModalWindow> = ({
   children,
   open,
   toggle,
   id,
   title,
   variant,
-}: ModalWindow) => {
+}) => {
   const bookNew = useAppSelector(newBooksSelector);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();

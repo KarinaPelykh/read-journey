@@ -1,7 +1,7 @@
 import book from '../../../images/img-book.png';
 import icon from '../../../images/sprite.svg';
 
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { deleteBook } from '../../../redux/books/operations';
 import { ModalRead } from '../../Modal/ModalRead';
 import {
@@ -20,7 +20,9 @@ interface Item {
   pages: number;
   title: string;
 }
-export const MyLibraryItem = ({ id, img, title, author, pages }: Item) => {
+export const MyLibraryItem: FC<Item> = ({ id, img, title, author, pages }) => {
+  console.log(typeof id);
+
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useAppDispatch();
   const toggle = () => {
@@ -40,7 +42,7 @@ export const MyLibraryItem = ({ id, img, title, author, pages }: Item) => {
             <Title>{title}</Title>
             <Author>{author}</Author>
           </div>
-          <ButtonDelete onClick={() => dispatch(deleteBook(id))}>
+          <ButtonDelete onClick={() => dispatch(deleteBook({ id }))}>
             <svg width="14" height="14">
               <use xlinkHref={icon + '#trash'}></use>
             </svg>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { ModalWindow } from '../../Modal/ModalWindow';
 import { Author, BookImg, Title } from './BookItemFilter.styled';
 interface BookItemFilter {
@@ -7,7 +7,12 @@ interface BookItemFilter {
   img: string;
   title: string;
 }
-export const BookItemFilter = ({ img, title, author, id }: BookItemFilter) => {
+export const BookItemFilter: FC<BookItemFilter> = ({
+  img,
+  title,
+  author,
+  id,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
     setIsOpen(!isOpen);

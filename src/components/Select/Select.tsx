@@ -18,7 +18,7 @@ export const Selector = () => {
   const statusBook = statusValue.value.toLowerCase();
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(getBookOwn({ status: statusValue }));
+    dispatch(getBookOwn({ status: statusValue.value }));
   }, [dispatch, statusValue]);
 
   const options = [

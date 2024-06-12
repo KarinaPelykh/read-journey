@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react';
+import React, { FC, MouseEvent } from 'react';
 import { Buttons } from '../Button/Button';
 import { Overlay, Modal, ButtonClose } from './ModalWindow.styled';
 import icons from '../../images/sprite.svg';
@@ -9,18 +9,18 @@ import { useAppDispatch } from '../../hooks/hooks';
 
 interface ModalRead {
   children: ReactNode;
-  id?: string;
+  id: string;
   open: boolean;
   toggle: () => void;
   variant?: string | null;
 }
-export const ModalRead = ({
+export const ModalRead: FC<ModalRead> = ({
   open,
   toggle,
   children,
   id,
   variant,
-}: ModalRead) => {
+}) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const handelAddBookRead = () => {

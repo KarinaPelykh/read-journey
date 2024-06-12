@@ -2,18 +2,18 @@ import { useNavigate } from 'react-router-dom';
 import { logOutThunk } from '../../redux/auth/operations';
 import { Buttons } from '../Button/Button';
 import { UserNav } from '../Header/UserNav/UserNav';
-import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import icon from '../../images/sprite.svg';
 import { Menu, Modal } from './BurgerMenu.styled';
 import { useAppDispatch } from '../../hooks/hooks';
+import { FC } from 'react';
 
 interface BurgerMenu {
   open: boolean;
   toggle: () => void;
 }
 
-export const BurgerMenu = ({ open, toggle }: BurgerMenu) => {
+export const BurgerMenu: FC<BurgerMenu> = ({ open, toggle }) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 

@@ -13,13 +13,13 @@ import {
 } from './MyLibrary.styled';
 import { ModalWindow } from '../Modal/ModalWindow';
 import { MyLibraryItem } from './MyLibraryItem/MyLibraryItem';
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { getVisibleTasks } from '../../helpers/sortedBook';
 import { useAppSelector } from '../../hooks/hooks';
 type Status = {
   status: string;
 };
-export const MyLibraryList = ({ status }: Status) => {
+export const MyLibraryList: FC<Status> = ({ status }) => {
   const [isOpen, setIsOpen] = useState(false);
   const newBook = useAppSelector(newBooksSelector);
 

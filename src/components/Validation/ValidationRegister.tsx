@@ -1,10 +1,11 @@
+import { FC } from 'react';
 import icon from '../../images/sprite.svg';
 import styled from 'styled-components';
 type Information = {
   errors: string | undefined;
   touched: boolean | undefined;
 };
-export const ValidationRegister = ({ errors, touched }: Information) => {
+export const ValidationRegister: FC<Information> = ({ errors, touched }) => {
   return (
     <>
       {touched && errors ? (

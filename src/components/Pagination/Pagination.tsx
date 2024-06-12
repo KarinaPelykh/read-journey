@@ -5,13 +5,19 @@ import {
   WrapperPagination,
 } from './Pagination.styled';
 import icon from '../../images/sprite.svg';
+import { FC } from 'react';
 interface Pagination {
   next: () => void;
   page: number;
   previous: () => void;
   totalPage: number;
 }
-export const Pagination = ({ next, previous, page, totalPage }: Pagination) => {
+export const Pagination: FC<Pagination> = ({
+  next,
+  previous,
+  page,
+  totalPage,
+}) => {
   return (
     <WrapperPagination>
       <Button disabled={page === 1} onClick={previous}>

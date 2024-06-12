@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { List, Item } from './UserNav.styled';
 const routes = [
   { path: '/recommended', page: 'Home' },
@@ -7,7 +7,7 @@ const routes = [
 export type Variant = {
   variant: string;
 };
-export const UserNav: React.FunctionComponent<Variant> = ({ variant }) => {
+export const UserNav: FC<Variant> = ({ variant }) => {
   return (
     <List $variant={variant}>
       {routes.map(({ path, page }) => (
