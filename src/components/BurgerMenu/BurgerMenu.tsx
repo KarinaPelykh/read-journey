@@ -7,6 +7,7 @@ import icon from '../../images/sprite.svg';
 import { Menu, Modal } from './BurgerMenu.styled';
 import { useAppDispatch } from '../../hooks/hooks';
 import { FC } from 'react';
+import { MyKnownError } from '../../type/Book.type';
 
 interface BurgerMenu {
   open: boolean;
@@ -18,16 +19,16 @@ export const BurgerMenu: FC<BurgerMenu> = ({ open, toggle }) => {
   const navigate = useNavigate();
 
   const handelLogout = () => {
-    dispatch(logOutThunk()).then(() => {
-      navigate('/');
-      toast
-        .success('You Log-out', {
+    dispatch(logOutThunk())
+      .then(() => {
+        navigate('/');
+        toast.success('You Log-out', {
           position: 'top-right',
           hideProgressBar: true,
           theme: 'dark',
-        })
-        .catch(error => toast.error(error));
-    });
+        });
+      })
+      .catch(error => toast.error(error.message));
   };
 
   return (

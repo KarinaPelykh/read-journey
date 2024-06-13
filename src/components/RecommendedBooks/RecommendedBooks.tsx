@@ -12,6 +12,7 @@ export const RecommendedBooks = () => {
   const localUser = location.pathname === '/library';
   const user = location.pathname === '/reading';
   const filterBook = useSelector(filterSelector);
+  console.log('filterBook', filterBook);
 
   return (
     <WrapperBooks>

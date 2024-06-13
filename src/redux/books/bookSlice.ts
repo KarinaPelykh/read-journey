@@ -12,22 +12,30 @@ import {
 } from './operations';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
-import { MyKnownError, StateBook } from '../../type/Book.type';
+import {
+  INformationAboutReding,
+  MyKnownError,
+  ReadBook,
+  StateBook,
+} from '../../type/Book.type';
 
 const pending = (state: StateBook) => {
   state.isLoading = true;
   state.error = '';
 };
 
-const rejected = (state: StateBook, action: PayloadAction<MyKnownError>) => {
+const rejected = (
+  state: StateBook,
+  action: PayloadAction<MyKnownError | unknown>
+) => {
   state.isLoading = false;
   state.error = action.payload;
 };
 
-const initialState = {
-  books: [],
+const initialState: StateBook = {
+  books: {} as INformationAboutReding,
   newBooks: [],
-  redBook: [],
+  redBook: {} as ReadBook,
   isLoading: false,
   error: null,
   page: 1,
@@ -80,7 +88,6 @@ const bookSlice = createSlice({
           deleteBook.pending,
           getBookOwn.pending,
           addReadBook.pending,
-
           startReading.pending,
           finishedReading.pending,
           deleteProgress.pending

@@ -3,12 +3,12 @@ import { Selectors } from './Select.styled';
 import { getBookOwn } from '../../redux/books/operations';
 import { MyLibraryList } from '../MyLibraryList/MyLibraryList';
 import { useAppDispatch } from '../../hooks/hooks';
-import { string } from 'prop-types';
 type Selector = {
   value: string;
   label: string;
   handleStatusChange: (options: Selector | null) => void;
 };
+
 export const Selector = () => {
   const [statusValue, setStatus] = useState({
     value: 'All books',

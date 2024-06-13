@@ -11,7 +11,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 
 interface ModalWindow {
   children: ReactNode;
-  id?: string;
+  id: string;
   open: boolean;
   title?: string;
   toggle: () => void;

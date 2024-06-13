@@ -1,12 +1,42 @@
 export interface MyKnownError {
   errorMessage: string;
 }
-interface BookItem {
+
+export interface Progress {
+  finishPage: number;
+  finishReading: string;
+  speed: number;
+  startPage: number;
+  startReading: string;
+  status: 'inactive' | 'active';
+  _id: string;
+}
+export interface BookItem {
   author: string;
   _id: string;
   imageUrl: string;
   recommend: boolean;
   title: string;
+  totalPages: number;
+}
+
+export interface INformationAboutReding {
+  page: number;
+  perPage: number;
+  results: BookItem[];
+  totalPages: number;
+}
+
+export interface ReadBook {
+  author: string;
+  imageUrl: string;
+  owner: string;
+  progress: Progress[];
+  status: string;
+  timeLeftToRead: { hours: null; minutes: null; seconds: null };
+  title: string;
+  totalPages: number;
+  _id: string;
 }
 interface BooksArrayResponse {
   author: string;
@@ -22,12 +52,12 @@ interface BooksArrayResponse {
   _id: string;
 }
 export interface StateBook {
-  books: BooksArrayResponse[];
+  books: INformationAboutReding;
   newBooks: BooksArrayResponse[];
-  redBook: BooksArrayResponse[];
+  redBook: ReadBook;
   isLoading: boolean;
-  error: string | unknown;
-  page: number;
+  error: string | null | unknown;
+  page: string | number;
   perPage: number;
   totalPages: number;
 }

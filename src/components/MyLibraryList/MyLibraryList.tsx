@@ -63,7 +63,7 @@ export const MyLibraryList: FC<Status> = ({ status }) => {
       )}
 
       {newBook.length > 0 && isOpen ? (
-        <ModalWindow open={isOpen} toggle={toggle} variant="min-modal">
+        <ModalWindow open={isOpen} toggle={toggle} variant="min-modal" id="">
           <img width="68" height="70" src={hand} />
           <TextGreeting>Good job</TextGreeting>
           <Greeting>

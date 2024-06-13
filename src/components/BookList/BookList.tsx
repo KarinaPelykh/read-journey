@@ -7,12 +7,24 @@ import { isLoggedInSelect } from '../../redux/auth/selectors';
 import { Pagination } from '../Pagination/Pagination';
 import { BookItem } from '../BookItem/BookItem';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import { INformationAboutReding } from '../../type/Book.type';
+export interface ReadBook {
+  author: string;
+  imageUrl: string;
+  owner: string;
+  progress: [];
+  status: string;
+  timeLeftToRead: { hours: null; minutes: null; seconds: null };
+  title: string;
+  totalPages: number;
+  _id: string;
+}
 
 export const BookList = () => {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [sizeWindow, setSizeWindow] = useState(window.innerWidth);
-  const bookSelector = useAppSelector(booksSelector);
+  const bookSelector = useAppSelector(booksSelector) as INformationAboutReding;
   const totalPage = bookSelector.totalPages;
 
   const { results } = bookSelector;

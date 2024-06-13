@@ -1,25 +1,25 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { instance } from '../../service/Api';
 import { MyKnownError } from '../../type/Book.type';
-interface Book {
-  page: string;
+export interface Book {
+  page: string | number;
   limit: number;
 }
-type Id = {
-  id: string;
+export type Id = {
+  id: string | null;
 };
-interface Compatible extends Id, Pick<Book, 'page'> {}
-interface IDBook {
+export interface Compatible extends Id, Pick<Book, 'page'> {}
+export interface IDBook {
   bookId: string;
   readingId: string;
 }
-interface BookResponse {
-  page: number;
+export interface BookResponse {
+  page: string | number;
   perPage: number;
   results: [];
   totalPages: number;
 }
-interface BooksArrayResponse {
+export interface BooksArrayResponse {
   author: string;
   createdAt: string;
   imageUrl: string;
@@ -34,7 +34,7 @@ interface BooksArrayResponse {
 }
 type Credentals = Pick<BooksArrayResponse, 'title' | 'author' | 'totalPages'>;
 type Status = {
-  status: [];
+  status: string;
 };
 export const fetchBooks = createAsyncThunk<
   BookResponse,
@@ -45,6 +45,7 @@ export const fetchBooks = createAsyncThunk<
     const { data } = await instance.get(
       `/books/recommend?page=${page}&limit=${limit}`
     );
+    console.log('data555', data);
 
     return data;
   } catch (error) {
@@ -100,8 +101,8 @@ export const deleteBook = createAsyncThunk<
   }
 });
 export const getBookOwn = createAsyncThunk<
-  Status,
   BooksArrayResponse,
+  Status,
   { rejectValue: MyKnownError }
 >('book/bookStatus', async ({ status }, { rejectWithValue }) => {
   try {

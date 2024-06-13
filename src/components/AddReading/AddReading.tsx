@@ -1,4 +1,7 @@
-import { useSelector } from 'react-redux';
+import { FormEvent, useState } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { Buttons } from '../Button/Button';
 import {
   Description,
@@ -12,14 +15,13 @@ import {
 } from './AddReading.styled';
 import { redBookSelector } from '../../redux/books/selectors';
 import { finishedReading, startReading } from '../../redux/books/operations';
-import { useState } from 'react';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 import { ModalRead } from '../Modal/ModalRead';
 import book from '../../images/book.png';
-import { useAppDispatch } from '../../hooks/hooks';
+
 export const AddReading = () => {
-  const readBook = useSelector(redBookSelector);
+  const readBook = useAppSelector(redBookSelector);
+
   const [page, setPage] = useState('');
   const [start, setStart] = useState(false);
   const [open, setOpen] = useState(false);
@@ -28,7 +30,7 @@ export const AddReading = () => {
   const toggle = () => {
     setOpen(!open);
   };
-  const handelSubmit = e => {
+  const handelSubmit = (e: FormEvent) => {
     e.preventDefault();
 
     if (!start) {
@@ -48,7 +50,7 @@ export const AddReading = () => {
             });
           }
         })
-        .catch(error => toast.error(error));
+        .catch(error => toast.error(error.message));
       setStart(!start);
     } else if (start) {
       dispatch(finishedReading({ id, page }))
@@ -65,7 +67,7 @@ export const AddReading = () => {
           });
         })
         .catch(error => {
-          toast.error(error);
+          toast.error(error.message);
           console.log(error.message);
         });
 
@@ -93,7 +95,7 @@ export const AddReading = () => {
         <Buttons prop={start ? 'To stop' : 'To start'} variant="buttonBase" />
       </Form>
       {open && (
-        <ModalRead open={open} toggle={toggle} variant="min-modal">
+        <ModalRead open={open} toggle={toggle} variant="min-modal" id="">
           <img width="68" height="70" src={book} />
           <Text>The book is read</Text>
           <Description>

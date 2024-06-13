@@ -1,13 +1,6 @@
-type Date = {
-  finishPage: number;
-  finishReading: string;
-  speed: number;
-  startPage: number;
-  startReading: string;
-  status: 'inactive' | 'active';
-};
+import { Progress } from '../type/Book.type';
 type Prop = {
-  progress: Date[];
+  progress: Progress[];
   totalPage: number;
 };
 

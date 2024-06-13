@@ -1,6 +1,7 @@
 import { booksSelector } from '../../../redux/books/selectors';
 import { Author, Img, List, Title } from './RecommendationsList.styled';
 import { useAppSelector } from '../../../hooks/hooks';
+import { INformationAboutReding } from '../../../type/Book.type';
 interface ListRecommends {
   _id: string;
   imageUrl: string;
@@ -9,7 +10,6 @@ interface ListRecommends {
 }
 export const RecommendationsList = () => {
   const bookRecommended = useAppSelector(booksSelector);
-  console.log(bookRecommended);
 
   const CutBookRecommended = bookRecommended.results.slice(0, 3);
   return (
