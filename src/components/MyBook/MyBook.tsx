@@ -14,7 +14,6 @@ import { useAppSelector } from '../../hooks/hooks';
 import { ReadBook } from '../BookList/BookList';
 export const MyBook = () => {
   const readBook = useAppSelector(redBookSelector);
-  console.log(readBook);
 
   return (
     <>

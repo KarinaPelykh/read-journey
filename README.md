@@ -35,7 +35,9 @@
 <li>styled-components: ^6.1.8</li>
 <li> vanta: ^0.5.24</li>
 <li>yup: ^1.3.3</li>
+<li>   typescript": "^5.4.5</li>
 </ul>
+
 </section>
 
 # Visual inspection

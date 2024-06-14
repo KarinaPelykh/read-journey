@@ -1,4 +1,3 @@
-import { useDispatch, useSelector } from 'react-redux';
 import {
   ContainerInfo,
   Data,
@@ -21,12 +20,13 @@ import formatDate from '../../helpers/formatDate';
 import getDate from '../../helpers/getDate';
 import timeReadingBook from '../../helpers/timeReadingBook';
 import { toast } from 'react-toastify';
-
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import { Progress } from '../../type/Book.type';
 export const Details = () => {
-  const redBook = useSelector(redBookSelector);
-  const bookId = redBook._id;
-  const dispatch = useDispatch();
-  const handelDeleteProgress = _id => {
+  const redBook = useAppSelector(redBookSelector);
+  const bookId = redBook._id as string;
+  const dispatch = useAppDispatch();
+  const handelDeleteProgress = (_id: string) => {
     dispatch(
       deleteProgress({
         bookId,
@@ -83,8 +83,8 @@ export const Details = () => {
                       finishReading,
                       speed,
                       _id,
-                    }) => (
-                      <li key={_id}>
+                    }: Progress) => (
+                      <li key={String(_id)}>
                         <ContainerInfo>
                           <DivInfoRead>
                             <p>{progressReading}%</p>
@@ -103,7 +103,9 @@ export const Details = () => {
                               <Speed>{speed} pages per hours</Speed>
                             </div>
 
-                            <button onClick={() => handelDeleteProgress(_id)}>
+                            <button
+                              onClick={() => handelDeleteProgress(String(_id))}
+                            >
                               <Trash
                                 width="14"
                                 height="14"

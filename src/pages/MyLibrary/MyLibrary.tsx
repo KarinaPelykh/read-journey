@@ -1,6 +1,6 @@
-import styled from 'styled-components';
 import { Dashboard } from '../../components/Dashboard/Dashboard';
 import { RecommendedBooks } from '../../components/RecommendedBooks/RecommendedBooks';
+import { Div } from './MyLibrary.styled';
 export const MyLibrary = () => {
   return (
     <Div>
@@ -9,9 +9,3 @@ export const MyLibrary = () => {
     </Div>
   );
 };
-
-const Div = styled.div`
-  @media screen and (min-width: 1440px) {
-    display: flex;
-  }
-`;

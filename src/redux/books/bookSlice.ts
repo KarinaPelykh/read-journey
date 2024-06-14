@@ -13,7 +13,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 import { MyKnownError, StateBook } from '../../type/Book.type';
-
+import { initialState } from './state';
 const pending = (state: StateBook) => {
   state.isLoading = true;
   state.error = '';
@@ -25,35 +25,6 @@ const rejected = (
 ) => {
   state.isLoading = false;
   state.error = action.payload;
-};
-
-const initialState: StateBook = {
-  books: {
-    page: 1,
-    perPage: 10,
-    results: [],
-    totalPages: 0,
-  },
-  newBooks: [],
-  redBook: {
-    author: '',
-    createdAt: '',
-    imageUrl: '',
-    owner: '',
-    progress: [],
-    recommend: false,
-    timeLeftToRead: { hours: null, minutes: null, seconds: null },
-    status: '',
-    title: '',
-    totalPages: 0,
-    updatedAt: '',
-    _id: '',
-  },
-  isLoading: false,
-  error: null,
-  page: 1,
-  perPage: 10,
-  totalPages: 0,
 };
 
 const bookSlice = createSlice({

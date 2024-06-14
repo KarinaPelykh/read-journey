@@ -36,6 +36,7 @@ export interface BookResponse {
 }
 // array in BooksArrayResponse
 export interface Progress {
+  progressReading: string;
   finishPage: number;
   finishReading: string;
   speed: number;

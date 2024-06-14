@@ -96,7 +96,6 @@ export const addReadBook = createAsyncThunk<
 >('book/addRead', async ({ id }, { rejectWithValue }) => {
   try {
     const { data } = await instance.get(`/books/${id}`);
-    console.log(data, 'addReadBook');
 
     return data;
   } catch (error) {
@@ -113,7 +112,6 @@ export const startReading = createAsyncThunk<
       id,
       page,
     });
-    console.log('startReading', data);
     return data;
   } catch (error) {
     return rejectWithValue(error as MyKnownError);
@@ -129,7 +127,6 @@ export const finishedReading = createAsyncThunk<
       id,
       page,
     });
-    console.log('finishedReading', data);
     return data;
   } catch (error) {
     return rejectWithValue(error as MyKnownError);
@@ -144,7 +141,6 @@ export const deleteProgress = createAsyncThunk<
     const { data } = await instance.delete(
       `/books/reading?bookId=${bookId}&readingId=${readingId}`
     );
-    console.log('deleteProgress', data);
     return data;
   } catch (error) {
     return rejectWithValue(error as MyKnownError);

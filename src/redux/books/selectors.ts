@@ -11,5 +11,3 @@ export const newBooksSelector = (state: { books: StateBook }) =>
   state.books.newBooks;
 export const redBookSelector = (state: { books: StateBook }) =>
   state.books.redBook;
-// export const bookOwnSelector = (state: { books: StateBook }) =>
-//   state.books.bookOwn;

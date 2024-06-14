@@ -1,9 +1,16 @@
-const getDate = ({ progress, totalPage }) => {
+import { Progress } from '../type/Book.type';
+
+interface Prop {
+  progress: Progress[];
+  totalPage: number;
+}
+
+const getDate = ({ progress, totalPage }: Prop) => {
   return progress
     .filter(({ status }) => status === 'inactive')
     .reduce(
       (
-        total,
+        total: { data: string; pagesReadCount: number; inform: any[] }[],
         {
           startReading,
           finishReading,
@@ -12,21 +19,18 @@ const getDate = ({ progress, totalPage }) => {
           status,
           speed,
           _id,
-        }
+        }: Progress
       ) => {
         const data = new Date(finishReading).toDateString();
         const entry = total.find(entry => entry.data === data);
         const pagesReadCount =
-          status === 'inactive' ? finishPage - startPage + 1 : 0;
-        const progressReading = parseInt(
-          (pagesReadCount / totalPage) * 100
-        ).toFixed(2);
+          status === 'inactive'
+            ? Number(finishPage) - Number(startPage) + 1
+            : 0;
+        const progressReading = ((pagesReadCount / totalPage) * 100).toFixed(2);
 
         if (entry) {
-          entry.readTotalPage = (entry.readTotalPage || 0) + pagesReadCount;
-
-          entry.inform = entry.inform || [];
-
+          entry.pagesReadCount += pagesReadCount;
           entry.inform.push({
             progressReading,
             startReading,
@@ -55,4 +59,5 @@ const getDate = ({ progress, totalPage }) => {
     )
     .sort((a, c) => c.data.localeCompare(a.data));
 };
+
 export default getDate;

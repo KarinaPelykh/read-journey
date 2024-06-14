@@ -11,7 +11,6 @@ import { useAppSelector } from '../../hooks/hooks';
 export const ShowMyInform = () => {
   const [open, setOpen] = useState({ statistic: false, details: true });
   const redBook = useAppSelector(redBookSelector);
-  console.log(redBook);
 
   return (
     <Wrapper>
