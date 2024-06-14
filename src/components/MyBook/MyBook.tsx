@@ -11,8 +11,11 @@ import {
 import icon from '../../images/sprite.svg';
 import book from '../../images/img-book.png';
 import { useAppSelector } from '../../hooks/hooks';
+import { ReadBook } from '../BookList/BookList';
 export const MyBook = () => {
   const readBook = useAppSelector(redBookSelector);
+  console.log(readBook);
+
   return (
     <>
       {readBook?.timeLeftToRead ? (

@@ -25,7 +25,7 @@ export const AddReading = () => {
   const [page, setPage] = useState('');
   const [start, setStart] = useState(false);
   const [open, setOpen] = useState(false);
-  const id = readBook._id;
+  const id = readBook._id as string;
   const dispatch = useAppDispatch();
   const toggle = () => {
     setOpen(!open);

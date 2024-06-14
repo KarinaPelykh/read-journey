@@ -13,6 +13,7 @@ import {
   WrapperItem,
 } from './MyLibraryItem.styled';
 import { useAppDispatch } from '../../../hooks/hooks';
+import { toast } from 'react-toastify';
 interface Item {
   author: string;
   id: string;
@@ -21,8 +22,6 @@ interface Item {
   title: string;
 }
 export const MyLibraryItem: FC<Item> = ({ id, img, title, author, pages }) => {
-  console.log(typeof id);
-
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useAppDispatch();
   const toggle = () => {
@@ -31,6 +30,19 @@ export const MyLibraryItem: FC<Item> = ({ id, img, title, author, pages }) => {
     if (isOpen) {
       document.body.style.overflow = 'auto';
     }
+  };
+
+  const handleDeleteBook = () => {
+    dispatch(deleteBook({ id }))
+      .unwrap()
+      .then(() => {
+        toast.success('You deleted book', {
+          position: 'top-right',
+          hideProgressBar: true,
+          theme: 'dark',
+        });
+      })
+      .catch(error => toast.error(error.message));
   };
   return (
     <>
@@ -42,7 +54,7 @@ export const MyLibraryItem: FC<Item> = ({ id, img, title, author, pages }) => {
             <Title>{title}</Title>
             <Author>{author}</Author>
           </div>
-          <ButtonDelete onClick={() => dispatch(deleteBook({ id }))}>
+          <ButtonDelete onClick={handleDeleteBook}>
             <svg width="14" height="14">
               <use xlinkHref={icon + '#trash'}></use>
             </svg>

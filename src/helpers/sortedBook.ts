@@ -1,12 +1,8 @@
-interface Book {
-  author: string;
-  imageUrl: string;
-  status: string;
-  title: string;
-  _id: string;
-  totalPages: number;
-}
-export const getVisibleTasks = (status: string, newBook: Book[]): Book[] => {
+import { BooksArrayResponse } from '../type/Book.type';
+export const getVisibleTasks = (
+  status: string,
+  newBook: BooksArrayResponse[]
+): BooksArrayResponse[] => {
   if (status === 'done') {
     return newBook.filter(item => item.status === 'done');
   } else if (status === 'in progress') {

@@ -1,41 +1,17 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { instance } from '../../service/Api';
-import { MyKnownError } from '../../type/Book.type';
-export interface Book {
-  page: string | number;
-  limit: number;
-}
-export type Id = {
-  id: string | null;
-};
-export interface Compatible extends Id, Pick<Book, 'page'> {}
-export interface IDBook {
-  bookId: string;
-  readingId: string;
-}
-export interface BookResponse {
-  page: string | number;
-  perPage: number;
-  results: [];
-  totalPages: number;
-}
-export interface BooksArrayResponse {
-  author: string;
-  createdAt: string;
-  imageUrl: string;
-  owner: string;
-  progress: [];
-  recommend: false;
-  status: string;
-  title: string;
-  totalPages: number;
-  updatedAt: string;
-  _id: string;
-}
-type Credentals = Pick<BooksArrayResponse, 'title' | 'author' | 'totalPages'>;
-type Status = {
-  status: string;
-};
+import {
+  Book,
+  BookResponse,
+  BooksArrayResponse,
+  Compatible,
+  Credentials,
+  CustomAxiosRequestConfig,
+  IDBook,
+  Id,
+  MyKnownError,
+} from '../../type/Book.type';
+
 export const fetchBooks = createAsyncThunk<
   BookResponse,
   Book,
@@ -45,8 +21,6 @@ export const fetchBooks = createAsyncThunk<
     const { data } = await instance.get(
       `/books/recommend?page=${page}&limit=${limit}`
     );
-    console.log('data555', data);
-
     return data;
   } catch (error) {
     return rejectWithValue(error as MyKnownError);
@@ -54,7 +28,7 @@ export const fetchBooks = createAsyncThunk<
 });
 
 export const addBooksWithRecommended = createAsyncThunk<
-  BookResponse,
+  BooksArrayResponse,
   Id,
   { rejectValue: MyKnownError }
 >('book/addBooks', async ({ id }, { rejectWithValue }) => {
@@ -69,7 +43,7 @@ export const addBooksWithRecommended = createAsyncThunk<
 
 export const addNewBook = createAsyncThunk<
   BooksArrayResponse,
-  Credentals,
+  Credentials,
   { rejectValue: MyKnownError }
 >(
   'book/addNewBook',
@@ -92,21 +66,23 @@ export const deleteBook = createAsyncThunk<
   Id,
   Id,
   { rejectValue: MyKnownError }
->('book/deleteBook', async (id, { rejectWithValue }) => {
+>('book/deleteBook', async ({ id }, { rejectWithValue }) => {
   try {
-    await instance.delete(`/books/remove/${id}`);
-    return id;
+    const { data } = await instance.delete(`/books/remove/${id}`);
+    return data.id;
   } catch (error) {
     return rejectWithValue(error as MyKnownError);
   }
 });
 export const getBookOwn = createAsyncThunk<
-  BooksArrayResponse,
-  Status,
+  BooksArrayResponse[],
+  CustomAxiosRequestConfig,
   { rejectValue: MyKnownError }
 >('book/bookStatus', async ({ status }, { rejectWithValue }) => {
   try {
-    const { data } = await instance.get('/books/own', { status });
+    const { data } = await instance.get(`/books/own`, {
+      status,
+    } as CustomAxiosRequestConfig);
 
     return data;
   } catch (error) {
@@ -120,6 +96,7 @@ export const addReadBook = createAsyncThunk<
 >('book/addRead', async ({ id }, { rejectWithValue }) => {
   try {
     const { data } = await instance.get(`/books/${id}`);
+    console.log(data, 'addReadBook');
 
     return data;
   } catch (error) {
@@ -136,7 +113,7 @@ export const startReading = createAsyncThunk<
       id,
       page,
     });
-
+    console.log('startReading', data);
     return data;
   } catch (error) {
     return rejectWithValue(error as MyKnownError);
@@ -152,7 +129,7 @@ export const finishedReading = createAsyncThunk<
       id,
       page,
     });
-    console.log('data', data);
+    console.log('finishedReading', data);
     return data;
   } catch (error) {
     return rejectWithValue(error as MyKnownError);
@@ -167,7 +144,7 @@ export const deleteProgress = createAsyncThunk<
     const { data } = await instance.delete(
       `/books/reading?bookId=${bookId}&readingId=${readingId}`
     );
-
+    console.log('deleteProgress', data);
     return data;
   } catch (error) {
     return rejectWithValue(error as MyKnownError);

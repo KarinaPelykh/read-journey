@@ -12,12 +12,7 @@ import {
 } from './operations';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
-import {
-  INformationAboutReding,
-  MyKnownError,
-  ReadBook,
-  StateBook,
-} from '../../type/Book.type';
+import { MyKnownError, StateBook } from '../../type/Book.type';
 
 const pending = (state: StateBook) => {
   state.isLoading = true;
@@ -33,9 +28,27 @@ const rejected = (
 };
 
 const initialState: StateBook = {
-  books: {} as INformationAboutReding,
+  books: {
+    page: 1,
+    perPage: 10,
+    results: [],
+    totalPages: 0,
+  },
   newBooks: [],
-  redBook: {} as ReadBook,
+  redBook: {
+    author: '',
+    createdAt: '',
+    imageUrl: '',
+    owner: '',
+    progress: [],
+    recommend: false,
+    timeLeftToRead: { hours: null, minutes: null, seconds: null },
+    status: '',
+    title: '',
+    totalPages: 0,
+    updatedAt: '',
+    _id: '',
+  },
   isLoading: false,
   error: null,
   page: 1,

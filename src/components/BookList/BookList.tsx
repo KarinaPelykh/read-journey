@@ -7,7 +7,6 @@ import { isLoggedInSelect } from '../../redux/auth/selectors';
 import { Pagination } from '../Pagination/Pagination';
 import { BookItem } from '../BookItem/BookItem';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { INformationAboutReding } from '../../type/Book.type';
 export interface ReadBook {
   author: string;
   imageUrl: string;
@@ -24,7 +23,7 @@ export const BookList = () => {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [sizeWindow, setSizeWindow] = useState(window.innerWidth);
-  const bookSelector = useAppSelector(booksSelector) as INformationAboutReding;
+  const bookSelector = useAppSelector(booksSelector);
   const totalPage = bookSelector.totalPages;
 
   const { results } = bookSelector;
@@ -80,7 +79,7 @@ export const BookList = () => {
         totalPage={totalPage}
       />
       <ListBook>
-        {results?.map(item => (
+        {results?.map((item: ReadBook) => (
           <BookItem
             key={item._id}
             id={item._id}

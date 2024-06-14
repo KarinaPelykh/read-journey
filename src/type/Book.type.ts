@@ -1,7 +1,40 @@
+import { AxiosRequestConfig } from 'axios';
+
 export interface MyKnownError {
   errorMessage: string;
 }
 
+export interface Book {
+  page: string | number;
+  limit: number;
+}
+export type Id = {
+  id: string;
+};
+
+export interface Compatible extends Id, Pick<Book, 'page'> {}
+
+export interface IDBook {
+  bookId: string;
+  readingId: string;
+}
+
+export type Credentials = Pick<
+  BooksArrayResponse,
+  'title' | 'author' | 'totalPages'
+>;
+// status Sort
+export interface CustomAxiosRequestConfig extends AxiosRequestConfig {
+  status?: string;
+}
+// object with books
+export interface BookResponse {
+  page: string | number;
+  perPage: number;
+  results: [];
+  totalPages: number;
+}
+// array in BooksArrayResponse
 export interface Progress {
   finishPage: number;
   finishReading: string;
@@ -9,52 +42,28 @@ export interface Progress {
   startPage: number;
   startReading: string;
   status: 'inactive' | 'active';
-  _id: string;
+  _id: Id;
 }
-export interface BookItem {
+// Response
+export interface BooksArrayResponse {
   author: string;
-  _id: string;
-  imageUrl: string;
-  recommend: boolean;
-  title: string;
-  totalPages: number;
-}
-
-export interface INformationAboutReding {
-  page: number;
-  perPage: number;
-  results: BookItem[];
-  totalPages: number;
-}
-
-export interface ReadBook {
-  author: string;
+  createdAt?: string;
   imageUrl: string;
   owner: string;
   progress: Progress[];
-  status: string;
-  timeLeftToRead: { hours: null; minutes: null; seconds: null };
-  title: string;
-  totalPages: number;
-  _id: string;
-}
-interface BooksArrayResponse {
-  author: string;
-  createdAt: string;
-  imageUrl: string;
-  owner: string;
-  progress: BookItem[];
-  recommend: false;
+  recommend?: false;
+  timeLeftToRead?: { hours: null; minutes: null; seconds: null };
   status: string;
   title: string;
   totalPages: number;
-  updatedAt: string;
-  _id: string;
+  updatedAt?: string;
+  _id: string | Id;
 }
+// State
 export interface StateBook {
-  books: INformationAboutReding;
+  books: BookResponse;
   newBooks: BooksArrayResponse[];
-  redBook: ReadBook;
+  redBook: BooksArrayResponse;
   isLoading: boolean;
   error: string | null | unknown;
   page: string | number;

@@ -41,8 +41,8 @@ export const MyLibraryList: FC<Status> = ({ status }) => {
         <MyListBook>
           {visible.map(item => (
             <MyLibraryItem
-              key={item._id}
-              id={item._id}
+              key={item._id as string}
+              id={item._id as string}
               img={item.imageUrl}
               title={item.title}
               author={item.author}

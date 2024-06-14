@@ -1,7 +1,6 @@
 import { booksSelector } from '../../../redux/books/selectors';
 import { Author, Img, List, Title } from './RecommendationsList.styled';
 import { useAppSelector } from '../../../hooks/hooks';
-import { INformationAboutReding } from '../../../type/Book.type';
 interface ListRecommends {
   _id: string;
   imageUrl: string;
