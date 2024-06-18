@@ -31,6 +31,7 @@ export const Header = () => {
       })
       .catch(error => toast.error(error));
   };
+
   return (
     <>
       {!locationUser && (

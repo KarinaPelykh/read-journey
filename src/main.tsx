@@ -1,29 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { theme } from './stylesheet/theme.js';
+import { lightTheme, theme as darkTheme } from './stylesheet/theme.js';
 import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
 import { persistor, store } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ToastContainer } from 'react-toastify';
 import GlobalStyles from './stylesheet/globalStyles.js';
-
+import { LightTheme } from './components/LightTheme/LigthTheme';
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement as HTMLElement);
+const Main = () => {
+  const [theme, setTheme] = useState('dark');
+  const isLight = theme === 'light';
+  const handleTheme = () => {
+    setTheme(isLight ? 'dark' : 'light');
+  };
+  return (
+    <ThemeProvider theme={isLight ? lightTheme : darkTheme}>
+      <ToastContainer autoClose={1000} />
+      <LightTheme handleTheme={handleTheme} />
+      <App />
+      <GlobalStyles />
+    </ThemeProvider>
+  );
+};
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <BrowserRouter>
-          <ThemeProvider theme={theme}>
-            <ToastContainer autoClose={1000} />
-            <App />
-
-            <GlobalStyles />
-          </ThemeProvider>
+          <Main />
         </BrowserRouter>
       </PersistGate>
     </Provider>
