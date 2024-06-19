@@ -47,6 +47,7 @@ export const Author = styled.p<Prop>`
     `}
 `;
 export const QuantityPages = styled.p`
+  color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.xs};
   margin-bottom: 32px;
 `;

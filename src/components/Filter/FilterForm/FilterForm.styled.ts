@@ -18,6 +18,7 @@ export const Form = styled.form`
   }
 `;
 export const Title = styled.p`
+  color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.xs};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   margin-bottom: 8px;

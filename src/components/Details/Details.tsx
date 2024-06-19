@@ -7,6 +7,7 @@ import {
   List,
   Minutes,
   Pages,
+  ProgressReading,
   Speed,
   Trash,
   VerticalDiv,
@@ -87,7 +88,9 @@ export const Details = () => {
                       <li key={String(_id)}>
                         <ContainerInfo>
                           <DivInfoRead>
-                            <p>{progressReading}%</p>
+                            <ProgressReading>
+                              {progressReading}%
+                            </ProgressReading>
                             <Minutes>
                               {timeReadingBook({
                                 startReading,

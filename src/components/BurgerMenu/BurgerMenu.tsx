@@ -4,7 +4,7 @@ import { Buttons } from '../Button/Button';
 import { UserNav } from '../Header/UserNav/UserNav';
 import { toast } from 'react-toastify';
 import icon from '../../images/sprite.svg';
-import { Menu, Modal } from './BurgerMenu.styled';
+import { Menu, Modal, Svg } from './BurgerMenu.styled';
 import { useAppDispatch } from '../../hooks/hooks';
 import { FC } from 'react';
 import { MyKnownError } from '../../type/Book.type';
@@ -36,9 +36,9 @@ export const BurgerMenu: FC<BurgerMenu> = ({ open, toggle }) => {
       <Modal className={open ? 'open' : 'close'}>
         <Menu>
           <button onClick={toggle}>
-            <svg width="28" height="28">
+            <Svg>
               <use xlinkHref={icon + '#close'}></use>
-            </svg>
+            </Svg>
           </button>
           <UserNav variant="burger-menu" />
           <Buttons onClick={handelLogout} variant="log-out" prop={'Log out'} />

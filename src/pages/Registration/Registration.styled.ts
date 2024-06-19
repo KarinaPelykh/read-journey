@@ -28,6 +28,7 @@ export const WrapperForm = styled.div`
 `;
 
 export const Comment = styled.p`
+  color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.xxl};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   margin-bottom: 20px;

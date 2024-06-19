@@ -28,6 +28,7 @@ export const Form = styled.form`
 export const Title = styled.p`
   margin-left: 14px;
   margin-bottom: 8px;
+  color: ${({ theme }) => theme.colors.white};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   font-size: ${({ theme }) => theme.fontSizes.xs};
   @media screen and (min-width: 768px) {

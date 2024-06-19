@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   margin: auto;
 `;
 export const Text = styled.p`
+  color: ${({ theme }) => theme.colors.white};
   width: 197px;
   text-align: center;
   margin-top: 10px;
@@ -38,6 +39,7 @@ export const MyListBook = styled.ul`
 `;
 
 export const TextGreeting = styled.p`
+  color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.xl};
   margin-bottom: 14px;
   margin-top: 32px;

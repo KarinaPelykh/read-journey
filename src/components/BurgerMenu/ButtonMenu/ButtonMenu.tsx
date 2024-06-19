@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import icon from '../../../images/sprite.svg';
-import { Button } from './ButtonMenu.styled';
+import { Button, Svg } from './ButtonMenu.styled';
 import { BurgerMenu } from '../BurgerMenu';
 export const ButtonMenu = () => {
   const [open, setOpen] = useState(false);
@@ -12,9 +12,9 @@ export const ButtonMenu = () => {
   return (
     <>
       <Button onClick={handelOpen}>
-        <svg width="28" height="28">
+        <Svg>
           <use xlinkHref={icon + '#icon-menu'}></use>
-        </svg>
+        </Svg>
       </Button>
       <BurgerMenu open={open} toggle={handelOpen} />
     </>

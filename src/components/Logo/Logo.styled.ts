@@ -25,6 +25,7 @@ export const WrapperSvg = styled.div<Prop>`
 export const Logo = styled.svg`
   width: 42px;
   height: 17px;
+  fill: ${({ theme }) => theme.colors.white};
 `;
 export const TextLogo = styled(Link)`
   display: none;

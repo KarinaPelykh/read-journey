@@ -22,7 +22,7 @@ export const Pagination: FC<Pagination> = ({
     <WrapperPagination>
       <Button disabled={page === 1} onClick={previous}>
         <SvgPrevious
-          style={{ stroke: page === 1 ? '#686868' : '#fff' }}
+          style={{ stroke: page === 1 ? '#686868' : '#aaaaaa' }}
           width="20"
           height="20"
         >
@@ -32,7 +32,7 @@ export const Pagination: FC<Pagination> = ({
       <Button onClick={next}>
         <SvgNext
           style={{
-            stroke: totalPage === page ? '#686868' : '#fff',
+            stroke: totalPage === page ? '#686868' : '#aaaaaa',
           }}
           width="20"
           height="20"

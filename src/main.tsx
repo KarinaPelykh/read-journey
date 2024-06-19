@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
@@ -13,11 +13,22 @@ import { LightTheme } from './components/LightTheme/LigthTheme';
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement as HTMLElement);
 const Main = () => {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState<string>(() => {
+    const themePage = localStorage.getItem('theme');
+    const parsedInfo = JSON.parse(themePage as string);
+    return parsedInfo ? parsedInfo : 'dark';
+  });
+
   const isLight = theme === 'light';
+
   const handleTheme = () => {
     setTheme(isLight ? 'dark' : 'light');
   };
+
+  useEffect(() => {
+    localStorage.setItem('theme', JSON.stringify(theme));
+  }, [theme]);
+
   return (
     <ThemeProvider theme={isLight ? lightTheme : darkTheme}>
       <ToastContainer autoClose={1000} />

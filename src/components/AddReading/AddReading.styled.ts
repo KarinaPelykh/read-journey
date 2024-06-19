@@ -8,6 +8,7 @@ export const Form = styled.form`
   }
 `;
 export const Title = styled.p`
+  color: ${({ theme }) => theme.colors.white};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   font-size: ${({ theme }) => theme.fontSizes.ss};
   margin-left: 14px;

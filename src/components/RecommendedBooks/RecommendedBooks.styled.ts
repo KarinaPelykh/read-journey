@@ -19,6 +19,7 @@ export const WrapperBooks = styled.div`
   }
 `;
 export const Text = styled.p`
+  color: ${({ theme }) => theme.colors.white};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   font-size: ${({ theme }) => theme.fontSizes.xl};
   margin-bottom: 34px;
@@ -29,6 +30,7 @@ export const Text = styled.p`
 `;
 
 export const TextLibrary = styled.p`
+  color: ${({ theme }) => theme.colors.white};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   font-size: ${({ theme }) => theme.fontSizes.xl};
   margin-bottom: 83px;

@@ -1,8 +1,8 @@
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
 <symbol id="logo" viewBox="0 0 79 32">
-<path fill="#f9f9f9" style="fill: var(--color1, #f9f9f9)" d="M0 20.706v-20.706h24.264c3.299 0 6.512 1.051 9.173 3.001 1.591 1.166 2.861 2.715 3.693 4.503l2.807 6.034c1.084-2.647 2.443-5.173 4.055-7.536l0.139-0.204c0.463-0.679 0.992-1.31 1.58-1.884l1.196-1.168c0.779-0.762 1.704-1.358 2.719-1.755l0.103-0.040c1.608-0.629 3.32-0.951 5.047-0.951h24.283v20.706h-79.059z"></path>
-<path fill="#f9f9f9" style="fill: var(--color1, #f9f9f9)" d="M0 24.471h79.059v7.529h-79.059v-7.529z"></path>
+<path  d="M0 20.706v-20.706h24.264c3.299 0 6.512 1.051 9.173 3.001 1.591 1.166 2.861 2.715 3.693 4.503l2.807 6.034c1.084-2.647 2.443-5.173 4.055-7.536l0.139-0.204c0.463-0.679 0.992-1.31 1.58-1.884l1.196-1.168c0.779-0.762 1.704-1.358 2.719-1.755l0.103-0.040c1.608-0.629 3.32-0.951 5.047-0.951h24.283v20.706h-79.059z"></path>
+<path  d="M0 24.471h79.059v7.529h-79.059v-7.529z"></path>
 </symbol>
 <symbol id="button-read" viewBox="0 0 32 32">
 <path fill="#e90516" style="fill: var(--color1, #e90516)" d="M28.8 16c0 7.069-5.731 12.8-12.8 12.8s-12.8-5.731-12.8-12.8c0-7.069 5.731-12.8 12.8-12.8s12.8 5.731 12.8 12.8z"></path>
@@ -103,8 +103,8 @@
 </symbol>
 
 <symbol id="close" viewBox="0 0 32 32">
-<path fill="none" stroke="#f9f9f9" style="stroke: var(--color1, #f9f9f9)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.9091" d="M24 8l-16 16"></path>
-<path fill="none" stroke="#f9f9f9" style="stroke: var(--color1, #f9f9f9)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.9091" d="M8 8l16 16"></path>
+<path  stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.9091" d="M24 8l-16 16"></path>
+<path  stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.9091" d="M8 8l16 16"></path>
 </symbol>
 
 
@@ -127,7 +127,7 @@
 </symbol>
 
 <symbol id="icon-menu" viewBox="0 0 48 32">
-<path fill="none" stroke="#f9f9f9" style="stroke: var(--color1, #f9f9f9)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4" d="M3 16h42M3 2h42M17 30h28"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4" d="M3 16h42M3 2h42M17 30h28"></path>
 </symbol>
 <symbol id="block" viewBox="0 0 32 32">
 <path fill="#f9f9f9" style="fill: var(--color1, #f9f9f9)" d="M6.4 0h19.2c3.535 0 6.4 2.865 6.4 6.4v19.2c0 3.535-2.865 6.4-6.4 6.4h-19.2c-3.535 0-6.4-2.865-6.4-6.4v-19.2c0-3.535 2.865-6.4 6.4-6.4z"></path>

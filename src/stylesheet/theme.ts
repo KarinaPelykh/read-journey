@@ -44,9 +44,9 @@ export const theme = {
 export const lightTheme = {
   colors: {
     white: '#000',
-    grey: '#f1f1f1f',
-    liteWhite: '#e3e3e391',
-    darkGray: '#262626',
+    grey: '#000',
+    liteWhite: '#453d3d91',
+    darkGray: '#eaeaea',
     lightBlack: '#fff',
     black: '#fff',
     blue: '#4F92F7',

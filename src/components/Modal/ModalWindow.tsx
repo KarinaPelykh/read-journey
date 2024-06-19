@@ -1,6 +1,6 @@
 import React, { FC, MouseEvent, ReactNode } from 'react';
 import { Buttons } from '../Button/Button';
-import { Overlay, Modal, ButtonClose } from './ModalWindow.styled';
+import { Overlay, Modal, ButtonClose, Text } from './ModalWindow.styled';
 import icons from '../../images/sprite.svg';
 import { useEffect } from 'react';
 import { addBooksWithRecommended } from '../../redux/books/operations';
@@ -8,6 +8,7 @@ import { newBooksSelector } from '../../redux/books/selectors';
 import images from '../../images/pngwing.com.png';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import { Svg } from '../BurgerMenu/BurgerMenu.styled';
 
 interface ModalWindow {
   children: ReactNode;
@@ -59,13 +60,13 @@ export const ModalWindow: FC<ModalWindow> = ({
       {open && (
         <Modal $variant={variant as string}>
           <ButtonClose onClick={toggle}>
-            <svg width="20" height="20">
+            <Svg>
               <use xlinkHref={icons + '#close'}></use>
-            </svg>
+            </Svg>
           </ButtonClose>
           {isBookAdded ? (
             <div>
-              <p>Book added choose another</p>
+              <Text>Book added choose another</Text>
               <img src={images} />
             </div>
           ) : (

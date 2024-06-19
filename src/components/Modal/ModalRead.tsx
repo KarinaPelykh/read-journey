@@ -6,6 +6,7 @@ import { ReactNode, useEffect } from 'react';
 import { addReadBook } from '../../redux/books/operations';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../hooks/hooks';
+import { Svg } from '../BurgerMenu/BurgerMenu.styled';
 
 interface ModalRead {
   children: ReactNode;
@@ -56,9 +57,9 @@ export const ModalRead: FC<ModalRead> = ({
       {open && (
         <Modal $variant={variant || null}>
           <ButtonClose onClick={toggle}>
-            <svg width="20" height="20">
+            <Svg width="20" height="20">
               <use xlinkHref={icons + '#close'}></use>
-            </svg>
+            </Svg>
           </ButtonClose>
 
           <>

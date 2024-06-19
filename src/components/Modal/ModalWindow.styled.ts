@@ -52,7 +52,7 @@ export const Modal = styled.div<Prop>`
     text-align: center;
   }
 `;
-export const ButtonClose = styled.div`
+export const ButtonClose = styled.button`
   position: absolute;
   top: 10px;
   right: 10px;
@@ -60,4 +60,8 @@ export const ButtonClose = styled.div`
   &:hover {
     transition: rotate(360deg);
   }
+`;
+
+export const Text = styled.p`
+  color: ${({ theme }) => theme.colors.white};
 `;

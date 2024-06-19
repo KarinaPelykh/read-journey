@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Title = styled.h1`
   margin-top: 40px;
   margin-bottom: 14px;
+  color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.xl};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
 `;
@@ -110,4 +111,7 @@ export const Text = styled.p`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.xl};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
+`;
+export const ProgressReading = styled.p`
+  color: ${({ theme }) => theme.colors.white};
 `;

@@ -55,6 +55,7 @@ export const WrapperItem = styled.div`
   width: 137px;
 `;
 export const QuantityPages = styled.p`
+  color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.xs};
   margin-bottom: 32px;
 `;

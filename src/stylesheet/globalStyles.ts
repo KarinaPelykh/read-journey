@@ -27,7 +27,7 @@ body {
 
   background:#141414;
   min-height:100vh;
-  /* color:#F9F9F9 */
+ 
 
 }
 

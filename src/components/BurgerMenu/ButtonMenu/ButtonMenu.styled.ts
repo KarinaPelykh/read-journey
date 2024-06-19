@@ -7,3 +7,8 @@ export const Button = styled.button`
     display: none;
   }
 `;
+export const Svg = styled.svg`
+  width: 28px;
+  height: 28px;
+  stroke: ${({ theme }) => theme.colors.white};
+`;
