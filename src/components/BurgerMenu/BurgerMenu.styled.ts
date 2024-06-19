@@ -34,7 +34,7 @@ export const Menu = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  padding: 40px 40px 40px 55px;
+  padding: 40px 40px 70px 55px;
   z-index: 555;
 `;
 export const Svg = styled.svg`
