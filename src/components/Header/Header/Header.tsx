@@ -47,7 +47,7 @@ export const Header = () => {
                 prop={'Log out'}
               />
             )}
-            {userNav ? null : <ButtonMenu />}
+            {(userNav && isLoggedIn) || !userNav ? <ButtonMenu /> : null}
           </Nav>
         </HeaderDiv>
       )}
