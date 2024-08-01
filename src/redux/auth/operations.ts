@@ -21,6 +21,7 @@ export const registerThunk = createAsyncThunk<
       setToken(data.token);
       return data;
     } catch (error) {
+      console.log(error);
       return rejectWithValue(error as MyKnownError);
     }
   }
@@ -37,6 +38,7 @@ export const loginThunk = createAsyncThunk<
 
     return data;
   } catch (error) {
+    console.log(error);
     return rejectWithValue(error as MyKnownError);
   }
 });
@@ -72,6 +74,7 @@ export const refreshThunk = createAsyncThunk<
 
     return data;
   } catch (error) {
+    console.log(error);
     return rejectWithValue(error as MyKnownError);
   }
 });
