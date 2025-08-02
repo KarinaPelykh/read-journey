@@ -1,13 +1,11 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { RegistrationPage } from './pages/Registration/Registration';
-
-import { HomePage } from './pages/Home/HomePage';
 
 import { PrivateRoute } from './hoc/PrivateRoute/PrivateRoute';
 import { PublicRoute } from './hoc/PublicRoute/PublicRoute';
 import { useEffect } from 'react';
 import { refreshThunk } from './redux/auth/operations';
-import { refresh } from './redux/auth/selectors';
+import { isLoggedInSelect, refresh } from './redux/auth/selectors';
 import { Loader } from './components/Loader/Loader';
 import { useAppDispatch, useAppSelector } from './hooks/hooks';
 import { Layout } from './components/Layout/Layout';
@@ -18,18 +16,31 @@ import { Recommended } from './pages/Recommended/Recommended';
 
 function App() {
   const dispatch = useAppDispatch();
+
   const isrRefresh = useAppSelector(refresh);
+
+  const isLoggedIn = useAppSelector(isLoggedInSelect);
 
   useEffect(() => {
     dispatch(refreshThunk());
   }, [dispatch]);
+
   return isrRefresh ? (
     <Loader />
   ) : (
-    <div>
+    <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
+          <Route
+            index
+            element={
+              isLoggedIn ? (
+                <Navigate to="/recommended" />
+              ) : (
+                <Navigate to="/register" />
+              )
+            }
+          />
           <Route
             path="register"
             element={
@@ -73,7 +84,7 @@ function App() {
           <Route path="*" element={<h1>Not found</h1>} />
         </Route>
       </Routes>
-    </div>
+    </>
   );
 }
 

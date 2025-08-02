@@ -8,17 +8,21 @@ import { ButtonMenu } from '../../BurgerMenu/ButtonMenu/ButtonMenu';
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
 import { UserNav } from '../UserNav/UserNav';
 import { UserBar } from '../UserBar/UserBar';
-import { AuthNav } from '../../AuthNav/AuthNav';
 import { LogoMain } from '../../Logo/Logo';
+
 export const Header = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const location = useLocation();
+
   const locationUser =
     location.pathname === '/login' || location.pathname === '/register';
+
   const isLoggedIn = useAppSelector(isLoggedInSelect);
+
   const userNav = location.pathname === '/';
+
   const handelLogout = () => {
     dispatch(logOutThunk())
       .then(() => {
@@ -38,7 +42,7 @@ export const Header = () => {
         <HeaderDiv>
           <Nav>
             <LogoMain variant="logo-header" />
-            {isLoggedIn ? <UserNav variant="" /> : <AuthNav />}
+            <UserNav variant="" />
             <UserBar />
             {!isLoggedIn ? null : (
               <Buttons

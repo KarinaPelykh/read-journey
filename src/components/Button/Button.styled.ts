@@ -8,7 +8,7 @@ export const WrapperButton = styled.div`
   justify-content: start;
   align-items: center;
 `;
-export const Button = styled.button<Button>`
+export const ReusableButton = styled.button<Button>`
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,19 +1,19 @@
-import { To } from 'react-router-dom';
-import { WrapperButton, Button, LinkOnLOgin } from './Button.styled';
-import { FC } from 'react';
-interface Buttons {
+import { WrapperButton, ReusableButton, LinkOnLOgin } from './Button.styled';
+
+type Button = {
   onClick?: () => void;
   prop: string;
   text?: string;
   to?: string;
   variant?: string;
-}
-export const Buttons: FC<Buttons> = ({ prop, text, to, onClick, variant }) => {
+};
+
+export const Buttons = ({ prop, text, to, onClick, variant }: Button) => {
   return (
     <WrapperButton>
-      <Button onClick={onClick} $variant={variant} type="submit">
+      <ReusableButton onClick={onClick} $variant={variant} type="submit">
         {prop}
-      </Button>
+      </ReusableButton>
       <LinkOnLOgin to={to as string}>{text}</LinkOnLOgin>
     </WrapperButton>
   );

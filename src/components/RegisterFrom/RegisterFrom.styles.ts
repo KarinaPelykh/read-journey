@@ -1,7 +1,9 @@
 import styled, { css } from 'styled-components';
+
 type Prop = {
   $variant: string | null;
 };
+
 export const RegisterForm = styled.form`
   @media screen and (min-width: 768px) {
     display: flex;
@@ -17,7 +19,7 @@ export const Input = styled.input`
   font-size: ${({ theme }) => theme.fontSizes.ss};
   width: 100%;
   outline: none;
-  border: none;
+  border: transparent;
   padding: 14px 14px 14px 62px;
 
   background-color: ${({ theme }) => theme.colors.darkGray};
@@ -50,35 +52,20 @@ export const InputPassword = styled.input<Prop>`
   color: ${({ theme }) => theme.colors.white};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   font-size: ${({ theme }) => theme.fontSizes.ss};
+  border-width: 1px;
+  border-style: solid;
 
-  ${({ $variant }) =>
-    $variant === 'error' &&
-    css`
-      border: 1px solid ${({ theme }) => theme.colors.red};
-    `}
-
-  ${({ $variant }) =>
-    $variant === 'successful' &&
-    css`
-      border: 1px solid ${({ theme }) => theme.colors.lightGreen};
-    `}
+  border-color: ${({ $variant }) =>
+    ($variant === 'error' && 'red') ||
+    ($variant === 'successful' && 'lightGreen') ||
+    ($variant === 'default' && 'transparent')};
+  transition: border-color 0.3s ease;
 `;
 
-export const TextErrors = styled.div`
-  position: relative;
-  top: -22px;
-  left: 4px;
-  color: ${({ theme }) => theme.colors.grey};
-  font-size: ${({ theme }) => theme.fontSizes.ss};
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
-
-  @media screen and (min-width: 768px) {
-    top: -54px;
-  }
-`;
 export const DivWrapperInput = styled.div`
   position: relative;
 `;
+
 export const Label = styled.label`
   position: absolute;
   color: ${({ theme }) => theme.colors.grey};
@@ -88,11 +75,12 @@ export const Label = styled.label`
   top: 15px;
   left: 14px;
 `;
+
 export const TextError = styled.div`
   position: absolute;
-  top: 40px;
+  top: 42px;
   left: 2px;
   color: ${({ theme }) => theme.colors.grey};
-  font-size: ${({ theme }) => theme.fontSizes.ss};
+  font-size: ${({ theme }) => theme.fontSizes.xs};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
 `;

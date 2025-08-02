@@ -2,8 +2,9 @@ import { NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 export interface Prop {
-  $variant: string;
+  $variant?: string;
 }
+
 export const List = styled.ul<Prop>`
   display: none;
   ${({ $variant }) =>

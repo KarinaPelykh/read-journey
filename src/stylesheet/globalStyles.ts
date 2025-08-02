@@ -5,8 +5,6 @@ import GilroyMedium from '../assets/fonts/Gilroy-Medium.ttf';
 import { createGlobalStyle } from 'styled-components';
 const GlobalStyles = createGlobalStyle`
 
-
-
 @font-face {
   font-family: 'Gilroy-Bold';
   src:  url(${GilroyBold});
@@ -50,11 +48,13 @@ ol {
   padding: 0;
   list-style: none;
 }
+
 img {
   display: block;
   max-width: 100%;
   height: auto;
 }
+
 button {
     padding: 0;
     border: none;
@@ -63,6 +63,6 @@ button {
     background-color: transparent;
     cursor: pointer;
   }
-
   `;
+
 export default GlobalStyles;

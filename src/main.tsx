@@ -32,7 +32,7 @@ const Main = () => {
   return (
     <ThemeProvider theme={isLight ? lightTheme : darkTheme}>
       <ToastContainer autoClose={1000} />
-      <LightTheme handleTheme={handleTheme} />
+      {/* <LightTheme handleTheme={handleTheme} /> */}
       <App />
       <GlobalStyles />
     </ThemeProvider>

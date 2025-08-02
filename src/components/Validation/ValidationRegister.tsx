@@ -1,25 +1,25 @@
-import { FC } from 'react';
 import icon from '../../images/sprite.svg';
 import styled from 'styled-components';
+
 type Information = {
-  errors: string | undefined;
-  touched: boolean | undefined;
+  errors?: string;
+  touched?: boolean;
 };
-export const ValidationRegister: FC<Information> = ({ errors, touched }) => {
+
+export const ValidationRegister = ({ errors, touched }: Information) => {
   return (
     <>
-      {touched && errors ? (
+      {touched && (
         <SvgValidation width="20px" height="20px">
-          <use xlinkHref={icon + '#error'}></use>
+          <use
+            xlinkHref={icon + `${errors ? '#error' : '#icon-check-psw'}`}
+          ></use>
         </SvgValidation>
-      ) : touched && !errors ? (
-        <SvgValidation width="20px" height="20px">
-          <use xlinkHref={icon + '#icon-check-psw'}></use>
-        </SvgValidation>
-      ) : null}
+      )}
     </>
   );
 };
+
 export const SvgValidation = styled.svg`
   position: absolute;
   top: 13px;

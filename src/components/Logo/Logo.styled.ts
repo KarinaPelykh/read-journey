@@ -1,11 +1,8 @@
-import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { Prop } from '../Header/UserNav/UserNav.styled';
+import { Link } from 'react-router-dom';
 
-export const WrapperSvg = styled.div<Prop>`
-  display: flex;
-  justify-content: start;
-  align-items: center;
+export const WrapperLogo = styled.div<Prop>`
   margin-bottom: 40px;
   @media screen and (min-width: 1440px) {
     margin-bottom: 104px;
@@ -27,7 +24,7 @@ export const Logo = styled.svg`
   height: 17px;
   fill: ${({ theme }) => theme.colors.white};
 `;
-export const TextLogo = styled(Link)`
+export const TextLogo = styled.p`
   display: none;
   @media screen and (min-width: 1439px) {
     display: flex;
@@ -35,6 +32,11 @@ export const TextLogo = styled(Link)`
     font-weight: ${({ theme }) => theme.fontWeights.medium};
     color: ${({ theme }) => theme.colors.white};
     margin-left: 4px;
-    text-decoration: none;
   }
+`;
+
+export const LinkLogo = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 `;
