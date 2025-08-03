@@ -1,23 +1,19 @@
 import { FC, useState } from 'react';
 import { Author, BookImg, QuantityPages, Title } from './BookItem.styled';
 import { ModalWindow } from '../Modal/ModalWindow';
-interface BookItem {
+import { useToggle } from '../../hooks/useToggle';
+
+type BookItemProps = {
   author: string;
   id: string;
   img: string;
   pages: number;
   title: string;
-}
-export const BookItem: FC<BookItem> = ({ img, title, author, pages, id }) => {
-  const [isOpen, setIsOpen] = useState(false);
+};
 
-  const toggle = () => {
-    setIsOpen(!isOpen);
-    document.body.style.overflow = 'hidden';
-    if (isOpen) {
-      document.body.style.overflow = 'auto';
-    }
-  };
+export const BookItem = ({ img, title, author, pages, id }: BookItemProps) => {
+  const { toggle, isOpen } = useToggle();
+
   return (
     <>
       <li onClick={toggle}>
@@ -25,6 +21,7 @@ export const BookItem: FC<BookItem> = ({ img, title, author, pages, id }) => {
         <Title>{title}</Title>
         <Author>{author}</Author>
       </li>
+
       {isOpen && (
         <ModalWindow open={isOpen} toggle={toggle} id={id} title={title}>
           <BookImg $variant="imgModal" src={img} />

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 interface Prop {
-  $variant: string | null;
+  $variant?: string;
 }
 export const Overlay = styled.div`
   position: fixed;

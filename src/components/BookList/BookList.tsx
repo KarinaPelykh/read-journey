@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { fetchBooks } from '../../redux/books/operations';
 import { booksSelector } from '../../redux/books/selectors';
 import { ListBook } from './BookList.styled';
@@ -7,7 +6,9 @@ import { isLoggedInSelect } from '../../redux/auth/selectors';
 import { Pagination } from '../Pagination/Pagination';
 import { BookItem } from '../BookItem/BookItem';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-export interface ReadBook {
+import { useWindowSize } from '../../hooks/useWindowSize';
+
+export type ReadBook = {
   author: string;
   imageUrl: string;
   owner: string;
@@ -17,31 +18,20 @@ export interface ReadBook {
   title: string;
   totalPages: number;
   _id: string;
-}
+};
 
 export const BookList = () => {
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(10);
-  const [sizeWindow, setSizeWindow] = useState(window.innerWidth);
-  const bookSelector = useAppSelector(booksSelector);
-  const totalPage = bookSelector.totalPages;
 
-  const { results } = bookSelector;
+  const [limit, setLimit] = useState(10);
+
+  const { results } = useAppSelector(booksSelector);
 
   const isLoggedIn = useAppSelector(isLoggedInSelect);
+
   const dispatch = useAppDispatch();
 
-  const handelSize = () => {
-    setSizeWindow(window.innerWidth);
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', handelSize);
-
-    return () => {
-      window.removeEventListener('resize', handelSize);
-    };
-  }, []);
+  const { sizeWindow } = useWindowSize();
 
   useEffect(() => {
     if (sizeWindow < 768) {
@@ -57,31 +47,13 @@ export const BookList = () => {
     isLoggedIn && dispatch(fetchBooks({ page, limit }));
   }, [dispatch, isLoggedIn, page, limit]);
 
-  const handelPrevious = () => {
-    if (page === 1) {
-      return;
-    }
-    setPage(page - 1);
-  };
-  const handelNext = () => {
-    if (page === totalPage) {
-      return;
-    }
-    setPage(page + 1);
-  };
-
   return (
     <>
-      <Pagination
-        previous={handelPrevious}
-        next={handelNext}
-        page={page}
-        totalPage={totalPage}
-      />
+      <Pagination setPage={setPage} page={page} />
       <ListBook>
-        {results?.map((item: ReadBook) => (
+        {results?.map((item: ReadBook, index) => (
           <BookItem
-            key={item._id}
+            key={index}
             id={item._id}
             img={item.imageUrl}
             title={item.title}

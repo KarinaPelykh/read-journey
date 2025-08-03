@@ -9,21 +9,24 @@ import { Selector } from '../Select/Select';
 
 export const RecommendedBooks = () => {
   const location = useLocation();
-  const localUser = location.pathname === '/library';
-  const user = location.pathname === '/reading';
-  const filterBook = useSelector(filterSelector);
+
+  const isLibraryPage = location.pathname === '/library';
+
+  const isReadingPage = location.pathname === '/reading';
+
+  const filteredBook = useSelector(filterSelector);
 
   return (
     <WrapperBooks>
-      {user ? (
+      {isReadingPage ? (
         <>
           <Text>My reading</Text>
           <MyBook />
         </>
-      ) : !localUser ? (
+      ) : !isLibraryPage ? (
         <>
           <Text>Recommended</Text>
-          {filterBook?.results ? <BookFilter /> : <BookList />}
+          {filteredBook?.results ? <BookFilter /> : <BookList />}
         </>
       ) : (
         <>

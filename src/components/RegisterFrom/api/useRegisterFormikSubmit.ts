@@ -7,7 +7,7 @@ import { useAppDispatch } from '../../../hooks/hooks';
 
 import { registrationScheme } from '../module/contract';
 
-export const useFormikSubmit = () => {
+export const useRegisterFormikSubmit = () => {
   const dispatch = useAppDispatch();
 
   const navigate = useNavigate();

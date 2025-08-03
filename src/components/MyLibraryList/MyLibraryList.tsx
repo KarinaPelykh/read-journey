@@ -13,27 +13,32 @@ import {
 } from './MyLibrary.styled';
 import { ModalWindow } from '../Modal/ModalWindow';
 import { MyLibraryItem } from './MyLibraryItem/MyLibraryItem';
-import { FC, useEffect, useState } from 'react';
+// import { FC, useEffect, useState } from 'react';
 import { getVisibleTasks } from '../../helpers/sortedBook';
 import { useAppSelector } from '../../hooks/hooks';
-type Status = {
+import { useToggle } from '../../hooks/useToggle';
+
+type MyLibraryListProps = {
   status: string;
 };
-export const MyLibraryList: FC<Status> = ({ status }) => {
-  const [isOpen, setIsOpen] = useState(false);
+
+export const MyLibraryList = ({ status }: MyLibraryListProps) => {
+  // const [isOpen, setIsOpen] = useState(false);
   const newBook = useAppSelector(newBooksSelector);
 
   const visible = getVisibleTasks(status, newBook);
 
-  useEffect(() => {
-    setIsOpen(true);
-    document.body.style.overflow = 'hidden';
-  }, []);
+  // useEffect(() => {
+  //   setIsOpen(true);
+  //   document.body.style.overflow = 'hidden';
+  // }, []);
 
-  const toggle = () => {
-    setIsOpen(!isOpen);
-    document.body.style.overflow = 'auto';
-  };
+  // const toggle = () => {
+  //   setIsOpen(!isOpen);
+  //   document.body.style.overflow = 'auto';
+  // };
+
+  const { isOpen, toggle } = useToggle();
 
   return (
     <>
@@ -62,8 +67,8 @@ export const MyLibraryList: FC<Status> = ({ status }) => {
         </Wrapper>
       )}
 
-      {newBook.length > 0 && isOpen ? (
-        <ModalWindow open={isOpen} toggle={toggle} variant="min-modal" id="">
+      {isOpen ? (
+        <ModalWindow open={isOpen} toggle={toggle} variant="min-modal">
           <img width="68" height="70" src={hand} />
           <TextGreeting>Good job</TextGreeting>
           <Greeting>

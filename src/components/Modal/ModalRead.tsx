@@ -1,76 +1,54 @@
-import React, { FC, MouseEvent } from 'react';
 import { Buttons } from '../Button/Button';
 import { Overlay, Modal, ButtonClose } from './ModalWindow.styled';
 import icons from '../../images/sprite.svg';
-import { ReactNode, useEffect } from 'react';
+import { ReactNode } from 'react';
 import { addReadBook } from '../../redux/books/operations';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../hooks/hooks';
 import { Svg } from '../BurgerMenu/BurgerMenu.styled';
+import { closeModalByKeyBoard } from './utils/closeModalByKeyBoard';
 
-interface ModalRead {
+type ModalReadProps = {
   children: ReactNode;
   id: string;
   open: boolean;
   toggle: () => void;
-  variant?: string | null;
-}
-export const ModalRead: FC<ModalRead> = ({
+  variant?: string;
+};
+
+export const ModalRead = ({
   open,
   toggle,
   children,
   id,
   variant,
-}) => {
+}: ModalReadProps) => {
   const dispatch = useAppDispatch();
+
   const navigate = useNavigate();
+
   const handelAddBookRead = () => {
     dispatch(addReadBook({ id }));
     navigate('/reading');
-
-    if (open) {
-      document.body.style.overflow = 'auto';
-    }
   };
-  useEffect(() => {
-    const handelKeyEscape = (e: KeyboardEvent) => {
-      if (e.code === 'Escape') {
-        toggle();
-        document.body.style.overflow = 'auto';
-      }
-    };
-    document.addEventListener('keydown', handelKeyEscape);
-    return () => {
-      document.removeEventListener('keydown', handelKeyEscape);
-    };
-  }, [toggle]);
 
-  const handelCloseClick = (e: MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      toggle();
-      document.body.style.overflow = 'auto';
-    }
-  };
+  const closeByClick = closeModalByKeyBoard(toggle);
 
   return (
-    <Overlay onClick={handelCloseClick}>
+    <Overlay onClick={closeByClick}>
       {open && (
-        <Modal $variant={variant || null}>
+        <Modal $variant={variant}>
           <ButtonClose onClick={toggle}>
             <Svg width="20" height="20">
               <use xlinkHref={icons + '#close'}></use>
             </Svg>
           </ButtonClose>
-
-          <>
-            {children}
-
-            <Buttons
-              onClick={handelAddBookRead}
-              prop="Start reading"
-              variant="buttonModal"
-            />
-          </>
+          {children}
+          <Buttons
+            onClick={handelAddBookRead}
+            prop="Start reading"
+            variant="buttonModal"
+          />
         </Modal>
       )}
     </Overlay>

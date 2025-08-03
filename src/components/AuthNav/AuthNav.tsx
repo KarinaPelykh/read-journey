@@ -1,8 +1,10 @@
 import { Item } from './AuthNav.styled';
+
 const routes = [
   { path: '/register', page: 'Registration' },
   { path: '/login', page: 'Login ' },
 ];
+
 export const AuthNav = () => {
   return (
     <nav>

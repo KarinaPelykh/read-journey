@@ -35,11 +35,12 @@ export const MyBook = () => {
       </Wrapper>
       <Button>
         <svg width="50" height="50">
-          {readBook?.timeLeftToRead ? (
-            <use xlinkHref={icon + '#button-read'}></use>
-          ) : (
-            <use xlinkHref={icon + '#button-stop-read'}></use>
-          )}
+          <use
+            xlinkHref={
+              icon +
+              (readBook?.timeLeftToRead ? '#button-read' : '#button-stop-read')
+            }
+          ></use>
         </svg>
       </Button>
     </>

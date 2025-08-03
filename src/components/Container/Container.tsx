@@ -1,8 +1,9 @@
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
-interface Element {
+type ContainerProps = {
   children: ReactNode;
-}
-export const Container: FC<Element> = ({ children }) => {
+};
+
+export const Container = ({ children }: ContainerProps) => {
   return <Container>{children}</Container>;
 };

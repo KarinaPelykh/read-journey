@@ -7,14 +7,14 @@ const GlobalStyles = createGlobalStyle`
 
 @font-face {
   font-family: 'Gilroy-Bold';
-  src:  url(${GilroyBold});
-   font-weight: 700 ; 
+  src:url(${GilroyBold});
+  font-weight: 700 ; 
 }
 
 @font-face {
   font-family: 'Gilroy-Medium';
   src:  url(${GilroyMedium});
-   font-weight: 500 ; 
+  font-weight: 500 ; 
 }
 
 html {

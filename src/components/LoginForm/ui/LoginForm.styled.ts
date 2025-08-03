@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const RegisterForm = styled.form`
+export const LoginForm = styled.form`
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: center;

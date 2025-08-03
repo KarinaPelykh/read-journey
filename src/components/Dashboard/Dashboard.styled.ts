@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 export const DivDashboard = styled.div`
   background: ${({ theme }) => theme.colors.lightBlack};
   padding-bottom: 20px;
@@ -6,10 +7,12 @@ export const DivDashboard = styled.div`
   width: 100%;
   margin-bottom: 16px;
   padding: 20px;
+
   @media screen and (min-width: 768px) {
     display: flex;
     padding: 32px;
   }
+
   @media screen and (min-width: 1440px) {
     margin: 0;
     margin-right: 16px;

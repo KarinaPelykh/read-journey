@@ -7,16 +7,19 @@ import { ShowMyInform } from '../ShowMyInform/ShowMyInform';
 
 export const Dashboard = () => {
   const location = useLocation();
-  const userNav = location.pathname === '/library';
-  const nav = location.pathname === '/reading';
+
+  const isLibraryPage = location.pathname === '/library';
+
+  const isReadingPage = location.pathname === '/reading';
+
   return (
     <DivDashboard>
-      {nav ? (
+      {isReadingPage ? (
         <>
           <AddReading />
           <ShowMyInform />
         </>
-      ) : !userNav ? (
+      ) : !isLibraryPage ? (
         <FilterOnRecommendedPage />
       ) : (
         <MyLibraryDashboard />

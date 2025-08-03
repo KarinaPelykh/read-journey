@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { TextError } from './RegisterFrom.styles';
+import { TextError } from './Error.styled';
 
 type ErrorProps = {
   children: ReactNode;

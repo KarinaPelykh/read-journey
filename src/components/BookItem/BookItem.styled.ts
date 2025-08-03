@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 interface Prop {
-  $variant?: string | null;
+  $variant?: string;
 }
 export const BookImg = styled.img<Prop>`
   border-radius: ${({ theme }) => theme.radii.s};

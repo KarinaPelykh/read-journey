@@ -2,19 +2,15 @@ import { useState } from 'react';
 import { Buttons } from '../Button/Button';
 import { ShowPassword } from '../Validation/ShowPassword';
 import { ValidationRegister } from '../Validation/ValidationRegister';
-import {
-  RegisterForm,
-  Input,
-  InputPassword,
-  DivWrapperInput,
-  Label,
-} from './RegisterFrom.styles';
+import { RegisterForm, DivWrapperInput, Label } from './RegisterFrom.styles';
 
-import { useFormikSubmit } from './api/useFormikSubmit';
-import { Error } from './Error';
+import { useRegisterFormikSubmit } from './api/useRegisterFormikSubmit';
+import { Error } from '../../shared/ui/Error/Error';
+import { Input } from '../../shared/ui/Input/Input';
+import { PasswordInput } from '../../shared/ui/PasswordInput/PasswordInput';
 
 export const RegistrationFrom = () => {
-  const formik = useFormikSubmit();
+  const formik = useRegisterFormikSubmit();
 
   const [showPsw, setShowPsw] = useState(true);
 
@@ -50,7 +46,7 @@ export const RegistrationFrom = () => {
       </DivWrapperInput>
       <DivWrapperInput>
         <Label htmlFor="password">Password:</Label>
-        <InputPassword
+        <PasswordInput
           $variant={
             !formik.touched.password
               ? 'default'

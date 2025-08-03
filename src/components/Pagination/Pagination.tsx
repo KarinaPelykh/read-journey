@@ -6,21 +6,35 @@ import {
 } from './Pagination.styled';
 import icon from '../../images/sprite.svg';
 import { FC } from 'react';
-interface Pagination {
-  next: () => void;
+import { booksSelector } from '../../redux/books/selectors';
+import { useAppSelector } from '../../hooks/hooks';
+
+type PaginationProps = {
   page: number;
-  previous: () => void;
-  totalPage: number;
-}
-export const Pagination: FC<Pagination> = ({
-  next,
-  previous,
-  page,
-  totalPage,
-}) => {
+  setPage: (params: number) => void;
+};
+
+export const Pagination = ({ page, setPage }: PaginationProps) => {
+  const bookSelector = useAppSelector(booksSelector);
+
+  const totalPage = bookSelector.totalPages;
+
+  const handelPrevious = () => {
+    if (page === 1) {
+      return;
+    }
+    setPage(page - 1);
+  };
+  const handelNext = () => {
+    if (page === totalPage) {
+      return;
+    }
+    setPage(page + 1);
+  };
+
   return (
     <WrapperPagination>
-      <Button disabled={page === 1} onClick={previous}>
+      <Button disabled={page === 1} onClick={handelPrevious}>
         <SvgPrevious
           style={{ stroke: page === 1 ? '#686868' : '#aaaaaa' }}
           width="20"
@@ -29,7 +43,7 @@ export const Pagination: FC<Pagination> = ({
           <use xlinkHref={icon + '#icon-left'}></use>
         </SvgPrevious>
       </Button>
-      <Button onClick={next}>
+      <Button onClick={handelNext}>
         <SvgNext
           style={{
             stroke: totalPage === page ? '#686868' : '#aaaaaa',
