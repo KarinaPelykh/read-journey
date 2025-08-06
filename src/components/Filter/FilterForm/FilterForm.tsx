@@ -1,4 +1,4 @@
-import { Buttons } from '../../Button/Button';
+import { Buttons } from '../../../shared/ui/Button/Button';
 import { Form, InputFilter, Label, Title, Wrapper } from './FilterForm.styled';
 import { getBook } from '../../../redux/filter/operations';
 import { FormEvent, useState } from 'react';
@@ -7,10 +7,14 @@ import { toast } from 'react-toastify';
 
 export const FilterForm = () => {
   const dispatch = useAppDispatch();
-  const [title, setTitle] = useState<string>('');
-  const [author, setAuthor] = useState<string>('');
+
+  const [title, setTitle] = useState('');
+
+  const [author, setAuthor] = useState('');
+
   const handelSubmit = (e: FormEvent) => {
     e.preventDefault();
+
     dispatch(getBook({ title, author }))
       .unwrap()
       .then(({ results }: any) => {
@@ -27,12 +31,15 @@ export const FilterForm = () => {
     setTitle('');
     setAuthor('');
   };
+
   const handleChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
+
   const handleChangeAuthor = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAuthor(e.target.value);
   };
+
   return (
     <Form onSubmit={handelSubmit}>
       <Title>Filters:</Title>

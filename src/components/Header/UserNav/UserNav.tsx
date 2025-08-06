@@ -1,13 +1,15 @@
-import React, { FC } from 'react';
 import { List, Item } from './UserNav.styled';
+
 const routes = [
   { path: '/recommended', page: 'Home' },
   { path: '/library', page: 'My library ' },
 ];
-export type Variant = {
+
+export type UserNavProps = {
   variant: string;
 };
-export const UserNav: FC<Variant> = ({ variant }) => {
+
+export const UserNav = ({ variant }: UserNavProps) => {
   return (
     <List $variant={variant}>
       {routes.map(({ path, page }) => (

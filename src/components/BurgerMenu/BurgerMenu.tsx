@@ -1,20 +1,18 @@
 import { useNavigate } from 'react-router-dom';
 import { logOutThunk } from '../../redux/auth/operations';
-import { Buttons } from '../Button/Button';
+import { Buttons } from '../../shared/ui/Button/Button';
 import { UserNav } from '../Header/UserNav/UserNav';
 import { toast } from 'react-toastify';
 import icon from '../../images/sprite.svg';
 import { Menu, Modal, Svg } from './BurgerMenu.styled';
 import { useAppDispatch } from '../../hooks/hooks';
-import { FC } from 'react';
-import { MyKnownError } from '../../type/Book.type';
 
-interface BurgerMenu {
+type BurgerMenuProps = {
   open: boolean;
   toggle: () => void;
-}
+};
 
-export const BurgerMenu: FC<BurgerMenu> = ({ open, toggle }) => {
+export const BurgerMenu = ({ open, toggle }: BurgerMenuProps) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -32,18 +30,16 @@ export const BurgerMenu: FC<BurgerMenu> = ({ open, toggle }) => {
   };
 
   return (
-    <>
-      <Modal className={open ? 'open' : 'close'}>
-        <Menu>
-          <button onClick={toggle}>
-            <Svg>
-              <use xlinkHref={icon + '#close'}></use>
-            </Svg>
-          </button>
-          <UserNav variant="burger-menu" />
-          <Buttons onClick={handelLogout} variant="log-out" prop={'Log out'} />
-        </Menu>
-      </Modal>
-    </>
+    <Modal className={open ? 'open' : 'close'}>
+      <Menu>
+        <button onClick={toggle}>
+          <Svg>
+            <use xlinkHref={icon + '#close'}></use>
+          </Svg>
+        </button>
+        <UserNav variant="burger-menu" />
+        <Buttons onClick={handelLogout} variant="log-out" prop={'Log out'} />
+      </Menu>
+    </Modal>
   );
 };

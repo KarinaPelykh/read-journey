@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { clear, instance, setToken } from '../../service/Api';
+import { clear, instance, setToken } from '../../shared/api/Api';
 import {
   AuthResponse,
   AuthCredential,

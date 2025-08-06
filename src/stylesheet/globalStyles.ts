@@ -17,15 +17,9 @@ const GlobalStyles = createGlobalStyle`
   font-weight: 500 ; 
 }
 
-html {
-  scroll-behavior: smooth;
-}
 body {
   font-family:'Gilroy-Medium';
-
   background:#141414;
-  min-height:100vh;
- 
 
 }
 

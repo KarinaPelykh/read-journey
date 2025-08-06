@@ -1,14 +1,19 @@
 import { addNewBook } from '../../redux/books/operations';
 import { Form, InputADD, Label, Title, Wrapper } from './AddBooks.styled';
-import { Buttons } from '../Button/Button';
+import { Buttons } from '../../shared/ui/Button/Button';
 import { toast } from 'react-toastify';
 import { useAppDispatch } from '../../hooks/hooks';
 import { FormEvent, useState } from 'react';
+
 export const AddBook = () => {
   const dispatch = useAppDispatch();
-  const [title, setTitle] = useState<string>('');
-  const [author, setAuthor] = useState<string>('');
-  const [totalPages, setTotalPages] = useState<number>(0);
+
+  const [title, setTitle] = useState('');
+
+  const [author, setAuthor] = useState('');
+
+  const [totalPages, setTotalPages] = useState(0);
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
@@ -30,13 +35,16 @@ export const AddBook = () => {
   const handleChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
+
   const handleChangeAuthor = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAuthor(e.target.value);
   };
+
   const handleChangePage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const totalPages = Number(e.target.value);
     setTotalPages(totalPages);
   };
+
   return (
     <Form onSubmit={handleSubmit}>
       <Title>Create your library:</Title>
@@ -81,11 +89,3 @@ export const AddBook = () => {
     </Form>
   );
 };
-{
-  /* type="submit" */
-}
-// const form = e.target;
-// const title = form.elements.title.value;
-// const author = form.elements.author.value;
-// const totalPages = form.elements.pages.value;
-// form.reset();

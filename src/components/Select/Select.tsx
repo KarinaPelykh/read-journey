@@ -17,6 +17,7 @@ export const Selector = () => {
 
   const statusBook = statusValue.value.toLowerCase();
   const dispatch = useAppDispatch();
+
   useEffect(() => {
     dispatch(getBookOwn({ status: statusValue.value }));
   }, [dispatch, statusValue]);
@@ -27,6 +28,7 @@ export const Selector = () => {
     { value: 'Done', label: 'Done' },
     { value: 'All books', label: 'All books' },
   ];
+
   const handleStatusChange = (options: Selector | any | null): void => {
     if (options) {
       setStatus(prevState => ({

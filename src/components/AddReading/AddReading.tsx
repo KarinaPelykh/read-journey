@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { Buttons } from '../Button/Button';
+import { Buttons } from '../../shared/ui/Button/Button';
 import {
   Description,
   Form,

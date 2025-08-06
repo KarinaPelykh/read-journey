@@ -1,4 +1,4 @@
-import { Buttons } from '../../Button/Button';
+import { Buttons } from '../../../shared/ui/Button/Button';
 import { useState } from 'react';
 import { ValidationRegister } from '../../Validation/ValidationRegister';
 import { ShowPassword } from '../../Validation/ShowPassword';
@@ -17,47 +17,48 @@ export const LoginFormComp = () => {
 
   return (
     <LoginForm onSubmit={formik.handleSubmit} autoComplete="off">
-      <DivWrapperInput>
-        <Label>Mail:</Label>
-        <Input
-          name="email"
-          type="email"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.email}
-          placeholder="Your@email.com"
-        />
-        <Error formik={formik} name="email">
-          {formik.errors.email}
-        </Error>
-      </DivWrapperInput>
-
-      <DivWrapperInput>
-        <Label>Password:</Label>
-        <PasswordInput
-          name="password"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.password}
-          placeholder="Your password here"
-          $variant={
-            !formik.touched.password
-              ? 'default'
-              : !formik.errors.password
-              ? 'successful'
-              : 'error'
-          }
-          type={showPsw ? 'password' : 'text'}
-        />
-        <ValidationRegister
-          touched={formik.touched.password}
-          errors={formik.errors.password}
-        />
-        <ShowPassword showPsw={showPsw} toggle={() => setShowPsw(!showPsw)} />
-        <Error formik={formik} name="password">
-          {formik.errors.password}
-        </Error>
-      </DivWrapperInput>
+      <div style={{ marginBottom: 'auto' }}>
+        <DivWrapperInput>
+          <Label>Mail:</Label>
+          <Input
+            name="email"
+            type="email"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.email}
+            placeholder="Your@email.com"
+          />
+          <Error formik={formik} name="email">
+            {formik.errors.email}
+          </Error>
+        </DivWrapperInput>
+        <DivWrapperInput>
+          <Label>Password:</Label>
+          <PasswordInput
+            name="password"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.password}
+            placeholder="Your password here"
+            $variant={
+              !formik.touched.password
+                ? 'default'
+                : !formik.errors.password
+                ? 'successful'
+                : 'error'
+            }
+            type={showPsw ? 'password' : 'text'}
+          />
+          <ValidationRegister
+            touched={formik.touched.password}
+            errors={formik.errors.password}
+          />
+          <ShowPassword showPsw={showPsw} toggle={() => setShowPsw(!showPsw)} />
+          <Error formik={formik} name="password">
+            {formik.errors.password}
+          </Error>
+        </DivWrapperInput>
+      </div>
 
       <Buttons prop="Log in" text="Don’t have an account?" to="/register" />
     </LoginForm>

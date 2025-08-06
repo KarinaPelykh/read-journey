@@ -1,7 +1,6 @@
 import book from '../../../images/img-book.png';
 import icon from '../../../images/sprite.svg';
 
-import { FC, useState } from 'react';
 import { deleteBook } from '../../../redux/books/operations';
 import { ModalRead } from '../../Modal/ModalRead';
 import {
@@ -14,23 +13,26 @@ import {
 } from './MyLibraryItem.styled';
 import { useAppDispatch } from '../../../hooks/hooks';
 import { toast } from 'react-toastify';
-interface Item {
+import { useToggle } from '../../../hooks/useToggle';
+
+type MyLibraryItemProps = {
   author: string;
   id: string;
   img: string;
   pages: number;
   title: string;
-}
-export const MyLibraryItem: FC<Item> = ({ id, img, title, author, pages }) => {
-  const [isOpen, setIsOpen] = useState(false);
+};
+
+export const MyLibraryItem = ({
+  id,
+  img,
+  title,
+  author,
+  pages,
+}: MyLibraryItemProps) => {
+  const { toggle, isOpen } = useToggle();
+
   const dispatch = useAppDispatch();
-  const toggle = () => {
-    setIsOpen(!isOpen);
-    document.body.style.overflow = 'hidden';
-    if (isOpen) {
-      document.body.style.overflow = 'auto';
-    }
-  };
 
   const handleDeleteBook = () => {
     dispatch(deleteBook({ id }))
@@ -44,11 +46,11 @@ export const MyLibraryItem: FC<Item> = ({ id, img, title, author, pages }) => {
       })
       .catch(error => toast.error(error.message));
   };
+
   return (
     <>
       <li>
         <BookImg onClick={toggle} src={img ? img : book} />
-
         <WrapperItem>
           <div>
             <Title>{title}</Title>

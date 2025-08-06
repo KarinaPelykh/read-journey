@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { instance } from '../../service/Api';
+import { instance } from '../../shared/api/Api';
 import { MyKnownError } from '../../type/Book.type';
 interface Credentals {
   title: string;

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Buttons } from '../Button/Button';
+import { Buttons } from '../../shared/ui/Button/Button';
 import { ShowPassword } from '../Validation/ShowPassword';
 import { ValidationRegister } from '../Validation/ValidationRegister';
 import { RegisterForm, DivWrapperInput, Label } from './RegisterFrom.styles';

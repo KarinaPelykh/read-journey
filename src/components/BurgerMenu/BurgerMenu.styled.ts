@@ -37,6 +37,7 @@ export const Menu = styled.div`
   padding: 40px 40px 70px 55px;
   z-index: 555;
 `;
+
 export const Svg = styled.svg`
   width: 28px;
   height: 28px;

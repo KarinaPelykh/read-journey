@@ -1,16 +1,19 @@
 import { booksSelector } from '../../../redux/books/selectors';
 import { Author, Img, List, Title } from './RecommendationsList.styled';
 import { useAppSelector } from '../../../hooks/hooks';
-interface ListRecommends {
+
+type ListRecommends = {
   _id: string;
   imageUrl: string;
   title: string;
   author: string;
-}
+};
+
 export const RecommendationsList = () => {
   const bookRecommended = useAppSelector(booksSelector);
 
   const CutBookRecommended = bookRecommended.results.slice(0, 3);
+
   return (
     <List>
       {CutBookRecommended.map((item: ListRecommends) => (

@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
+
 interface Button {
   $variant: string | undefined;
 }
+
 export const WrapperButton = styled.div`
   display: flex;
   justify-content: start;
@@ -23,6 +25,7 @@ export const ReusableButton = styled.button<Button>`
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   transition-property: background-color, color, text-shadow, box-shadow;
   transition-duration: 250ms;
+
   &:hover::before {
     transform: scale(1.1);
     box-shadow: 0 0 15px #000;
@@ -62,6 +65,7 @@ export const ReusableButton = styled.button<Button>`
       background-color: transparent;
       margin: 0;
     `};
+
   ${({ $variant }) =>
     $variant === 'buttonModal' &&
     css`
@@ -73,6 +77,7 @@ export const ReusableButton = styled.button<Button>`
       background-color: transparent;
     `};
 `;
+
 export const LinkOnLOgin = styled(Link)`
   color: ${({ theme }) => theme.colors.grey};
   font-size: ${({ theme }) => theme.fontSizes.ss};

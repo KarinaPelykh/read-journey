@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Buttons } from '../Button/Button';
+import { Buttons } from '../../shared/ui/Button/Button';
 import { Overlay, Modal, ButtonClose, Text } from './ModalWindow.styled';
 import icons from '../../images/sprite.svg';
 import { addBooksWithRecommended } from '../../redux/books/operations';
@@ -12,12 +12,13 @@ import { closeModalByKeyBoard } from './utils/closeModalByKeyBoard';
 
 type ModalWindowProps = {
   children: ReactNode;
-  id: string;
+  id?: string;
   open: boolean;
   title?: string;
   toggle: () => void;
   variant?: string;
 };
+
 export const ModalWindow = ({
   children,
   open,

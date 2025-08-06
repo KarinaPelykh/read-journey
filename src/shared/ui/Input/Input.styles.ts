@@ -10,7 +10,6 @@ export const FormInput = styled.input`
   padding: 14px 14px 14px 62px;
   background-color: ${({ theme }) => theme.colors.darkGray};
   border-radius: ${({ theme }) => theme.radii.m};
-  margin-bottom: 14px;
 
   &::placeholder {
     color: ${({ theme }) => theme.colors.white};

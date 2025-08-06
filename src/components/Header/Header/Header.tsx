@@ -1,4 +1,4 @@
-import { Buttons } from '../../Button/Button';
+import { Buttons } from '../../../shared/ui/Button/Button';
 import { logOutThunk } from '../../../redux/auth/operations';
 import { HeaderDiv, Nav } from './Header.styled';
 import { isLoggedInSelect } from '../../../redux/auth/selectors';
@@ -8,10 +8,11 @@ import { ButtonMenu } from '../../BurgerMenu/ButtonMenu/ButtonMenu';
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
 import { UserNav } from '../UserNav/UserNav';
 import { UserBar } from '../UserBar/UserBar';
-import { LogoMain } from '../../Logo/Logo';
+import { LogoMain } from '../../../shared/ui/Logo/Logo';
 
 export const Header = () => {
   const dispatch = useAppDispatch();
+
   const navigate = useNavigate();
 
   const location = useLocation();
@@ -48,10 +49,10 @@ export const Header = () => {
               <Buttons
                 onClick={handelLogout}
                 variant="log-out"
-                prop={'Log out'}
+                prop="Log out"
               />
             )}
-            {(userNav && isLoggedIn) || !userNav ? <ButtonMenu /> : null}
+            {isLoggedIn ? <ButtonMenu /> : null}
           </Nav>
         </HeaderDiv>
       )}

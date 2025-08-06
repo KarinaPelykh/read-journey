@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Prop } from '../Header/UserNav/UserNav.styled';
+import { Prop } from '../../../components/Header/UserNav/UserNav.styled';
 import { Link } from 'react-router-dom';
 
 export const WrapperLogo = styled.div<Prop>`

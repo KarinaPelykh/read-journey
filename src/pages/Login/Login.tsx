@@ -1,19 +1,18 @@
-import { Comment, Span, WrapperForm, Wrapper } from './Login.styled';
+import { Main, Section } from './Login.styled';
 import { LoginFormComp } from '../../components/LoginForm/ui/LoginForm';
 import { Hero } from '../../components/Hero/Hero';
-import { LogoMain } from '../../components/Logo/Logo';
+import { LogoMain } from '../../shared/ui/Logo/Logo';
+import { Text } from '../../shared/ui/Text/Text';
 
 export const LoginPage = () => {
   return (
-    <Wrapper>
-      <WrapperForm>
-        <LogoMain variant="" />
-        <Comment>
-          Expand your mind, reading <Span>a book</Span>
-        </Comment>
+    <Section>
+      <Main>
+        <LogoMain />
+        <Text />
         <LoginFormComp />
-      </WrapperForm>
+      </Main>
       <Hero />
-    </Wrapper>
+    </Section>
   );
 };

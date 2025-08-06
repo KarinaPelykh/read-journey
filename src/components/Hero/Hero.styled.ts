@@ -10,24 +10,20 @@ export const WrapperForm = styled.div`
   @media screen and (min-width: 768px) {
     display: none;
   }
+
   @media screen and (min-width: 1439px) {
     display: flex;
-
+    overflow: hidden;
     padding: 80px 97px 0px 97px;
-    max-width: 600px;
     margin-top: 0;
-    height: 100vh;
   }
 `;
+
 export const Images = styled.img`
-  width: 393px;
-  height: auto;
   margin: 0 auto 0 auto;
+  object-fit: contain;
 `;
+
 export const Picture = styled.picture`
   display: block;
-
-  @media only screen and (min-width: 1440px) {
-    margin-top: 22px;
-  }
 `;

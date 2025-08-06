@@ -1,19 +1,18 @@
 import { newBooksSelector } from '../../redux/books/selectors';
 import Images from '../../images/bookDefault.png';
-import hand from '../../images/hand.png';
+// import hand from '../../images/hand.png';
 
 import {
-  Greeting,
+  // Greeting,
   MyListBook,
   Span,
-  SpanGreeting,
+  // SpanGreeting,
   Text,
-  TextGreeting,
+  // TextGreeting,
   Wrapper,
 } from './MyLibrary.styled';
-import { ModalWindow } from '../Modal/ModalWindow';
+// import { ModalWindow } from '../Modal/ModalWindow';
 import { MyLibraryItem } from './MyLibraryItem/MyLibraryItem';
-// import { FC, useEffect, useState } from 'react';
 import { getVisibleTasks } from '../../helpers/sortedBook';
 import { useAppSelector } from '../../hooks/hooks';
 import { useToggle } from '../../hooks/useToggle';
@@ -23,19 +22,14 @@ type MyLibraryListProps = {
 };
 
 export const MyLibraryList = ({ status }: MyLibraryListProps) => {
-  // const [isOpen, setIsOpen] = useState(false);
   const newBook = useAppSelector(newBooksSelector);
 
   const visible = getVisibleTasks(status, newBook);
 
-  // useEffect(() => {
-  //   setIsOpen(true);
-  //   document.body.style.overflow = 'hidden';
-  // }, []);
+  // const [books, setBooks] = useState(newBook.length);
 
-  // const toggle = () => {
-  //   setIsOpen(!isOpen);
-  //   document.body.style.overflow = 'auto';
+  // const g = () => {
+  //   setBooks(prevState => (prevState < books ? books : prevState));
   // };
 
   const { isOpen, toggle } = useToggle();
@@ -61,13 +55,13 @@ export const MyLibraryList = ({ status }: MyLibraryListProps) => {
             <img width="130" height="130" src={Images} alt="book" />
           </div>
           <Text>
-            To start training, add <Span>some of your books </Span> or from the
+            To start training, add <Span>some of your books</Span> or from the
             recommended ones
           </Text>
         </Wrapper>
       )}
 
-      {isOpen ? (
+      {/* {isOpen && (
         <ModalWindow open={isOpen} toggle={toggle} variant="min-modal">
           <img width="68" height="70" src={hand} />
           <TextGreeting>Good job</TextGreeting>
@@ -76,7 +70,7 @@ export const MyLibraryList = ({ status }: MyLibraryListProps) => {
             joy knows no bounds and now you can start your training
           </Greeting>
         </ModalWindow>
-      ) : null}
+      )} */}
     </>
   );
 };
