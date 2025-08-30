@@ -1,5 +1,5 @@
-import book from '../../../images/img-book.png';
-import icon from '../../../images/sprite.svg';
+import book from '/images/img-book.png';
+import icon from '/images/sprite.svg';
 
 import { deleteBook } from '../../../redux/books/operations';
 import { ModalRead } from '../../Modal/ModalRead';

@@ -1,7 +1,7 @@
 import { Details } from '../Details/Details';
 import { Statistic } from '../Statistic/Statistic';
-import icon from '../../images/sprite.svg';
-import star from '../../images/star.png';
+import icon from '/images/sprite.svg';
+import star from '/images/star.png';
 
 import { useState } from 'react';
 import { Describe, ImgStatic, Thumb, Title } from '../Details/Details.styled';

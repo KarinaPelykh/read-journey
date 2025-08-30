@@ -17,7 +17,7 @@ import { redBookSelector } from '../../redux/books/selectors';
 import { finishedReading, startReading } from '../../redux/books/operations';
 
 import { ModalRead } from '../Modal/ModalRead';
-import book from '../../images/book.png';
+import book from '/images/book.png';
 
 export const AddReading = () => {
   const readBook = useAppSelector(redBookSelector);

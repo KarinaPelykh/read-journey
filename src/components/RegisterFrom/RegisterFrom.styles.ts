@@ -1,13 +1,9 @@
 import styled from 'styled-components';
 
 export const RegisterForm = styled.form`
-  @media screen and (min-width: 768px) {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    height: auto;
-  }
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const DivWrapperInput = styled.div`

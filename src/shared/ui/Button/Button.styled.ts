@@ -13,6 +13,7 @@ export const WrapperButton = styled.div<Button>`
   ${({ $variant }) =>
     $variant === 'wrapper' &&
     css`
+      margin-top: auto;
       @media screen and (min-width: 768px) {
         margin-top: 82px;
       }
@@ -25,6 +26,7 @@ export const WrapperButton = styled.div<Button>`
       button {
         padding: 12px 45px;
       }
+
       @media screen and (min-width: 768px) {
         margin-top: 146px;
         button {

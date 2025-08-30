@@ -1,4 +1,4 @@
-import icon from '../../../images/sprite.svg';
+import icon from '/images/sprite.svg';
 import { RecommendationsList } from '../ListBooksRecommended/RecommendationsList';
 import { LinkHome, Title, Wrapper } from './Recommendations.styled';
 

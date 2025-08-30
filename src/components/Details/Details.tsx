@@ -15,7 +15,7 @@ import {
   WrapperMain,
 } from './Details.styled';
 import { redBookSelector } from '../../redux/books/selectors';
-import icon from '../../images/sprite.svg';
+import icon from '/images/sprite.svg';
 import { deleteProgress } from '../../redux/books/operations';
 import formatDate from '../../helpers/formatDate';
 import getDate from '../../helpers/getDate';

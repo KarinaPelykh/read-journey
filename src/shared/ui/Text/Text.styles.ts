@@ -12,7 +12,6 @@ export const Comment = styled.p`
     font-weight: ${({ theme }) => theme.fontWeights.bold};
     width: 444px;
     line-height: 60px;
-
     margin-bottom: 40px;
   }
 

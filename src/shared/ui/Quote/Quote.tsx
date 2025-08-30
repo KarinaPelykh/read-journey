@@ -1,5 +1,6 @@
 import { SpanWord, WrapperQuote, Text } from './Quote.styled';
-import book from '../../../images/book.png';
+import book from '/images/book.png';
+
 export const Quote = () => {
   return (
     <WrapperQuote>

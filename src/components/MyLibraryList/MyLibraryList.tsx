@@ -1,5 +1,5 @@
 import { newBooksSelector } from '../../redux/books/selectors';
-import Images from '../../images/bookDefault.png';
+import Images from '/images/bookDefault.png';
 // import hand from '../../images/hand.png';
 
 import {

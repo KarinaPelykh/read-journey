@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 export const WrapperForm = styled.div`
   background: ${({ theme }) => theme.colors.lightBlack};
-  padding: 20px;
-  padding-bottom: 0px;
+  padding: 20px 20px 0 20px;
   border-radius: ${({ theme }) => theme.radii.xl};
   margin-top: 10px;
 
@@ -13,17 +12,17 @@ export const WrapperForm = styled.div`
 
   @media screen and (min-width: 1439px) {
     display: flex;
-    overflow: hidden;
-    padding: 80px 97px 0px 97px;
+    padding: 95px 97px 0px 97px;
     margin-top: 0;
+    width: 600px;
   }
 `;
 
 export const Images = styled.img`
-  margin: 0 auto 0 auto;
-  object-fit: contain;
-`;
+  margin: 0 auto;
 
-export const Picture = styled.picture`
-  display: block;
+  @media screen and (min-width: 1439px) {
+    width: 405px;
+    height: 656px;
+  }
 `;

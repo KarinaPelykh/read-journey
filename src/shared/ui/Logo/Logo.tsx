@@ -1,4 +1,4 @@
-import icon from '../../../images/sprite.svg';
+import icon from '/images/sprite.svg';
 import { Logo, TextLogo, WrapperLogo, LinkLogo } from './Logo.styled';
 import { isLoggedInSelect } from '../../../redux/auth/selectors';
 import { useAppSelector } from '../../../hooks/hooks';

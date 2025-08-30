@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import icon from '../../../images/sprite.svg';
+import icon from '/images/sprite.svg';
 import { Button, Svg } from './ButtonMenu.styled';
 import { BurgerMenu } from '../BurgerMenu';
 export const ButtonMenu = () => {

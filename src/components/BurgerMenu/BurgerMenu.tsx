@@ -3,7 +3,7 @@ import { logOutThunk } from '../../redux/auth/operations';
 import { Buttons } from '../../shared/ui/Button/Button';
 import { UserNav } from '../Header/UserNav/UserNav';
 import { toast } from 'react-toastify';
-import icon from '../../images/sprite.svg';
+import icon from '/images/sprite.svg';
 import { Menu, Modal, Svg } from './BurgerMenu.styled';
 import { useAppDispatch } from '../../hooks/hooks';
 

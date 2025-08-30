@@ -1,4 +1,4 @@
-import icon from '../../images/sprite.svg';
+import icon from '/images/sprite.svg';
 import styled from 'styled-components';
 
 type Information = {

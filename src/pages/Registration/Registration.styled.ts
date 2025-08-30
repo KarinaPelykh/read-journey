@@ -12,6 +12,9 @@ export const Main = styled.div`
   width: auto;
   height: 411px;
 
+  display: flex;
+  flex-direction: column;
+
   background: ${({ theme }) => theme.colors.lightBlack};
   padding: 20px 20px 40px 20px;
   border-radius: ${({ theme }) => theme.radii.xl};

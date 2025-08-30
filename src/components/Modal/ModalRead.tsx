@@ -1,6 +1,6 @@
 import { Buttons } from '../../shared/ui/Button/Button';
 import { Overlay, Modal, ButtonClose } from './ModalWindow.styled';
-import icons from '../../images/sprite.svg';
+import icons from '/images/sprite.svg';
 import { ReactNode } from 'react';
 import { addReadBook } from '../../redux/books/operations';
 import { useNavigate } from 'react-router-dom';

@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux';
 import { redBookSelector } from '../../redux/books/selectors';
 import {
   Author,
@@ -8,10 +7,10 @@ import {
   Title,
   Wrapper,
 } from './MyBook.styled';
-import icon from '../../images/sprite.svg';
-import book from '../../images/img-book.png';
+import icon from '/images/sprite.svg';
+import book from '/images/img-book.png';
 import { useAppSelector } from '../../hooks/hooks';
-import { ReadBook } from '../BookList/BookList';
+
 export const MyBook = () => {
   const readBook = useAppSelector(redBookSelector);
 
