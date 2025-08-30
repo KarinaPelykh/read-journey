@@ -1,18 +1,9 @@
 import styled from 'styled-components';
 
 export const LoginForm = styled.form`
-  height: 100%;
   display: flex;
-  /* justify-content: center; */
-  flex-wrap: wrap;
+  flex: 1;
   flex-direction: column;
-  /* @media screen and (min-width: 768px) {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    row-gap: 14px;
-  } */
 `;
 
 export const DivWrapperInput = styled.div`
@@ -28,4 +19,8 @@ export const Label = styled.label`
   color: ${({ theme }) => theme.colors.grey};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   font-size: ${({ theme }) => theme.fontSizes.ss};
+
+  @media screen and (min-width: 768px) {
+    font-size: ${({ theme }) => theme.fontSizes.s};
+  }
 `;

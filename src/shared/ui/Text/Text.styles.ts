@@ -13,7 +13,7 @@ export const Comment = styled.p`
     width: 444px;
     line-height: 60px;
 
-    margin-bottom: 35px;
+    margin-bottom: 40px;
   }
 
   @media screen and (min-width: 1440px) {

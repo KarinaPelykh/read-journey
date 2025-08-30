@@ -10,7 +10,7 @@ type Button = {
 
 export const Buttons = ({ prop, text, to, onClick, variant }: Button) => {
   return (
-    <WrapperButton>
+    <WrapperButton $variant={variant}>
       <ReusableButton onClick={onClick} $variant={variant} type="submit">
         {prop}
       </ReusableButton>

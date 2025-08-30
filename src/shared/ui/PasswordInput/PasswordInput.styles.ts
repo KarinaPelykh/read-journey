@@ -16,6 +16,10 @@ export const InputPassword = styled.input<Prop>`
     color: ${({ theme }) => theme.colors.white};
     font-weight: ${({ theme }) => theme.fontWeights.medium};
     font-size: ${({ theme }) => theme.fontSizes.ss};
+
+    @media screen and (min-width: 768px) {
+      font-size: ${({ theme }) => theme.fontSizes.s};
+    }
   }
 
   color: ${({ theme }) => theme.colors.white};
@@ -29,4 +33,8 @@ export const InputPassword = styled.input<Prop>`
     ($variant === 'default' && 'transparent')};
 
   transition: border-color 0.3s ease;
+
+  @media screen and (min-width: 768px) {
+    padding: 16px 16px 16px 80px;
+  }
 `;

@@ -23,4 +23,8 @@ export const Label = styled.label`
   font-size: ${({ theme }) => theme.fontSizes.ss};
   top: 15px;
   left: 14px;
+
+  @media screen and (min-width: 768px) {
+    font-size: ${({ theme }) => theme.fontSizes.s};
+  }
 `;

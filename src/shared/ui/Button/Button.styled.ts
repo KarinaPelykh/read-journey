@@ -5,10 +5,33 @@ interface Button {
   $variant: string | undefined;
 }
 
-export const WrapperButton = styled.div`
+export const WrapperButton = styled.div<Button>`
   display: flex;
   justify-content: start;
   align-items: center;
+
+  ${({ $variant }) =>
+    $variant === 'wrapper' &&
+    css`
+      @media screen and (min-width: 768px) {
+        margin-top: 82px;
+      }
+    `}
+  ${({ $variant }) =>
+    $variant === 'loginWrapper' &&
+    css`
+      margin-top: auto;
+
+      button {
+        padding: 12px 45px;
+      }
+      @media screen and (min-width: 768px) {
+        margin-top: 146px;
+        button {
+          padding: 16px 54px;
+        }
+      }
+    `}
 `;
 export const ReusableButton = styled.button<Button>`
   display: flex;
@@ -25,6 +48,11 @@ export const ReusableButton = styled.button<Button>`
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   transition-property: background-color, color, text-shadow, box-shadow;
   transition-duration: 250ms;
+
+  @media screen and (min-width: 768px) {
+    font-size: ${({ theme }) => theme.fontSizes.xl};
+    padding: 16px 54px;
+  }
 
   &:hover::before {
     transform: scale(1.1);
@@ -81,4 +109,7 @@ export const ReusableButton = styled.button<Button>`
 export const LinkOnLOgin = styled(Link)`
   color: ${({ theme }) => theme.colors.grey};
   font-size: ${({ theme }) => theme.fontSizes.ss};
+  @media screen and (min-width: 767px) {
+    font-size: ${({ theme }) => theme.fontSizes.s};
+  }
 `;

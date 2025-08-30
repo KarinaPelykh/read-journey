@@ -7,4 +7,9 @@ export const TextError = styled.div`
   color: ${({ theme }) => theme.colors.grey};
   font-size: ${({ theme }) => theme.fontSizes.xs};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
+
+  @media screen and (min-width: 768px) {
+    top: 46px;
+    left: 2px;
+  }
 `;

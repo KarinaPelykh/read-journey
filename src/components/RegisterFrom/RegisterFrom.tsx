@@ -75,6 +75,7 @@ export const RegistrationFrom = () => {
         prop="Registration"
         text="Already have an account?"
         to="/login"
+        variant="wrapper"
       />
     </RegisterForm>
   );

@@ -15,5 +15,13 @@ export const FormInput = styled.input`
     color: ${({ theme }) => theme.colors.white};
     font-weight: ${({ theme }) => theme.fontWeights.medium};
     font-size: ${({ theme }) => theme.fontSizes.ss};
+
+    @media screen and (min-width: 768px) {
+      font-size: ${({ theme }) => theme.fontSizes.s};
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 16px 16px 16px 62px;
   }
 `;

@@ -10,6 +10,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { ToastContainer } from 'react-toastify';
 import GlobalStyles from './stylesheet/globalStyles.js';
 import { LightTheme } from './components/LightTheme/LigthTheme';
+
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement as HTMLElement);
 const Main = () => {

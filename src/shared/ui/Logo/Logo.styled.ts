@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 
 export const WrapperLogo = styled.div<Prop>`
   margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 157px;
+  }
+
   @media screen and (min-width: 1440px) {
     margin-bottom: 104px;
   }
@@ -24,12 +29,14 @@ export const Logo = styled.svg`
   height: 17px;
   fill: ${({ theme }) => theme.colors.white};
 `;
+
 export const TextLogo = styled.p`
   display: none;
-  @media screen and (min-width: 1439px) {
+
+  @media screen and (min-width: 768px) {
     display: flex;
     font-size: ${({ theme }) => theme.fontSizes.m};
-    font-weight: ${({ theme }) => theme.fontWeights.medium};
+    font-weight: ${({ theme }) => theme.fontWeights.bold};
     color: ${({ theme }) => theme.colors.white};
     margin-left: 4px;
   }
