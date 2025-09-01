@@ -1,4 +1,3 @@
-import { FC, useState } from 'react';
 import { Author, BookImg, QuantityPages, Title } from './BookItem.styled';
 import { ModalWindow } from '../Modal/ModalWindow';
 import { useToggle } from '../../hooks/useToggle';

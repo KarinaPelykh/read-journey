@@ -12,7 +12,7 @@ import {
 } from './operations';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
-import { MyKnownError, StateBook } from '../../type/Book.type';
+import { MyKnownError, StateBook } from '@/types/book.type';
 import { initialState } from './state';
 const pending = (state: StateBook) => {
   state.isLoading = true;

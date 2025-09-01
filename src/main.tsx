@@ -9,10 +9,12 @@ import { persistor, store } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ToastContainer } from 'react-toastify';
 import GlobalStyles from './stylesheet/globalStyles.js';
-import { LightTheme } from './components/LightTheme/LigthTheme';
+// import { LightTheme } from './components/LightTheme/LigthTheme';
 
 const rootElement = document.getElementById('root');
+
 const root = createRoot(rootElement as HTMLElement);
+
 const Main = () => {
   const [theme, setTheme] = useState<string>(() => {
     const themePage = localStorage.getItem('theme');

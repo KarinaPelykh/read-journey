@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { clear, instance, setToken } from '../../shared/api/Api';
+import { clear, instance, setToken } from '@/shared/api/Api';
 import {
   AuthResponse,
   AuthCredential,
   MyKnownError,
   LoginCredential,
-} from '../../type/Auth.type';
+} from '@/types/auth.type';
 import { RootState } from '../store';
 
 export const registerThunk = createAsyncThunk<

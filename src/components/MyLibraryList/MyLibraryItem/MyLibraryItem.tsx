@@ -1,8 +1,7 @@
 import book from '/images/img-book.png';
 import icon from '/images/sprite.svg';
 
-import { deleteBook } from '../../../redux/books/operations';
-import { ModalRead } from '../../Modal/ModalRead';
+import { deleteBook } from '@/redux/books/operations';
 import {
   Author,
   BookImg,
@@ -11,9 +10,10 @@ import {
   Title,
   WrapperItem,
 } from './MyLibraryItem.styled';
-import { useAppDispatch } from '../../../hooks/hooks';
+import { useAppDispatch } from '@/hooks/hooks';
 import { toast } from 'react-toastify';
-import { useToggle } from '../../../hooks/useToggle';
+import { useToggle } from '@/hooks/useToggle';
+import { ModalRead } from '@/components/Modal/ModalRead';
 
 type MyLibraryItemProps = {
   author: string;

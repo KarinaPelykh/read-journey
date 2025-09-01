@@ -1,6 +1,7 @@
+import { instance } from '@/shared/api/Api';
+import { MyKnownError } from '@/types/book.type';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { instance } from '../../shared/api/Api';
-import { MyKnownError } from '../../type/Book.type';
+
 interface Credentals {
   title: string;
   author: string;

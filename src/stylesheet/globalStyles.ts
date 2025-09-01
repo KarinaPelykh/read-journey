@@ -1,8 +1,9 @@
 import 'modern-normalize';
 
-import GilroyBold from '../assets/fonts/Gilroy-Bold.ttf';
-import GilroyMedium from '../assets/fonts/Gilroy-Medium.ttf';
+import GilroyBold from '/assets/fonts/Gilroy-Bold.ttf';
+import GilroyMedium from '/assets/fonts/Gilroy-Medium.ttf';
 import { createGlobalStyle } from 'styled-components';
+
 const GlobalStyles = createGlobalStyle`
 
 @font-face {

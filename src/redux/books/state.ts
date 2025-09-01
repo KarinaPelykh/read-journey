@@ -1,4 +1,4 @@
-import { StateBook } from '../../type/Book.type';
+import { StateBook } from '@/types/book.type';
 
 export const initialState: StateBook = {
   books: {

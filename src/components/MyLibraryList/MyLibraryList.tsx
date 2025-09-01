@@ -1,6 +1,6 @@
-import { newBooksSelector } from '../../redux/books/selectors';
+import { newBooksSelector } from '@/redux/books/selectors';
 import Images from '/images/bookDefault.png';
-// import hand from '../../images/hand.png';
+// import hand from '@/images/hand.png';
 
 import {
   // Greeting,
@@ -13,9 +13,9 @@ import {
 } from './MyLibrary.styled';
 // import { ModalWindow } from '../Modal/ModalWindow';
 import { MyLibraryItem } from './MyLibraryItem/MyLibraryItem';
-import { getVisibleTasks } from '../../helpers/sortedBook';
-import { useAppSelector } from '../../hooks/hooks';
-import { useToggle } from '../../hooks/useToggle';
+import { getVisibleTasks } from '@/helpers/sortedBook';
+import { useAppSelector } from '@/hooks/hooks';
+import { useToggle } from '@/hooks/useToggle';
 
 type MyLibraryListProps = {
   status: string;

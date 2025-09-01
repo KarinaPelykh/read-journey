@@ -1,4 +1,4 @@
-import { StateBook } from '../../type/Book.type';
+import { StateBook } from '@/types/book.type';
 
 export const booksSelector = (state: { books: StateBook }) => state.books.books;
 export const currentPageSelector = (state: { books: StateBook }) =>

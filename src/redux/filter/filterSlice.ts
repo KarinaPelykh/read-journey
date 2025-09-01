@@ -1,7 +1,8 @@
-import { PayloadAction, createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { getBook } from './operations.js';
-import { StateFilter } from '../../type/Fiter.js';
-import { MyKnownError } from '../../type/Book.type.js';
+import { MyKnownError } from '@/types/book.type';
+import { StateFilter } from '@/types/filter.type';
+import { createSlice, isAnyOf, PayloadAction } from '@reduxjs/toolkit';
+import { getBook } from './operations';
+
 const pending = (state: StateFilter) => {
   state.isLoading = true;
   state.error = '';

@@ -1,6 +1,6 @@
 import { FormEvent } from 'react';
-import { getBook } from '../../../../redux/filter/operations';
-import { useAppDispatch } from '../../../../hooks/hooks';
+import { getBook } from '@/redux/filter/operations';
+import { useAppDispatch } from '@/hooks/hooks';
 import { toast } from 'react-toastify';
 
 type FilterFormSubmitProps = {

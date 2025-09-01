@@ -1,10 +1,11 @@
-import { Progress } from '../type/Book.type';
-type Prop = {
+import { Progress } from '@/types/book.type';
+
+type ProsesReadingProp = {
   progress: Progress[];
   totalPage: number;
 };
 
-const getProsesReading = ({ progress, totalPage }: Prop) => {
+const getProsesReading = ({ progress, totalPage }: ProsesReadingProp) => {
   const result = progress
     .filter(({ status }) => status === 'inactive')
     .reduce(

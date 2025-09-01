@@ -1,14 +1,15 @@
-import { Buttons } from '../../../shared/ui/Button/Button';
-import { logOutThunk } from '../../../redux/auth/operations';
-import { HeaderDiv, Nav } from './Header.styled';
-import { isLoggedInSelect } from '../../../redux/auth/selectors';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { ButtonMenu } from '../../BurgerMenu/ButtonMenu/ButtonMenu';
-import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { UserNav } from '../UserNav/UserNav';
-import { UserBar } from '../UserBar/UserBar';
-import { LogoMain } from '../../../shared/ui/Logo/Logo';
+
+import { HeaderDiv, Nav } from './Header.styled';
+import { LogoMain } from '@/shared/ui/Logo/Logo';
+import { UserNav } from '@/widgets/header/user-nav/UserNav';
+import { UserBar } from '@/widgets/header/user-bar/UserBar';
+import { Buttons } from '@/shared/ui/Button/Button';
+import { ButtonMenu } from '@/widgets/header/btn-burger/ButtonMenu';
+import { useAppDispatch, useAppSelector } from '@/hooks/hooks';
+import { isLoggedInSelect } from '@/redux/auth/selectors';
+import { logOutThunk } from '@/redux/auth/operations';
 
 export const Header = () => {
   const dispatch = useAppDispatch();

@@ -1,19 +1,19 @@
-import { filterSelector } from '../../../redux/filter/selectors';
-import { BookItemFilter } from '../BookItemFilter/BookItemFilter';
-import { useAppSelector } from '../../../hooks/hooks';
-interface Book {
+import { filterSelector } from '@/redux/filter/selectors';
+import { BookItemFilter } from './BookItemFilter/BookItemFilter';
+import { useAppSelector } from '@/hooks/hooks';
+type FilteredBook = {
   author: string;
   _id: string;
   imageUrl: string;
   title: string;
-}
-export const BookFilter = () => {
+};
+export const FilterBook = () => {
   const filterBook = useAppSelector(filterSelector);
   const filter = filterBook?.results?.length as number;
   return (
     <div>
       {filter > 0 ? (
-        filterBook?.results?.map((item: Book) => (
+        filterBook?.results?.map((item: FilteredBook) => (
           <BookItemFilter
             key={item._id}
             id={item._id}

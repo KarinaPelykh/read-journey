@@ -1,7 +1,7 @@
+import { useAppSelector } from '@/hooks/hooks';
+import { isLoggedInSelect } from '@/redux/auth/selectors';
+import { LinkLogo, Logo, TextLogo, WrapperLogo } from './Logo.styled';
 import icon from '/images/sprite.svg';
-import { Logo, TextLogo, WrapperLogo, LinkLogo } from './Logo.styled';
-import { isLoggedInSelect } from '../../../redux/auth/selectors';
-import { useAppSelector } from '../../../hooks/hooks';
 
 type LogoMainProps = {
   variant?: string;

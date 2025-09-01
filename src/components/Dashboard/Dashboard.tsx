@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { DivDashboard } from './Dashboard.styled';
-import { FilterOnRecommendedPage } from '../FilterOnRecommendedPage/FilterOnRecommendedPage';
-import { MyLibraryDashboard } from '../MyLibraryDashboard/MyLibraryDashboard';
+import { FilterOnRecommendedPage } from '../FilterOnRecommendedPage';
+import { MyLibraryDashboard } from '../MyLibraryDashboard';
 import { AddReading } from '../AddReading/AddReading';
 import { ShowMyInform } from '../ShowMyInform/ShowMyInform';
 

@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { Buttons } from '../../shared/ui/Button/Button';
+import { Buttons } from '@/shared/ui/Button/Button';
 import { ShowPassword } from '../Validation/ShowPassword';
 import { ValidationRegister } from '../Validation/ValidationRegister';
 import { RegisterForm, DivWrapperInput, Label } from './RegisterFrom.styles';
 
 import { useRegisterFormikSubmit } from './api/useRegisterFormikSubmit';
-import { Error } from '../../shared/ui/Error/Error';
-import { Input } from '../../shared/ui/Input/Input';
-import { PasswordInput } from '../../shared/ui/PasswordInput/PasswordInput';
+import { Error } from '@/shared/ui/Error/Error';
+import { Input } from '@/shared/ui/Input/Input';
+import { PasswordInput } from '@/shared/ui/PasswordInput/PasswordInput';
 
 export const RegistrationFrom = () => {
   const formik = useRegisterFormikSubmit();

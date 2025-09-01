@@ -1,7 +1,6 @@
+import { Header } from '@/widgets/header/Header';
 import { Outlet } from 'react-router-dom';
-
-import { Header } from '../../../components/Header/Header/Header';
-import { Container } from '../Container/Container.styled';
+import { Container } from './Container/Container.styled';
 
 export const Layout = () => {
   return (

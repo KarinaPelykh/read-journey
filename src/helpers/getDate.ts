@@ -1,11 +1,11 @@
-import { Progress } from '../type/Book.type';
+import { Progress } from '@/types/book.type';
 
-interface Prop {
+type GetDateProp = {
   progress: Progress[];
   totalPage: number;
-}
+};
 
-const getDate = ({ progress, totalPage }: Prop) => {
+const getDate = ({ progress, totalPage }: GetDateProp) => {
   return progress
     .filter(({ status }) => status === 'inactive')
     .reduce(

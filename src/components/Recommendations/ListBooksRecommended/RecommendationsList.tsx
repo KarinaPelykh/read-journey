@@ -1,6 +1,6 @@
-import { booksSelector } from '../../../redux/books/selectors';
+import { booksSelector } from '@/redux/books/selectors';
 import { Author, Img, List, Title } from './RecommendationsList.styled';
-import { useAppSelector } from '../../../hooks/hooks';
+import { useAppSelector } from '@/hooks/hooks';
 
 type ListRecommends = {
   _id: string;
@@ -12,11 +12,12 @@ type ListRecommends = {
 export const RecommendationsList = () => {
   const bookRecommended = useAppSelector(booksSelector);
 
-  const CutBookRecommended = bookRecommended.results.slice(0, 3);
+  const cutBookRecommended = bookRecommended.results.slice(0, 3);
+  console.log(cutBookRecommended);
 
   return (
     <List>
-      {CutBookRecommended.map((item: ListRecommends) => (
+      {cutBookRecommended.map((item: ListRecommends) => (
         <li key={item._id}>
           <Img src={item.imageUrl} />
           <Title>{item.title}</Title>

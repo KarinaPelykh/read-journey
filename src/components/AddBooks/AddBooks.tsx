@@ -1,8 +1,8 @@
-import { addNewBook } from '../../redux/books/operations';
+import { addNewBook } from '@/redux/books/operations';
 import { Form, InputADD, Label, Title, Wrapper } from './AddBooks.styled';
-import { Buttons } from '../../shared/ui/Button/Button';
+import { Buttons } from '@/shared/ui/Button/Button';
 import { toast } from 'react-toastify';
-import { useAppDispatch } from '../../hooks/hooks';
+import { useAppDispatch } from '@/hooks/hooks';
 import { FormEvent, useState } from 'react';
 
 export const AddBook = () => {

@@ -8,12 +8,14 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
+
 import { persistedReducerBook } from './books/bookSlice';
+
 import storage from 'redux-persist/lib/storage';
 
 import { configureStore } from '@reduxjs/toolkit';
-import { filterReducer } from './filter/filterSlice';
 import { authReducer } from './auth/authSlice';
+import { filterReducer } from './filter/filterSlice';
 
 const persistConfig = {
   key: 'root',
@@ -22,6 +24,7 @@ const persistConfig = {
 };
 
 const persistedReducer = persistReducer(persistConfig, authReducer);
+
 export const store = configureStore({
   reducer: {
     auth: persistedReducer,
@@ -38,5 +41,7 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
+
 export type RootState = ReturnType<typeof store.getState>;
+
 export type AppDispatch = typeof store.dispatch;

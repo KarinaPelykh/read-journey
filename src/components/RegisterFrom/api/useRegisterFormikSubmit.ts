@@ -2,9 +2,8 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 
-import { registerThunk } from '../../../redux/auth/operations';
-import { useAppDispatch } from '../../../hooks/hooks';
-
+import { registerThunk } from '@/redux/auth/operations';
+import { useAppDispatch } from '@/hooks/hooks';
 import { registrationScheme } from '../module/contract';
 
 export const useRegisterFormikSubmit = () => {

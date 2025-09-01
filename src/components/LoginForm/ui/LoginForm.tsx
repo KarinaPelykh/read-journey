@@ -1,4 +1,4 @@
-import { Buttons } from '../../../shared/ui/Button/Button';
+import { Buttons } from '@/shared/ui/Button/Button';
 import { useState } from 'react';
 import { ValidationRegister } from '../../Validation/ValidationRegister';
 import { ShowPassword } from '../../Validation/ShowPassword';
@@ -7,9 +7,9 @@ import { DivWrapperInput, Label, LoginForm } from './LoginForm.styled';
 
 import { useLoginFormSubmit } from '../api/useLoginFormSubmit';
 
-import { Error } from '../../../shared/ui/Error/Error';
-import { Input } from '../../../shared/ui/Input/Input';
-import { PasswordInput } from '../../../shared/ui/PasswordInput/PasswordInput';
+import { Error } from '@/shared/ui/Error/Error';
+import { Input } from '@/shared/ui/Input/Input';
+import { PasswordInput } from '@/shared/ui/PasswordInput/PasswordInput';
 
 export const LoginFormComp = () => {
   const [showPsw, setShowPsw] = useState(true);

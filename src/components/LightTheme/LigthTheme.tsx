@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import './LightTheme.css';
-interface Prop {
+
+type LightThemeProp = {
   handleTheme: () => void;
-}
-export const LightTheme = ({ handleTheme }: Prop) => {
+};
+
+export const LightTheme = ({ handleTheme }: LightThemeProp) => {
   const [toggle, setToggle] = useState(false);
 
   const handleToggle = () => {

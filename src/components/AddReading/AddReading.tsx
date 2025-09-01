@@ -1,8 +1,8 @@
 import { FormEvent, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { Buttons } from '../../shared/ui/Button/Button';
+import { useAppDispatch, useAppSelector } from '@/hooks/hooks';
+import { Buttons } from '@/shared/ui/Button/Button';
 import {
   Description,
   Form,
@@ -13,8 +13,8 @@ import {
   Title,
   Wrapper,
 } from './AddReading.styled';
-import { redBookSelector } from '../../redux/books/selectors';
-import { finishedReading, startReading } from '../../redux/books/operations';
+import { redBookSelector } from '@/redux/books/selectors';
+import { finishedReading, startReading } from '@/redux/books/operations';
 
 import { ModalRead } from '../Modal/ModalRead';
 import book from '/images/book.png';

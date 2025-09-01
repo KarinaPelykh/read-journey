@@ -1,4 +1,4 @@
-import { State } from '../../type/Auth.type';
+import { State } from '@/types/auth.type';
 
 export const userNameSelect = (state: { auth: State }) => state.auth.user;
 export const isLoggedInSelect = (state: { auth: State }) =>

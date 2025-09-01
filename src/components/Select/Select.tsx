@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Selectors } from './Select.styled';
-import { getBookOwn } from '../../redux/books/operations';
+import { getBookOwn } from '@/redux/books/operations';
 import { MyLibraryList } from '../MyLibraryList/MyLibraryList';
-import { useAppDispatch } from '../../hooks/hooks';
+import { useAppDispatch } from '@/hooks/hooks';
 type Selector = {
   value: string;
   label: string;

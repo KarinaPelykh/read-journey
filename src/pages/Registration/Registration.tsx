@@ -1,8 +1,8 @@
-import { Section, Main } from './Registration.styled';
-import { RegistrationFrom } from '../../components/RegisterFrom/RegisterFrom';
-import { Hero } from '../../components/Hero/Hero';
-import { LogoMain } from '../../shared/ui/Logo/Logo';
-import { Text } from '../../shared/ui/Text/Text';
+import { LogoMain } from '@/shared/ui/Logo/Logo';
+import { Main, Section } from './Registration.styled';
+import { Text } from '@/shared/ui/Text/Text';
+import { RegistrationFrom } from '@/components/RegisterFrom/RegisterFrom';
+import { Hero } from '@/components/Hero/Hero';
 
 export const RegistrationPage = () => {
   return (

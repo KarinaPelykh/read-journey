@@ -14,15 +14,16 @@ import {
   Wrapper,
   WrapperMain,
 } from './Details.styled';
-import { redBookSelector } from '../../redux/books/selectors';
+import { redBookSelector } from '@/redux/books/selectors';
 import icon from '/images/sprite.svg';
-import { deleteProgress } from '../../redux/books/operations';
-import formatDate from '../../helpers/formatDate';
-import getDate from '../../helpers/getDate';
-import timeReadingBook from '../../helpers/timeReadingBook';
+import { deleteProgress } from '@/redux/books/operations';
+import formatDate from '@/helpers/formatDate';
+import getDate from '@/helpers/getDate';
+import timeReadingBook from '@/helpers/timeReadingBook';
 import { toast } from 'react-toastify';
-import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { Progress } from '../../type/Book.type';
+import { useAppDispatch, useAppSelector } from '@/hooks/hooks';
+import { Progress } from '@/types/book.type';
+
 export const Details = () => {
   const redBook = useAppSelector(redBookSelector);
   const bookId = redBook._id as string;

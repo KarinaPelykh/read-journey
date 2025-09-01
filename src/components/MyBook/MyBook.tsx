@@ -1,4 +1,4 @@
-import { redBookSelector } from '../../redux/books/selectors';
+import { redBookSelector } from '@/redux/books/selectors';
 import {
   Author,
   Button,
@@ -9,7 +9,7 @@ import {
 } from './MyBook.styled';
 import icon from '/images/sprite.svg';
 import book from '/images/img-book.png';
-import { useAppSelector } from '../../hooks/hooks';
+import { useAppSelector } from '@/hooks/hooks';
 
 export const MyBook = () => {
   const readBook = useAppSelector(redBookSelector);

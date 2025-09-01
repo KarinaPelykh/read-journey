@@ -5,7 +5,7 @@ import {
   refreshThunk,
   registerThunk,
 } from './operations';
-import { MyKnownError, State, StateFunction } from '../../type/Auth.type';
+import { MyKnownError, State, StateFunction } from '@/types/auth.type';
 
 const pending = (state: StateFunction) => {
   state.loading = true;

@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { instance } from '../../shared/api/Api';
 import {
   Book,
   BookResponse,
@@ -10,7 +9,8 @@ import {
   IDBook,
   Id,
   MyKnownError,
-} from '../../type/Book.type';
+} from '@/types/book.type';
+import { instance } from '@/shared/api/Api';
 
 export const fetchBooks = createAsyncThunk<
   BookResponse,

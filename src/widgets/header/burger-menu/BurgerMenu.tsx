@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom';
-import { logOutThunk } from '../../redux/auth/operations';
-import { Buttons } from '../../shared/ui/Button/Button';
-import { UserNav } from '../Header/UserNav/UserNav';
+import { logOutThunk } from '@/redux/auth/operations';
+import { Buttons } from '@/shared/ui/Button/Button';
+import { UserNav } from '../user-nav/UserNav';
 import { toast } from 'react-toastify';
 import icon from '/images/sprite.svg';
 import { Menu, Modal, Svg } from './BurgerMenu.styled';
-import { useAppDispatch } from '../../hooks/hooks';
+import { useAppDispatch } from '@/hooks/hooks';
 
 type BurgerMenuProps = {
   open: boolean;

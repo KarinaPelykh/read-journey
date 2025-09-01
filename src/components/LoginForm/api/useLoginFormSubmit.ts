@@ -2,8 +2,8 @@ import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 
 import { LoginScheme } from '../module/contract';
-import { loginThunk } from '../../../redux/auth/operations';
-import { useAppDispatch } from '../../../hooks/hooks';
+import { loginThunk } from '@/redux/auth/operations';
+import { useAppDispatch } from '@/hooks/hooks';
 import { toast } from 'react-toastify';
 
 export const useLoginFormSubmit = () => {

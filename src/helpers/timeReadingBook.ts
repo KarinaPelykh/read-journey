@@ -1,10 +1,12 @@
-import { string } from 'prop-types';
-
-type Prop = {
+type TimeReadingBookProp = {
   startReading: string;
   finishReading: string;
 };
-const timeReadingBook = ({ startReading, finishReading }: Prop) => {
+
+const timeReadingBook = ({
+  startReading,
+  finishReading,
+}: TimeReadingBookProp) => {
   const start = new Date(startReading);
   const stop = new Date(finishReading);
   const time = stop.getTime() - start.getTime();
