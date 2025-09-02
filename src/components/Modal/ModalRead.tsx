@@ -1,12 +1,11 @@
 import { Buttons } from '@/shared/ui/Button/Button';
 import { Overlay, Modal, ButtonClose } from './ModalWindow.styled';
-import icons from '/images/sprite.svg';
 import { ReactNode } from 'react';
 import { addReadBook } from '@/redux/books/operations';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '@/hooks/hooks';
-import { Svg } from '../../widgets/header/burger-menu/BurgerMenu.styled';
 import { closeModalByKeyBoard } from './utils/closeModalByKeyBoard';
+import { Icon } from '@/shared/ui/svg/Svg';
 
 type ModalReadProps = {
   children: ReactNode;
@@ -39,9 +38,7 @@ export const ModalRead = ({
       {open && (
         <Modal $variant={variant}>
           <ButtonClose onClick={toggle}>
-            <Svg width="20" height="20">
-              <use xlinkHref={icons + '#close'}></use>
-            </Svg>
+            <Icon iconName="close" />
           </ButtonClose>
           {children}
           <Buttons
@@ -54,3 +51,5 @@ export const ModalRead = ({
     </Overlay>
   );
 };
+
+// svg  size  width="20" height="20"

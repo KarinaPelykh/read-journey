@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import './LightTheme.css';
+import './ThemeSwitcher.css';
 
-type LightThemeProp = {
+type ThemeSwitcherProp = {
   handleTheme: () => void;
 };
 
-export const LightTheme = ({ handleTheme }: LightThemeProp) => {
+export const ThemeSwitcher = ({ handleTheme }: ThemeSwitcherProp) => {
   const [toggle, setToggle] = useState(false);
 
   const handleToggle = () => {

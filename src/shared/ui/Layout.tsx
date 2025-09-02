@@ -1,4 +1,4 @@
-import { Header } from '@/widgets/header/Header';
+import { Header } from '@/widgets/header/ui/Header';
 import { Outlet } from 'react-router-dom';
 import { Container } from './Container/Container.styled';
 

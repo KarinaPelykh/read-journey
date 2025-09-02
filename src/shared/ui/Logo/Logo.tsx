@@ -1,21 +1,19 @@
 import { useAppSelector } from '@/hooks/hooks';
 import { isLoggedInSelect } from '@/redux/auth/selectors';
-import { LinkLogo, Logo, TextLogo, WrapperLogo } from './Logo.styled';
-import icon from '/images/sprite.svg';
+import { LinkLogo, TextLogo, WrapperLogo } from './Logo.styled';
+import { Icon } from '../svg/Svg';
 
-type LogoMainProps = {
+type LogoProps = {
   variant?: string;
 };
 
-export const LogoMain = ({ variant }: LogoMainProps) => {
+export const Logo = ({ variant }: LogoProps) => {
   const isLogin = useAppSelector(isLoggedInSelect);
 
   return (
     <WrapperLogo $variant={variant}>
       <LinkLogo to={isLogin ? '/recommended' : ''}>
-        <Logo>
-          <use xlinkHref={icon + '#logo'}></use>
-        </Logo>
+        <Icon iconName="logo" variant="logo" />
         <TextLogo>READ JOURNEY</TextLogo>
       </LinkLogo>
     </WrapperLogo>

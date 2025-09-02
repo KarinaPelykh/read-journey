@@ -1,12 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
-export interface Prop {
+type ListProp = {
   $variant?: string;
-}
+};
 
-export const List = styled.ul<Prop>`
+export const List = styled.ul<ListProp>`
   display: none;
+
   ${({ $variant }) =>
     $variant === 'burger-menu' &&
     css`
@@ -16,6 +17,7 @@ export const List = styled.ul<Prop>`
         margin-bottom: 20px;
       }
     `}
+
   @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: row;
@@ -25,9 +27,11 @@ export const List = styled.ul<Prop>`
 export const Item = styled(NavLink)`
   margin-right: 40px;
   position: relative;
+  
   &:last-child {
     margin-right: 0;
   }
+
   &.active::before {
     position: absolute;
     top: 100%;

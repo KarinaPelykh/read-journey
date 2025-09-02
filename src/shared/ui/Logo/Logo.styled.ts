@@ -1,8 +1,11 @@
 import styled, { css } from 'styled-components';
-import { Prop } from '../../../widgets/header/user-nav/UserNav.styled';
 import { Link } from 'react-router-dom';
 
-export const WrapperLogo = styled.div<Prop>`
+type LogoProps = {
+  $variant?: string;
+};
+
+export const WrapperLogo = styled.div<LogoProps>`
   margin-bottom: 40px;
 
   @media screen and (min-width: 768px) {
@@ -22,12 +25,6 @@ export const WrapperLogo = styled.div<Prop>`
 
       margin-right: auto;
     `}
-`;
-
-export const Logo = styled.svg`
-  width: 42px;
-  height: 17px;
-  fill: ${({ theme }) => theme.colors.white};
 `;
 
 export const TextLogo = styled.p`

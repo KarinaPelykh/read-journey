@@ -10,9 +10,11 @@ export const useToggle = () => {
       document.body.style.overflow = 'auto';
     }
   };
+
   const close = () => {
     setIsOpen(false);
   };
+
   const open = () => {
     setIsOpen(true);
   };

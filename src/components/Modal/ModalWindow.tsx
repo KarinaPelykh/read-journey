@@ -1,14 +1,13 @@
 import { ReactNode } from 'react';
 import { Buttons } from '@/shared/ui/Button/Button';
 import { Overlay, Modal, ButtonClose, Text } from './ModalWindow.styled';
-import icons from '/images/sprite.svg';
 import { addBooksWithRecommended } from '@/redux/books/operations';
 import { newBooksSelector } from '@/redux/books/selectors';
 import images from '/images/pngwing.com.png';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '@/hooks/hooks';
-import { Svg } from '../../widgets/header/burger-menu/BurgerMenu.styled';
 import { closeModalByKeyBoard } from './utils/closeModalByKeyBoard';
+import { Icon } from '@/shared/ui/svg/Svg';
 
 type ModalWindowProps = {
   children: ReactNode;
@@ -47,9 +46,7 @@ export const ModalWindow = ({
       {open && (
         <Modal $variant={variant as string}>
           <ButtonClose onClick={toggle}>
-            <Svg>
-              <use xlinkHref={icons + '#close'}></use>
-            </Svg>
+            <Icon iconName="close" />
           </ButtonClose>
           {isBookAdded ? (
             <div>

@@ -1,4 +1,4 @@
-import { LogoMain } from '@/shared/ui/Logo/Logo';
+import { Logo } from '@/shared/ui/Logo/Logo';
 import { Main, Section } from './Registration.styled';
 import { Text } from '@/shared/ui/Text/Text';
 import { RegistrationFrom } from '@/components/RegisterFrom/RegisterFrom';
@@ -8,7 +8,7 @@ export const RegistrationPage = () => {
   return (
     <Section>
       <Main>
-        <LogoMain />
+        <Logo />
         <Text />
         <RegistrationFrom />
       </Main>

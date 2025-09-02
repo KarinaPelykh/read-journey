@@ -22,7 +22,11 @@ export const Modal = styled.div`
   &.open {
     transform: translateX(0%);
   }
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `;
+
 export const Menu = styled.div`
   position: absolute;
   top: 0;
@@ -36,10 +40,4 @@ export const Menu = styled.div`
   flex-direction: column;
   padding: 40px 40px 70px 55px;
   z-index: 555;
-`;
-
-export const Svg = styled.svg`
-  width: 28px;
-  height: 28px;
-  stroke: ${({ theme }) => theme.colors.white};
 `;

@@ -5,8 +5,8 @@ const routes = [
   { path: '/library', page: 'My library ' },
 ];
 
-export type UserNavProps = {
-  variant: string;
+type UserNavProps = {
+  variant?: string;
 };
 
 export const UserNav = ({ variant }: UserNavProps) => {

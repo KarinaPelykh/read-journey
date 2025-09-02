@@ -77,7 +77,8 @@ export const ReusableButton = styled.button<Button>`
       }
       margin-right: 0px;
       margin-left: 16px;
-      padding: 12px 28px;
+      font-size: ${({ theme }) => theme.fontSizes.s}!important;
+      padding: 12px 28px !important;
       border-radius: ${({ theme }) => theme.radii.xl};
       border: ${({ theme }) => theme.borders.normal};
       border-color: ${({ theme }) => theme.colors.liteWhite};

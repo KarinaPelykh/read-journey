@@ -1,44 +1,34 @@
-import { useNavigate } from 'react-router-dom';
-import { logOutThunk } from '@/redux/auth/operations';
 import { Buttons } from '@/shared/ui/Button/Button';
 import { UserNav } from '../user-nav/UserNav';
-import { toast } from 'react-toastify';
-import icon from '/images/sprite.svg';
-import { Menu, Modal, Svg } from './BurgerMenu.styled';
-import { useAppDispatch } from '@/hooks/hooks';
+import { Menu, Modal } from './BurgerMenu.styled';
+import { Icon } from '@/shared/ui/svg/Svg';
+import { useLogOut } from '../api/useLogOut';
 
 type BurgerMenuProps = {
   open: boolean;
-  toggle: () => void;
+  close: () => void;
 };
 
-export const BurgerMenu = ({ open, toggle }: BurgerMenuProps) => {
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
+export const BurgerMenu = ({ open, close }: BurgerMenuProps) => {
+  const handelLogout = useLogOut();
 
-  const handelLogout = () => {
-    dispatch(logOutThunk())
-      .then(() => {
-        navigate('/');
-        toast.success('You Log-out', {
-          position: 'top-right',
-          hideProgressBar: true,
-          theme: 'dark',
-        });
-      })
-      .catch(error => toast.error(error.message));
+  const logoutAndCloseMenu = () => {
+    handelLogout();
+    close();
   };
 
   return (
     <Modal className={open ? 'open' : 'close'}>
       <Menu>
-        <button onClick={toggle}>
-          <Svg>
-            <use xlinkHref={icon + '#close'}></use>
-          </Svg>
+        <button onClick={close}>
+          <Icon iconName="close" />
         </button>
         <UserNav variant="burger-menu" />
-        <Buttons onClick={handelLogout} variant="log-out" prop={'Log out'} />
+        <Buttons
+          onClick={logoutAndCloseMenu}
+          variant="log-out"
+          prop="Log out"
+        />
       </Menu>
     </Modal>
   );

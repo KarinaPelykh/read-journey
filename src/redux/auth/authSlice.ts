@@ -11,6 +11,7 @@ const pending = (state: StateFunction) => {
   state.loading = true;
   state.error = '';
 };
+
 const rejected = (
   state: StateFunction,
   action: PayloadAction<MyKnownError | unknown>
@@ -18,6 +19,7 @@ const rejected = (
   state.loading = false;
   state.error = action.payload;
 };
+
 const initialState: State = {
   user: {
     name: '',
