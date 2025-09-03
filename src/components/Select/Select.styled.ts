@@ -1,5 +1,6 @@
 import Select from 'react-select';
 import styled from 'styled-components';
+
 export const Selectors = styled(Select)`
   background-color: transparent;
   border-radius: ${({ theme }) => theme.radii.m};

@@ -1,5 +1,4 @@
-import icon from '/images/sprite.svg';
-import styled from 'styled-components';
+import { Icon } from '@/shared/ui/svg/Svg';
 
 type ShowPasswordProps = {
   toggle: () => void;
@@ -9,15 +8,7 @@ type ShowPasswordProps = {
 export const ShowPassword = ({ toggle, showPsw }: ShowPasswordProps) => {
   return (
     <button type="button" onClick={toggle}>
-      <SvgValidation width="20px" height="20px">
-        <use xlinkHref={icon + (showPsw ? '#eye-off' : '#eye')}></use>
-      </SvgValidation>
+      <Icon iconName={showPsw ? 'eye-off' : 'eye'} variant="display-password" />
     </button>
   );
 };
-
-export const SvgValidation = styled.svg`
-  position: absolute;
-  top: 13px;
-  right: 13px;
-`;
