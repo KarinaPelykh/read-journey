@@ -10,9 +10,9 @@ import {
   Title,
   WrapperItem,
 } from './MyLibraryItem.styled';
-import { useAppDispatch } from '@/hooks/hooks';
+import { useAppDispatch } from '@/shared/hooks/hooks';
 import { toast } from 'react-toastify';
-import { useToggle } from '@/hooks/useToggle';
+import { useToggle } from '@/shared/hooks/useToggle';
 import { ModalRead } from '@/components/Modal/ModalRead';
 
 type MyLibraryItemProps = {

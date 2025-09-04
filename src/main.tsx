@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import { persistor, store } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ToastContainer } from 'react-toastify';
-import GlobalStyles from './stylesheet/globalStyles.js';
+import GlobalStyles from './stylesheet/global-styles.js';
 // import { LightTheme } from './components/LightTheme/LigthTheme';
 
 const rootElement = document.getElementById('root');

@@ -4,15 +4,15 @@ import { RegistrationPage } from './pages/Registration/Registration';
 import { useEffect } from 'react';
 import { refreshThunk } from './redux/auth/operations';
 import { isLoggedInSelect, refresh } from './redux/auth/selectors';
-import { Loader } from './shared/ui/Loader/Loader';
-import { useAppDispatch, useAppSelector } from './hooks/hooks';
+import { Loader } from './shared/ui/loader/Loader';
+import { useAppDispatch, useAppSelector } from './shared/hooks/hooks';
 import { LoginPage } from './pages/Login/Login';
 import { Reading } from './pages/Reading/Reading';
 import { MyLibrary } from './pages/MyLibrary/MyLibrary';
 import { Recommended } from './pages/Recommended/Recommended';
 import { Layout } from './shared/ui/Layout';
-import { PublicRoute } from './hoc/PublicRoute';
-import { PrivateRoute } from './hoc/PrivateRoute';
+import { PublicRoute } from './guards/PublicRoute';
+import { PrivateRoute } from './guards/PrivateRoute';
 
 function App() {
   const dispatch = useAppDispatch();

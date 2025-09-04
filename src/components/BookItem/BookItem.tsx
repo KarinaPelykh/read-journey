@@ -1,6 +1,6 @@
 import { Author, BookImg, QuantityPages, Title } from './BookItem.styled';
 import { ModalWindow } from '../Modal/ModalWindow';
-import { useToggle } from '../../hooks/useToggle';
+import { useToggle } from '../../shared/hooks/useToggle';
 
 type BookItemProps = {
   author: string;

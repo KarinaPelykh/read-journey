@@ -21,7 +21,7 @@ import formatDate from '@/helpers/formatDate';
 import getDate from '@/helpers/getDate';
 import timeReadingBook from '@/helpers/timeReadingBook';
 import { toast } from 'react-toastify';
-import { useAppDispatch, useAppSelector } from '@/hooks/hooks';
+import { useAppDispatch, useAppSelector } from '@/shared/hooks/hooks';
 import { Progress } from '@/types/book.type';
 
 export const Details = () => {

@@ -1,6 +1,6 @@
 import { booksSelector } from '@/redux/books/selectors';
 import { Author, Img, List, Title } from './RecommendationsList.styled';
-import { useAppSelector } from '@/hooks/hooks';
+import { useAppSelector } from '@/shared/hooks/hooks';
 
 type ListRecommends = {
   _id: string;

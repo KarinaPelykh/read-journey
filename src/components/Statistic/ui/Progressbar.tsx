@@ -1,5 +1,5 @@
 import { CircularProgressbar } from 'react-circular-progressbar';
-import { Circle } from '../Statistic.styled';
+import { Circle } from './Statistic.styled';
 import 'react-circular-progressbar/dist/styles.css';
 
 type ProgressbarProps = {

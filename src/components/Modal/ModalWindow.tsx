@@ -1,11 +1,11 @@
 import { ReactNode } from 'react';
-import { Buttons } from '@/shared/ui/Button/Button';
+import { Buttons } from '@/shared/ui/button/Button';
 import { Overlay, Modal, ButtonClose, Text } from './ModalWindow.styled';
 import { addBooksWithRecommended } from '@/redux/books/operations';
 import { newBooksSelector } from '@/redux/books/selectors';
 import images from '/images/pngwing.com.png';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '@/hooks/hooks';
+import { useAppDispatch, useAppSelector } from '@/shared/hooks/hooks';
 import { closeModalByKeyBoard } from './utils/closeModalByKeyBoard';
 import { Icon } from '@/shared/ui/svg/Svg';
 

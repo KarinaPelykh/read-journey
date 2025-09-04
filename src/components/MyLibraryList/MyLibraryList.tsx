@@ -14,8 +14,8 @@ import {
 // import { ModalWindow } from '../Modal/ModalWindow';
 import { MyLibraryItem } from './MyLibraryItem/MyLibraryItem';
 import { getVisibleTasks } from '@/helpers/sortedBook';
-import { useAppSelector } from '@/hooks/hooks';
-import { useToggle } from '@/hooks/useToggle';
+import { useAppSelector } from '@/shared/hooks/hooks';
+import { useToggle } from '@/shared/hooks/useToggle';
 
 type MyLibraryListProps = {
   status: string;

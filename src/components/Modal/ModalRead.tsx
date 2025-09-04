@@ -1,9 +1,9 @@
-import { Buttons } from '@/shared/ui/Button/Button';
+import { Buttons } from '@/shared/ui/button/Button';
 import { Overlay, Modal, ButtonClose } from './ModalWindow.styled';
 import { ReactNode } from 'react';
 import { addReadBook } from '@/redux/books/operations';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '@/hooks/hooks';
+import { useAppDispatch } from '@/shared/hooks/hooks';
 import { closeModalByKeyBoard } from './utils/closeModalByKeyBoard';
 import { Icon } from '@/shared/ui/svg/Svg';
 

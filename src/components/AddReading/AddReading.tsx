@@ -1,8 +1,7 @@
 import { FormEvent, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useAppDispatch, useAppSelector } from '@/hooks/hooks';
-import { Buttons } from '@/shared/ui/Button/Button';
+import { useAppDispatch, useAppSelector } from '@/shared/hooks/hooks';
 import {
   Description,
   Form,
@@ -18,6 +17,7 @@ import { finishedReading, startReading } from '@/redux/books/operations';
 
 import { ModalRead } from '../Modal/ModalRead';
 import book from '/images/book.png';
+import { Buttons } from '@/shared/ui/button/Button';
 
 export const AddReading = () => {
   const readBook = useAppSelector(redBookSelector);

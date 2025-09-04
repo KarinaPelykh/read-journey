@@ -6,7 +6,7 @@ import {
 } from './Pagination.styled';
 import icon from '/images/sprite.svg';
 import { booksSelector } from '@/redux/books/selectors';
-import { useAppSelector } from '@/hooks/hooks';
+import { useAppSelector } from '@/shared/hooks/hooks';
 
 type PaginationProps = {
   page: number;

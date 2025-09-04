@@ -1,4 +1,4 @@
-import { useAppDispatch } from '@/hooks/hooks';
+import { useAppDispatch } from '@/shared/hooks/hooks';
 import { logOutThunk } from '@/redux/auth/operations';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';

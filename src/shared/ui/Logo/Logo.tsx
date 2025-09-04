@@ -1,4 +1,4 @@
-import { useAppSelector } from '@/hooks/hooks';
+import { useAppSelector } from '@/shared/hooks/hooks';
 import { isLoggedInSelect } from '@/redux/auth/selectors';
 import { LinkLogo, TextLogo, WrapperLogo } from './Logo.styled';
 import { Icon } from '../svg/Svg';

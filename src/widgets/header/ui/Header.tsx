@@ -1,14 +1,14 @@
 import { HeaderDiv, Nav } from './Header.styled';
-import { Logo } from '@/shared/ui/Logo/Logo';
-import { UserNav } from '@/widgets/header/user-nav/UserNav';
-import { UserBar } from '@/widgets/header/user-bar/UserBar';
-import { Buttons } from '@/shared/ui/Button/Button';
-import { ButtonMenu } from '@/widgets/header/btn-burger/ButtonMenu';
+import { Logo } from '@/shared/ui/logo/Logo';
+import { UserNav } from '@/widgets/header/ui/user-nav/UserNav';
+import { UserBar } from '@/widgets/header/ui/user-bar/UserBar';
+import { Buttons } from '@/shared/ui/button/Button';
+import { ButtonMenu } from '@/widgets/header/ui/btn-burger/ButtonMenu';
 
 import { useLogOut } from '../api/useLogOut';
 import { useLocation } from 'react-router-dom';
-import { BurgerMenu } from '../burger-menu/BurgerMenu';
-import { useToggle } from '@/hooks/useToggle';
+import { BurgerMenu } from './burger-menu/BurgerMenu';
+import { useToggle } from '@/shared/hooks/useToggle';
 
 const routes = ['/login', '/register'];
 

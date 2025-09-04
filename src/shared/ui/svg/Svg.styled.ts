@@ -40,4 +40,19 @@ export const Svg = styled.svg<SvgProps>`
       right: 13px;
       stroke: transparent;
     `}
+
+
+      ${({ $variant }) =>
+    ($variant === 'watches' || $variant === 'icon-pie-chart') &&
+    css`
+      width: 20px;
+      height: 20px;
+    `}
+
+     ${({ $variant }) =>
+    $variant === 'log-in' &&
+    css`
+      width: 24px;
+      height: 24px;
+    `}
 `;

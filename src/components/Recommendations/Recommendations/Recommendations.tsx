@@ -1,6 +1,6 @@
-import icon from '/images/sprite.svg';
 import { RecommendationsList } from '../ListBooksRecommended/RecommendationsList';
 import { LinkHome, Title, Wrapper } from './Recommendations.styled';
+import { Icon } from '@/shared/ui/svg/Svg';
 
 export const Recommendations = () => {
   return (
@@ -9,9 +9,7 @@ export const Recommendations = () => {
       <RecommendationsList />
       <LinkHome to="/recommended">
         <p>Home</p>
-        <svg width="24" height="24">
-          <use xlinkHref={icon + '#log-in'}></use>
-        </svg>
+        <Icon iconName="log-in" variant="log-in" />
       </LinkHome>
     </Wrapper>
   );

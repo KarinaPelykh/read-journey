@@ -1,9 +1,9 @@
 import { useLocation } from 'react-router-dom';
 import { DivDashboard } from './Dashboard.styled';
-import { FilterOnRecommendedPage } from '../FilterOnRecommendedPage';
-import { MyLibraryDashboard } from '../MyLibraryDashboard';
+import { RecommendedSidebar } from '../RecommendedSidebar';
+import { MyLibrarySidebar } from '../MyLibrarySidebar';
 import { AddReading } from '../AddReading/AddReading';
-import { ShowMyInform } from '../ShowMyInform/ShowMyInform';
+import { ProgressReading } from '@/widgets/progress-reading/ui/ProgressReading';
 
 export const Dashboard = () => {
   const location = useLocation();
@@ -17,12 +17,12 @@ export const Dashboard = () => {
       {isReadingPage ? (
         <>
           <AddReading />
-          <ShowMyInform />
+          <ProgressReading />
         </>
       ) : !isLibraryPage ? (
-        <FilterOnRecommendedPage />
+        <RecommendedSidebar />
       ) : (
-        <MyLibraryDashboard />
+        <MyLibrarySidebar />
       )}
     </DivDashboard>
   );

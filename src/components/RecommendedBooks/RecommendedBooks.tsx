@@ -2,7 +2,7 @@ import { Text, TextLibrary, WrapperBooks } from './RecommendedBooks.styled';
 import { BookList } from '../BookList/BookList';
 import { useLocation } from 'react-router-dom';
 import { MyBook } from '../MyBook/MyBook';
-import { Selector } from '../Select/Select';
+import { CustomSelect } from '../../widgets/select/ui/CustomSelect';
 
 export const RecommendedBooks = () => {
   const location = useLocation();
@@ -30,7 +30,7 @@ export const RecommendedBooks = () => {
       ) : (
         <>
           <TextLibrary>My library</TextLibrary>
-          <Selector />
+          <CustomSelect />
         </>
       )}
     </WrapperBooks>
