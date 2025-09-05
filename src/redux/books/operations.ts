@@ -16,7 +16,7 @@ export const fetchBooks = createAsyncThunk<
   BookResponse,
   Book,
   { rejectValue: MyKnownError }
->('books/fetchAll', async ({ page, limit }, { rejectWithValue }) => {
+>('book/fetchAll', async ({ page, limit }, { rejectWithValue }) => {
   try {
     const { data } = await instance.get(
       `/books/recommend?page=${page}&limit=${limit}`

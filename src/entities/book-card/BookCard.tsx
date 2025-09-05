@@ -1,6 +1,6 @@
-import { Author, BookImg, QuantityPages, Title } from './BookItem.styled';
-import { ModalWindow } from '../Modal/ModalWindow';
+import { Author, BookImg, QuantityPages, Title } from './BookCard.styled';
 import { useToggle } from '../../shared/hooks/useToggle';
+import { ModalWindow } from '@/components/Modal/ModalWindow';
 
 type BookItemProps = {
   author: string;
@@ -10,7 +10,9 @@ type BookItemProps = {
   title: string;
 };
 
-export const BookItem = ({ img, title, author, pages, id }: BookItemProps) => {
+export const BookCard = ({ ...data }: BookItemProps) => {
+  const { img, title, author, pages, id } = data;
+
   const { toggle, isOpen } = useToggle();
 
   return (

@@ -1,4 +1,4 @@
 import { StateFilter } from '@/types/filter.type';
 
-export const filterSelector = (state: { filter: StateFilter }) =>
-  state.filter.book;
+export const selectorFilter = (state: { filter: StateFilter }) =>
+  state.filter.value;

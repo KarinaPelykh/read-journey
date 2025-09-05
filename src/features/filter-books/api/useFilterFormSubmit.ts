@@ -1,5 +1,5 @@
 import { FormEvent } from 'react';
-import { getBook } from '@/redux/filter/operations';
+import { getFilteredBook } from '@/redux/filter/operations';
 import { useAppDispatch } from '@/shared/hooks/hooks';
 import { toast } from 'react-toastify';
 
@@ -21,7 +21,7 @@ export const useFilterFormSubmit = ({
   const handelSubmit = (e: FormEvent) => {
     e.preventDefault();
 
-    dispatch(getBook({ title, author }))
+    dispatch(getFilteredBook({ title, author }))
       .unwrap()
       .then(({ results }: any) => {
         if (results.length === 0) {

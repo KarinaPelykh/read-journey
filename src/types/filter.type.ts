@@ -14,7 +14,8 @@ export interface ItemBookFilter {
 }
 
 export interface StateFilter {
-  book: ItemBookFilter | null;
+  value: string;
+  // book: ItemBookFilter | null;
   error: string | null | unknown;
   isLoading: boolean;
 }

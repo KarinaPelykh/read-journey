@@ -14,6 +14,7 @@ import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 import { MyKnownError, StateBook } from '@/types/book.type';
 import { initialState } from './state';
+
 const pending = (state: StateBook) => {
   state.isLoading = true;
   state.error = '';
@@ -100,5 +101,6 @@ const persistConfig = {
   key: 'book',
   storage,
 };
+
 export const bookReducer = bookSlice.reducer;
 export const persistedReducerBook = persistReducer(persistConfig, bookReducer);

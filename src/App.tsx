@@ -4,7 +4,6 @@ import { RegistrationPage } from './pages/Registration/Registration';
 import { useEffect } from 'react';
 import { refreshThunk } from './redux/auth/operations';
 import { isLoggedInSelect, refresh } from './redux/auth/selectors';
-import { Loader } from './shared/ui/loader/Loader';
 import { useAppDispatch, useAppSelector } from './shared/hooks/hooks';
 import { LoginPage } from './pages/Login/Login';
 import { Reading } from './pages/Reading/Reading';
@@ -13,6 +12,7 @@ import { Recommended } from './pages/Recommended/Recommended';
 import { Layout } from './shared/ui/Layout';
 import { PublicRoute } from './guards/PublicRoute';
 import { PrivateRoute } from './guards/PrivateRoute';
+import { Loader } from './shared/ui/loader/Loader';
 
 function App() {
   const dispatch = useAppDispatch();

@@ -2,7 +2,7 @@ import { Buttons } from '@/shared/ui/button/Button';
 import { Form, InputFilter, Label, Title, Wrapper } from './FilterForm.styled';
 import { useState } from 'react';
 
-import { useFilterFormSubmit } from './api/useFilterFormSubmit';
+import { useFilterFormSubmit } from '../api/useFilterFormSubmit';
 
 export const FilterForm = () => {
   const [title, setTitle] = useState('');

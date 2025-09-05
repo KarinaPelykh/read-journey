@@ -1,7 +1,7 @@
 import { MyKnownError } from '@/types/book.type';
 import { StateFilter } from '@/types/filter.type';
 import { createSlice, isAnyOf, PayloadAction } from '@reduxjs/toolkit';
-import { getBook } from './operations';
+import { getFilteredBook } from './operations';
 
 const pending = (state: StateFilter) => {
   state.isLoading = true;
@@ -15,23 +15,30 @@ const rejected = (
   state.isLoading = false;
   state.error = action.payload;
 };
+
 const initialState: StateFilter = {
-  book: null,
+  value: '',
   error: null,
   isLoading: false,
 };
+
 export const filterBook = createSlice({
   name: 'filter',
   initialState,
-  reducers: {},
+  reducers: {
+    resetFilter: state => {
+      state.value = '';
+    },
+  },
   extraReducers: builder => {
     builder
-      .addCase(getBook.fulfilled, (state, action) => {
-        state.book = action.payload;
+      .addCase(getFilteredBook.fulfilled, (state, action) => {
+        state.value = action.meta.arg.title;
       })
-      .addMatcher(isAnyOf(getBook.pending), pending)
-      .addMatcher(isAnyOf(getBook.rejected), rejected);
+      .addMatcher(isAnyOf(getFilteredBook.pending), pending)
+      .addMatcher(isAnyOf(getFilteredBook.rejected), rejected);
   },
 });
 
+export const { resetFilter } = filterBook.actions;
 export const filterReducer = filterBook.reducer;
