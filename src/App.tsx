@@ -12,7 +12,7 @@ import { Recommended } from './pages/Recommended/Recommended';
 import { Layout } from './shared/ui/Layout';
 import { PublicRoute } from './guards/PublicRoute';
 import { PrivateRoute } from './guards/PrivateRoute';
-import { Loader } from './shared/ui/loader/Loader';
+import { Loader } from './shared/ui/Loader/Loader';
 
 function App() {
   const dispatch = useAppDispatch();

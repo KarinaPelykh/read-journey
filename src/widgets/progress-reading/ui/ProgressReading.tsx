@@ -6,8 +6,8 @@ import { useAppSelector } from '@/shared/hooks/hooks';
 
 import { ProgressOnboarding } from './progress-onboarding/ProgressOnboarding';
 import { Icon } from '@/shared/ui/svg/Svg';
-import { Details } from '@/components/Details/Details';
 import { Statistic } from '@/components/Statistic/ui/Statistic';
+import { ReadingProgressJournal } from '@/widgets/reading-progress-journal/ui/ReadingProgressJournal';
 
 export const ProgressReading = () => {
   const [open, setOpen] = useState({ statistic: false, details: true });
@@ -41,7 +41,7 @@ export const ProgressReading = () => {
               </button>
             </div>
           </Div>
-          {open.details && <Details />}
+          {open.details && <ReadingProgressJournal />}
           {open.statistic && <Statistic />}
         </>
       ) : (

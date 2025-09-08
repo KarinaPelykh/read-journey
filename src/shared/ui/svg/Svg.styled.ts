@@ -55,4 +55,41 @@ export const Svg = styled.svg<SvgProps>`
       width: 24px;
       height: 24px;
     `}
+
+    
+     ${({ $variant }) =>
+    ($variant === 'icon-2' || $variant === 'icon-1') &&
+    css`
+      width: 44px;
+      height: 44px;
+    `}
+
+      ${({ $variant }) =>
+    $variant === 'block' &&
+    css`
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: -27px;
+    `}
+
+        ${({ $variant }) =>
+    $variant === 'trash' &&
+    css`
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      top: 5px;
+      left: 8px
+      stroke: #686868;
+      fill: transparent;
+    `}
+
+    
+        ${({ $variant }) =>
+    $variant === 'icon-block' &&
+    css`
+      width: 59px;
+      height: 25px;
+    `}
 `;

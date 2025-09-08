@@ -13,7 +13,6 @@ export const RecommendationsList = () => {
   const bookRecommended = useAppSelector(booksSelector);
 
   const cutBookRecommended = bookRecommended.results.slice(0, 3);
-  console.log(cutBookRecommended);
 
   return (
     <List>

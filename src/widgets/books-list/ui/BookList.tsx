@@ -6,9 +6,9 @@ import { useAppDispatch } from '@/shared/hooks/hooks';
 import { useResetFilter } from '../api/useResetFilter';
 import { useSetLimitOfBooks } from '../api/useSetLimitOfBooks';
 import { useGetFilteredData } from '../api/useGetFilteredData';
-import { Pagination } from '@/components/Pagination/Pagination';
 import { NotFound } from './NotFound';
 import { BookCard } from '@/entities/book-card/BookCard';
+import { Pagination } from '@/shared/ui/pagination/Pagination';
 
 type Book = {
   author: string;

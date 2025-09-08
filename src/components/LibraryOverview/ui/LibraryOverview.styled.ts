@@ -11,6 +11,7 @@ export const Block = styled.div`
   @media screen and (min-width: 768px) {
     width: 313px;
   }
+
   @media screen and (min-width: 1440px) {
     border-radius: ${({ theme }) => theme.radii.m};
     background: ${({ theme }) => theme.colors.darkGray};
@@ -21,6 +22,7 @@ export const Block = styled.div`
     margin-top: 20px;
   }
 `;
+
 export const Title = styled.h3`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.m};
@@ -31,16 +33,19 @@ export const Title = styled.h3`
     margin-bottom: 40px;
   }
 `;
+
 export const WrapperInfo = styled.div`
   display: flex;
   margin-bottom: 20px;
 `;
+
 export const Information = styled.p`
   color: ${({ theme }) => theme.colors.grey};
   font-size: ${({ theme }) => theme.fontSizes.s};
   width: 197px;
   margin-left: 12px;
 `;
+
 export const Span = styled.span`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.s};

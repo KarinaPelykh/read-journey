@@ -1,3 +1,4 @@
+import { Icon } from '@/shared/ui/svg/Svg';
 import {
   Block,
   Information,
@@ -6,25 +7,20 @@ import {
   Title,
   WrapperInfo,
 } from './LibraryOverview.styled';
-import icon from '/images/sprite.svg';
 
 export const LibraryOverview = () => {
   return (
     <Block>
       <Title>Start your workout</Title>
       <WrapperInfo>
-        <svg width="44" height="44">
-          <use xlinkHref={icon + '#icon-1'}></use>
-        </svg>
+        <Icon iconName="icon-1" variant="icon-1" />
         <Information>
           <Span>Create a personal library:</Span> add the books you intend to
           read to it.
         </Information>
       </WrapperInfo>
       <WrapperInfo>
-        <svg width="44" height="44">
-          <use xlinkHref={icon + '#icon-2'}></use>
-        </svg>
+        <Icon iconName="icon-2" variant="icon-2" />
         <Information>
           <Span> Create your first workout:</Span>
           define a goal, choose a period, start training.
@@ -32,9 +28,7 @@ export const LibraryOverview = () => {
       </WrapperInfo>
       <LinkLibrary to="/library">
         <p> My library</p>
-        <svg width="24" height="24">
-          <use xlinkHref={icon + '#log-in'}></use>
-        </svg>
+        <Icon iconName="log-in" variant="log-in'" />
       </LinkLibrary>
     </Block>
   );
