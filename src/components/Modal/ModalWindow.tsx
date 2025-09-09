@@ -22,7 +22,7 @@ export const ModalWindow = ({
   children,
   open,
   toggle,
-  id,
+  id = '',
   title,
   variant,
 }: ModalWindowProps) => {

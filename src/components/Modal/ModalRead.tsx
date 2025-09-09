@@ -9,7 +9,7 @@ import { Icon } from '@/shared/ui/svg/Svg';
 
 type ModalReadProps = {
   children: ReactNode;
-  id: string;
+  id?: string;
   open: boolean;
   toggle: () => void;
   variant?: string;
@@ -19,7 +19,7 @@ export const ModalRead = ({
   open,
   toggle,
   children,
-  id,
+  id = '',
   variant,
 }: ModalReadProps) => {
   const dispatch = useAppDispatch();
