@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Buttons } from '@/shared/ui/button/Button';
+import { Buttons } from '@/shared/ui/btn/Button';
 
 import { RegisterForm, DivWrapperInput, Label } from './RegisterFrom.styles';
 

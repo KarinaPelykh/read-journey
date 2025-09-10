@@ -1,4 +1,4 @@
-import { Buttons } from '@/shared/ui/button/Button';
+import { Buttons } from '@/shared/ui/btn/Button';
 import { useState } from 'react';
 
 import { DivWrapperInput, Label, LoginForm } from './LoginForm.styled';

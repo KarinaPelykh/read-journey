@@ -1,4 +1,4 @@
-import { Buttons } from '@/shared/ui/button/Button';
+import { Buttons } from '@/shared/ui/btn/Button';
 import { UserNav } from '../user-nav/UserNav';
 import { Menu, Modal } from './BurgerMenu.styled';
 import { Icon } from '@/shared/ui/svg/Svg';

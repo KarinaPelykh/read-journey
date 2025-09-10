@@ -1,5 +1,5 @@
 import { Form, InputADD, Label, Title, Wrapper } from './AddBooks.styled';
-import { Buttons } from '@/shared/ui/button/Button';
+import { Buttons } from '@/shared/ui/btn/Button';
 
 import { useState } from 'react';
 import { useBookFomSubmit } from '../api/useBookFomSubmit';

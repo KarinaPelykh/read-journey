@@ -2,7 +2,7 @@ import { HeaderDiv, Nav } from './Header.styled';
 import { Logo } from '@/shared/ui/sign/Logo';
 import { UserNav } from '@/widgets/header/ui/user-nav/UserNav';
 import { UserBar } from '@/widgets/header/ui/user-bar/UserBar';
-import { Buttons } from '@/shared/ui/button/Button';
+import { Buttons } from '@/shared/ui/btn/Button';
 import { ButtonMenu } from '@/widgets/header/ui/btn-burger/ButtonMenu';
 
 import { useLogOut } from '../api/useLogOut';

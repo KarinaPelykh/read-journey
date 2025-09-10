@@ -1,4 +1,4 @@
-import { Buttons } from '@/shared/ui/button/Button';
+import { Buttons } from '@/shared/ui/btn/Button';
 import { Form, InputFilter, Label, Title, Wrapper } from './FilterForm.styled';
 import { useState } from 'react';
 

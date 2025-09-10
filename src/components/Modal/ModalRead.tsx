@@ -1,4 +1,4 @@
-import { Buttons } from '@/shared/ui/button/Button';
+import { Buttons } from '@/shared/ui/btn/Button';
 import { Overlay, Modal, ButtonClose } from './ModalWindow.styled';
 import { ReactNode } from 'react';
 import { addReadBook } from '@/redux/books/operations';

@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Buttons } from '@/shared/ui/button/Button';
+import { Buttons } from '@/shared/ui/btn/Button';
 import { Overlay, Modal, ButtonClose, Text } from './ModalWindow.styled';
 import { addBooksWithRecommended } from '@/redux/books/operations';
 import { newBooksSelector } from '@/redux/books/selectors';

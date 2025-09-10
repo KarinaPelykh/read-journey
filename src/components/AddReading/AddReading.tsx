@@ -12,7 +12,7 @@ import {
 } from './AddReading.styled';
 
 import { ModalRead } from '../Modal/ModalRead';
-import { Buttons } from '@/shared/ui/button/Button';
+import { Buttons } from '@/shared/ui/btn/Button';
 import { useSubmitProgressReading } from './api/useSubmitProgressReading';
 import { useToggle } from '@/shared/hooks/useToggle';
 
