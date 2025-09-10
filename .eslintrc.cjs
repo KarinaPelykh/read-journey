@@ -17,5 +17,6 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'import/no-unresolved': ['error', { caseSensitive: true }],
   },
-}
+};
