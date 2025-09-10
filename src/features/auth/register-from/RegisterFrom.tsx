@@ -4,11 +4,12 @@ import { Buttons } from '@/shared/ui/button/Button';
 import { RegisterForm, DivWrapperInput, Label } from './RegisterFrom.styles';
 
 import { useRegisterFormikSubmit } from './api/useRegisterFormikSubmit';
-import { Error } from '@/shared/ui/error/Error';
-import { Input } from '@/shared/ui/input/Input';
+
 import { PasswordInput } from '@/shared/ui/password-input/PasswordInput';
 import { ValidationAuth } from '@/shared/ui/ValidationAuth';
 import { ShowPassword } from '@/components/ShowPassword';
+import { Input } from '@/shared/ui/entry/Input';
+import { Error } from '@/shared/ui/error-message/Error';
 
 export const RegistrationFrom = () => {
   const formik = useRegisterFormikSubmit();

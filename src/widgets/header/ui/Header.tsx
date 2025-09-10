@@ -1,5 +1,5 @@
 import { HeaderDiv, Nav } from './Header.styled';
-import { Logo } from '@/shared/ui/logo/Logo';
+import { Logo } from '@/shared/ui/sign/Logo';
 import { UserNav } from '@/widgets/header/ui/user-nav/UserNav';
 import { UserBar } from '@/widgets/header/ui/user-bar/UserBar';
 import { Buttons } from '@/shared/ui/button/Button';

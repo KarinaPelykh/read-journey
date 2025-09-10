@@ -2,9 +2,8 @@ import { Main, Section } from './Login.styled';
 
 import { Hero } from '@/components/Hero/Hero';
 import { LoginFormComp } from '@/features/auth/login-form/ui/LoginForm';
-import { Logo } from '@/shared/ui/logo/Logo';
-
-import { Text } from '@/shared/ui/text/Text';
+import { Text } from '@/shared/ui/content/Text';
+import { Logo } from '@/shared/ui/sign/Logo';
 
 export const LoginPage = () => {
   return (

@@ -1,8 +1,8 @@
-import { Logo } from '@/shared/ui/logo/Logo';
+import { Logo } from '@/shared/ui/sign/Logo';
 import { Main, Section } from './Registration.styled';
-import { Text } from '@/shared/ui/text/Text';
 import { Hero } from '@/components/Hero/Hero';
 import { RegistrationFrom } from '@/features/auth/register-from/RegisterFrom';
+import { Text } from '@/shared/ui/content/Text';
 
 export const RegistrationPage = () => {
   return (

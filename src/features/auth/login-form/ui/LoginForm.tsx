@@ -5,11 +5,11 @@ import { DivWrapperInput, Label, LoginForm } from './LoginForm.styled';
 
 import { useLoginFormSubmit } from '../api/useLoginFormSubmit';
 
-import { Error } from '@/shared/ui/error/Error';
 import { PasswordInput } from '@/shared/ui/password-input/PasswordInput';
 import { ValidationAuth } from '@/shared/ui/ValidationAuth';
 import { ShowPassword } from '@/components/ShowPassword';
-import { Input } from '@/shared/ui/input/Input';
+import { Error } from '@/shared/ui/error-message/Error';
+import { Input } from '@/shared/ui/entry/Input';
 
 export const LoginFormComp = () => {
   const [showPsw, setShowPsw] = useState(true);
