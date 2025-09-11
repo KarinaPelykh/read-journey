@@ -3,6 +3,7 @@ import { Form, InputFilter, Label, Title, Wrapper } from './FilterForm.styled';
 import { useState } from 'react';
 
 import { useFilterFormSubmit } from '../api/useFilterFormSubmit';
+import { useResetFilter } from '@/features/filter-books/api/useResetFilter';
 
 export const FilterForm = () => {
   const [title, setTitle] = useState('');
@@ -23,6 +24,8 @@ export const FilterForm = () => {
   const handleChangeAuthor = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAuthor(e.target.value);
   };
+  
+  useResetFilter();
 
   return (
     <Form onSubmit={handelSubmit}>

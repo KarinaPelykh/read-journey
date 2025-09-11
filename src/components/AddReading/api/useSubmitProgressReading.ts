@@ -65,5 +65,6 @@ export const useSubmitProgressReading = ({
         toast.error(error.message);
       });
   };
+
   return handleSubmit;
 };

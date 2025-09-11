@@ -1,33 +1,32 @@
-import { Text, TextLibrary, WrapperBooks } from './RecommendedBooks.styled';
-import { useLocation } from 'react-router-dom';
-import { MyBook } from '../MyBook/MyBook';
-import { CustomSelect } from '../../widgets/select/ui/CustomSelect';
+import { useAppDispatch } from '@/shared/hooks/hooks';
+import { Text, WrapperBooks } from './RecommendedBooks.styled';
+import { Pagination } from '@/shared/ui/pagination/Pagination';
+import { useEffect, useState } from 'react';
+import { useSetLimitOfBooks } from '@/widgets/books-list/api/useSetLimitOfBooks';
+import { useGetFilteredData } from '@/widgets/books-list/api/useGetFilteredData';
+import { fetchBooks } from '@/redux/books/operations';
 import { BookList } from '@/widgets/books-list/ui/BookList';
+
 export const RecommendedBooks = () => {
-  const location = useLocation();
+  const [page, setPage] = useState(1);
 
-  const isLibraryPage = location.pathname === '/library';
+  const [limit, setLimit] = useState(10);
 
-  const isReadingPage = location.pathname === '/reading';
+  const dispatch = useAppDispatch();
+
+  useSetLimitOfBooks(setLimit);
+
+  useEffect(() => {
+    dispatch(fetchBooks({ page, limit }));
+  }, [dispatch, page, limit]);
+
+  const books = useGetFilteredData();
 
   return (
     <WrapperBooks>
-      {isReadingPage ? (
-        <>
-          <Text>My reading</Text>
-          <MyBook />
-        </>
-      ) : !isLibraryPage ? (
-        <>
-          <Text>Recommended</Text>
-          <BookList />
-        </>
-      ) : (
-        <>
-          <TextLibrary>My library</TextLibrary>
-          <CustomSelect />
-        </>
-      )}
+      <Text>Recommended</Text>
+      {books.length <= 1 ? null : <Pagination setPage={setPage} page={page} />}
+      <BookList books={books} />
     </WrapperBooks>
   );
 };

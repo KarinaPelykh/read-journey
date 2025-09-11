@@ -1,47 +1,26 @@
 import { redBookSelector } from '@/redux/books/selectors';
-import {
-  Author,
-  Button,
-  ImgRead,
-  TextTime,
-  Title,
-  Wrapper,
-} from './MyBook.styled';
-import icon from '/images/sprite.svg';
-import book from '/images/img-book.png';
+import { Author, Button, ImgRead, Title, Wrapper } from './MyBook.styled';
 import { useAppSelector } from '@/shared/hooks/hooks';
+import { Icon } from '@/shared/ui/svg/Svg';
 
 export const MyBook = () => {
   const readBook = useAppSelector(redBookSelector);
 
-  return (
-    <>
-      {readBook?.timeLeftToRead ? (
-        <TextTime>
-          {readBook.timeLeftToRead.hours}hours and
-          {readBook.timeLeftToRead.minutes}minutes left
-        </TextTime>
-      ) : null}
-      <Wrapper>
-        <div style={{ textAlign: 'center' }}>
-          <div>
-            <ImgRead src={readBook?.imageUrl ? readBook?.imageUrl : book} />
-          </div>
+  const { timeLeftToRead, imageUrl, title, author } = readBook;
 
-          <Title>{readBook?.title}</Title>
-          <Author>{readBook?.author}</Author>
-        </div>
-      </Wrapper>
+  return (
+    <Wrapper>
+      <div>
+        <ImgRead src={imageUrl ? imageUrl : '/images/img-book.png'} />
+      </div>
+      <Title>{title}</Title>
+      <Author>{author}</Author>
       <Button>
-        <svg width="50" height="50">
-          <use
-            xlinkHref={
-              icon +
-              (readBook?.timeLeftToRead ? '#button-read' : '#button-stop-read')
-            }
-          ></use>
-        </svg>
+        <Icon
+          iconName={timeLeftToRead ? 'button-read' : 'button-stop-read'}
+          variant="reading-button"
+        />
       </Button>
-    </>
+    </Wrapper>
   );
 };

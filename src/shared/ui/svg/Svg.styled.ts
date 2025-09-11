@@ -92,4 +92,12 @@ export const Svg = styled.svg<SvgProps>`
       width: 59px;
       height: 25px;
     `}
+
+
+         ${({ $variant }) =>
+    $variant === 'reading-button' &&
+    css`
+      width: 50px;
+      height: 50px;
+    `}
 `;

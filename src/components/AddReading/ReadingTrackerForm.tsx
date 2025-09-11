@@ -9,23 +9,17 @@ import {
   Text,
   Title,
   Wrapper,
-} from './AddReading.styled';
+} from './ReadingTrackerForm.styled';
 
 import { ModalRead } from '../Modal/ModalRead';
 import { Buttons } from '@/shared/ui/btn/Button';
 import { useSubmitProgressReading } from './api/useSubmitProgressReading';
 import { useToggle } from '@/shared/hooks/useToggle';
 
-export const AddReading = () => {
+export const ReadingTrackerForm = () => {
   const [page, setPage] = useState('');
 
   const [start, setStart] = useState(false);
-
-  // const [open, setOpen] = useState(false);
-
-  // const toggle = () => {
-  //   setOpen(!open);
-  // };
 
   const { isOpen, toggle, open } = useToggle();
 
