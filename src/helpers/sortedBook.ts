@@ -1,6 +1,6 @@
 import { BooksArrayResponse } from '@/types/book.type';
 
-export const getVisibleTasks = (
+export const getBookByReadingStatus = (
   status: string,
   newBook: BooksArrayResponse[]
 ): BooksArrayResponse[] => {

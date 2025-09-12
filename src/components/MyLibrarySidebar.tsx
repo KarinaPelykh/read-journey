@@ -1,11 +1,11 @@
+import { BookPicksWidget } from '@/widgets/book-widget/ui/book-picks-widget/BookPicksWidget';
 import { AddBook } from '../features/add-book-form/ui/AddBooks';
-import { Recommendations } from './Recommendations/Recommendations/Recommendations';
 
 export const MyLibrarySidebar = () => {
   return (
     <>
       <AddBook />
-      <Recommendations />
+      <BookPicksWidget />
     </>
   );
 };

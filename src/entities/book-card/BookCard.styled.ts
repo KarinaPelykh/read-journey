@@ -1,11 +1,13 @@
 import styled, { css } from 'styled-components';
-interface Prop {
+type Prop = {
   $variant?: string;
-}
-export const BookImg = styled.img<Prop>`
+};
+
+export const Image = styled.img<Prop>`
   border-radius: ${({ theme }) => theme.radii.s};
   width: 137px;
   height: 208px;
+
   ${({ $variant }) =>
     $variant === 'imgModal' &&
     css`

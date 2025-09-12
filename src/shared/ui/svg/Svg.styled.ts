@@ -85,6 +85,13 @@ export const Svg = styled.svg<SvgProps>`
       fill: transparent;
     `}
 
+ ${({ $variant }) =>
+    $variant === 'trash-2' &&
+    css`
+      width: 14px;
+      height: 14px;
+    `}
+
     
         ${({ $variant }) =>
     $variant === 'icon-block' &&

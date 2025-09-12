@@ -1,5 +1,5 @@
 import { Dashboard } from '@/widgets/dashboard/Dashboard';
-import { RecommendedBooks } from '@/components/RecommendedBooks/RecommendedBooks';
+import { RecommendedBooks } from '@/components/recommended-books/RecommendedBooks';
 
 import { RecommendedSidebar } from '@/components/RecommendedSidebar';
 

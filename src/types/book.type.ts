@@ -29,7 +29,7 @@ export interface CustomAxiosRequestConfig extends AxiosRequestConfig {
 }
 // object with books
 export interface BookResponse {
-  page: string | number;
+  page: number;
   perPage: number;
   results: [];
   totalPages: number;
@@ -43,7 +43,7 @@ export interface Progress {
   startPage: number;
   startReading: string;
   status: 'inactive' | 'active';
-  _id: Id;
+  _id: string;
 }
 // Response
 export interface BooksArrayResponse {
@@ -58,16 +58,17 @@ export interface BooksArrayResponse {
   title: string;
   totalPages: number;
   updatedAt?: string;
-  _id: string | Id;
+  _id: string;
 }
 // State
 export interface StateBook {
   books: BookResponse;
+  // newBooks: [];
   newBooks: BooksArrayResponse[];
   redBook: BooksArrayResponse;
   isLoading: boolean;
   error: string | null | unknown;
-  page: string | number;
+  page: number;
   perPage: number;
   totalPages: number;
 }

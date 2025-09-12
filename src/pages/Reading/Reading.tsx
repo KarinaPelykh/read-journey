@@ -9,7 +9,7 @@ import {
 } from './Reading.styled';
 import { ReadingTrackerForm } from '@/components/AddReading/ReadingTrackerForm';
 import { ProgressReading } from '@/widgets/progress-reading/ui/ProgressReading';
-import { MyBook } from '@/components/MyBook/MyBook';
+import { ReadingBook } from '@/entities/reading-book/ReadingBook';
 import { useAppSelector } from '@/shared/hooks/hooks';
 import { redBookSelector } from '@/redux/books/selectors';
 
@@ -32,7 +32,7 @@ export const Reading = () => {
             <TextTime>{timeLeftToRead?.minutes} minutes left</TextTime>
           </TimeReading>
         </Header>
-        <MyBook />
+        <ReadingBook />
       </WrapperBooks>
     </Div>
   );

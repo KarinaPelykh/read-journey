@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Card = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   text-align: center;
 `;
 
-export const ImgRead = styled.img`
+export const Images = styled.img`
   border-radius: ${({ theme }) => theme.radii.s};
   width: 224px;
   height: 340px;

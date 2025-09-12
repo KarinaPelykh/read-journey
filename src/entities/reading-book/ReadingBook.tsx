@@ -1,17 +1,17 @@
 import { redBookSelector } from '@/redux/books/selectors';
-import { Author, Button, ImgRead, Title, Wrapper } from './MyBook.styled';
+import { Author, Button, Images, Title, Card } from './ReadingBook.styled';
 import { useAppSelector } from '@/shared/hooks/hooks';
 import { Icon } from '@/shared/ui/svg/Svg';
 
-export const MyBook = () => {
+export const ReadingBook = () => {
   const readBook = useAppSelector(redBookSelector);
 
   const { timeLeftToRead, imageUrl, title, author } = readBook;
 
   return (
-    <Wrapper>
+    <Card>
       <div>
-        <ImgRead src={imageUrl ? imageUrl : '/images/img-book.png'} />
+        <Images src={imageUrl ? imageUrl : '/images/img-book.png'} />
       </div>
       <Title>{title}</Title>
       <Author>{author}</Author>
@@ -21,6 +21,6 @@ export const MyBook = () => {
           variant="reading-button"
         />
       </Button>
-    </Wrapper>
+    </Card>
   );
 };

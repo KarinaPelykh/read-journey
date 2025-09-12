@@ -1,5 +1,5 @@
 import { booksSelector } from '@/redux/books/selectors';
-import { Author, Img, List, Title } from './RecommendationsList.styled';
+import { Author, Img, List, Title } from './ListBookPicksWidget.styled';
 import { useAppSelector } from '@/shared/hooks/hooks';
 
 type ListRecommends = {
@@ -9,7 +9,7 @@ type ListRecommends = {
   author: string;
 };
 
-export const RecommendationsList = () => {
+export const ListBookPicksWidget = () => {
   const bookRecommended = useAppSelector(booksSelector);
 
   const cutBookRecommended = bookRecommended.results.slice(0, 3);

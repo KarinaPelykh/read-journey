@@ -1,4 +1,4 @@
-import { Author, BookImg, QuantityPages, Title } from './BookCard.styled';
+import { Author, Image, QuantityPages, Title } from './BookCard.styled';
 import { useToggle } from '../../shared/hooks/useToggle';
 import { ModalWindow } from '@/components/Modal/ModalWindow';
 
@@ -18,14 +18,20 @@ export const BookCard = ({ ...data }: BookItemProps) => {
   return (
     <>
       <li onClick={toggle}>
-        <BookImg src={img} />
+        <Image src={img} alt="book" width={137} height={200} />
         <Title>{title}</Title>
         <Author>{author}</Author>
       </li>
 
       {isOpen && (
         <ModalWindow open={isOpen} toggle={toggle} id={id} title={title}>
-          <BookImg $variant="imgModal" src={img} />
+          <Image
+            $variant="imgModal"
+            src={img}
+            alt="book"
+            width={137}
+            height={200}
+          />
           <Title $variant="titleModal">{title}</Title>
 
           <Author $variant="titleAuthor">{author}</Author>

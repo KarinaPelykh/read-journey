@@ -1,10 +1,7 @@
-import book from '/images/img-book.png';
-import icon from '/images/sprite.svg';
-
 import { deleteBook } from '@/redux/books/operations';
 import {
   Author,
-  BookImg,
+  Image,
   ButtonDelete,
   QuantityPages,
   Title,
@@ -14,22 +11,23 @@ import { useAppDispatch } from '@/shared/hooks/hooks';
 import { toast } from 'react-toastify';
 import { useToggle } from '@/shared/hooks/useToggle';
 import { ModalRead } from '@/components/Modal/ModalRead';
+import { Icon } from '@/shared/ui/svg/Svg';
 
-type MyLibraryItemProps = {
+type Book = {
   author: string;
-  id: string;
-  img: string;
-  pages: number;
+  _id: string;
+  imageUrl: string;
+  totalPages: number;
   title: string;
 };
 
-export const MyLibraryItem = ({
-  id,
-  img,
-  title,
-  author,
-  pages,
-}: MyLibraryItemProps) => {
+type MyLibraryItemProps = {
+  book: Book;
+};
+
+export const MyLibraryItem = ({ book }: MyLibraryItemProps) => {
+  const { _id: id, imageUrl, title, author, totalPages } = book;
+
   const { toggle, isOpen } = useToggle();
 
   const dispatch = useAppDispatch();
@@ -50,27 +48,35 @@ export const MyLibraryItem = ({
   return (
     <>
       <li>
-        <BookImg onClick={toggle} src={img ? img : book} />
+        <Image
+          onClick={toggle}
+          src={imageUrl ?? '/images/img-book.png'}
+          alt="book"
+          width={137}
+          height={208}
+        />
         <WrapperItem>
           <div>
             <Title>{title}</Title>
             <Author>{author}</Author>
           </div>
           <ButtonDelete onClick={handleDeleteBook}>
-            <svg width="14" height="14">
-              <use xlinkHref={icon + '#trash'}></use>
-            </svg>
+            <Icon iconName="trash" variant="trash-2" />
           </ButtonDelete>
         </WrapperItem>
       </li>
 
       {isOpen && (
         <ModalRead open={isOpen} toggle={toggle} id={id}>
-          <BookImg src={img ? img : book} />
+          <Image
+            src={imageUrl ?? '/images/img-book.png'}
+            alt="book"
+            width={137}
+            height={208}
+          />
           <Title>{title}</Title>
-
           <Author>{author}</Author>
-          <QuantityPages>{pages} pages</QuantityPages>
+          <QuantityPages>{totalPages} pages</QuantityPages>
         </ModalRead>
       )}
     </>

@@ -5,8 +5,8 @@ import { CustomSelect } from '@/widgets/select/ui/CustomSelect';
 import { useEffect, useState } from 'react';
 import { getBookOwn } from '@/redux/books/operations';
 import { useAppDispatch } from '@/shared/hooks/hooks';
-import { MyLibraryList } from '@/components/MyLibraryList/MyLibraryList';
 import { OPTIONS } from '@/widgets/select/constants/options.constants';
+import { MyLibraryList } from '@/components/my-library-list/ui/library-list/MyLibraryList';
 
 export const MyLibrary = () => {
   const [statusValue, setStatus] = useState(OPTIONS[OPTIONS.length - 1]);
