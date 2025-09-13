@@ -20,7 +20,6 @@ export const CustomSelect = ({ setStatus, statusValue }: CustomSelectProps) => {
       });
     }
   };
-  console.log(statusValue.value.toLowerCase());
 
   return (
     <Selectors

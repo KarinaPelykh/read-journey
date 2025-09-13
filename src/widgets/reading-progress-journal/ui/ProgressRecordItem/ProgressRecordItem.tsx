@@ -1,6 +1,6 @@
 import formatDate from '@/helpers/formatDate';
 import { Icon } from '@/shared/ui/svg/Svg';
-import { Data, Pages, WrapperMain } from './ReadingProgressJournal.styled';
+import { Data, Pages, WrapperMain } from './ProgressRecordItem.style';
 import { ReactNode } from 'react';
 
 type ProgressRecordItemProps = {

@@ -27,6 +27,7 @@ export const ModalWindow = ({
   variant,
 }: ModalWindowProps) => {
   const bookNew = useAppSelector(newBooksSelector);
+  console.log(id);
 
   const dispatch = useAppDispatch();
 

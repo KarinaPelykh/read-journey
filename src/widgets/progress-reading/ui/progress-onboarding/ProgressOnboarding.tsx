@@ -1,6 +1,6 @@
 import {
   Describe,
-  ImgStatic,
+  Image,
   Thumb,
   Title,
   WrapperProgress,
@@ -15,7 +15,7 @@ export const ProgressOnboarding = () => {
         red button above.
       </Describe>
       <Thumb>
-        <ImgStatic src="/images/star.png" alt="star" />
+        <Image src="/images/star.png" alt="star" width={100} height={100} />
       </Thumb>
     </WrapperProgress>
   );

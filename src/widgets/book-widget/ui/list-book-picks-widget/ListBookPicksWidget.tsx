@@ -1,6 +1,7 @@
 import { booksSelector } from '@/redux/books/selectors';
-import { Author, Img, List, Title } from './ListBookPicksWidget.styled';
+import { List } from './ListBookPicksWidget.styled';
 import { useAppSelector } from '@/shared/hooks/hooks';
+import { Card } from '@/entities/card/Card';
 
 type ListRecommends = {
   _id: string;
@@ -17,11 +18,13 @@ export const ListBookPicksWidget = () => {
   return (
     <List>
       {cutBookRecommended.map((item: ListRecommends) => (
-        <li key={item._id}>
-          <Img src={item.imageUrl} />
-          <Title>{item.title}</Title>
-          <Author>{item.author}</Author>
-        </li>
+        <Card
+          variant="widget"
+          key={item._id}
+          image={item.imageUrl}
+          title={item.title}
+          author={item.author}
+        />
       ))}
     </List>
   );

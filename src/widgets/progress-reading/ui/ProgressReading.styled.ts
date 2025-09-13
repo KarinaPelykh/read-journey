@@ -5,6 +5,7 @@ export const Text = styled.p`
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   color: ${({ theme }) => theme.colors.white};
 `;
+
 export const Div = styled.div`
   display: flex;
   justify-content: space-between;
@@ -16,6 +17,7 @@ export const Div = styled.div`
     margin-top: 40px;
   }
 `;
+
 export const Wrapper = styled.div`
   @media screen and (min-width: 768px) {
     margin-bottom: auto;

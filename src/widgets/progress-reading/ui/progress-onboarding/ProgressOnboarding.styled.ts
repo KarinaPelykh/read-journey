@@ -19,7 +19,7 @@ export const Thumb = styled.div`
   justify-content: center;
   align-items: center;
 `;
-export const ImgStatic = styled.img`
+export const Image = styled.img`
   width: 100px;
   height: 100px;
 `;

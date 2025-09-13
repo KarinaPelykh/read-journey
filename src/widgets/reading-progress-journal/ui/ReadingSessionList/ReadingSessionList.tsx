@@ -2,14 +2,14 @@ import { Progress } from '@/types/book.type';
 import {
   ContainerInfo,
   Div,
-  DivInfoRead,
+  Head,
   Minutes,
   ProgressReading,
   Speed,
-} from './ReadingProgressJournal.styled';
+} from './ReadingSessionList.style';
 import timeReadingBook from '@/helpers/timeReadingBook';
 import { Icon } from '@/shared/ui/svg/Svg';
-import { useDeleteProgressOfReading } from '../api/useDeleteProgressOfReading';
+import { useDeleteProgressOfReading } from '../../api/useDeleteProgressOfReading';
 
 export const ReadingSessionList = ({ inform }: { inform: any }) => {
   const deleteProgress = useDeleteProgressOfReading();
@@ -26,7 +26,7 @@ export const ReadingSessionList = ({ inform }: { inform: any }) => {
         }: Progress) => (
           <li key={String(_id)}>
             <ContainerInfo>
-              <DivInfoRead>
+              <Head>
                 <ProgressReading>{progressReading}%</ProgressReading>
                 <Minutes>
                   {timeReadingBook({
@@ -34,7 +34,7 @@ export const ReadingSessionList = ({ inform }: { inform: any }) => {
                     finishReading,
                   })}
                 </Minutes>
-              </DivInfoRead>
+              </Head>
               <Div>
                 <div>
                   <Icon iconName="icon-block" variant="icon-block" />

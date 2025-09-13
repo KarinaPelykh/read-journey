@@ -3,10 +3,16 @@ import { redBookSelector } from '@/redux/books/selectors';
 import { useAppDispatch, useAppSelector } from '@/shared/hooks/hooks';
 import { toast } from 'react-toastify';
 
-export const useDeleteProgressOfReading = () => {
-  const redBook = useAppSelector(redBookSelector);
+const options = {
+  position: 'top-right' as const,
+  hideProgressBar: true,
+  theme: 'dark',
+};
 
-  const bookId = redBook._id as string;
+export const useDeleteProgressOfReading = () => {
+  const readBook = useAppSelector(redBookSelector);
+
+  const bookId = readBook._id;
 
   const dispatch = useAppDispatch();
 
@@ -19,19 +25,9 @@ export const useDeleteProgressOfReading = () => {
     )
       .unwrap()
       .then(() => {
-        toast.success('You delete progress', {
-          position: 'top-right',
-          hideProgressBar: true,
-          theme: 'dark',
-        });
+        toast.success('You delete progress', options);
       })
-      .catch(error =>
-        toast.error(error, {
-          position: 'top-right',
-          hideProgressBar: true,
-          theme: 'dark',
-        })
-      );
+      .catch(error => toast.error(error, options));
   };
 
   return handelDeleteProgress;

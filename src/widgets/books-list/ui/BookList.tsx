@@ -1,7 +1,7 @@
+import { Card } from '@/entities/card/Card';
 import { ListBook } from './BookList.styled';
 
 import { NotFound } from './NotFound';
-import { BookCard } from '@/entities/book-card/BookCard';
 
 type Book = {
   author: string;
@@ -16,10 +16,9 @@ export const BookList = ({ books }: { books: Book[] }) => {
     <ListBook>
       {books.length ? (
         books.map((item: Book) => (
-          <BookCard
+          <Card
             key={item._id}
-            id={item._id}
-            img={item.imageUrl}
+            image={item.imageUrl}
             title={item.title}
             author={item.author}
             pages={item.totalPages}

@@ -1,5 +1,5 @@
 import {
-  DivDiary,
+  Diary,
   List,
   VerticalDiv,
   Wrapper,
@@ -7,14 +7,14 @@ import {
 import { redBookSelector } from '@/redux/books/selectors';
 import getDate from '@/helpers/getDate';
 import { useAppSelector } from '@/shared/hooks/hooks';
-import { ProgressRecordItem } from './ProgressRecordItem';
-import { ReadingSessionList } from './ReadingSessionList';
+import { ProgressRecordItem } from '../ProgressRecordItem/ProgressRecordItem';
+import { ReadingSessionList } from '../ReadingSessionList/ReadingSessionList';
 
 export const ReadingProgressJournal = () => {
   const redBook = useAppSelector(redBookSelector);
 
   return (
-    <DivDiary>
+    <Diary>
       <Wrapper>
         <List>
           <VerticalDiv></VerticalDiv>
@@ -28,6 +28,6 @@ export const ReadingProgressJournal = () => {
           ))}
         </List>
       </Wrapper>
-    </DivDiary>
+    </Diary>
   );
 };
