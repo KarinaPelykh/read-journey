@@ -1,6 +1,7 @@
-import { Image, Title, Author, QuantityPages } from './Card.style';
+import { Image, Title, Author, QuantityPages, Li } from './Card.style';
 import { ModalWindow } from '@/components/Modal/ModalWindow';
 import { useToggle } from '@/shared/hooks/useToggle';
+import { ReactNode } from 'react';
 
 type CardProps = {
   image: string;
@@ -8,14 +9,22 @@ type CardProps = {
   author: string;
   variant?: string;
   pages?: number;
+  children?: ReactNode;
 };
 
-export const Card = ({ image, title, author, variant, pages }: CardProps) => {
-  const { open, isOpen, toggle } = useToggle();
+export const Card = ({
+  image,
+  title,
+  author,
+  variant,
+  pages,
+  children,
+}: CardProps) => {
+  const { open, isOpen, toggle, close } = useToggle();
 
   return (
     <>
-      <li onClick={open} style={{ cursor: 'pointer' }}>
+      <Li onClick={variant === 'reading' ? close : open} $variant={variant}>
         <Image
           src={image}
           alt="book"
@@ -25,7 +34,8 @@ export const Card = ({ image, title, author, variant, pages }: CardProps) => {
         />
         <Title $variant={variant}>{title}</Title>
         <Author $variant={variant}>{author}</Author>
-      </li>
+        {children}
+      </Li>
 
       {isOpen && (
         <ModalWindow open={isOpen} toggle={toggle ?? (() => {})}>

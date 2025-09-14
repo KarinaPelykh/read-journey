@@ -4,6 +4,21 @@ type Prop = {
   $variant?: string;
 };
 
+export const Li = styled.li<Prop>`
+  cursor: pointer;
+
+  ${({ $variant }) =>
+    $variant === 'reading' &&
+    css`
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      cursor: default;
+    `}
+`;
+
 export const Image = styled.img<Prop>`
   border-radius: ${({ theme }) => theme.radii.s};
   width: 137px;
@@ -23,6 +38,15 @@ export const Image = styled.img<Prop>`
       @media screen and (min-width: 375px) {
         width: 71px;
       }
+    `}
+
+
+    ${({ $variant }) =>
+    $variant === 'reading' &&
+    css`
+      width: 224px;
+      height: 340px;
+      margin-bottom: 25px;
     `}
 `;
 export const Title = styled.h1<Prop>`
@@ -56,7 +80,18 @@ export const Title = styled.h1<Prop>`
       margin-bottom: 2px;
       margin-top: 8px;
     `}
+
+
+      ${({ $variant }) =>
+    $variant === 'reading' &&
+    css`
+      width: 100%;
+      font-size: ${({ theme }) => theme.fontSizes.xl};
+      margin-top: 0px;
+      margin-bottom: 4px;
+    `}
 `;
+
 export const Author = styled.p<Prop>`
   color: ${({ theme }) => theme.colors.grey};
   font-size: ${({ theme }) => theme.fontSizes.xs};
@@ -76,6 +111,16 @@ export const Author = styled.p<Prop>`
       overflow: hidden;
       text-overflow: ellipsis;
       margin-bottom: 20px;
+    `}
+
+    
+  ${({ $variant }) =>
+    $variant === 'reading' &&
+    css`
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: ${({ theme }) => theme.fontSizes.s};
+      margin-bottom: 25px;
     `}
 `;
 

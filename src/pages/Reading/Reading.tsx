@@ -6,17 +6,19 @@ import {
   TextTime,
   TimeReading,
   Header,
+  Button,
 } from './Reading.styled';
 import { ReadingTrackerForm } from '@/components/AddReading/ReadingTrackerForm';
 import { ProgressReading } from '@/widgets/progress-reading/ui/ProgressReading';
-import { ReadingBook } from '@/entities/reading-book/ReadingBook';
 import { useAppSelector } from '@/shared/hooks/hooks';
 import { redBookSelector } from '@/redux/books/selectors';
+import { Card } from '@/entities/card/Card';
+import { Icon } from '@/shared/ui/svg/Svg';
 
 export const Reading = () => {
   const readBook = useAppSelector(redBookSelector);
 
-  const { timeLeftToRead } = readBook;
+  const { timeLeftToRead, imageUrl, title, author } = readBook;
 
   return (
     <Div>
@@ -32,7 +34,19 @@ export const Reading = () => {
             <TextTime>{timeLeftToRead?.minutes} minutes left</TextTime>
           </TimeReading>
         </Header>
-        <ReadingBook />
+        <Card
+          variant="reading"
+          title={title}
+          author={author}
+          image={imageUrl ? imageUrl : '/images/img-book.png'}
+        >
+          <Button>
+            <Icon
+              iconName={timeLeftToRead ? 'button-read' : 'button-stop-read'}
+              variant="reading-button"
+            />
+          </Button>
+        </Card>
       </WrapperBooks>
     </Div>
   );
