@@ -1,33 +1,33 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 import { Buttons } from '@/shared/ui/btn/Button';
 import { Overlay, Modal, ButtonClose, Text } from './ModalWindow.styled';
-import { addBooksWithRecommended } from '@/redux/books/operations';
+import { addBooksWithRecommended, addReadBook } from '@/redux/books/operations';
 import { newBooksSelector } from '@/redux/books/selectors';
-import images from '/images/pngwing.com.png';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '@/shared/hooks/hooks';
 import { closeModalByKeyBoard } from './utils/closeModalByKeyBoard';
 import { Icon } from '@/shared/ui/svg/Svg';
 
 type ModalWindowProps = {
   children: ReactNode;
-  id?: string;
+  id: string;
   open: boolean;
-  title?: string;
   toggle: () => void;
   variant?: string;
+  title?: string;
 };
 
 export const ModalWindow = ({
   children,
   open,
   toggle,
-  id = '',
-  title,
+  id,
   variant,
+  title,
 }: ModalWindowProps) => {
   const bookNew = useAppSelector(newBooksSelector);
-  console.log(id);
+
+  const { pathname } = useLocation();
 
   const dispatch = useAppDispatch();
 
@@ -35,7 +35,12 @@ export const ModalWindow = ({
 
   const handelAddBook = () => {
     dispatch(addBooksWithRecommended({ id }));
-    navigate('/library');
+    navigate('/library', { state: { bookAdded: true } });
+  };
+
+  const handelAddToRead = () => {
+    dispatch(addReadBook({ id }));
+    navigate('/reading');
   };
 
   const closeByClick = closeModalByKeyBoard(toggle);
@@ -45,23 +50,28 @@ export const ModalWindow = ({
   return (
     <Overlay onClick={closeByClick}>
       {open && (
-        <Modal $variant={variant as string}>
+        <Modal $variant={variant}>
           <ButtonClose onClick={toggle}>
             <Icon iconName="close" />
           </ButtonClose>
-          {isBookAdded ? (
+
+          {isBookAdded && pathname !== '/library' ? (
             <div>
               <Text>Book added choose another</Text>
-              <img src={images} />
+              <img src="/images/pngwing.com.png" alt="image" />
             </div>
           ) : (
             <>
               {children}
 
               <Buttons
-                prop="Add to library"
+                prop={
+                  pathname === '/library' ? 'Start reading' : 'Add to library'
+                }
                 variant="buttonModal"
-                onClick={handelAddBook}
+                onClick={
+                  pathname === '/library' ? handelAddToRead : handelAddBook
+                }
               />
             </>
           )}

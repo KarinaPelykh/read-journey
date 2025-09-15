@@ -11,10 +11,10 @@ import {
   Wrapper,
 } from './ReadingTrackerForm.styled';
 
-import { ModalRead } from '../Modal/ModalRead';
 import { Buttons } from '@/shared/ui/btn/Button';
 import { useSubmitProgressReading } from './api/useSubmitProgressReading';
 import { useToggle } from '@/shared/hooks/useToggle';
+import { ModalWindow } from '../Modal/ModalWindow';
 
 export const ReadingTrackerForm = () => {
   const [page, setPage] = useState('');
@@ -49,15 +49,16 @@ export const ReadingTrackerForm = () => {
         </Wrapper>
         <Buttons prop={start ? 'To stop' : 'To start'} variant="buttonBase" />
       </Form>
+
       {isOpen && (
-        <ModalRead open={isOpen} toggle={toggle} variant="min-modal">
+        <ModalWindow open={isOpen} toggle={toggle} variant="min-modal" id="">
           <img width="68" height="70" src="/images/book.png" />
           <Text>The book is read</Text>
           <Description>
             It was an <Span>exciting journey</Span>, where each page revealed
             new horizons, and the characters became inseparable friends.
           </Description>
-        </ModalRead>
+        </ModalWindow>
       )}
     </>
   );

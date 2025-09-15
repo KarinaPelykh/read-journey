@@ -22,6 +22,7 @@ export const BookList = ({ books }: { books: Book[] }) => {
             title={item.title}
             author={item.author}
             pages={item.totalPages}
+            id={item._id}
           />
         ))
       ) : (

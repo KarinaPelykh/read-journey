@@ -10,6 +10,7 @@ type CardProps = {
   variant?: string;
   pages?: number;
   children?: ReactNode;
+  id?: string;
 };
 
 export const Card = ({
@@ -19,6 +20,7 @@ export const Card = ({
   variant,
   pages,
   children,
+  id = '',
 }: CardProps) => {
   const { open, isOpen, toggle, close } = useToggle();
 
@@ -38,7 +40,7 @@ export const Card = ({
       </Li>
 
       {isOpen && (
-        <ModalWindow open={isOpen} toggle={toggle ?? (() => {})}>
+        <ModalWindow open={isOpen} toggle={toggle} id={id} title={title}>
           <Image
             src={image}
             alt="book"

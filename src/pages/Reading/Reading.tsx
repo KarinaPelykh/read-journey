@@ -18,7 +18,7 @@ import { Icon } from '@/shared/ui/svg/Svg';
 export const Reading = () => {
   const readBook = useAppSelector(redBookSelector);
 
-  const { timeLeftToRead, imageUrl, title, author } = readBook;
+  const { timeLeftToRead, imageUrl, title, author, _id: id } = readBook;
 
   return (
     <Div>
@@ -35,6 +35,7 @@ export const Reading = () => {
           </TimeReading>
         </Header>
         <Card
+          id={id}
           variant="reading"
           title={title}
           author={author}
