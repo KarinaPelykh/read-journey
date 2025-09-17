@@ -3,7 +3,7 @@ interface Prop {
   $variant?: string;
 }
 
-export const Overlay = styled.div`
+export const Overlay = styled.div<Prop>`
   position: fixed;
   top: 0;
   left: 0;
@@ -27,6 +27,7 @@ export const Modal = styled.div<Prop>`
   padding: 50px;
   border-radius: ${({ theme }) => theme.radii.m};
   position: relative;
+
   ${({ $variant }) =>
     $variant === 'min-modal' &&
     css`
@@ -36,6 +37,7 @@ export const Modal = styled.div<Prop>`
         display: none;
       }
     `};
+
   @media screen and (min-width: 1440px) {
     width: 500px;
     height: 483px;
@@ -49,6 +51,7 @@ export const Modal = styled.div<Prop>`
         }
       `};
   }
+
   h1 {
     text-align: center;
   }

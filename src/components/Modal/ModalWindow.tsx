@@ -48,7 +48,7 @@ export const ModalWindow = ({
   const isBookAdded = bookNew.some((book: any) => book.title === title);
 
   return (
-    <Overlay onClick={closeByClick}>
+    <Overlay onClick={closeByClick} $variant={variant}>
       {open && (
         <Modal $variant={variant}>
           <ButtonClose onClick={toggle}>

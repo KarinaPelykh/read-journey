@@ -4,25 +4,24 @@ import { Data, Pages, WrapperMain } from './ProgressRecordItem.style';
 import { ReactNode } from 'react';
 
 type ProgressRecordItemProps = {
-  pagesReadCount: number;
-  data: any;
-  children: ReactNode;
+  readPage: number;
+  date: any;
+  children?: ReactNode;
 };
 
 export const ProgressRecordItem = ({
-  pagesReadCount,
-  data,
+  readPage,
+  date,
   children,
 }: ProgressRecordItemProps) => {
   return (
-    <li key={data}>
+    <li key={date}>
       <WrapperMain>
         <Icon iconName="block" variant="block" />
-
-        <Data>{formatDate(data)}</Data>
+        <Data>{formatDate(date)}</Data>
         <Pages>
-          {pagesReadCount}
-          pages
+          {readPage}
+          <span> pages</span>
         </Pages>
       </WrapperMain>
       {children}

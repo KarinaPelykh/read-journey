@@ -17,6 +17,12 @@ export const Li = styled.li<Prop>`
       text-align: center;
       cursor: default;
     `}
+
+  ${({ $variant }) =>
+    $variant === 'widget' &&
+    css`
+      cursor: default;
+    `}
 `;
 
 export const Image = styled.img<Prop>`
@@ -47,6 +53,16 @@ export const Image = styled.img<Prop>`
       width: 224px;
       height: 340px;
       margin-bottom: 25px;
+    `}
+`;
+
+export const Box = styled.div<Prop>`
+  ${({ $variant }) =>
+    $variant === 'library-list' &&
+    css`
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     `}
 `;
 export const Title = styled.h1<Prop>`
@@ -89,6 +105,13 @@ export const Title = styled.h1<Prop>`
       font-size: ${({ theme }) => theme.fontSizes.xl};
       margin-top: 0px;
       margin-bottom: 4px;
+    `}
+
+
+    ${({ $variant }) =>
+    $variant === 'library-list' &&
+    css`
+      width: 89px;
     `}
 `;
 

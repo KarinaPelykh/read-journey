@@ -3,19 +3,27 @@ type TimeReadingBookProp = {
   finishReading: string;
 };
 
-const timeReadingBook = ({
+export const timeReadingBook = ({
   startReading,
   finishReading,
 }: TimeReadingBookProp) => {
   const start = new Date(startReading);
+
   const stop = new Date(finishReading);
-  const time = stop.getTime() - start.getTime();
 
-  const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-    .toString()
-    .padStart(2, '0');
-  const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+  const diffTime = stop.getTime() - start.getTime();
 
-  return hours !== '' ? `${minutes}minutes` : `${hours}hours,${minutes}minutes`;
+  const totalSeconds = Math.floor(diffTime / 1000);
+
+  const hours = Math.floor(totalSeconds / 3600);
+
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+
+  const seconds = totalSeconds % 60;
+  if (hours > 0) {
+    return `${hours} hours, ${minutes} minutes`;
+  } else if (minutes > 0) {
+    return `${minutes} minutes`;
+  }
+  return `${seconds} seconds`;
 };
-export default timeReadingBook;

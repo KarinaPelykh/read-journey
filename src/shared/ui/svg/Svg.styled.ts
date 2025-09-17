@@ -96,6 +96,7 @@ export const Svg = styled.svg<SvgProps>`
         ${({ $variant }) =>
     $variant === 'icon-block' &&
     css`
+      stroke: transparent;
       width: 59px;
       height: 25px;
     `}

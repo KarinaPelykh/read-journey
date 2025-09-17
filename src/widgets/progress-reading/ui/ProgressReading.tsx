@@ -8,6 +8,7 @@ import { ProgressOnboarding } from './progress-onboarding/ProgressOnboarding';
 import { Icon } from '@/shared/ui/svg/Svg';
 import { Statistic } from '@/components/Statistic/ui/Statistic';
 import { ReadingProgressJournal } from '@/widgets/reading-progress-journal/ui/ReadingProgressJournal/ReadingProgressJournal';
+import { SwitcherBtnStatistic } from './switcher-btns-statistic/SwitcherBtnStatistic';
 
 export const ProgressReading = () => {
   const [open, setOpen] = useState({ statistic: false, details: true });
@@ -20,26 +21,7 @@ export const ProgressReading = () => {
         <>
           <Div>
             <Text> {open.details ? 'Diary' : 'Statistic'} </Text>
-            <div>
-              <button
-                onClick={() => setOpen({ statistic: false, details: true })}
-              >
-                <Icon
-                  iconName="watches"
-                  variant="watches"
-                  style={{ stroke: open.details ? '#f9f9f9' : '#686868' }}
-                />
-              </button>
-              <button
-                onClick={() => setOpen({ statistic: true, details: false })}
-              >
-                <Icon
-                  iconName="icon-pie-chart"
-                  variant="icon-pie-chart"
-                  style={{ stroke: open.statistic ? '#f9f9f9' : '#686868' }}
-                />
-              </button>
-            </div>
+            <SwitcherBtnStatistic open={open} setOpen={setOpen} />
           </Div>
           {open.details && <ReadingProgressJournal />}
           {open.statistic && <Statistic />}

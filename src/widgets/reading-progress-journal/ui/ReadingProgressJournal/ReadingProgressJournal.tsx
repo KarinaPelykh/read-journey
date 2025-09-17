@@ -5,28 +5,31 @@ import {
   Wrapper,
 } from './ReadingProgressJournal.styled';
 import { redBookSelector } from '@/redux/books/selectors';
-import getDate from '@/helpers/getDate';
 import { useAppSelector } from '@/shared/hooks/hooks';
 import { ProgressRecordItem } from '../ProgressRecordItem/ProgressRecordItem';
 import { ReadingSessionList } from '../ReadingSessionList/ReadingSessionList';
+import { getReadingProgress } from '@/helpers/getReadingProgress';
 
 export const ReadingProgressJournal = () => {
-  const redBook = useAppSelector(redBookSelector);
+  const readBook = useAppSelector(redBookSelector);
 
   return (
     <Diary>
+      {' '}
       <Wrapper>
         <List>
+          {' '}
           <VerticalDiv></VerticalDiv>
-          {getDate({
-            progress: redBook.progress,
-            totalPage: redBook.totalPages,
-          })?.map(({ data, pagesReadCount, inform }) => (
-            <ProgressRecordItem data={data} pagesReadCount={pagesReadCount}>
+          {getReadingProgress({
+            progress: readBook.progress,
+            totalPage: readBook.totalPages,
+          }).map(({ date, readPage, inform }) => (
+            <ProgressRecordItem date={date} readPage={readPage}>
               <ReadingSessionList inform={inform} />
             </ProgressRecordItem>
           ))}
-        </List>
+          {/* <ReadingSessionList /> */}
+        </List>{' '}
       </Wrapper>
     </Diary>
   );

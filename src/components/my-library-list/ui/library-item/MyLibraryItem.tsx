@@ -38,6 +38,7 @@ export const MyLibraryItem = ({ book }: MyLibraryItemProps) => {
   return (
     <>
       <Card
+        variant="library-list"
         title={title}
         author={author}
         image={imageUrl}

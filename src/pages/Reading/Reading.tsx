@@ -19,6 +19,7 @@ export const Reading = () => {
   const readBook = useAppSelector(redBookSelector);
 
   const { timeLeftToRead, imageUrl, title, author, _id: id } = readBook;
+  console.log(timeLeftToRead);
 
   return (
     <Div>
@@ -30,8 +31,8 @@ export const Reading = () => {
         <Header>
           <Text>My reading</Text>
           <TimeReading>
-            <TextTime>{timeLeftToRead?.hours} hours and</TextTime>
-            <TextTime>{timeLeftToRead?.minutes} minutes left</TextTime>
+            {/* <TextTime>{timeLeftToRead?.hours} hours and</TextTime>
+            <TextTime>{timeLeftToRead?.minutes} minutes left</TextTime> */}
           </TimeReading>
         </Header>
         <Card

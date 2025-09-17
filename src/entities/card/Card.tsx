@@ -1,4 +1,4 @@
-import { Image, Title, Author, QuantityPages, Li } from './Card.style';
+import { Image, Title, Author, QuantityPages, Li, Box } from './Card.style';
 import { ModalWindow } from '@/components/Modal/ModalWindow';
 import { useToggle } from '@/shared/hooks/useToggle';
 import { ReactNode } from 'react';
@@ -34,25 +34,38 @@ export const Card = ({
           height={200}
           $variant={variant}
         />
-        <Title $variant={variant}>{title}</Title>
-        <Author $variant={variant}>{author}</Author>
-        {children}
+        <Box $variant={variant}>
+          <div>
+            <Title $variant={variant}>{title}</Title>
+            <Author $variant={variant}>{author}</Author>
+          </div>
+
+          {children}
+        </Box>
       </Li>
 
-      {isOpen && (
-        <ModalWindow open={isOpen} toggle={toggle} id={id} title={title}>
-          <Image
-            src={image}
-            alt="book"
-            width={137}
-            height={200}
-            $variant="modal"
-          />
-          <Title $variant="modal">{title}</Title>
-          <Author $variant="modal">{author}</Author>
-          <QuantityPages>{pages} pages</QuantityPages>
-        </ModalWindow>
-      )}
+      {variant === 'widget'
+        ? null
+        : isOpen && (
+            <ModalWindow
+              open={isOpen}
+              toggle={toggle}
+              id={id}
+              title={title}
+              variant={variant}
+            >
+              <Image
+                src={image}
+                alt="book"
+                width={137}
+                height={200}
+                $variant="modal"
+              />
+              <Title $variant="modal">{title}</Title>
+              <Author $variant="modal">{author}</Author>
+              <QuantityPages>{pages} pages</QuantityPages>
+            </ModalWindow>
+          )}
     </>
   );
 };
