@@ -5,7 +5,11 @@ type GetReadingProgressProp = {
   totalPage: number;
 };
 
-type Total = { date: string; readPage: number; inform: any[] };
+type Total = {
+  date: string;
+  readPage: number;
+  inform: any[];
+};
 
 export const getReadingProgress = ({
   progress,
@@ -64,6 +68,5 @@ export const getReadingProgress = ({
         return total;
       },
       []
-    )
-    .sort((a, c) => c.date.localeCompare(a.date));
+    );
 };

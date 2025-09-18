@@ -15,21 +15,22 @@ export const ReadingProgressJournal = () => {
 
   return (
     <Diary>
-      {' '}
       <Wrapper>
         <List>
-          {' '}
           <VerticalDiv></VerticalDiv>
           {getReadingProgress({
             progress: readBook.progress,
             totalPage: readBook.totalPages,
-          }).map(({ date, readPage, inform }) => (
-            <ProgressRecordItem date={date} readPage={readPage}>
-              <ReadingSessionList inform={inform} />
-            </ProgressRecordItem>
-          ))}
-          {/* <ReadingSessionList /> */}
-        </List>{' '}
+          })
+            .sort(
+              (a, c) => new Date(c.date).getTime() - new Date(a.date).getTime()
+            )
+            .map(({ date, readPage, inform }) => (
+              <ProgressRecordItem date={date} readPage={readPage}>
+                <ReadingSessionList inform={inform} />
+              </ProgressRecordItem>
+            ))}
+        </List>
       </Wrapper>
     </Diary>
   );

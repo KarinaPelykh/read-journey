@@ -2,7 +2,8 @@ import icon from '/images/sprite.svg';
 import { Svg } from './Svg.styled';
 
 type Style = {
-  stroke: string;
+  stroke?: string;
+  fill?: string;
 };
 
 type IconProps = {

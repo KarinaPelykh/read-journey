@@ -10,25 +10,21 @@ import { Icon } from '@/shared/ui/svg/Svg';
 import { useDeleteProgressOfReading } from '../../api/useDeleteProgressOfReading';
 import { timeReadingBook } from '@/helpers/timeReadingBook';
 
+type D = {
+  readPage: number;
+  percentReading: string;
+  startReading: string;
+  finishReading: string;
+  _id: string;
+};
+
 export const ReadingSessionList = ({ inform }: { inform: any }) => {
   const deleteProgress = useDeleteProgressOfReading();
 
   return (
     <ul>
       {inform?.map(
-        ({
-          readPage,
-          percentReading,
-          startReading,
-          finishReading,
-          _id,
-        }: {
-          readPage: number;
-          percentReading: string;
-          startReading: string;
-          finishReading: string;
-          _id: string;
-        }) => {
+        ({ readPage, percentReading, startReading, finishReading, _id }: D) => {
           const start = new Date(startReading);
 
           const stop = new Date(finishReading);

@@ -9,7 +9,7 @@ export const WrapperMain = styled.div`
 `;
 
 export const Data = styled.p`
-  color: ${({ theme }) => theme.colors.white};
+  /* color: ${({ theme }) => theme.colors.white}; */
   font-size: ${({ theme }) => theme.fontSizes.l};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   margin-right: auto;

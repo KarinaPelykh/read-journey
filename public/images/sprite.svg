@@ -130,7 +130,7 @@
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4" d="M3 16h42M3 2h42M17 30h28"></path>
 </symbol>
 <symbol id="block" viewBox="0 0 32 32">
-<path fill="#f9f9f9" style="fill: var(--color1, #f9f9f9)" d="M6.4 0h19.2c3.535 0 6.4 2.865 6.4 6.4v19.2c0 3.535-2.865 6.4-6.4 6.4h-19.2c-3.535 0-6.4-2.865-6.4-6.4v-19.2c0-3.535 2.865-6.4 6.4-6.4z"></path>
+<path  d="M6.4 0h19.2c3.535 0 6.4 2.865 6.4 6.4v19.2c0 3.535-2.865 6.4-6.4 6.4h-19.2c-3.535 0-6.4-2.865-6.4-6.4v-19.2c0-3.535 2.865-6.4 6.4-6.4z"></path>
 <path fill="#141414" style="fill: var(--color2, #141414)" d="M9.6 6.4h12.8c1.767 0 3.2 1.433 3.2 3.2v12.8c0 1.767-1.433 3.2-3.2 3.2h-12.8c-1.767 0-3.2-1.433-3.2-3.2v-12.8c0-1.767 1.433-3.2 3.2-3.2z"></path>
 </symbol>
 </defs>
