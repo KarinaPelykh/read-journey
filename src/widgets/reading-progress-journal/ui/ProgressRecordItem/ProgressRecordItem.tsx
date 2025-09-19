@@ -26,7 +26,7 @@ export const ProgressRecordItem = ({
         <Icon
           iconName="block"
           variant="block"
-          style={{ fill: isCurrentDate }}
+          style={{ fill: isCurrentDate, stroke: isCurrentDate }}
         />
         <Data style={{ color: isCurrentDate }}>{ddMMyyy}</Data>
         <Pages>

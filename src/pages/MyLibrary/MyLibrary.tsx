@@ -16,7 +16,7 @@ import { OPTIONS } from '@/widgets/select/constants/options.constants';
 import { MyLibraryList } from '@/components/my-library-list/ui/library-list/MyLibraryList';
 import { useLocation } from 'react-router-dom';
 import { useToggle } from '@/shared/hooks/useToggle';
-import { ModalWindow } from '@/components/Modal/ModalWindow';
+import { ModalWindow } from '@/components/Modal/ui/modal/ModalWindow';
 
 export const MyLibrary = () => {
   const [statusValue, setStatus] = useState(OPTIONS[OPTIONS.length - 1]);

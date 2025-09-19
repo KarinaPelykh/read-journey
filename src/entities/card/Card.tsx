@@ -1,5 +1,5 @@
 import { Image, Title, Author, QuantityPages, Li, Box } from './Card.style';
-import { ModalWindow } from '@/components/Modal/ModalWindow';
+import { ModalWindow } from '@/components/Modal/ui/modal/ModalWindow';
 import { useToggle } from '@/shared/hooks/useToggle';
 import { ReactNode } from 'react';
 

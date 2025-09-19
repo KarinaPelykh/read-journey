@@ -65,7 +65,3 @@ export const ButtonClose = styled.button`
     transition: rotate(360deg);
   }
 `;
-
-export const Text = styled.p`
-  color: ${({ theme }) => theme.colors.white};
-`;

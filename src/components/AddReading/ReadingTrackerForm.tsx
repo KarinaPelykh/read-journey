@@ -14,7 +14,7 @@ import {
 import { Buttons } from '@/shared/ui/btn/Button';
 import { useSubmitProgressReading } from './api/useSubmitProgressReading';
 import { useToggle } from '@/shared/hooks/useToggle';
-import { ModalWindow } from '../Modal/ModalWindow';
+import { ModalWindow } from '../Modal/ui/modal/ModalWindow';
 
 export const ReadingTrackerForm = () => {
   const [page, setPage] = useState('');

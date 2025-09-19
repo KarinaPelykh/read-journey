@@ -57,6 +57,7 @@ export const Image = styled.img<Prop>`
 `;
 
 export const Box = styled.div<Prop>`
+  width: 100%;
   ${({ $variant }) =>
     $variant === 'library-list' &&
     css`
