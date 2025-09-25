@@ -8,12 +8,12 @@ import {
   Header,
   Button,
 } from './Reading.styled';
-import { ReadingTrackerForm } from '@/components/AddReading/ReadingTrackerForm';
 import { ProgressReading } from '@/widgets/progress-reading/ui/ProgressReading';
 import { useAppSelector } from '@/shared/hooks/hooks';
 import { redBookSelector } from '@/redux/books/selectors';
 import { Card } from '@/entities/card/Card';
 import { Icon } from '@/shared/ui/svg/Svg';
+import { ReadingTrackerForm } from '@/features/add-reading/ReadingTrackerForm';
 
 export const Reading = () => {
   const readBook = useAppSelector(redBookSelector);

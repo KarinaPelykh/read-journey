@@ -6,9 +6,9 @@ import {
   Span,
   Title,
   WrapperInfo,
-} from './LibraryOverview.styled';
+} from './SetupGuide.styled';
 
-export const LibraryOverview = () => {
+export const SetupGuide = () => {
   return (
     <Block>
       <Title>Start your workout</Title>
@@ -22,7 +22,7 @@ export const LibraryOverview = () => {
       <WrapperInfo>
         <Icon iconName="icon-2" variant="icon-2" />
         <Information>
-          <Span> Create your first workout:</Span>
+          <Span>Create your first workout: </Span>
           define a goal, choose a period, start training.
         </Information>
       </WrapperInfo>

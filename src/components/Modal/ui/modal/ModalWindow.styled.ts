@@ -56,6 +56,7 @@ export const Modal = styled.div<Prop>`
     text-align: center;
   }
 `;
+
 export const ButtonClose = styled.button`
   position: absolute;
   top: 10px;

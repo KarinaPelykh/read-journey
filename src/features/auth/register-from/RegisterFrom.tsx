@@ -7,7 +7,7 @@ import { useRegisterFormikSubmit } from './api/useRegisterFormikSubmit';
 
 import { PasswordInput } from '@/shared/ui/password-input/PasswordInput';
 import { ValidationAuth } from '@/shared/ui/ValidationAuth';
-import { ShowPassword } from '@/components/ShowPassword';
+import { ShowPassword } from '@/shared/ui/ShowPassword';
 import { Input } from '@/shared/ui/entry/Input';
 import { Error } from '@/shared/ui/error-message/Error';
 

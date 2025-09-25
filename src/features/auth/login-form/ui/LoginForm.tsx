@@ -7,7 +7,7 @@ import { useLoginFormSubmit } from '../api/useLoginFormSubmit';
 
 import { PasswordInput } from '@/shared/ui/password-input/PasswordInput';
 import { ValidationAuth } from '@/shared/ui/ValidationAuth';
-import { ShowPassword } from '@/components/ShowPassword';
+import { ShowPassword } from '@/shared/ui/ShowPassword';
 import { Error } from '@/shared/ui/error-message/Error';
 import { Input } from '@/shared/ui/entry/Input';
 

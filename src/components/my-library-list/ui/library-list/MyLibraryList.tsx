@@ -19,9 +19,9 @@ export const MyLibraryList = ({ status }: MyLibraryListProps) => {
     <>
       {newBook.length ? (
         <MyListBook>
-          {books?.map(book => {
-            return <MyLibraryItem key={book._id} book={book} />;
-          })}
+          {books?.map(book => (
+            <MyLibraryItem key={book._id} book={book} />
+          ))}
         </MyListBook>
       ) : (
         <EmptyBookList />

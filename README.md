@@ -1,48 +1,57 @@
-# About project
+# 📚 Read Journey
 
-<section>
-<h1> Read journey</h1>
-<p>Adaptation to different devices: mobil, tablet ,desktop</p>
-<p>User registration and login: created page Login and Register</p>
-<p>Workspace for authorized users: Implemented the main layout of the page for authorized users, which includes a header, navigation menu, block with user information and a logout button. The menu is adapted for mobile devices</p>
-<p>Recommendation Page: A book recommendation page that includes filters for book searches, an app description block, and a list of recommended books. On this page, the user can add a book to his library.</p>
-<p>Adding books: It is possible to select books and add them to the user's library using a modal window</p>
-<p>When the user logs out, the data is cleared and the user is redirected to the public welcome page</p>
-<p>MyLibraryBooks: This component contains a page header, a selector for filtering books by reading status, and a list of the user's books in the form of a card list. Each card represents a book with a cover image, title, and author. Clicking on the book cover opens a modal window with detailed information about the book and the "Start reading" button, which allows the user to start reading the book.</p>
-</section>
+**Read Journey** is a modern web application for book enthusiasts. It helps you
+organize your personal library, get tailored recommendations, and track your
+reading progress. The project is built with a focus on simplicity, adaptability,
+and a smooth user experience.
 
-# Dependencies
+---
 
-<section>
-<h2>Dependencies</h2>
-<ul>
-<li>@redux-devtools/extension": "^3.3.0</li>
-<li>  @reduxjs/toolkit: ^2.2.1</li>
-<li>  axios: ^1.6.7</li>
-<li>formik: ^2.4.5</li>
-<li>modern-normalize: ^2.0.0</li>
-<li>prop-types: ^15.8.1</li>
-<li>react: ^18.2.0</li>
-<li> react-circular-progressbar: ^2.1.0</li>
-<li>react-dom: ^18.2.0</li>
-<li>react-loader-spinner: ^6.1.6</li>
-<li> react-redux: ^9.1.0</li>
-<li> react-router-dom: ^6.22.1</li>
-<li> react-select: ^5.8.0</li>
-<li>react-toastify: ^10.0.5</li>
-<li> redux: ^5.0.1</li>
-<li> redux-persist: ^6.0.0</li>
-<li>styled-components: ^6.1.8</li>
-<li> vanta: ^0.5.24</li>
-<li>yup: ^1.3.3</li>
-<li>   typescript": "^5.4.5</li>
-</ul>
+## 🚀 Features
 
-</section>
+- **Responsive design**: fully optimized for mobile, tablet, and desktop.
+- **User authentication**: registration and login pages with secure access.
+- **Personal dashboard**:
+  - main layout for authorized users;
+  - header, navigation menu, and user profile section;
+  - quick logout button;
+  - mobile-friendly navigation menu.
+- **Book recommendations**:
+  - advanced filters for search and discovery;
+  - an app description block;
+  - a list of recommended books with the option to add them to your library.
+- **My Library** (_MyLibraryBooks_):
+  - filter books by reading status (currently reading, plan to read, finished);
+  - book cards with cover, title, and author;
+  - detailed modal view with book information;
+  - **"Start reading"** button to begin reading.
+- **Session management**: user data is cleared on logout, and the app redirects
+  to the public welcome page.
+
+---
+
+## 🛠 Tech Stack
+
+- **React 18**, **React Router v6**
+- **Redux Toolkit** + **Redux Persist**
+- **Axios** (API requests)
+- **Formik** + **Yup** (forms and validation)
+- **Styled-components** (styling)
+- **React-toastify**, **React-loader-spinner**, **React-select**,
+  **React-circular-progressbar**
+- **Vanta.js** (dynamic visual effects)
+- **TypeScript** (type safety and maintainability)
+
+---
+
+## ⚡️ Quick Start
+
+- **User email** user71@gmail.com
+- **Password** 12345678
 
 # Visual inspection
 
 <section>
-<img src="src/images/Readme/screenshot1.png" alt="photo"   width="500">
-<img src="src/images/Readme/screenshot2.png" alt="photo"  width="500">
+<img src="/public/images/Readme/screenshot1.png" alt="photo"   width="500">
+<img src="/public/images/Readme/screenshot2.png" alt="photo"  width="500">
 </section>

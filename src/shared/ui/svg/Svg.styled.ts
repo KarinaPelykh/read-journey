@@ -7,6 +7,7 @@ type SvgProps = {
 export const Svg = styled.svg<SvgProps>`
   width: 28px;
   height: 28px;
+  display: block;
   stroke: ${({ theme }) => theme.colors.white};
 
   ${({ $variant }) =>
@@ -60,8 +61,10 @@ export const Svg = styled.svg<SvgProps>`
      ${({ $variant }) =>
     ($variant === 'icon-2' || $variant === 'icon-1') &&
     css`
-      width: 44px;
-      height: 44px;
+      width: 45px;
+      stroke: transparent;
+      height: 45px;
+      flex-shrink: 0;
     `}
 
       ${({ $variant }) =>

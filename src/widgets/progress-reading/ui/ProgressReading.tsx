@@ -5,10 +5,9 @@ import { Div, Text, Wrapper } from './ProgressReading.styled';
 import { useAppSelector } from '@/shared/hooks/hooks';
 
 import { ProgressOnboarding } from './progress-onboarding/ProgressOnboarding';
-import { Icon } from '@/shared/ui/svg/Svg';
-import { Statistic } from '@/components/Statistic/ui/Statistic';
 import { ReadingProgressJournal } from '@/widgets/reading-progress-journal/ui/ReadingProgressJournal/ReadingProgressJournal';
 import { SwitcherBtnStatistic } from './switcher-btns-statistic/SwitcherBtnStatistic';
+import { Statistic } from '@/widgets/statistics/ui/Statistic';
 
 export const ProgressReading = () => {
   const [open, setOpen] = useState({ statistic: false, details: true });

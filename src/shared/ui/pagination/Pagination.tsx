@@ -24,6 +24,7 @@ export const Pagination = ({ page, setPage }: PaginationProps) => {
     }
     setPage(page - 1);
   };
+
   const handelNext = () => {
     if (page === totalPage) {
       return;

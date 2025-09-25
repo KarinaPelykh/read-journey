@@ -9,7 +9,6 @@ export const Comment = styled.p`
 
   @media screen and (min-width: 768px) {
     font-size: ${({ theme }) => theme.fontSizes.xxxl};
-    font-weight: ${({ theme }) => theme.fontWeights.bold};
     width: 444px;
     line-height: 60px;
     margin-bottom: 40px;

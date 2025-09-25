@@ -1,13 +1,16 @@
 import styled from 'styled-components';
+
 export const WrapperBooks = styled.div`
   background: ${({ theme }) => theme.colors.lightBlack};
   padding: 40px 20px;
   border-radius: ${({ theme }) => theme.radii.xl};
   width: 100%;
   position: relative;
+
   @media screen and (min-width: 768px) {
     padding: 40px;
   }
+
   @media screen and (min-width: 1440px) {
     display: flex;
     flex-direction: column;
