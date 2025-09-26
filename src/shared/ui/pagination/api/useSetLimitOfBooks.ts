@@ -7,12 +7,12 @@ export const useSetLimitOfBooks = (setLimit: UseSetLimitOfBooksProps) => {
   const { sizeWindow } = useWindowSize();
 
   useEffect(() => {
-    if (sizeWindow < 768) {
-      setLimit(2);
+    if (sizeWindow >= 1440) {
+      setLimit(10);
     } else if (sizeWindow > 768 && sizeWindow < 1440) {
       setLimit(8);
-    } else {
-      setLimit(10);
+    } else if (sizeWindow < 768) {
+      setLimit(2);
     }
   }, [sizeWindow]);
 };

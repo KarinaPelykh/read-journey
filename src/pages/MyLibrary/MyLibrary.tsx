@@ -6,6 +6,7 @@ import {
   Greeting,
   SpanGreeting,
   TextGreeting,
+  Block,
 } from './MyLibrary.styled';
 import { MyLibrarySidebar } from '@/components/MyLibrarySidebar';
 import { CustomSelect } from '@/widgets/select/ui/CustomSelect';
@@ -44,8 +45,11 @@ export const MyLibrary = () => {
           <MyLibrarySidebar />
         </Dashboard>
         <WrapperBooks>
-          <TextLibrary>My library</TextLibrary>
-          <CustomSelect setStatus={setStatus} statusValue={statusValue} />
+          <Block>
+            <TextLibrary>My library</TextLibrary>
+            <CustomSelect setStatus={setStatus} statusValue={statusValue} />
+          </Block>
+
           <MyLibraryList status={statusValue.value.toLowerCase()} />
         </WrapperBooks>
       </Div>

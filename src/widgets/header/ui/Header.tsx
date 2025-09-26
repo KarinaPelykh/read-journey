@@ -17,7 +17,7 @@ export const Header = () => {
 
   const handelLogout = useLogOut();
 
-  const { isOpen, open, close } = useToggle();
+  const { isOpen, open, close, toggle } = useToggle();
 
   return (
     <>
@@ -29,7 +29,7 @@ export const Header = () => {
             <UserBar />
             <Buttons onClick={handelLogout} variant="log-out" prop="Log out" />
             <ButtonMenu handelOpen={open} />
-            <BurgerMenu open={isOpen} close={close} />
+            <BurgerMenu open={isOpen} close={close} toggle={toggle} />
           </Nav>
         </HeaderDiv>
       )}

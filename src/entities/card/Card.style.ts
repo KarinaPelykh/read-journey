@@ -26,6 +26,8 @@ export const Li = styled.li<Prop>`
 `;
 
 export const Image = styled.img<Prop>`
+  display: block;
+  object-fit: cover;
   border-radius: ${({ theme }) => theme.radii.s};
   width: 137px;
   height: 208px;

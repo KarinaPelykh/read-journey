@@ -7,7 +7,9 @@ type SvgProps = {
 export const Svg = styled.svg<SvgProps>`
   width: 28px;
   height: 28px;
+
   display: block;
+
   stroke: ${({ theme }) => theme.colors.white};
 
   ${({ $variant }) =>
@@ -110,5 +112,12 @@ export const Svg = styled.svg<SvgProps>`
     css`
       width: 50px;
       height: 50px;
+    `}
+
+            ${({ $variant }) =>
+    $variant === 'icon-left' &&
+    css`
+      width: 20px;
+      height: 20px;
     `}
 `;

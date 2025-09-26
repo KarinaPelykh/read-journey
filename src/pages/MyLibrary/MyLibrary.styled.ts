@@ -11,7 +11,6 @@ export const WrapperBooks = styled.div`
   padding: 40px 20px;
   border-radius: ${({ theme }) => theme.radii.xl};
   width: 100%;
-  position: relative;
   @media screen and (min-width: 768px) {
     padding: 40px;
   }
@@ -30,13 +29,8 @@ export const TextLibrary = styled.p`
   color: ${({ theme }) => theme.colors.white};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   font-size: ${({ theme }) => theme.fontSizes.xl};
-  margin-bottom: 83px;
   @media screen and (min-width: 768px) {
     font-size: ${({ theme }) => theme.fontSizes.medium};
-    margin-bottom: 100px;
-  }
-  @media screen and (min-width: 1440px) {
-    margin-bottom: 28px;
   }
 `;
 
@@ -56,4 +50,18 @@ export const Greeting = styled.p`
 export const SpanGreeting = styled.span`
   font-size: ${({ theme }) => theme.fontSizes.s};
   color: ${({ theme }) => theme.colors.white};
+`;
+
+export const Block = styled.div`
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 83px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 100px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 28px;
+  }
 `;

@@ -1,11 +1,11 @@
 import { useAppDispatch } from '@/shared/hooks/hooks';
-import { Text, WrapperBooks } from './RecommendedBooks.styled';
+import { Text, WrapperBooks, Div } from './RecommendedBooks.styled';
 import { Pagination } from '@/shared/ui/pagination/Pagination';
 import { useEffect, useState } from 'react';
-import { useSetLimitOfBooks } from '@/widgets/books-list/api/useSetLimitOfBooks';
 import { useGetFilteredData } from '@/widgets/books-list/api/useGetFilteredData';
 import { fetchBooks } from '@/redux/books/operations';
 import { BookList } from '@/widgets/books-list/ui/BookList';
+import { useSetLimitOfBooks } from '@/shared/ui/pagination/api/useSetLimitOfBooks';
 
 export const RecommendedBooks = () => {
   const [page, setPage] = useState(1);
@@ -24,8 +24,11 @@ export const RecommendedBooks = () => {
 
   return (
     <WrapperBooks>
-      <Text>Recommended</Text>
-      {books.length <= 1 ? null : <Pagination setPage={setPage} page={page} />}
+      <Div>
+        <Text>Recommended</Text>
+        {!(books.length <= 1) && <Pagination setPage={setPage} page={page} />}
+      </Div>
+
       <BookList books={books} />
     </WrapperBooks>
   );

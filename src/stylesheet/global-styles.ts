@@ -21,6 +21,7 @@ const GlobalStyles = createGlobalStyle`
 body {
   font-family:'Gilroy-Medium';
   background:#141414;
+  overflow:auto;
 
 }
 

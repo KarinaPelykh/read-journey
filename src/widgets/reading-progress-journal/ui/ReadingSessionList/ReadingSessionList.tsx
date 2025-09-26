@@ -34,6 +34,7 @@ export const ReadingSessionList = ({ inform }: { inform: any }) => {
           const seconds = diffTime / 1000;
 
           const speedReading = (readPage / seconds) * 3600;
+
           return (
             <li key={String(_id)}>
               <ContainerInfo>

@@ -41,7 +41,7 @@ export const MyLibraryItem = ({ book }: MyLibraryItemProps) => {
         variant="library-list"
         title={title}
         author={author}
-        image={imageUrl}
+        image={imageUrl ? imageUrl : '/images/image.png'}
         pages={totalPages}
         id={id}
       >

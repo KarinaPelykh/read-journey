@@ -4,6 +4,7 @@ import { Svg } from './Svg.styled';
 type Style = {
   stroke?: string;
   fill?: string;
+  transform?: string;
 };
 
 type IconProps = {

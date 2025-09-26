@@ -5,10 +5,6 @@ export const useToggle = () => {
 
   const toggle = () => {
     setIsOpen(!isOpen);
-    document.body.style.overflow = 'hidden';
-    if (isOpen) {
-      document.body.style.overflow = 'auto';
-    }
   };
 
   const close = () => {
@@ -18,5 +14,12 @@ export const useToggle = () => {
   const open = () => {
     setIsOpen(true);
   };
+
+  if (isOpen) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
+
   return { isOpen, open, close, toggle };
 };

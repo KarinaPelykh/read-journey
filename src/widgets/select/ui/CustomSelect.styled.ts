@@ -1,4 +1,5 @@
 import Select from 'react-select';
+
 import styled from 'styled-components';
 
 export const Selectors = styled(Select)`
@@ -7,12 +8,9 @@ export const Selectors = styled(Select)`
   border: ${({ theme }) => theme.borders.normal};
   border-color: ${({ theme }) => theme.colors.liteWhite};
   outline: 0;
-
   position: absolute !important;
-  top: 45px;
-  right: 39px;
+  right: 0;
   cursor: none;
-  position: relative;
 
   .react-select__control {
     background-color: transparent !important;
@@ -101,8 +99,6 @@ export const Selectors = styled(Select)`
   }
   @media screen and (min-width: 1440px) {
     width: 153px;
-    position: absolute;
-    right: 39px;
 
     .react-select__control {
       background-color: transparent !important;

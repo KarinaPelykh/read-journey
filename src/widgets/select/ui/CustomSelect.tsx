@@ -27,6 +27,7 @@ export const CustomSelect = ({ setStatus, statusValue }: CustomSelectProps) => {
       defaultValue={statusValue}
       options={OPTIONS}
       classNamePrefix="react-select"
+      isSearchable={false}
     />
   );
 };

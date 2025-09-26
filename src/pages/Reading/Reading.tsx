@@ -19,7 +19,6 @@ export const Reading = () => {
   const readBook = useAppSelector(redBookSelector);
 
   const { timeLeftToRead, imageUrl, title, author, _id: id } = readBook;
-  console.log(timeLeftToRead);
 
   return (
     <Div>
