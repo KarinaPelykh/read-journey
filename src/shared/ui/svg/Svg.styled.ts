@@ -74,8 +74,7 @@ export const Svg = styled.svg<SvgProps>`
     css`
       width: 20px;
       height: 20px;
-      position: absolute;
-      left: -27px;
+      margin-right: 10px;
     `}
 
         ${({ $variant }) =>
@@ -83,10 +82,7 @@ export const Svg = styled.svg<SvgProps>`
     css`
       width: 14px;
       height: 14px;
-      position: absolute;
-      top: 5px;
-      left: 8px
-      stroke: #686868;
+
       fill: transparent;
     `}
 

@@ -22,7 +22,7 @@ export const ReadingSessionList = ({ inform }: { inform: any }) => {
   const deleteProgress = useDeleteProgressOfReading();
 
   return (
-    <ul>
+    <ul style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
       {inform?.map(
         ({ readPage, percentReading, startReading, finishReading, _id }: D) => {
           const start = new Date(startReading);
@@ -36,7 +36,7 @@ export const ReadingSessionList = ({ inform }: { inform: any }) => {
           const speedReading = (readPage / seconds) * 3600;
 
           return (
-            <li key={String(_id)}>
+            <li key={String(_id)} style={{ paddingLeft: '30px' }}>
               <ContainerInfo>
                 <Head>
                   <ProgressReading>{percentReading}%</ProgressReading>
@@ -53,7 +53,10 @@ export const ReadingSessionList = ({ inform }: { inform: any }) => {
                     <Speed>{speedReading.toFixed(2)} pages per hours</Speed>
                   </div>
 
-                  <button onClick={() => deleteProgress(String(_id))}>
+                  <button
+                    onClick={() => deleteProgress(String(_id))}
+                    style={{ paddingTop: '5px', marginLeft: '8px ' }}
+                  >
                     <Icon iconName="trash-1" variant="trash" />
                   </button>
                 </Div>

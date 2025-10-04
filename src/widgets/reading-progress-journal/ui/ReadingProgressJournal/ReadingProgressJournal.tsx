@@ -1,8 +1,8 @@
 import {
-  Diary,
   List,
   VerticalDiv,
   Wrapper,
+  Block,
 } from './ReadingProgressJournal.styled';
 import { redBookSelector } from '@/redux/books/selectors';
 import { useAppSelector } from '@/shared/hooks/hooks';
@@ -14,10 +14,10 @@ export const ReadingProgressJournal = () => {
   const readBook = useAppSelector(redBookSelector);
 
   return (
-    <Diary>
+    <Block>
       <Wrapper>
+        <VerticalDiv />
         <List>
-          <VerticalDiv></VerticalDiv>
           {getReadingProgress({
             progress: readBook.progress,
             totalPage: readBook.totalPages,
@@ -32,6 +32,6 @@ export const ReadingProgressJournal = () => {
             ))}
         </List>
       </Wrapper>
-    </Diary>
+    </Block>
   );
 };

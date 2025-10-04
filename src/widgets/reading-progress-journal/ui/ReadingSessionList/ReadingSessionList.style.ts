@@ -2,11 +2,10 @@ import styled from 'styled-components';
 
 export const ContainerInfo = styled.div`
   display: flex;
-  margin-bottom: 40px;
 `;
 
 export const Head = styled.div`
-  margin-right: auto;
+  margin-right: 105px;
 `;
 
 export const Minutes = styled.p`
@@ -20,12 +19,10 @@ export const Speed = styled.p`
   width: 55px;
 `;
 
-export const Div = styled.p`
+export const Div = styled.div`
   display: flex;
   justify-content: center;
-  button {
-    position: relative;
-  }
+  align-items: flex-start;
 `;
 
 export const ProgressReading = styled.p`
